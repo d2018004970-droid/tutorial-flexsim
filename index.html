@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modelagem utilizando FlexSim Education v2027-0</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand-mark"><span class="brand-plus">+</span></div>
+    <div>
+      <div class="brand-small">TUTORIAL INTERATIVO</div>
+      <h1>Modelagem utilizando FlexSim Education v2027-0</h1>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-label">AULA 01</div>
+    <div class="sidebar-title">Introdução ao Software</div>
+
+    <nav>
+      <a class="nav-model" href="#modelo01">1.1) Modelo 01</a>
+      <div class="nav-steps">
+        <a href="#etapa01">Etapa 01</a>
+        <a href="#etapa02">Etapa 02</a>
+        <a href="#etapa03">Etapa 03</a>
+        <a href="#etapa04">Etapa 04</a>
+        <a href="#etapa05">Etapa 05</a>
+        <a href="#etapa06">Etapa 06</a>
+        <a href="#etapa07">Etapa 07</a>
+        <a href="#resultados">Resultados</a>
+      </div>
+      <a class="nav-model" href="#modelo02">1.2) Modelo 02</a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <label for="search">Pesquisar</label>
+      <div class="search-wrap">
+        <span>⌕</span>
+        <input id="search" type="search" placeholder="Ex.: Source, Queue...">
+      </div>
+    </div>
+  </aside>
+
+  <main class="content">
+
+    <section class="intro-strip">
+      <div>
+        <span class="section-kicker">AULA 01</span>
+        <h2>Introdução ao Software</h2>
+      </div>
+      <div class="intro-note">Acompanhe o roteiro e execute cada etapa no FlexSim.</div>
+    </section>
+
+    <details class="model" id="modelo01" open>
+      <summary><span class="plus-box">+</span><span>1.1) Modelo 01</span></summary>
+
+      <div class="model-content">
+
+        <details class="stage" id="etapa01" open>
+          <summary><span class="stage-number">01</span><span>Chegada de placas virgens ao modelo</span></summary>
+          <div class="stage-content two-cols">
+
+            <article class="instruction-card">
+              <div class="card-title"><span class="card-index">01</span> Adicionando objeto</div>
+              <div class="media">
+                <img src="images/AULA1_MODELO1_ETAPA1_1.png" alt="AULA1_MODELO1_ETAPA1_1">
+              </div>
+              <div class="script">
+                <div class="script-label">ROTEIRO</div>
+                <p>NESTE PRIMEIRO MODELO,<br><strong>PLACAS VIRGENS CHEGAM PELO SOURCE.</strong></p>
+              </div>
+              <div class="field"><b>Objeto</b><span>Source</span></div>
+              <div class="field"><b>Caminho onde encontrar objeto</b><span>Barra da Esquerda → Library → Fixed Resources → Source.</span></div>
+              <div class="field"><b>Ação do mouse</b><span>Clique e mantenha pressionado o botão esquerdo do mouse sobre o objeto e arraste-o até o local desejado no Mapa 3D.<br><br>Como alternativa, clique uma vez com o botão esquerdo para selecionar o objeto e, em seguida, clique novamente no local desejado do Mapa 3D para adicioná-lo.</span></div>
+              <div class="note"><b>Observação</b><span>Ao utilizar a segunda forma, o objeto permanece selecionado após ser adicionado. Dessa maneira, você pode clicar em outros locais do Mapa 3D para inserir rapidamente outros objetos do mesmo tipo.</span></div>
+            </article>
+
+            <article class="instruction-card">
+              <div class="card-title"><span class="card-index">02</span> Configurando o objeto</div>
+              <div class="media">
+                <img src="images/AULA1_MODELO1_ETAPA1_2.png" alt="AULA1_MODELO1_ETAPA1_2">
+              </div>
+              <div class="script">
+                <div class="script-label">ROTEIRO</div>
+                <p>“SOURCE: CHEGADA_PLACAS_VIRGENS”:<br><br>POSICIONADO EM:<br><strong>X = 0.00 ; Y = 0.00 ; Z = 0.00</strong><br><br>ESSAS CHEGADAS OCORREM EM INTERVALOS DE <strong>10 s</strong> A PARTIR DE <strong>t = 0</strong></p>
+              </div>
+              <div class="field"><b>Ação do mouse</b><span>Para abrir as propriedades do objeto, clique sobre ele com o botão esquerdo do mouse ou clique duas vezes com o botão direito do mouse.</span></div>
+              <div class="properties">
+                <div class="property"><div class="property-title"><span class="flex-plus">+</span> Nome</div><div class="property-content"><b>CHEGADA_PLACAS_VIRGENS</b></div></div>
+                <div class="property"><div class="property-title"><span class="flex-plus">+</span> Visuals</div><div class="property-content">X = 0.00 ; Y = 0.00 ; Z = 0.00</div></div>
+                <div class="property"><div class="property-title"><span class="flex-plus">+</span> Source</div><div class="property-content">Arrival Style: Inter-Arrival Time<br>Arrival at time 0<br>Inter-Arrival Time: 10 s</div></div>
+              </div>
+            </article>
+
+          </div>
+        </details>
+
+        <details class="stage" id="etapa02">
+          <summary><span class="stage-number">02</span><span>Fila/Estoque das Placas Virgens</span></summary>
+          <div class="stage-content two-cols">
+            <article class="instruction-card">
+              <div class="card-title"><span class="card-index">01</span> Adicionando objeto</div>
+              <div class="media"><img src="images/AULA1_MODELO1_ETAPA2_1.png" alt="AULA1_MODELO1_ETAPA2_1"></div>
+              <div class="script"><div class="script-label">ROTEIRO</div><p>APÓS ENTRAREM NO SISTEMA,<br><strong>AS PLACAS VÃO PARA UMA QUEUE.</strong></p></div>
+              <div class="field"><b>Objeto</b><span>Queue</span></div>
+              <div class="field"><b>Caminho onde encontrar objeto</b><span>Barra da Esquerda → Library → Fixed Resources → Queue.</span></div>
+              <div class="field"><b>Ação do mouse</b><span>Clique e mantenha pressionado o botão esquerdo do mouse sobre o objeto e arraste-o até o local desejado no Mapa 3D.<br><br>Como alternativa, clique uma vez com o botão esquerdo para selecionar o objeto e, em seguida, clique novamente no local desejado do Mapa 3D para adicioná-lo.</span></div>
+              <div class="note"><b>Observação</b><span>Ao utilizar a segunda forma, o objeto permanece selecionado após ser adicionado. Dessa maneira, você pode clicar em outros locais do Mapa 3D para inserir rapidamente outros objetos do mesmo tipo.</span></div>
+            </article>
+            <article class="instruction-card">
+              <div class="card-title"><span class="card-index">02</span> Configurando o objeto</div>
+              <div class="media"><img src="images/AULA1_MODELO1_ETAPA2_2.png" alt="AULA1_MODELO1_ETAPA2_2"></div>
+              <div class="script"><div class="script-label">ROTEIRO</div><p>“QUEUE: PLACAS_VIRGENS”:<br><br><strong>CAPACIDADE INFINITA.</strong><br><br>POSICIONADO EM:<br><strong>X = 10.00 ; Y = 0.00 ; Z = 0.00</strong></p></div>
+              <div class="field"><b>Ação do mouse</b><span>Conectar os objetos utilizando o comando de conexão. Como atalho, pressione a tecla “A” do teclado. Em seguida, clique primeiro no Source e depois na Queue.</span></div>
+              <div class="properties">
+                <div class="property"><div class="property-title"><span class="flex-plus">+</span> Nome</div><div class="property-content"><b>PLACAS_VIRGENS</b></div></div>
+                <div class="property"><div class="property-title"><span class="flex-plus">+</span> Visuals</div><div class="property-content">X = 10.00 ; Y = 0.00 ; Z = 0.00</div></div>
+                <div class="property"><div class="property-title"><span class="flex-plus">+</span> Queue</div><div class="property-content">Max Content = 1000000</div></div>
+              </div>
+            </article>
+          </div>
+        </details>
+
+        <details class="stage" id="etapa03">
+          <summary><span class="stage-number">03</span><span>Diferentes modelos de Placas Virgens</span></summary>
+          <div class="stage-content one-col">
+            <article class="instruction-card">
+              <div class="card-title"><span class="card-index">01</span> Configurando objeto</div>
+              <div class="media two-images"><img src="images/AULA1_MODELO1_ETAPA3_1.png" alt="AULA1_MODELO1_ETAPA3_1"><img src="images/AULA1_MODELO1_ETAPA3_2.png" alt="AULA1_MODELO1_ETAPA3_2"></div>
+              <div class="script"><div class="script-label">ROTEIRO</div><p>CHEGAM DOIS MODELOS DIFERENTES,<br>NA MESMA PROPORÇÃO.<br><br>MODELOS E COLOCAÇÕES:<br><strong>1 – GREEN; 2 – YELLOW</strong></p></div>
+              <div class="field"><b>Objeto</b><span>Source – CHEGADAS_PLACAS_VIRGENS</span></div>
+              <div class="properties">
+                <div class="property"><div class="property-title"><span class="flex-plus">+</span> Triggers</div><div class="property-content"><b>Criar Modelos</b><br>On Creation → Data → Set Label by Percentage<br>Object: item<br>Label: “MODELO”<br>Percent: 50<br>Value: 1<br><br>Clique no <span class="green-plus">+</span> abaixo de Label para criar um novo “MODELO”.<br>Percent: 50<br>Value: 2</div></div>
+                <div class="property"><div class="property-title"><span class="flex-plus">+</span> Triggers</div><div class="property-content"><b>Criar Coloração por Modelos</b><br>On Creation → Visual → Set Color By Case<br>Value: item.MODELO<br>Object: item<br><br>Preencha Value na primeira coluna e Color na segunda coluna.<br><br>1 : Color.green<br>2 : Color.yellow</div></div>
+              </div>
+              <div class="note"><b>Observação</b><span>Ao adicionar novos modelos em Set Label by Percentage, distribua as porcentagens entre todos os modelos de forma que a soma dos valores seja sempre igual a 100%.</span></div>
+            </article>
+          </div>
+        </details>
+
+        <details class="stage" id="etapa04">
+          <summary><span class="stage-number">04</span><span>Impressoras das Placas Virgens</span></summary>
+          <div class="stage-content two-cols">
+            <article class="instruction-card">
+              <div class="card-title"><span class="card-index">01</span> Adicionando objeto</div>
+              <div class="media"><img src="images/AULA1_MODELO1_ETAPA4_1.png" alt="AULA1_MODELO1_ETAPA4_1"></div>
+              <div class="script"><div class="script-label">ROTEIRO</div><p>DESSE ESTOQUE, AS PLACAS VÃO PARA OS<br><strong>“PROCESSOR: IMPRESSORAS 1;2”</strong><br><br>Idênticas e paralelas</p></div>
+              <div class="field"><b>Objeto</b><span>Processor</span></div>
+              <div class="field"><b>Caminho onde encontrar objeto</b><span>Barra da Esquerda → Library → Fixed Resources → Processor.</span></div>
+              <div class="field"><b>Ação do mouse</b><span>Clique e mantenha pressionado o botão esquerdo do mouse sobre o objeto e arraste-o até o local desejado no Mapa 3D.</span></div>
+              <div class="note"><b>Observação</b><span>Adicione um Processor e configure-o conforme as orientações da coluna “Configurando objeto”. Depois, selecione o Processor “IMPRESSORA_1”, utilize CTRL+C para copiá-lo e CTRL+V para colar uma cópia em outro local do Mapa 3D.</span></div>
+            </article>
+            <article class="instruction-card">
+              <div class="card-title"><span class="card-index">02</span> Configurando objeto</div>
+              <div class="media two-images"><img src="images/AULA1_MODELO1_ETAPA4_2.png" alt="AULA1_MODELO1_ETAPA4_2"><img src="images/AULA1_MODELO1_ETAPA4_3.png" alt="AULA1_MODELO1_ETAPA4_3"></div>
+              <div class="script"><div class="script-label">ROTEIRO</div><p>“PROCESSOR: IMPRESSORAS 1;2”<br>TC = 20 [s/u]<br><br>POSICIONADAS EM:<br>IMPRESSORA_1, X=20.00 ; Y=3.50 ; Z=0.00<br>IMPRESSORA_2, X=20.00 ; Y=-3.50 ; Z=0.00</p></div>
+              <div class="field"><b>Ação do mouse</b><span>Para abrir as propriedades do Processor, clique sobre ele com o botão esquerdo do mouse ou clique duas vezes com o botão direito do mouse.</span></div>
+              <div class="properties">
+                <div class="property"><div class="property-title"><span class="flex-plus">+</span> Nome</div><div class="property-content">IMPRESSORA_1<br>IMPRESSORA_2</div></div>
+                <div class="property"><div class="property-title"><span class="flex-plus">+</span> Visuals</div><div class="property-content">IMPRESSORA_1: X = 20.00 ; Y = 3.50 ; Z = 0.00<br>IMPRESSORA_2: X = 20.00 ; Y = -3.50 ; Z = 0.00</div></div>
+                <div class="property"><div class="property-title"><span class="flex-plus">+</span> Processor</div><div class="property-content">Process Time: 20 (s)</div></div>
+                <div class="property"><div class="property-title"><span class="flex-plus">+</span> Ports</div><div class="property-content">Conexões configuradas conforme o roteiro.</div></div>
+                <div class="property"><div class="property-title"><span class="flex-plus">+</span> Triggers</div><div class="property-content">Configurações conforme a etapa.</div></div>
+              </div>
+            </article>
+          </div>
+        </details>
+
+        <details class="stage" id="etapa05">
+          <summary><span class="stage-number">05</span><span>Saída das Placas para os clientes</span></summary>
+          <div class="stage-content two-cols">
+            <article class="instruction-card">
+              <div class="card-title"><span class="card-index">01</span> Adicionando objeto</div>
+              <div class="media"><img src="images/AULA1_MODELO1_ETAPA5_1.png" alt="AULA1_MODELO1_ETAPA5_1"></div>
+              <div class="script"><div class="script-label">ROTEIRO</div><p>APÓS SEREM IMPRESSAS, AS PLACAS DEIXARÃO O SISTEMA PELO<br><strong>“SINK: SAIDAS_CLIENTES”</strong></p></div>
+              <div class="field"><b>Objeto</b><span>Sink</span></div>
+              <div class="field"><b>Caminho onde encontrar objeto</b><span>Barra da Esquerda → Library → Fixed Resources → Sink.</span></div>
+              <div class="field"><b>Ação do mouse</b><span>Clique e mantenha pressionado o botão esquerdo do mouse sobre o objeto e arraste-o até o local desejado no Mapa 3D.</span></div>
+            </article>
+            <article class="instruction-card">
+              <div class="card-title"><span class="card-index">02</span> Configurando objeto</div>
+              <div class="media"><img src="images/AULA1_MODELO1_ETAPA5_2.png" alt="AULA1_MODELO1_ETAPA5_2"></div>
+              <div class="script"><div class="script-label">ROTEIRO</div><p>“SINK: SAIDAS_CLIENTES”<br><br>POSICIONADO EM:<br><strong>X=30.00 ; Y=0.00 ; Z=0.00</strong></p></div>
+              <div class="field"><b>Ação do mouse</b><span>Conectar os objetos utilizando o comando de conexão. Como atalho, pressione a tecla “A” do teclado e, em seguida, clique nos objetos que deseja conectar.</span></div>
+              <div class="properties">
+                <div class="property"><div class="property-title"><span class="flex-plus">+</span> Nome</div><div class="property-content">SAIDAS_CLIENTES</div></div>
+                <div class="property"><div class="property-title"><span class="flex-plus">+</span> Visuals</div><div class="property-content">X = 30.00 ; Y = 0.00 ; Z = 0.00</div></div>
+                <div class="property"><div class="property-title"><span class="flex-plus">+</span> Output</div><div class="property-content">Conexão configurada conforme o roteiro.</div></div>
+                <div class="property"><div class="property-title"><span class="flex-plus">+</span> Ports</div><div class="property-content">Porta de entrada conectada ao fluxo.</div></div>
+              </div>
+            </article>
+          </div>
+        </details>
+
+        <details class="stage" id="etapa06">
+          <summary><span class="stage-number">06</span><span>Filtrar qual impressora processa cada modelo de placa</span></summary>
+          <div class="stage-content one-col">
+            <article class="instruction-card">
+              <div class="card-title"><span class="card-index">01</span> Configurando objeto</div>
+              <div class="media"><img src="images/AULA1_MODELO1_ETAPA6_1.png" alt="AULA1_MODELO1_ETAPA6_1"></div>
+              <div class="script"><div class="script-label">ROTEIRO</div><p>CADA MODELO DEVERÁ ENTRAR EM UMA IMPRESSORA ESPECÍFICA:<br><strong>O MODELO 1 NA IMPRESSORA 1 E O MODELO 2 NA IMPRESSORA 2.</strong></p></div>
+              <div class="field"><b>Objeto</b><span>PLACAS_VIRGENS</span></div>
+              <div class="properties">
+                <div class="property"><div class="property-title"><span class="flex-plus">+</span> Output</div><div class="property-content">Send to Port → Port By Case<br><br>Case Function: item.MODELO<br><br>Clique no <span class="green-plus">+</span> abaixo de Case Function para adicionar os campos necessários aos dois modelos.<br><br>Preencha Case na primeira coluna e Port na segunda coluna.<br><br>Case: 1 → Port: 1<br>Case: 2 → Port: 2</div></div>
+                <div class="property"><div class="property-title"><span class="flex-plus">+</span> Ports</div><div class="property-content">Portas de saída utilizadas pelas impressoras.</div></div>
+              </div>
+            </article>
+          </div>
+        </details>
+
+        <details class="stage" id="etapa07">
+          <summary><span class="stage-number">07</span><span>Ajustar turno de trabalho de 08:00 até 16:00 horas</span></summary>
+          <div class="stage-content one-col">
+            <article class="instruction-card">
+              <div class="card-title"><span class="card-index">01</span> Configurando Run Time</div>
+              <div class="media"><img src="images/AULA1_MODELO1_ETAPA7_1.png" alt="AULA1_MODELO1_ETAPA7_1"></div>
+              <div class="script"><div class="script-label">ROTEIRO</div><p>AJUSTE O RUN TIME PARA 1 TURNO DAS 08h00 ÀS 16h00,<br>SE NECESSÁRIO, COM O AUXÍLIO DO EDIT MODEL SETTINGS.</p></div>
+              <div class="field"><b>Caminho</b><span>Barra Superior → Run Time</span></div>
+              <div class="field"><b>Run Time</b><span>Start Time: 08:00:00<br>Stop Times: 16:00:00</span></div>
+            </article>
+          </div>
+        </details>
+
+        <details class="results" id="resultados">
+          <summary><span class="result-icon">✓</span><span>Resultados</span></summary>
+          <div class="results-body">
+            <p>Resultados do modelo serão inseridos nesta seção.</p>
+          </div>
+        </details>
+
+      </div>
+    </details>
+
+    <details class="model model-placeholder" id="modelo02">
+      <summary><span class="plus-box">+</span><span>1.2) Modelo 02</span></summary>
+      <div class="placeholder-body">Conteúdo do Modelo 02 será inserido posteriormente.</div>
+    </details>
+
+  </main>
+</div>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" aria-label="Fechar">×</button>
+  <div class="lightbox-caption"></div>
+  <img id="lightbox-img" alt="">
+  <div class="lightbox-help">Clique na imagem para ampliar • ESC para fechar</div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
