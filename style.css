@@ -12,7 +12,47 @@
 .lightbox{position:fixed;inset:0;background:rgba(9,17,29,.88);display:none;align-items:center;justify-content:center;z-index:100;padding:40px}.lightbox.open{display:flex}.lightbox img{max-width:92vw;max-height:88vh;object-fit:contain;border-radius:6px;box-shadow:0 12px 50px rgba(0,0,0,.4)}.lightbox-close{position:fixed;right:22px;top:14px;border:0;background:rgba(255,255,255,.14);color:#fff;width:42px;height:42px;border-radius:50%;font-size:28px;cursor:pointer}.lightbox-help{position:fixed;bottom:15px;color:#d9e1ea;font-size:12px}.search-hidden{display:none!important}.search-hit{outline:3px solid rgba(23,105,170,.18);outline-offset:2px}
 @media(max-width:900px){.page-layout{grid-template-columns:1fr}.sidebar{position:static}.two-cols{grid-template-columns:1fr}.course-heading{align-items:flex-start;flex-direction:column;gap:5px}.results-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:620px){.topbar-inner,.content{padding-left:15px;padding-right:15px}.title-logo{width:56px;height:56px}h1{font-size:20px}.print-grid,.results-images{grid-template-columns:1fr}.field{display:block}.field b{display:block;margin-bottom:3px}.results-grid{grid-template-columns:1fr}}
-@media print{.topbar{position:static;box-shadow:none}.search-bar-wrap,.sidebar{display:none}.content{max-width:none;padding:0}.page-layout{display:block}.model,.stage,.results{box-shadow:none;break-inside:auto}.stage>summary,.model>summary{background:#fff}.instruction-card{break-inside:avoid}.lightbox{display:none!important}.stage-content{display:grid}.model-view.is-hidden{display:block!important}}
+@page{size:A4 portrait;margin:12mm}
+@media print{
+  html,body{background:#fff!important;color:#111!important;font-size:11pt;line-height:1.4;width:auto!important;height:auto!important;overflow:visible!important}
+  .topbar{position:static!important;box-shadow:none!important;border-bottom:1px solid #cfd8e3}
+  .search-bar-wrap,.sidebar,.lightbox,.pdf-controls,.pdf-dialog,.lightbox-nav,.lightbox-counter,.lightbox-help{display:none!important}
+  .content{max-width:none!important;padding:0!important;margin:0!important}
+  .page-layout{display:block!important}
+  .main-area{width:100%!important}
+  .course-section{display:block!important}
+  .course-section>summary.course-heading{display:flex!important;margin:0 0 12px!important;break-after:avoid;page-break-after:avoid}
+  .course-section>summary.course-heading h2{margin-bottom:0!important}
+  .model-view,.model-view.is-hidden{display:block!important}
+  .model,.stage,.results{box-shadow:none!important;overflow:visible!important}
+  .model{border:0!important}
+  .model>summary,.stage>summary,.results>summary{background:#fff!important}
+  /* Cada etapa começa uma nova página. Dentro dela, cada coluna do Word-Mestre
+     (instruction-card) começa em uma nova página, exceto a primeira. */
+  .stage{break-before:page;page-break-before:always;break-inside:auto;page-break-inside:auto}
+  /* A primeira coluna do primeiro estágio pode ocupar a primeira página. */
+  .model-content > .stage:first-child{break-before:auto!important;page-break-before:auto!important}
+  .stage-content{display:block!important}
+  .stage-content > .instruction-card{display:block!important;width:100%!important;min-width:0!important;break-inside:auto;page-break-inside:auto}
+  .stage-content > .instruction-card + .instruction-card{break-before:page;page-break-before:always}
+
+  /* A imagem normal pode ocupar a largura disponível da coluna impressa. */
+  .media{break-inside:avoid;page-break-inside:avoid}
+  .media > img{max-width:100%!important;width:auto!important;height:auto!important;max-height:230mm!important;object-fit:contain!important;box-shadow:none!important}
+
+  /* Dentro de uma mesma coluna, imagens pequenas são organizadas em até duas
+     por linha. Uma imagem grande ocupa as duas posições e fica sozinha. */
+  .print-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:5mm!important;align-items:start!important}
+  .print-grid img{width:auto!important;max-width:100%!important;height:auto!important;max-height:105mm!important;object-fit:contain!important;justify-self:center!important}
+  .print-grid img.print-image-large{grid-column:1 / -1!important;max-width:100%!important;max-height:230mm!important;justify-self:center!important}
+
+  /* Se a própria coluna tiver um único print grande, ele recebe toda a largura. */
+  .print-large-card{break-inside:auto!important;page-break-inside:auto!important}
+  .print-large-card .media:not(.print-grid){display:flex!important;justify-content:center!important}
+  .print-large-card .media:not(.print-grid) img{max-width:100%!important;width:auto!important;max-height:230mm!important}
+  .properties,.note,.script{break-inside:avoid;page-break-inside:avoid}
+  img{print-color-adjust:exact;-webkit-print-color-adjust:exact}
+}
 
 
 /* Atualizações do Word-Mestre: ícones inline e navegação entre prints */
@@ -87,3 +127,68 @@
 @media(max-width:900px){
   .multi-cols{grid-template-columns:1fr}
 }
+
+/* Navegação por aulas e modelos */
+.outline-nav{display:flex;flex-direction:column;gap:8px}
+.outline-course{border:1px solid transparent;border-radius:10px}
+.outline-course[open]{background:#fbfdff;border-color:#e0e7ef}
+.outline-course>summary{list-style:none;cursor:pointer;padding:10px 9px;font-weight:750;color:#263a55;display:flex;align-items:center;gap:7px;border-radius:9px}
+.outline-course>summary::-webkit-details-marker{display:none}
+.outline-course>summary:hover{background:#f4f8fc}
+.outline-chevron{width:17px;color:#58708b;font-size:13px}
+.outline-course:not([open]) .outline-chevron{transform:rotate(-90deg)}
+.outline-models{padding:2px 8px 9px 27px;display:flex;flex-direction:column;gap:6px}
+.outline-models .model-link{padding:9px 8px;grid-template-columns:20px 1fr 14px;font-size:14px}
+.outline-models .model-link-icon{font-size:13px}
+.outline-models .model-link-arrow{font-size:20px}
+.model-link.is-pending{opacity:.5;cursor:default}
+.model-link.is-pending:hover{border-color:var(--line);background:#fff}
+.nav-focus{animation:navFocus .9s ease}
+@keyframes navFocus{0%{box-shadow:0 0 0 0 rgba(23,105,170,.35)}100%{box-shadow:0 0 0 10px rgba(23,105,170,0)}}
+
+
+
+/* Aula como nível expansível na área central */
+.course-section{display:block}
+.course-section>summary{list-style:none;cursor:pointer}
+.course-section>summary::-webkit-details-marker{display:none}
+.course-section>summary.course-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:24px}
+.course-section:not([open])>summary.course-heading{margin-bottom:0}
+.course-section:not([open])>summary.course-heading h2{margin-bottom:0}
+.course-section:not([open])>summary.course-heading .course-description{padding-bottom:4px}
+
+/* Controles de impressão */
+.pdf-controls{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
+.pdf-button{border:1px solid #b8cfe4;background:#eaf3ff;color:#075db2;border-radius:9px;padding:9px 13px;font:600 13px/1.2 "Segoe UI",Arial,sans-serif;cursor:pointer;transition:.18s ease}
+.pdf-button:hover{background:#dceeff;border-color:#91b5d5}
+.pdf-button.secondary{background:#fff;color:#344b66}
+.pdf-button.secondary:hover{background:#f7fbff;color:#075db2}
+
+@media print{
+  /* O JavaScript define exatamente quais modelos foram selecionados. */
+  body[data-print-models] .model-view{display:none!important}
+  body[data-print-models] .model-view.print-selected{display:block!important}
+}
+
+
+/* ============================================================
+   SELETOR DE PDF — escalável para qualquer quantidade de modelos
+   ============================================================ */
+.pdf-dialog{position:fixed;inset:0;z-index:80;display:none;align-items:center;justify-content:center;padding:24px}
+.pdf-dialog.open{display:flex}
+.pdf-dialog-backdrop{position:absolute;inset:0;background:rgba(10,22,38,.52);backdrop-filter:blur(2px)}
+.pdf-dialog-panel{position:relative;z-index:1;width:min(560px,94vw);max-height:82vh;overflow:auto;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 20px 60px rgba(16,38,65,.22);padding:24px}
+.pdf-dialog-panel h3{margin:0 34px 5px 0;font-size:21px;color:var(--ink)}
+.pdf-dialog-help{margin:0 0 18px;color:var(--muted);font-size:14px}
+.pdf-dialog-close{position:absolute;right:14px;top:12px;width:34px;height:34px;border:0;border-radius:50%;background:#f3f6f9;color:#52657d;font-size:24px;cursor:pointer}
+.pdf-choice-group{display:grid;gap:8px;margin-bottom:16px}
+.pdf-choice{display:flex;gap:10px;align-items:flex-start;padding:11px 12px;border:1px solid var(--line);border-radius:10px;cursor:pointer}
+.pdf-choice:hover{background:#f8fbff;border-color:#b9d3ed}
+.pdf-choice input{margin-top:4px;accent-color:#1769aa}
+.pdf-choice span{display:grid;gap:2px}.pdf-choice strong{font-size:14px}.pdf-choice small{color:var(--muted);font-size:12px}
+.pdf-model-selection{display:grid;gap:6px;max-height:260px;overflow:auto;border:1px solid var(--line);border-radius:10px;padding:10px;background:#fbfcfe}
+.pdf-model-selection.disabled{opacity:.55}
+.pdf-model-check{display:flex;align-items:center;gap:9px;padding:8px 9px;border-radius:7px;cursor:pointer;font-size:14px}.pdf-model-check:hover{background:#eef5fc}.pdf-model-check input{accent-color:#1769aa}
+.pdf-selection-actions{display:flex;gap:8px;margin:9px 0 18px}.pdf-small-button{border:1px solid #c7d3df;background:#fff;border-radius:7px;padding:6px 9px;color:#41556e;font-size:12px;cursor:pointer}.pdf-small-button:hover{background:#f5f9fd}
+.pdf-dialog-footer{display:flex;justify-content:flex-end;gap:8px;border-top:1px solid #edf1f5;padding-top:15px}
+@media print{.pdf-dialog{display:none!important}}
