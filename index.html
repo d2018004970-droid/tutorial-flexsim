@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tutorial de Modelagem utilizando FlexSim Education v2027-0</title>
-<link rel="stylesheet" href="style.css?v=8">
+<link rel="stylesheet" href="style.css?v=9">
 </head>
 <body>
 <header class="topbar">
@@ -30,77 +30,55 @@
   <div class="page-layout">
     <aside class="sidebar" aria-label="Sumário">
       <div class="sidebar-label">SUMÁRIO</div>
-      <nav class="outline-nav">
-        <details class="outline-course" open>
-          <summary><span class="outline-chevron">▾</span><span>Aula 01 — Introdução ao Software</span></summary>
-          <div class="outline-models">
-            <button class="model-link active" type="button" data-model-target="modelo01">
-              <span class="model-link-icon">▣</span><span>Modelo 01</span><span class="model-link-arrow">›</span>
-            </button>
-            <button class="model-link" type="button" data-model-target="modelo02">
-              <span class="model-link-icon">▣</span><span>Modelo 02</span><span class="model-link-arrow">›</span>
-            </button>
-          </div>
-        </details>
-      </nav>
+      <div class="sidebar-course-group" data-course-id="aula01">
+  <button class="sidebar-course-toggle" type="button" data-course-toggle="aula01">
+    <span class="course-caret">▾</span><span class="course-label">Aula 01 - Introdução ao Software</span>
+  </button>
+  <nav class="model-nav" data-course-model-nav="aula01"><button class="model-link active" type="button" data-model-target="modelo01"><span class="model-link-icon">▣</span><span>1.1) Modelo 01</span><span class="model-link-arrow">›</span></button><button class="model-link" type="button" data-model-target="modelo02"><span class="model-link-icon">▣</span><span>1.2) Modelo 02</span><span class="model-link-arrow">›</span></button></nav>
+</div><div class="sidebar-course-group" data-course-id="aula02">
+  <button class="sidebar-course-toggle" type="button" data-course-toggle="aula02">
+    <span class="course-caret">▾</span><span class="course-label">Aula 02 - Continuação da modelagem</span>
+  </button>
+  <nav class="model-nav" data-course-model-nav="aula02"><button class="model-link" type="button" data-model-target="modelo03"><span class="model-link-icon">▣</span><span>2.1) Modelo 03</span><span class="model-link-arrow">›</span></button><button class="model-link" type="button" data-model-target="modelo04"><span class="model-link-icon">▣</span><span>2.2) Modelo 04</span><span class="model-link-arrow">›</span></button></nav>
+</div>
     </aside>
 
     <section class="main-area">
-      <details class="course-section" id="aula01" open>
-        <summary class="course-heading">
-          <div><div class="section-kicker">AULA 01</div><h2>Introdução ao Software</h2></div>
-          <div class="course-description">Modelagem passo a passo no FlexSim Education.</div>
-        </summary>
-
-        <div class="pdf-controls" aria-label="Impressão e PDF">
-          <button type="button" class="pdf-button" id="open-pdf-dialog">🖨 Imprimir / Baixar PDF</button>
-        </div>
-
-        <div class="pdf-dialog" id="pdf-dialog" aria-hidden="true">
-          <div class="pdf-dialog-backdrop" data-close-pdf></div>
-          <section class="pdf-dialog-panel" role="dialog" aria-modal="true" aria-labelledby="pdf-dialog-title">
-            <button type="button" class="pdf-dialog-close" id="close-pdf-dialog" aria-label="Fechar">×</button>
-            <h3 id="pdf-dialog-title">🖨 Imprimir / Baixar PDF</h3>
-            <p class="pdf-dialog-help">Escolha se deseja imprimir todo o material ou somente alguns modelos.</p>
-
-            <div class="pdf-choice-group">
-              <label class="pdf-choice">
-                <input type="radio" name="pdf-scope" value="all" checked>
-                <span><strong>Material completo</strong><small>Inclui todos os modelos que já possuem conteúdo.</small></span>
-              </label>
-              <label class="pdf-choice">
-                <input type="radio" name="pdf-scope" value="selected">
-                <span><strong>Selecionar modelos</strong><small>Marque somente os modelos que deseja incluir.</small></span>
-              </label>
-            </div>
-
-            <div class="pdf-model-selection" id="pdf-model-selection" aria-label="Modelos disponíveis para impressão"></div>
-
-            <div class="pdf-selection-actions">
-              <button type="button" class="pdf-small-button" id="pdf-select-all">Marcar todos</button>
-              <button type="button" class="pdf-small-button" id="pdf-clear-all">Desmarcar todos</button>
-            </div>
-
-            <div class="pdf-dialog-footer">
-              <button type="button" class="pdf-button secondary" data-close-pdf>Cancelar</button>
-              <button type="button" class="pdf-button" id="confirm-pdf">Gerar PDF</button>
-            </div>
-          </section>
-        </div>
-
-        <div class="model-view" id="modelo01-view">
-<details class="model" id="modelo01">
+      <div class="pdf-controls" aria-label="Impressão e PDF"><button type="button" class="pdf-button" id="open-pdf-dialog">🖨 Imprimir / Baixar PDF</button></div>
+      <div class="pdf-dialog" id="pdf-dialog" aria-hidden="true">
+        <div class="pdf-dialog-backdrop" data-close-pdf></div>
+        <section class="pdf-dialog-panel" role="dialog" aria-modal="true" aria-labelledby="pdf-dialog-title">
+          <button type="button" class="pdf-dialog-close" id="close-pdf-dialog" aria-label="Fechar">×</button>
+          <h3 id="pdf-dialog-title">🖨 Imprimir / Baixar PDF</h3>
+          <p class="pdf-dialog-help">Escolha se deseja imprimir todo o material ou somente alguns modelos.</p>
+          <div class="pdf-choice-group">
+            <label class="pdf-choice"><input type="radio" name="pdf-scope" value="all" checked><span><strong>Material completo</strong><small>Inclui todos os modelos que já possuem conteúdo.</small></span></label>
+            <label class="pdf-choice"><input type="radio" name="pdf-scope" value="selected"><span><strong>Selecionar modelos</strong><small>Marque somente os modelos que deseja incluir.</small></span></label>
+          </div>
+          <div class="pdf-model-selection" id="pdf-model-selection" aria-label="Modelos disponíveis para impressão"></div>
+          <div class="pdf-selection-actions"><button type="button" class="pdf-small-button" id="pdf-select-all">Marcar todos</button><button type="button" class="pdf-small-button" id="pdf-clear-all">Desmarcar todos</button></div>
+          <div class="pdf-dialog-footer"><button type="button" class="pdf-button secondary" data-close-pdf>Cancelar</button><button type="button" class="pdf-button" id="confirm-pdf">Gerar PDF</button></div>
+        </section>
+      </div>
+      <details class="course-section" id="aula01" data-course-id="aula01" open>
+  <summary class="course-heading">
+    <div><div class="section-kicker">AULA 01</div><h2>Introdução ao Software</h2></div>
+    <div class="course-description">Modelagem passo a passo no FlexSim Education.</div>
+  </summary><div class="model-view" id="modelo01-view" data-model-id="modelo01">
+<details class="model" id="modelo01" data-model-id="modelo01">
 <summary><span class="section-plus">+</span><span>1.1) Modelo 01</span></summary>
 <div class="model-content">
-<details class="stage" id="modelo01-etapa-1">
+<details class="stage" id="stage-1-1">
 <summary><span class="stage-number">01</span><span>Etapa 01 - Chegada de placas virgens ao modelo.</span></summary>
-<div class="stage-content two-cols">
+<div class="stage-content multi-cols">
 <article class="instruction-card">
 <h3 class="card-title">Adicionando objeto</h3>
 <div class="media">
 <img src="images/AULA1_MODELO1_ETAPA1_1.png" alt="AULA1_MODELO1_ETAPA1_1.png" loading="eager">
 </div>
-<div class="script"><div class="script-label">ROTEIRO</div><p>NESTE PRIMEIRO MODELO,<br>PLACAS VIRGENS CHEGAM PELO SOURCE.</p></div>
+<div class="script"><div class="script-label">ROTEIRO</div><p>
+NESTE PRIMEIRO MODELO,<br>PLACAS VIRGENS CHEGAM PELO SOURCE.
+</p></div>
 <div class="field"><b>Objeto</b><span>Source</span></div>
 <div class="field"><b>Caminho onde encontrar objeto</b><span>Barra da Esquerda → Library (Biblioteca) → Fixed Resources (Recursos fixos) → Source.</span></div>
 <div class="field"><b>Ação do mouse</b><span>Clique e mantenha pressionado o botão esquerdo do mouse sobre o objeto e arraste-o até o local desejado no Mapa 3D.<br>Como alternativa, clique uma vez com o botão esquerdo para selecionar o objeto e, em seguida, clique novamente no local desejado do Mapa 3D para adicioná-lo.</span></div>
@@ -111,34 +89,41 @@
 <div class="media">
 <img src="images/AULA1_MODELO1_ETAPA1_2.png" alt="AULA1_MODELO1_ETAPA1_2.png" loading="eager">
 </div>
-<div class="script"><div class="script-label">ROTEIRO</div><p>“SOURCE: CHEGADA_PLACAS_VIRGENS”:<br>POSICIONADO EM:<br>X = 0.00 ; Y = 0.00 ; Z = 0.00<br>ESSAS CHEGADAS OCORREM EM INTERVALOS DE 10 s A PARTIR DE t = 0</p></div>
+<div class="script"><div class="script-label">ROTEIRO</div><p>
+“SOURCE: CHEGADA_PLACAS_VIRGENS”:<br>POSICIONADO EM:<br>X = 0.00 ; Y = 0.00 ; Z = 0.00<br>ESSAS CHEGADAS OCORREM EM INTERVALOS DE 10 s A PARTIR DE t = 0
+</p></div>
 <div class="field"><b>Objeto</b><span>Source – “CHEGADA_PLACAS_VIRGENS”</span></div>
 <div class="field"><b>Ação do mouse</b><span>Para abrir as propriedades do objeto, clique sobre ele com o botão esquerdo do mouse ou clique duas vezes com o botão esquerdo do mouse.</span></div>
 <div class="properties">
 <div class="property">
 <div class="property-title"><span class="flex-plus" aria-hidden="true">+</span>Nome</div>
-<div class="property-content">CHEGADA_PLACAS_VIRGENS</div>
-</div>
+<div class="property-content">
+CHEGADA_PLACAS_VIRGENS
+</div></div>
 <div class="property">
 <div class="property-title"><span class="flex-plus" aria-hidden="true">+</span>Visuals</div>
-<div class="property-content">X = 0.00 ; Y = 0.00 ; Z = 0.00</div>
-</div>
+<div class="property-content">
+<img class="flexsim-icon" src="images/Mid6_small.png" alt="Mid6_small.png"> X = 0.00 ; Y = 0.00 ; Z = 0.00
+</div></div>
 <div class="property">
 <div class="property-title"><span class="flex-plus" aria-hidden="true">+</span>Source</div>
-<div class="property-content">Arrival Style: Inter-Arrival Time<br><span class="check-box" aria-hidden="true">✓</span> Arrival at time 0<br>Inter-Arrival Time: 10 s</div>
-</div>
+<div class="property-content">
+Arrival Style: Inter-Arrival Time<br><span class="check-box" aria-hidden="true">✓</span> Arrival at time 0<br>Inter-Arrival Time: 10 s
+</div></div>
 </div>
 </article>
 </div></details>
-<details class="stage" id="modelo01-etapa-2">
+<details class="stage" id="stage-2-1">
 <summary><span class="stage-number">02</span><span>Etapa 02 – Fila/Estoque das Placas Virgens</span></summary>
-<div class="stage-content two-cols">
+<div class="stage-content multi-cols">
 <article class="instruction-card">
 <h3 class="card-title">Adicionando objeto</h3>
 <div class="media">
 <img src="images/AULA1_MODELO1_ETAPA2_1.png" alt="AULA1_MODELO1_ETAPA2_1.png" loading="eager">
 </div>
-<div class="script"><div class="script-label">ROTEIRO</div><p>APÓS ENTRAREM NO SISTEMA,<br>AS PLACAS VÃO PARA UMA QUEUE.</p></div>
+<div class="script"><div class="script-label">ROTEIRO</div><p>
+APÓS ENTRAREM NO SISTEMA,<br>AS PLACAS VÃO PARA UMA QUEUE.
+</p></div>
 <div class="field"><b>Objeto</b><span>Queue</span></div>
 <div class="field"><b>Caminho onde encontrar objeto</b><span>Barra da Esquerda → Library (Biblioteca) → Fixed Resources (Recursos fixos) → Queue.</span></div>
 <div class="field"><b>Ação do mouse</b><span>Clique e mantenha pressionado o botão esquerdo do mouse sobre o objeto e arraste-o até o local desejado no Mapa 3D.<br>Como alternativa, clique uma vez com o botão esquerdo para selecionar o objeto e, em seguida, clique novamente no local desejado do Mapa 3D para adicioná-lo.</span></div>
@@ -149,26 +134,31 @@
 <div class="media">
 <img src="images/AULA1_MODELO1_ETAPA2_2.png" alt="AULA1_MODELO1_ETAPA2_2.png" loading="eager">
 </div>
-<div class="script"><div class="script-label">ROTEIRO</div><p>“QUEUE: PLACAS_VIRGENS”:<br>CAPACIDADE INFINITA.<br>POSICIONADO EM:<br>X = 10.00 ; Y = 0.00 ; Z = 0.00<br>ESSAS CHEGADAS OCORREM EM INTERVALOS DE 10 s A PARTIR DE t = 0</p></div>
+<div class="script"><div class="script-label">ROTEIRO</div><p>
+“QUEUE: PLACAS_VIRGENS”:<br>CAPACIDADE INFINITA.<br>POSICIONADO EM:<br>X = 10.00 ; Y = 0.00 ; Z = 0.00<br>ESSAS CHEGADAS OCORREM EM INTERVALOS DE 10 s A PARTIR DE t = 0
+</p></div>
 <div class="field"><b>Objeto</b><span>Queue – “PLACAS_VIRGENS”</span></div>
 <div class="field"><b>Ação do mouse</b><span>Conectar os objetos utilizando o comando de conexão. Como atalho, pressione a tecla “A” do teclado. Em seguida, clique primeiro no Source e depois na Queue.</span></div>
 <div class="properties">
 <div class="property">
 <div class="property-title"><span class="flex-plus" aria-hidden="true">+</span>Nome</div>
-<div class="property-content">PLACAS_VIRGENS</div>
-</div>
+<div class="property-content">
+PLACAS_VIRGENS
+</div></div>
 <div class="property">
 <div class="property-title"><span class="flex-plus" aria-hidden="true">+</span>Visuals</div>
-<div class="property-content">X = 10.00 ; Y = 0.00 ; Z = 0.00</div>
-</div>
+<div class="property-content">
+<img class="flexsim-icon" src="images/Mid6_small.png" alt="Mid6_small.png"> X = 10.00 ; Y = 0.00 ; Z = 0.00
+</div></div>
 <div class="property">
 <div class="property-title"><span class="flex-plus" aria-hidden="true">+</span>Source</div>
-<div class="property-content">Max Content = 1000000</div>
-</div>
+<div class="property-content">
+Max Content = 1000000
+</div></div>
 </div>
 </article>
 </div></details>
-<details class="stage" id="modelo01-etapa-3">
+<details class="stage" id="stage-3-1">
 <summary><span class="stage-number">03</span><span>Etapa 03 – Diferentes modelos de Placas Virgens</span></summary>
 <div class="stage-content one-col">
 <article class="instruction-card">
@@ -177,151 +167,97 @@
 <img src="images/AULA1_MODELO1_ETAPA3_1.png" alt="AULA1_MODELO1_ETAPA3_1.png" loading="eager">
 <img src="images/AULA1_MODELO1_ETAPA3_2.png" alt="AULA1_MODELO1_ETAPA3_2.png" loading="eager">
 </div>
-<div class="script"><div class="script-label">ROTEIRO</div><p>CHEGAM DOIS MODELOS DIFERENTES,<br>ALEATORIAMENTE NA AMESMA PROPORÇÃO<br>MODELOS E COLOCAÇÕES:<br>1 – GREEN; 2 - YELLOW</p></div>
+<div class="script"><div class="script-label">ROTEIRO</div><p>
+CHEGAM DOIS MODELOS DIFERENTES,<br>ALEATORIAMENTE NA AMESMA PROPORÇÃO<br>MODELOS E COLOCAÇÕES:<br>1 – GREEN; 2 - YELLOW
+</p></div>
 <div class="field"><b>Objeto</b><span>Source – CHEGADAS_PLACAS_VIRGENS</span></div>
 <div class="note"><b>Observação</b><span>Ao adicionar novos modelos em Set Label by Percentage, distribua as porcentagens entre todos os modelos de forma que a soma dos valores seja sempre igual a 100%.</span></div>
 <div class="properties">
 <div class="property">
 <div class="property-title"><span class="flex-plus" aria-hidden="true">+</span>Triggers</div>
-<div class="property-content">Criar Modelos:<br>On Creation → Data → Set Label by Percentage:<br>Object: item<br>Label: “MODELO”<br>Percent:50<br>Value:1<br>Clique no <span class="green-plus" aria-hidden="true">+</span> abaixo de Label para criar um novo “MODELO” e liberar o campo para preencher o Modelo 2 abaixo.<br>Percent:50<br>Value:2</div>
-</div>
+<div class="property-content">
+Criar Modelos:<br>On Creation → Data → Set Label by Percentage:<br>Object: item<br>Label: “MODELO”<br>Percent:50<br>Value:1<br>Clique no <span class="green-plus" aria-hidden="true">+</span> abaixo de Label para criar um novo “MODELO” e liberar o campo para preencher o Modelo 2 abaixo.<br>Percent:50<br>Value:2
+</div></div>
 <div class="property">
 <div class="property-title"><span class="flex-plus" aria-hidden="true">+</span>Triggers</div>
-<div class="property-content">Criar Coloração por Modelos:<br>On Creation → Visual → Set Color By Case:<br>Value: item.MODELO<br>Object: item<br>Clique no <span class="green-plus" aria-hidden="true">+</span> abaixo de Object para adicionar os campos necessários ao preenchimento dos dois modelos.<br>Preencha Value na primeira coluna e Color na segunda coluna, associando cada valor do campo MODELO à respectiva cor.<br>1 : Color.green<br>2 : Color.yellow</div>
-</div>
+<div class="property-content">
+Criar Coloração por Modelos:<br>On Creation → Visual → Set Color By Case:<br>Value: item.MODELO<br>Object: item<br>Clique no <span class="green-plus" aria-hidden="true">+</span> abaixo de Object para adicionar os campos necessários ao preenchimento dos dois modelos.<br>Preencha Value na primeira coluna e Color na segunda coluna, associando cada valor do campo MODELO à respectiva cor.<br>1 : <img class="flexsim-icon" src="images/down_arrow.bmp" alt="down_arrow.bmp"> Color.green<br>2 : <img class="flexsim-icon" src="images/down_arrow.bmp" alt="down_arrow.bmp"> Color.yellow
+</div></div>
 </div>
 </article>
 </div></details>
-<details class="stage" id="modelo01-etapa-4">
+<details class="stage" id="stage-4-1">
 <summary><span class="stage-number">04</span><span>Etapa 04 – Impressoras das Placas Virgens</span></summary>
-<div class="stage-content two-cols">
-<article class="instruction-card">
-<h3 class="card-title">Adicionando objeto</h3>
-<div class="media">
-<img src="images/AULA1_MODELO1_ETAPA4_1.png" alt="AULA1_MODELO1_ETAPA4_1.png" loading="eager">
-</div>
-<div class="script"><div class="script-label">ROTEIRO</div><p>DESSE ESTOQUE, AS PLACAS VÃO PARA OS<br>“PROCESSOR: IMPRESSORAS 1;2”<br>Idênticas e paralelas</p></div>
-<div class="field"><b>Objeto</b><span>Processor</span></div>
-<div class="field"><b>Caminho onde encontrar objeto</b><span>Barra da Esquerda → Library (Biblioteca) → Fixed Resources (Recursos fixos) → Processor.</span></div>
-<div class="field"><b>Ação do mouse</b><span>Clique e mantenha pressionado o botão esquerdo do mouse sobre o objeto e arraste-o até o local desejado no Mapa 3D.<br>Como alternativa, clique uma vez com o botão esquerdo para selecionar o objeto e, em seguida, clique novamente no local desejado do Mapa 3D para adicioná-lo.</span></div>
-<div class="note"><b>Observação</b><span>Ao utilizar a segunda forma, o objeto permanece selecionado após ser adicionado. Dessa maneira, você pode clicar em outros locais do Mapa 3D para inserir rapidamente outros objetos do mesmo tipo.<br>Adicione um Processor e configure-o conforme as orientações da coluna “Configurando impressoras”. Depois, selecione o Processor “IMPRESSORA_1”, utilize CTRL+C para copiá-lo e CTRL+V para colar uma cópia em outro local do Mapa 3D. A cópia será criada já com as configurações do Processor original.</span></div>
-</article>
+<div class="stage-content one-col">
 <article class="instruction-card">
 <h3 class="card-title">Configurando impressoras</h3>
 <div class="media print-grid">
 <img src="images/AULA1_MODELO1_ETAPA4_2.png" alt="AULA1_MODELO1_ETAPA4_2.png" loading="eager">
 <img src="images/AULA1_MODELO1_ETAPA4_3.png" alt="AULA1_MODELO1_ETAPA4_3.png" loading="eager">
 </div>
-<div class="script"><div class="script-label">ROTEIRO</div><p>“PROCESSOR: IMPRESSORAS 1;2”<br>TC = 20 [s/u]<br>POSICIONADAS EM:<br>IMPRESSORA_1, X=20.00 ; Y=3.50 ; Z=0.00<br>IMPRESSORA_2, X=20.00 ; Y=-3.50 ; Z=0.00</p></div>
+<div class="script"><div class="script-label">ROTEIRO</div><p>
+“PROCESSOR: IMPRESSORAS 1;2”<br>TC = 20 [s/u]<br>POSICIONADAS EM:<br>IMPRESSORA_1, <img class="flexsim-icon" src="images/Mid6_small.png" alt="Mid6_small.png"> X=20.00 ; Y=3.50 ; Z=0.00<br>IMPRESSORA_2, <img class="flexsim-icon" src="images/Mid6_small.png" alt="Mid6_small.png"> X=20.00 ; Y=-3.50 ; Z=0.00
+</p></div>
 <div class="field"><b>Objeto</b><span>Processor – “IMPRESSORA_1”<br>Processor – “IMPRESSORA_2”</span></div>
 <div class="field"><b>Ação do mouse</b><span>Para abrir as propriedades do objeto, clique sobre ele com o botão esquerdo do mouse ou clique duas vezes com o botão esquerdo do mouse.<br>Conectar os objetos utilizando o comando de conexão. Como atalho, pressione a tecla “A” do teclado.<br>Neste caso, recomenda-se realizar as conexões nesta ordem:<br>1. “PLACAS_VIRGENS” → “IMPRESSORA_1”<br>2. “PLACAS_VIRGENS” → “IMPRESSORA_2”</span></div>
 <div class="properties">
 <div class="property">
 <div class="property-title"><span class="flex-plus" aria-hidden="true">+</span>Nome</div>
-<div class="property-content">IMPRESSORA_1<br>IMPRESSORA_2</div>
-</div>
+<div class="property-content">
+IMPRESSORA_1<br>IMPRESSORA_2
+</div></div>
 <div class="property">
 <div class="property-title"><span class="flex-plus" aria-hidden="true">+</span>Visuals</div>
-<div class="property-content">IMPRESSORA_1: X = 20.00 ; Y = 3.50 ; Z = 0.00<br>IMPRESSORA_2: X = 20.00 ; Y = -3.50 ; Z = 0.00</div>
-</div>
+<div class="property-content">
+IMPRESSORA_1:<img class="flexsim-icon" src="images/Mid6_small.png" alt="Mid6_small.png"> X = 20.00 ; Y = 3.50 ; Z = 0.00<br>IMPRESSORA_2:<img class="flexsim-icon" src="images/Mid6_small.png" alt="Mid6_small.png"> X = 20.00 ; Y = -3.50 ; Z = 0.00
+</div></div>
 <div class="property">
 <div class="property-title"><span class="flex-plus" aria-hidden="true">+</span>Processor</div>
-<div class="property-content">Process Time: 20 (s)</div>
-</div>
+<div class="property-content">
+Process Time: 20 (s)
+</div></div>
 </div>
 </article>
 </div></details>
-<details class="stage" id="modelo01-etapa-5">
+<details class="stage" id="stage-5-1">
 <summary><span class="stage-number">05</span><span>Etapa 05 – Saída das Placas para os clientes</span></summary>
-<div class="stage-content two-cols">
-<article class="instruction-card">
-<h3 class="card-title">Adicionando objeto</h3>
-<div class="media">
-<img src="images/AULA1_MODELO1_ETAPA5_1.png" alt="AULA1_MODELO1_ETAPA5_1.png" loading="eager">
-</div>
-<div class="script"><div class="script-label">ROTEIRO</div><p>APÓS SEREM IMPRESSAS, AS PLACAS DEIXARÃO O SISTEMA PELO<br>“SINK: SAIDAS_CLIENTES”</p></div>
-<div class="field"><b>Objeto</b><span>Sink</span></div>
-<div class="field"><b>Caminho onde encontrar objeto</b><span>Barra da Esquerda → Library (Biblioteca) → Fixed Resources (Recursos fixos) → Sink.</span></div>
-<div class="field"><b>Ação do mouse</b><span>Clique e mantenha pressionado o botão esquerdo do mouse sobre o objeto e arraste-o até o local desejado no Mapa 3D.<br>Como alternativa, clique uma vez com o botão esquerdo para selecionar o objeto e, em seguida, clique novamente no local desejado do Mapa 3D para adicioná-lo.</span></div>
-<div class="note"><b>Observação</b><span>Ao utilizar a segunda forma, o objeto permanece selecionado após ser adicionado. Dessa maneira, você pode clicar em outros locais do Mapa 3D para inserir rapidamente outros objetos do mesmo tipo.</span></div>
-</article>
+<div class="stage-content one-col">
 <article class="instruction-card">
 <h3 class="card-title">Configurando saída do modelo</h3>
 <div class="media">
 <img src="images/AULA1_MODELO1_ETAPA5_2.png" alt="AULA1_MODELO1_ETAPA5_2.png" loading="eager">
 </div>
-<div class="script"><div class="script-label">ROTEIRO</div><p>“SINK: SAIDAS_CLIENTES”<br>POSICIONADO EM:<br>X=30.00 ; Y=0.00 ; Z=0.00</p></div>
+<div class="script"><div class="script-label">ROTEIRO</div><p>
+“SINK: SAIDAS_CLIENTES”<br>POSICIONADO EM:<br><img class="flexsim-icon" src="images/Mid6_small.png" alt="Mid6_small.png"> X=30.00 ; Y=0.00 ; Z=0.00
+</p></div>
 <div class="field"><b>Objeto</b><span>Sink – “SAÍDAS_CLIENTES”</span></div>
 <div class="field"><b>Ação do mouse</b><span>Conectar objetos (Atalho: Letra “A” do teclado - clicar primeiro no Source e depois na Queue.)</span></div>
 <div class="note"><b>Observação</b><span>Assim como se fez a ligação da Queue “PLACAS_VIRGENS” aos Processors “IMPRESSORA_1” e “IMPRESSORA_2”, priorize conectar na ordem, objeto 1 na porta 1 e objeto 2 na porta 2, tanto input quanto output.</span></div>
 <div class="properties">
 <div class="property">
 <div class="property-title"><span class="flex-plus" aria-hidden="true">+</span>Nome</div>
-<div class="property-content">SAIDAS_CLIENTES</div>
-</div>
+<div class="property-content">
+SAIDAS_CLIENTES
+</div></div>
 <div class="property">
 <div class="property-title"><span class="flex-plus" aria-hidden="true">+</span>Visuals</div>
-<div class="property-content">X = 30.00 ; Y = 0.00 ; Z = 0.00</div>
-</div>
+<div class="property-content">
+<img class="flexsim-icon" src="images/Mid6_small.png" alt="Mid6_small.png"> X = 30.00 ; Y = 0.00 ; Z = 0.00
+</div></div>
 </div>
 </article>
 </div></details>
-<details class="stage" id="modelo01-etapa-6">
+<details class="stage" id="stage-6-1">
 <summary><span class="stage-number">06</span><span>Etapa 06 – Filtrar qual impressora processa cada modelo de placa</span></summary>
-<div class="stage-content one-col">
-<article class="instruction-card">
-<h3 class="card-title">Configurando saídas da Queue</h3>
-<div class="media">
-<img src="images/AULA1_MODELO1_ETAPA6_1.png" alt="AULA1_MODELO1_ETAPA6_1.png" loading="eager">
-</div>
-<div class="script"><div class="script-label">ROTEIRO</div><p>CADA MODELO DEVERÁ ENTRAR EM UMA IMPRESSORA ESPECÍFICA:<br>O MODELO 1 NA IMPRESSORA 1 E O MODELO 2 NA IMPRESSORA 2</p></div>
-<div class="field"><b>Objeto</b><span>Queue - PLACAS_VIRGENS</span></div>
-<div class="properties">
-<div class="property">
-<div class="property-title"><span class="flex-plus" aria-hidden="true">+</span>Output</div>
-<div class="property-content">Send to Port → Port By Case<br>Case Function: item.MODELO<br>Clique no <span class="green-plus" aria-hidden="true">+</span> abaixo de Case Function para adicionar os campos necessários aos dois modelos.<br>Preencha Case na primeira coluna e Port na segunda coluna, associando cada modelo à respectiva porta de saída.<br>Case: 1  Port: 1<br>Case: 2  Port: 2</div>
-</div>
-</div>
-</article>
+<div class="stage-content multi-cols">
 </div></details>
-<details class="stage" id="modelo01-etapa-7">
+<details class="stage" id="stage-7-1">
 <summary><span class="stage-number">07</span><span>Etapa 07 – Ajustar turno de trabalho de 08:00 até 16:00 horas.</span></summary>
-<div class="stage-content one-col">
-<article class="instruction-card">
-<h3 class="card-title">Configurando Run Time</h3>
-<div class="media">
-<img src="images/AULA1_MODELO1_ETAPA7_1.png" alt="AULA1_MODELO1_ETAPA7_1.png" loading="eager">
-</div>
-<div class="script"><div class="script-label">ROTEIRO</div><p>AJUSTE O RUN TIME PARA 1 TURNO DAS 08h00 ÀS 16h00,<br>SE NECESSÁRIO, COM O AUXÍLIO DO EDIT MODEL SETTINGS</p></div>
-<div class="field"><b>Caminho onde encontrar objeto</b><span>Barra da Superior → Run Time<br>[Run Time]<br>Start Time: 08:00:00<br><span class="check-box" aria-hidden="true">✓</span> Stop Times: 16:00:00</span></div>
-</article>
+<div class="stage-content multi-cols">
 </div></details>
-<details class="stage" id="modelo01-etapa-8">
-<summary><span class="stage-number final">08</span><span>Etapa Final – Elaborar dados de output e gráficos de estados (Dashboard)</span></summary>
-<div class="stage-content two-cols">
-<article class="instruction-card">
-<h3 class="card-title">Output</h3>
-<div class="media print-grid">
-<img src="images/AULA1_MODELO1_ETAPAFINAL1_1.png" alt="AULA1_MODELO1_ETAPAFINAL1_1.png" loading="eager">
-<img src="images/AULA1_MODELO1_ETAPAFINAL1_2.png" alt="AULA1_MODELO1_ETAPAFINAL1_2.png" loading="eager">
-<img src="images/AULA1_MODELO1_ETAPAFINAL1_3.png" alt="AULA1_MODELO1_ETAPAFINAL1_3.png" loading="eager">
-<img src="images/AULA1_MODELO1_ETAPAFINAL1_4.png" alt="AULA1_MODELO1_ETAPAFINAL1_4.png" loading="eager">
-</div>
-<div class="script"><div class="script-label">ROTEIRO</div><p>Quantidade expedida<br>2.829 unidades</p></div>
-<div class="field"><b>Caminho onde encontrar objeto</b><span>Imagem 1 - Barra Superior → Dashboards → Add Blank Dashboard<br>Imagem 2 – Output → Bar Chart**</span></div>
-<div class="field"><b>Ação do mouse</b><span>**: Da Imagem 2, deve-se arrastar com o mouse “Bar Chart” até a área vazia de Dashboard.</span></div>
-<div class="note"><b>Observação</b><span>É possível alterar a cor da barra que irá representa a quantidade expedida na aba Colors em Properties.</span></div>
-<div class="properties">
-<div class="property">
-<div class="property-title"><span class="flex-plus" aria-hidden="true">+</span>Nome</div>
-<div class="property-content">QUANTIDADE EXPEDIDA</div>
-</div>
-<div class="property">
-<div class="property-title"><span class="flex-plus" aria-hidden="true">+</span>Options</div>
-<div class="property-content">Throughput Display: PLACAS IMPRESSAS</div>
-</div>
-</div>
-</article>
+<details class="stage" id="stage-8-1">
+<summary><span class="stage-number">08</span><span>Etapa Final – Elaborar dados de output e gráficos de estados (Dashboard)</span></summary>
+<div class="stage-content one-col">
 <article class="instruction-card">
 <h3 class="card-title">Gráficos de Estados</h3>
 <div class="media print-grid">
@@ -329,30 +265,27 @@
 <img src="images/AULA1_MODELO1_ETAPAFINAL2_2.png" alt="AULA1_MODELO1_ETAPAFINAL2_2.png" loading="eager">
 <img src="images/AULA1_MODELO1_ETAPAFINAL2_3.png" alt="AULA1_MODELO1_ETAPAFINAL2_3.png" loading="eager">
 </div>
-<div class="script"><div class="script-label">ROTEIRO</div><p>Elaborar e interpretar os gráficos de estados<br>PROCESSING<br>IMPRESSORA_1: 97,78% ; IMPRESSORA_2: 98,82%</p></div>
+<div class="script"><div class="script-label">ROTEIRO</div><p>
+Elaborar e interpretar os gráficos de estados<br>PROCESSING<br>IMPRESSORA_1: 97,78% ; IMPRESSORA_2: 98,82%
+</p></div>
 <div class="field"><b>Caminho onde encontrar objeto</b><span>Imagem 1 - State → Pie Chart**<br>Imagem 2 – <span class="green-plus" aria-hidden="true">+</span> → Select Objects → +Processor → IMPRESSORA_1 + IMPRESSORA_2 → Select*</span></div>
 <div class="field"><b>Ação do mouse</b><span>**: Da Imagem 1, deve-se arrastar com o mouse “Bar Chart” até a área vazia de Dashboard.<br>*: O caminho da Imagem 2 é uma forma alternativa de selecionar os elementos que serão visualizados no gráfico, alternativo ao que fizemos no gráfico de quantidade expedida ao lado, usando o pincel.</span></div>
 </article>
 </div></details>
-<details class="stage" id="modelo01-etapa-9">
+<details class="stage" id="stage-9-1">
 <summary><span class="stage-number final">09</span><span>Resultados</span></summary>
 <div class="stage-content one-col">
 <article class="instruction-card">
-<h3 class="card-title">Checando performance do modelo simulado.</h3>
-<div class="media print-grid">
-<img src="images/AULA1_MODELO1_RESULTADOS_1.png" alt="AULA1_MODELO1_RESULTADOS_1.png" loading="eager">
-<img src="images/AULA1_MODELO1_RESULTADOS_2.png" alt="AULA1_MODELO1_RESULTADOS_2.png" loading="eager">
-</div>
+<h3 class="card-title">Resultados</h3>
+<div class="media print-grid"><img src="images/AULA1_MODELO1_RESULTADOS_1.png" alt="AULA1_MODELO1_RESULTADOS_1.png" loading="eager"><img src="images/AULA1_MODELO1_RESULTADOS_2.png" alt="AULA1_MODELO1_RESULTADOS_2.png" loading="eager"></div>
 <div class="script"><div class="script-label">ROTEIRO</div><p>Quantidade expedida: 2.829 unidades<br>PROCESSING<br>IMPRESSORA_1: 97,78% ; IMPRESSORA_2: 98,82%</p></div>
 </article>
 </div></details>
-</div></details></div>
-
-<div class="model-view" id="modelo02-view">
-<details class="model" id="modelo02">
+</div></details></div><div class="model-view" id="modelo02-view" data-model-id="modelo02">
+<details class="model" id="modelo02" data-model-id="modelo02">
 <summary><span class="section-plus">+</span><span>1.2) Modelo 02</span></summary>
 <div class="model-content">
-<details class="stage" id="modelo02-etapa-1">
+<details class="stage" id="stage-1-2">
 <summary><span class="stage-number">01</span><span>Etapa 01 – Operadores dedicados para as impressoras</span></summary>
 <div class="stage-content multi-cols">
 <article class="instruction-card">
@@ -360,7 +293,9 @@
 <div class="media">
 <img src="images/AULA1_MODELO2_ETAPA1_1.png" alt="AULA1_MODELO2_ETAPA1_1.png" loading="eager">
 </div>
-<div class="script"><div class="script-label">ROTEIRO</div><p>NESTE MODELO, VAMOS ACRESCENTAR:<br>UM OPERADOR DEDICADO PARA CADA IMPRESSORA</p></div>
+<div class="script"><div class="script-label">ROTEIRO</div><p>
+NESTE MODELO, VAMOS ACRESCENTAR:<br>UM OPERADOR DEDICADO PARA CADA IMPRESSORA
+</p></div>
 <div class="field"><b>Objeto</b><span>Operator</span></div>
 <div class="field"><b>Caminho onde encontrar objeto</b><span>Barra da Esquerda → Library (Biblioteca) → Task Executers (Executores de Tarefas) → Operator.</span></div>
 <div class="field"><b>Ação do mouse</b><span>Clique e mantenha pressionado o botão esquerdo do mouse sobre o objeto e arraste-o até o local próximo do desejado no Mapa 3D.<br>Como alternativa, clique uma vez com o botão esquerdo para selecionar o objeto e, em seguida, clique novamente no local desejado do Mapa 3D para adicioná-lo.</span></div>
@@ -371,103 +306,85 @@
 <div class="media">
 <img src="images/AULA1_MODELO2_ETAPA1_2.png" alt="AULA1_MODELO2_ETAPA1_2.png" loading="eager">
 </div>
-<div class="script"><div class="script-label">ROTEIRO</div><p>POSICIONADOS EM:<br>OPERADOR_IMPRESSORA_1, X = 20.00 ; Y = 6.00 ; Z = 0.00<br>OPERADOR_IMPRESSORA_2, X = 20.00 ; Y = -1.00 ; Z = 0.00<br>( ambos com rotação de 270º no eixo Z )</p></div>
+<div class="script"><div class="script-label">ROTEIRO</div><p>
+POSICIONADOS EM:<br>OPERADOR_IMPRESSORA_1, X = 20.00 ; Y = 6.00 ; Z = 0.00<br>OPERADOR_IMPRESSORA_2, X = 20.00 ; Y = -1.00 ; Z = 0.00<br>( ambos com rotação de 270º no eixo Z )
+</p></div>
 <div class="field"><b>Objeto</b><span>Operator – “OPERADOR_IMPRESSORA_1”<br>Operator – “OPERADOR_IMPRESSORA_2”</span></div>
 <div class="field"><b>Ação do mouse</b><span>Para abrir as propriedades do objeto, clique sobre ele com o botão esquerdo do mouse ou clique duas vezes com o botão esquerdo do mouse.</span></div>
 <div class="properties">
 <div class="property">
 <div class="property-title"><span class="flex-plus" aria-hidden="true">+</span>Nome</div>
-<div class="property-content">OPERADOR_IMPRESSORA_1<br>OPERADOR_IMPRESSORA_2</div>
-</div>
+<div class="property-content">
+OPERADOR_IMPRESSORA_1<br>OPERADOR_IMPRESSORA_2
+</div></div>
 <div class="property">
 <div class="property-title"><span class="flex-plus" aria-hidden="true">+</span>Visuals</div>
-<div class="property-content">OPERADOR_IMPRESSORA_1 - X = 20.00 ; Y = 6.00 ; Z = 0.00<br>OPERADOR_IMPRESSORA_2 - X = 20.00 ; Y = -1.00 ; Z = 0.00<br>PARA AMBOS, ROTACIONE 270.00 NO EIXO Z, CONFORME A IMAGEM.</div>
-</div>
+<div class="property-content">
+OPERADOR_IMPRESSORA_1 –<br><img class="flexsim-icon" src="images/Mid6_small.png" alt="Mid6_small.png"> X = 20.00 ; Y = 6.00 ; Z = 0.00<br><img class="flexsim-icon" src="images/rotate_arrow.png" alt="rotate_arrow.png"> Z = 270.00<br>OPERADOR_IMPRESSORA_2 –<br><img class="flexsim-icon" src="images/Mid6_small.png" alt="Mid6_small.png"> X = 20.00 ; Y = -1.00 ; Z = 0.00<br><img class="flexsim-icon" src="images/rotate_arrow.png" alt="rotate_arrow.png"> Z = 270.00
+</div></div>
 </div>
 </article>
 <article class="instruction-card">
 <h3 class="card-title">Configurando Operador ao Processo (Método 1)</h3>
-<div class="media print-grid">
+<div class="media">
 <img src="images/AULA1_MODELO2_ETAPA1_3.png" alt="AULA1_MODELO2_ETAPA1_3.png" loading="eager">
 <img src="images/AULA1_MODELO2_ETAPA1_4.png" alt="AULA1_MODELO2_ETAPA1_4.png" loading="eager">
 </div>
-<div class="script"><div class="script-label">ROTEIRO</div><p>o OPERADOR_IMPRESSORA_1 realizará o processamento na IMPRESSORA_1,<br>enquanto o OPERADOR_IMPRESSORA_2 realizará o processamento na IMPRESSORA_2</p></div>
+<div class="script"><div class="script-label">ROTEIRO</div><p>
+o OPERADOR_IMPRESSORA_1 realizará o processamento na IMPRESSORA_1,<br>enquanto o OPERADOR_IMPRESSORA_2 realizará o processamento na IMPRESSORA_2
+</p></div>
 <div class="field"><b>Ação do mouse</b><span>1°: Conectar objetos na porta central (Atalho: Letra “S” do teclado - clicar no Operator e no Processor.)<br>2°: Para abrir as propriedades do objeto, clique sobre ele com o botão esquerdo do mouse ou clique duas vezes com o botão esquerdo do mouse.</span></div>
 <div class="note"><b>Observação</b><span>Nas ligações de Porta Central, não faz diferença iniciar clicando no Operador ou no processor primeiro, ambos sentidos funcionam.</span></div>
 <div class="properties">
 <div class="property">
 <div class="property-title"><span class="flex-plus" aria-hidden="true">+</span>Nome</div>
-<div class="property-content">IMPRESSORA_1<br>IMPRESSORA_2</div>
-</div>
+<div class="property-content">
+IMPRESSORA_1<br>IMPRESSORA_2
+</div></div>
 <div class="property">
 <div class="property-title"><span class="flex-plus" aria-hidden="true">+</span>Processor</div>
-<div class="property-content"><span class="check-box" aria-hidden="true">✓</span> Use Operator(s) : 1<br>Operator: current.centerObjects[1]</div>
-</div>
+<div class="property-content">
+<span class="check-box" aria-hidden="true">✓</span> Use Operator(s) : 1<br>Operator: current.centerObjects[1]
+</div></div>
 </div>
 </article>
 <article class="instruction-card">
 <h3 class="card-title">Configurando Operador ao Processo (Método 2)</h3>
-<div class="media print-grid">
+<div class="media">
 <img src="images/AULA1_MODELO2_ETAPA1_3.png" alt="AULA1_MODELO2_ETAPA1_3.png" loading="eager">
 <img src="images/AULA1_MODELO2_ETAPA1_5.png" alt="AULA1_MODELO2_ETAPA1_5.png" loading="eager">
 </div>
-<div class="script"><div class="script-label">ROTEIRO</div><p>o OPERADOR_IMPRESSORA_1 realizará o processamento na IMPRESSORA_1,<br>enquanto o OPERADOR_IMPRESSORA_2 realizará o processamento na IMPRESSORA_2</p></div>
+<div class="script"><div class="script-label">ROTEIRO</div><p>
+o OPERADOR_IMPRESSORA_1 realizará o processamento na IMPRESSORA_1,<br>enquanto o OPERADOR_IMPRESSORA_2 realizará o processamento na IMPRESSORA_2
+</p></div>
 <div class="field"><b>Ação do mouse</b><span>1°: Conectar objetos na porta central (Atalho: Letra “S” do teclado - clicar no Operator e no Processor.)<br>2°: Para abrir as propriedades do objeto, clique sobre ele com o botão esquerdo do mouse ou clique duas vezes com o botão esquerdo do mouse.<br>3°: Dentro de |+|Processor, após habilitar (<span class="check-box" aria-hidden="true">✓</span> Use Operator(s)), selecione o Operator com <img class="flexsim-icon" src="images/eyedropper.png" alt="eyedropper.png"> e depois clicando em cima do “OPERADOR_IMPRESSORA_X” para a “IMPRESSORA_X”.</span></div>
 <div class="note"><b>Observação</b><span>Nas ligações de Porta Central, não faz diferença iniciar clicando no Operador ou no processor primeiro, ambos sentidos funcionam.</span></div>
 </article>
 </div></details>
-<details class="stage" id="modelo02-etapa-2">
+<details class="stage" id="stage-2-2">
 <summary><span class="stage-number">02</span><span>Etapa 02 – Movimentadores das Placas Virgens entre a fila e as impressoras.</span></summary>
 <div class="stage-content multi-cols">
-<article class="instruction-card">
-<h3 class="card-title">Adicionando objeto</h3>
-<div class="media">
-<img src="images/AULA1_MODELO2_ETAPA1_1.png" alt="AULA1_MODELO2_ETAPA1_1.png" loading="eager">
-</div>
-<div class="script"><div class="script-label">ROTEIRO</div><p>E DOIS MOVIMENTADORES DE MATERIAIS,<br>QUE LEVARÃO AS PLACAS VIRGENS</p></div>
-<div class="field"><b>Objeto</b><span>Operator</span></div>
-<div class="field"><b>Caminho onde encontrar objeto</b><span>Barra da Esquerda → Library (Biblioteca) → Task Executers (Executores de Tarefas) → Operator.</span></div>
-<div class="field"><b>Ação do mouse</b><span>Clique e mantenha pressionado o botão esquerdo do mouse sobre o objeto e arraste-o até o local próximo do desejado no Mapa 3D.<br>Como alternativa, clique uma vez com o botão esquerdo para selecionar o objeto e, em seguida, clique novamente no local desejado do Mapa 3D para adicioná-lo.</span></div>
-<div class="note"><b>Observação</b><span>Ao utilizar a segunda forma, o objeto permanece selecionado após ser adicionado. Dessa maneira, você pode clicar em outros locais do Mapa 3D para inserir rapidamente outros objetos do mesmo tipo.<br>Adicione um Operator e configure-o conforme as orientações da coluna “Configurando posição dos movimentadores”. Depois, selecione o Operator “MOVIMENTADOR_1”, utilize CTRL+C para copiá-lo e CTRL+V para colar uma cópia em outro local do Mapa 3D. A cópia será criada já com as configurações do Operator original.</span></div>
-</article>
 <article class="instruction-card">
 <h3 class="card-title">Configurando posição dos movimentadores</h3>
 <div class="media">
 <img src="images/AULA1_MODELO2_ETAPA2_2.png" alt="AULA1_MODELO2_ETAPA2_2.png" loading="eager">
 </div>
-<div class="script"><div class="script-label">ROTEIRO</div><p>DO “ QUEUE: PLACAS_VIRGENS ” PARA OS “ PROCESSOR: IMPRESSORAS_1 ; 2 ”<br>POSICIONADOS EM:<br>MOVIMENTADOR_1, X = 15.00 ; Y =  3.50 ; Z = 0.00<br>MOVIMENTADOR_2, X = 15.00 ; Y = -3.50 ; Z = 0.00<br>( ambos com rotação de 180º no eixo Z )</p></div>
+<div class="script"><div class="script-label">ROTEIRO</div><p>
+DO “ QUEUE: PLACAS_VIRGENS ” PARA OS “ PROCESSOR: IMPRESSORAS_1 ; 2 ”<br>POSICIONADOS EM:<br>MOVIMENTADOR_1, X = 15.00 ; Y =  3.50 ; Z = 0.00<br>MOVIMENTADOR_2, X = 15.00 ; Y = -3.50 ; Z = 0.00<br>( ambos com rotação de 180º no eixo Z )
+</p></div>
 <div class="field"><b>Objeto</b><span>Operator – “MOVIMENTADOR_1”<br>Operator – “MOVIMENTADOR_2”</span></div>
 <div class="field"><b>Ação do mouse</b><span>Para abrir as propriedades do objeto, clique sobre ele com o botão esquerdo do mouse ou clique duas vezes com o botão esquerdo do mouse.</span></div>
 <div class="properties">
 <div class="property">
 <div class="property-title"><span class="flex-plus" aria-hidden="true">+</span>Nome</div>
-<div class="property-content">MOVIMENTADOR_1<br>MOVIMENTADOR_2</div>
-</div>
+<div class="property-content">
+MOVIMENTADOR_1<br>MOVIMENTADOR_2
+</div></div>
 <div class="property">
 <div class="property-title"><span class="flex-plus" aria-hidden="true">+</span>Visuals</div>
-<div class="property-content">MOVIMENTADOR_1 - X = 15.00 ; Y = 3.50 ; Z = 0.00<br>MOVIMENTADOR_2 - X = 15.00 ; Y = -3.50 ; Z = 0.00<br>PARA AMBOS, ROTACIONE 180.00 NO EIXO Z, CONFORME A IMAGEM.</div>
-</div>
-</div>
-</article>
-<article class="instruction-card">
-<h3 class="card-title">Configurando Movimentador ao Processo</h3>
-<div class="media print-grid">
-<img src="images/AULA1_MODELO2_ETAPA2_3.png" alt="AULA1_MODELO2_ETAPA2_3.png" loading="eager">
-<img src="images/AULA1_MODELO2_ETAPA2_4.png" alt="AULA1_MODELO2_ETAPA2_4.png" loading="eager">
-</div>
-<div class="script"><div class="script-label">ROTEIRO</div><p>SENDO QUE:<br>o MOVIMENTADOR_1 deverá abastecer somente a IMPRESSORA_1,<br>enquanto que o MOVIMENTADOR_2 deverá abastecer somente a IMPRESSORA_2;</p></div>
-<div class="field"><b>Objeto</b><span>Queue – “PLACAS_VIRGENS”</span></div>
-<div class="field"><b>Ação do mouse</b><span>1°: Conectar objetos na porta central (Atalho: Letra “S” do teclado - clicar no Operator e na Queue.)<br>2°: Para abrir as propriedades do objeto, clique sobre ele com o botão esquerdo do mouse ou clique duas vezes com o botão esquerdo do mouse.</span></div>
-<div class="note"><b>Observação</b><span>Nas ligações de Porta Central, não faz diferença iniciar clicando no Operador ou no processor primeiro, ambos sentidos funcionam.</span></div>
-<div class="properties">
-<div class="property">
-<div class="property-title"><span class="flex-plus" aria-hidden="true">+</span>Nome</div>
-<div class="property-content">PLACAS_VIRGENS</div>
-</div>
-<div class="property">
-<div class="property-title"><span class="flex-plus" aria-hidden="true">+</span>Output</div>
-<div class="property-content"><span class="check-box" aria-hidden="true">✓</span> Use Transport:<br><img class="flexsim-icon" src="images/down_arrow.png" alt="down_arrow.png"> → Center Port By Case:<br>Case Function: item.MODELO<br>Clique duas vezes no <span class="green-plus" aria-hidden="true">+</span> abaixo de Case Function para criar um novo Case e liberar os campos para preencher os valores de Setup Cases abaixo.<br>Case: 1 Port: 1<br>Case: 2 Port: 2</div>
-</div>
+<div class="property-content">
+MOVIMENTADOR_1 –<br><img class="flexsim-icon" src="images/Mid6_small.png" alt="Mid6_small.png"> X = 15.00 ; Y = 3.50 ; Z = 0.00<br><img class="flexsim-icon" src="images/rotate_arrow.png" alt="rotate_arrow.png"> Z = 180.00<br>MOVIMENTADOR_2 –<br><img class="flexsim-icon" src="images/Mid6_small.png" alt="Mid6_small.png"> X = 15.00 ; Y = -3.50 ; Z = 0.00<br><img class="flexsim-icon" src="images/rotate_arrow.png" alt="rotate_arrow.png"> Z = 180.00
+</div></div>
 </div>
 </article>
 <article class="instruction-card">
@@ -475,44 +392,487 @@
 <div class="media">
 <img src="images/AULA1_MODELO2_ETAPA2_5.png" alt="AULA1_MODELO2_ETAPA2_5.png" loading="eager">
 </div>
-<div class="script"><div class="script-label">ROTEIRO</div><p>PARA FINALIZAR:<br>o MOVIMENTADOR_1, após descarregar, deverá retornar à posição X = 15.00 ; Y = 3.50 ; Z = 0.00,<br>enquanto o MOVIMENTADOR_2, após descarregar, deverá retornar à posição X = 15.00 ; Y = -3.50 ; Z = 0.00</p></div>
+<div class="script"><div class="script-label">ROTEIRO</div><p>
+PARA FINALIZAR:<br>o MOVIMENTADOR_1, após descarregar, deverá retornar à posição X = 15.00 ; Y = 3.50 ; Z = 0.00,<br>enquanto o MOVIMENTADOR_2, após descarregar, deverá retornar à posição X = 15.00 ; Y = -3.50 ; Z = 0.00
+</p></div>
 <div class="field"><b>Objeto</b><span>Operator – “MOVIMENTADOR_1”<br>Operator – “MOVIMENTADOR_2”</span></div>
 <div class="field"><b>Ação do mouse</b><span>Para abrir as propriedades do objeto, clique sobre ele com o botão esquerdo do mouse ou clique duas vezes com o botão esquerdo do mouse.</span></div>
 <div class="properties">
 <div class="property">
 <div class="property-title"><span class="flex-plus" aria-hidden="true">+</span>Triggers</div>
-<div class="property-content">MOVIMENTADOR_1:<br>On Unload → Travel to a Specific Location:<br>X: 15<br>Y: 3.5<br>Z: 0<br>MOVIMENTADOR_1:<br>On Unload → Travel to a Specific Location:<br>X: 15<br>Y: -3.5<br>Z: 0</div>
-</div>
+<div class="property-content">
+MOVIMENTADOR_1:<br>On Unload → Travel to a Specific Location:<br>X: 15<br>Y: 3.5<br>Z: 0<br>MOVIMENTADOR_1:<br>On Unload → Travel to a Specific Location:<br>X: 15<br>Y: -3.5<br>Z: 0
+</div></div>
 </div>
 </article>
 </div></details>
-<details class="stage" id="modelo02-etapa-3">
+<details class="stage" id="stage-3-2">
 <summary><span class="stage-number final">03</span><span>Resultados</span></summary>
 <div class="stage-content one-col">
 <article class="instruction-card">
-<h3 class="card-title">Checando performance do modelo simulado.</h3>
-<div class="media">
-<img src="images/AULA1_MODELO2_RESULTADOS_1.png" alt="AULA1_MODELO2_RESULTADOS_1.png" loading="eager">
-</div>
+<h3 class="card-title">Resultados</h3>
+<div class="media print-grid"><img src="images/AULA1_MODELO2_RESULTADOS_1.png" alt="AULA1_MODELO2_RESULTADOS_1.png" loading="eager"></div>
 <div class="script"><div class="script-label">ROTEIRO</div><p>Quantidade expedida: 2.009 unidades<br>PROCESSING<br>IMPRESSORA_1: 70,31% ; IMPRESSORA_2: 69,24%</p></div>
 </article>
 </div></details>
-</div></details></div>
-      </details>
-
+</div></details></div></details><details class="course-section" id="aula02" data-course-id="aula02" open>
+  <summary class="course-heading">
+    <div><div class="section-kicker">AULA 02</div><h2>Continuação da modelagem</h2></div>
+    <div class="course-description">Modelagem passo a passo no FlexSim Education.</div>
+  </summary><div class="model-view" id="modelo03-view" data-model-id="modelo03">
+<details class="model" id="modelo03" data-model-id="modelo03">
+<summary><span class="section-plus">+</span><span>2.1) Modelo 03</span></summary>
+<div class="model-content">
+<details class="stage" id="stage-1-3">
+<summary><span class="stage-number">01</span><span>Etapa 01 – Estoque de placas impressas</span></summary>
+<div class="stage-content multi-cols">
+<article class="instruction-card">
+<h3 class="card-title">Desconectando objetos</h3>
+<div class="media">
+<img src="images/AULA2_MODELO3_ETAPA1_1.png" alt="AULA2_MODELO3_ETAPA1_1.png" loading="eager">
+</div>
+<div class="field"><b>Objeto</b><span>Processor – “IMPRESSORA_1”<br>Processor – “IMPRESSORA_2”<br>Sink – “SAIDA_CLIENTES”</span></div>
+<div class="field"><b>Ação do mouse</b><span>Desconectar os objetos utilizando o comando de Disconnect Object. Como atalho, pressione a tecla “Q” do teclado.</span></div>
+<div class="note"><b>Observação</b><span>Após realizar a desconexão dos objetos, coloque o Sink – “SAIDA_CLIENTES” em X = 50.00, mantendo Y e Z em 0.00.</span></div>
+</article>
+<article class="instruction-card">
+<h3 class="card-title">Adicionando e configurando objeto</h3>
+<div class="media">
+<img src="images/AULA2_MODELO3_ETAPA1_2.png" alt="AULA2_MODELO3_ETAPA1_2.png" loading="eager">
+<img src="images/AULA2_MODELO3_ETAPA1_3.png" alt="AULA2_MODELO3_ETAPA1_3.png" loading="eager">
+</div>
+<div class="script"><div class="script-label">ROTEIRO</div><p>
+NESTE MODELO, AO SAÍREM DOS “ PROCESSOR: IMPRESSORAS_1 ; 2 ”,<br>AS PLACAS IRÃO DIRETO PARA O “ QUEUE: PLACAS_IMPRESSAS ”,<br>( com capacidade infinita )<br>POSICIONADO EM X = 30.00 ; Y = 0.00 ; Z = 0.00
+</p></div>
+<div class="field"><b>Objeto</b><span>Queue – “PLACAS_IMPRESSAS”</span></div>
+<div class="properties">
+<div class="property">
+<div class="property-title"><span class="flex-plus" aria-hidden="true">+</span>Nome</div>
+<div class="property-content">
+PLACAS_IMPRESSAS
+</div></div>
+<div class="property">
+<div class="property-title"><span class="flex-plus" aria-hidden="true">+</span>Visuals</div>
+<div class="property-content">
+PLACAS_IMPRESSAS - <img class="flexsim-icon" src="images/Mid6_small.png" alt="Mid6_small.png"> X = 30.00 ; Y = 0.00 ; Z = 0.00
+</div></div>
+<div class="property">
+<div class="property-title"><span class="flex-plus" aria-hidden="true">+</span>Queue</div>
+<div class="property-content">
+Max Content – 1000000
+</div></div>
+</div>
+</article>
+<article class="instruction-card">
+<h3 class="card-title">Configurando transporte na saída das impressoras</h3>
+<div class="media">
+<img src="images/AULA2_MODELO3_ETAPA1_4.png" alt="AULA2_MODELO3_ETAPA1_4.png" loading="eager">
+<img src="images/AULA2_MODELO3_ETAPA1_5.png" alt="AULA2_MODELO3_ETAPA1_5.png" loading="eager">
+</div>
+<div class="script"><div class="script-label">ROTEIRO</div><p>
+SENDO LEVADAS PELOS PRÓPRIOS OPERADORES DESSES PROCESSOS,
+</p></div>
+<div class="field"><b>Objeto</b><span>Processor – “IMPRESSORA_1”<br>Processor – “IMPRESSORA_2”</span></div>
+<div class="note"><b>Observação</b><span>As imagens presentes nesta parte são os dois métodos de selecionar o responsável pelo transporte do produto.<br>A primeira imagem é como o primeiro Task Executer na Porta Central do Objeto.<br>A segunda imagem é utilizando o <img class="flexsim-icon" src="images/eyedropper.png" alt="eyedropper.png"> para selecionar Task Executer desejado para transporter o produto.</span></div>
+</article>
+</div></details>
+<details class="stage" id="stage-2-3">
+<summary><span class="stage-number">02</span><span>Etapa 02 – Teste das placas impressas</span></summary>
+<div class="stage-content one-col">
+<article class="instruction-card">
+<h3 class="card-title">Extra – Indicador de tempo de Process Time do Teste no Mapa 3D</h3>
+<div class="media">
+<img src="images/AULA2_MODELO3_ETAPA2_3.png" alt="AULA2_MODELO3_ETAPA2_3.png" loading="eager">
+</div>
+<div class="note"><b>Observação</b><span>Apenas um método de verificação da lógica de diferentes Process Times para diferentes Modelos. Se o produto dentro do processor for da cor verde, deve aparecer “TC_TESTE: 11”, se for da cor amarela, deve aparecer “TC_TESTE: 12”.</span></div>
+</article>
+</div></details>
+<details class="stage" id="stage-3-3">
+<summary><span class="stage-number">03</span><span>Etapa 03 – Operador responsável pelo Teste</span></summary>
+<div class="stage-content multi-cols">
+<article class="instruction-card">
+<h3 class="card-title">Configurando Atividade 1 do Operador do Teste</h3>
+<div class="media">
+<img src="images/AULA2_MODELO3_ETAPA3_2.png" alt="AULA2_MODELO3_ETAPA3_2.png" loading="eager">
+<img src="images/AULA2_MODELO3_ETAPA3_3.png" alt="AULA2_MODELO3_ETAPA3_3.png" loading="eager">
+</div>
+<div class="script"><div class="script-label">ROTEIRO</div><p>
+QUE FICARÁ RESPONSÁVEL POR TRÊS ATIVIDADES:<br>LEVAR AS PLACAS DO “ QUEUE: ESTOQUE_PLACAS_IMPRESSAS ” PARA O “ PROCESSOR: TESTE ”
+</p></div>
+<div class="field"><b>Objeto</b><span>Queue – “PLACAS_IMPRESSAS”</span></div>
+<div class="field"><b>Ação do mouse</b><span>Conectar objetos na porta central (Atalho: Letra “S” do teclado - clicar no Operator e na Queue.)</span></div>
+<div class="properties">
+<div class="property">
+<div class="property-title"><span class="flex-plus" aria-hidden="true">+</span>Output</div>
+<div class="property-content">
+<span class="check-box" aria-hidden="true">✓</span> Use Transport: current.centerObjects[1]<br>OU<br><span class="check-box" aria-hidden="true">✓</span> Use Transport: /OPERADOR_TESTE (USANDO eyedropper.png PARA SELECIONAR O TRANSPORTER)
+</div></div>
+</div>
+</article>
+<article class="instruction-card">
+<h3 class="card-title">Configurando Atividade 2 do Operador do Teste</h3>
+<div class="media">
+<img src="images/AULA2_MODELO3_ETAPA3_4.png" alt="AULA2_MODELO3_ETAPA3_4.png" loading="eager">
+<img src="images/AULA2_MODELO3_ETAPA3_5.png" alt="AULA2_MODELO3_ETAPA3_5.png" loading="eager">
+<img src="images/AULA2_MODELO3_ETAPA3_6.png" alt="AULA2_MODELO3_ETAPA3_6.png" loading="eager">
+<img src="images/AULA2_MODELO3_ETAPA3_7.png" alt="AULA2_MODELO3_ETAPA3_7.png" loading="eager">
+</div>
+<div class="script"><div class="script-label">ROTEIRO</div><p>
+FAZER O SETUP DE 2 [ s/u ] SEMPRE QUE HOUVER MUDANÇA DE MODELO
+</p></div>
+<div class="field"><b>Objeto</b><span>Processor – “TESTE”</span></div>
+<div class="field"><b>Ação do mouse</b><span>Conectar objetos na porta central (Atalho: Letra “S” do teclado - clicar no Operator e na Queue.)</span></div>
+<div class="properties">
+<div class="property">
+<div class="property-title"><span class="flex-plus" aria-hidden="true">+</span>Processor</div>
+<div class="property-content">
+Setup Time → <img class="flexsim-icon" src="images/down_arrow.bmp" alt="down_arrow.bmp"> If Item Label Changes:<br>Label: “MODELO”<br>If Item’s Label Changed: 2<br>Otherwise: 0<br><span class="check-box" aria-hidden="true">✓</span> Use Operator(s): 1<br>Operator:<br>Current.centerObjects[1]  OU  /OPERADOR_TESTE
+</div></div>
+</div>
+</article>
+<article class="instruction-card">
+<h3 class="card-title">Configurando Atividade 3 do Operador do Teste</h3>
+<div class="media">
+<img src="images/AULA2_MODELO3_ETAPA3_8.png" alt="AULA2_MODELO3_ETAPA3_8.png" loading="eager">
+</div>
+<div class="script"><div class="script-label">ROTEIRO</div><p>
+E REALIZAR O TESTE EM CADA UMA DAS PLACAS
+</p></div>
+<div class="field"><b>Objeto</b><span>Processor – “TESTE”</span></div>
+<div class="note"><b>Observação</b><span>A conexão da porta central do Operator já foi feita com o Processor no passo anterior, para que ele pudesse fazer o Setup do Processor. Logo, aqui não será necessário realizar a conexão de porta central.</span></div>
+<div class="properties">
+<div class="property">
+<div class="property-title"><span class="flex-plus" aria-hidden="true">+</span>Processor</div>
+<div class="property-content">
+Process Time:<br><span class="check-box" aria-hidden="true">✓</span> Use Operator(s)  +  <span class="check-box" aria-hidden="true">✓</span> Same as Setup
+</div></div>
+</div>
+</article>
+</div></details>
+<details class="stage" id="stage-4-3">
+<summary><span class="stage-number">04</span><span>Etapa 04 – Qualidade das Placas determinadas pelo teste</span></summary>
+<div class="stage-content multi-cols">
+</div></details>
+<details class="stage" id="stage-5-3">
+<summary><span class="stage-number">05</span><span>Etapa 05 – Utilizar esteiras</span></summary>
+<div class="stage-content one-col">
+<article class="instruction-card">
+<h3 class="card-title">Adicionando e configurando objeto (Esteira reprovados)</h3>
+<div class="media">
+<img src="images/AULA2_MODELO3_ETAPA5_4.png" alt="AULA2_MODELO3_ETAPA5_4.png" loading="eager">
+</div>
+<div class="script"><div class="script-label">ROTEIRO</div><p>
+E AS PLACAS REPROVADAS PARA UMA ESTEIRA RETA VERTICAL<br>POSICIONADA EM Xa = 45.00 e Xb = 45.00 ; Ya = -0.50 e Yb = -16.50 ; Za = 1.00 e Zb = 1.00
+</p></div>
+<div class="field"><b>Objeto</b><span>Conveyor</span></div>
+<div class="note"><b>Observação</b><span>Repita o processo de arrastar o Conveyor para o Mapa 3D, como mostrado no passo anterior realizado para o Conveyor de aprovadas. Posteriormente a isso, configure a posição conforme mostra em [CONVEYOR].</span></div>
+<div class="properties">
+<div class="property">
+<div class="property-title"><span class="flex-plus" aria-hidden="true">+</span>Conveyor</div>
+<div class="property-content">
+Start: X= 45.00 ; Y= -0.50 ; Z= 1.00<br>End: X= 45.00 ; Y= -16.50 ; Z= 1.00
+</div></div>
+</div>
+</article>
+</div></details>
+<details class="stage" id="stage-6-3">
+<summary><span class="stage-number">06</span><span>Etapa 06 – Utilizando Decision Point para determinar o fluxo dos produtos</span></summary>
+<div class="stage-content one-col">
+<article class="instruction-card">
+<h3 class="card-title">Configurando lógica do objeto</h3>
+<div class="media">
+<img src="images/AULA2_MODELO3_ETAPA6_5.png" alt="AULA2_MODELO3_ETAPA6_5.png" loading="eager">
+</div>
+<div class="field"><b>Objeto</b><span>Decision Point – “DP_0”</span></div>
+<div class="properties">
+<div class="property">
+<div class="property-title"><span class="flex-plus" aria-hidden="true">+</span>Triggers</div>
+<div class="property-content">
+<span class="green-plus" aria-hidden="true">+</span> → On arrival → Send Item By Case:<br>Case Function: item.QUALIDADE<br><span class="green-plus" aria-hidden="true">+</span> Para adicionar um novo “Case + Destination”:<br>Case: “REPROVADA”<br>Destination: current.outObjects[1]
+</div></div>
+</div>
+</article>
+</div></details>
+<details class="stage" id="stage-7-3">
+<summary><span class="stage-number">07</span><span>Etapa 07 – Destino Placas Reprovadas</span></summary>
+<div class="stage-content multi-cols">
+<article class="instruction-card">
+<h3 class="card-title">Conectando esteiras (Join Conveyors)</h3>
+<div class="media">
+<img src="images/AULA2_MODELO3_ETAPA7_2.png" alt="AULA2_MODELO3_ETAPA7_2.png" loading="eager">
+</div>
+<div class="script"><div class="script-label">ROTEIRO</div><p>
+( AS ESTEIRAS VERTICAL E HORIZONTAL DEVERÃO SER UNIDAS POR UM JOIN )
+</p></div>
+<div class="field"><b>Objeto</b><span>Conveyor – “StraightConveyor2”<br>Conveyor – “StraightConveyor3”</span></div>
+<div class="field"><b>Ação do mouse</b><span>Selecione a opção Join Conveyors na Barra Esquerda, em seguida, selecione o final da “StraightConveyor2” com o início da “StraightConveyor3”.</span></div>
+</article>
+<article class="instruction-card">
+<h3 class="card-title">Adicionando e configurando objeto</h3>
+<div class="media">
+<img src="images/AULA2_MODELO3_ETAPA7_3.png" alt="AULA2_MODELO3_ETAPA7_3.png" loading="eager">
+</div>
+<div class="script"><div class="script-label">ROTEIRO</div><p>
+QUE LEVARÁ AS PLACAS PARA O “ QUEUE: PLACAS_IMPRESSAS_REPROVADAS ”,<br>( com capacidade infinita )<br>POSICIONADO EM X = 10.00 ; Y = -20.00 ; Z = 0.00<br>AO ENTRAREM NESSE ESTOQUE, AS PLACAS DEVERÃO FICAR NA COR VERMELHA<br>( POR SEGURANÇA, PLACAS APROVADAS DEVERÃO FICAR NA COR AZUL)
+</p></div>
+<div class="field"><b>Objeto</b><span>Queue – “PLACAS_IMPRESSAS_REPROVADAS”</span></div>
+<div class="field"><b>Ação do mouse</b><span>Conectar os objetos utilizando o comando de conexão. Como atalho, pressione a tecla “A” do teclado. Conforme orientado a seguir:<br>Conveyor “StraightConveyor3” → Queue “PLACAS_IMPRESSAS_REPROVADAS”</span></div>
+<div class="properties">
+<div class="property">
+<div class="property-title"><span class="flex-plus" aria-hidden="true">+</span>Nome</div>
+<div class="property-content">
+PLACAS_IMPRESSAS_REPROVADAS
+</div></div>
+<div class="property">
+<div class="property-title"><span class="flex-plus" aria-hidden="true">+</span>Queue</div>
+<div class="property-content">
+Max Content: 1000000
+</div></div>
+<div class="property">
+<div class="property-title"><span class="flex-plus" aria-hidden="true">+</span>Triggers</div>
+<div class="property-content">
+<span class="green-plus" aria-hidden="true">+</span> → On Entry → Visuals → Set Color By Case:<br>Value: item.QUALIDADE<br>2x <span class="green-plus" aria-hidden="true">+</span> Para adicionar “Case Value + Color”:<br>“APROVADA” – <img class="flexsim-icon" src="images/down_arrow.bmp" alt="down_arrow.bmp"> Color.blue<br>“REPROVADA” - <img class="flexsim-icon" src="images/down_arrow.bmp" alt="down_arrow.bmp"> Color.red
+</div></div>
+</div>
+</article>
+</div></details>
+<details class="stage" id="stage-8-3">
+<summary><span class="stage-number final">08</span><span>Resultados</span></summary>
+<div class="stage-content one-col">
+<article class="instruction-card">
+<h3 class="card-title">Resultados</h3>
+<div class="media print-grid"><img src="images/AULA2_MODELO3_RESULTADOS_1.png" alt="AULA2_MODELO3_RESULTADOS_1.png" loading="eager"></div>
+<div class="script"><div class="script-label">ROTEIRO</div><p>Quantidade expedida<br>1.021 unidades<br>PROCESSING<br>IMPRESSORA_1: 63,91% ; IMPRESSORA_2: 63,85% ; TESTE: 51,41%</p></div>
+</article>
+</div></details>
+</div></details></div><div class="model-view" id="modelo04-view" data-model-id="modelo04">
+<details class="model" id="modelo04" data-model-id="modelo04">
+<summary><span class="section-plus">+</span><span>2.2) Modelo 04</span></summary>
+<div class="model-content">
+<details class="stage" id="stage-1-4">
+<summary><span class="stage-number">01</span><span>Etapa 01 – Retrabalhar placas impressas reprovadas</span></summary>
+<div class="stage-content multi-cols">
+<article class="instruction-card">
+<h3 class="card-title">Conectando e configurando objetos</h3>
+<div class="media">
+<img src="images/AULA2_MODELO4_ETAPA1_1.png" alt="AULA2_MODELO4_ETAPA1_1.png" loading="eager">
+<img src="images/AULA2_MODELO4_ETAPA1_2.png" alt="AULA2_MODELO4_ETAPA1_2.png" loading="eager">
+</div>
+<div class="script"><div class="script-label">ROTEIRO</div><p>
+NESTE NOVO MODELO, DO “QUEUE: PLACAS_IMPRESSAS_REPROVADAS”,<br>AS PLACAS SERÃO LERVADAS PELOS MOVIMENTADORES PARA SEREM<br>RETRABALHADAS NAS IMPRESSORAS NAS QUAIS FORAM IMPRESSAS:
+</p></div>
+<div class="field"><b>Objeto</b><span>Queue – “PLACAS_IMPRESSAS_REPROVADAS”<br>Processor – “IMPRESSORA_1”<br>Processor – “IMPRESSORA_2”<br>Sink – “SAIDA_CLIENTES”</span></div>
+<div class="field"><b>Ação do mouse</b><span>1°: Conectar os objetos utilizando o comando de conexão. Como atalho, pressione a tecla “A” do teclado.<br>Conforme orientado a seguir:<br>Queue “PLACAS_IMPRESSAS_REPROVADAS” → Processor “IMPRESSORA_1”<br>Queue “PLACAS_IMPRESSAS_REPROVADAS” → Processor “IMPRESSORA_2”<br>2°</span></div>
+<div class="note"><b>Observação</b><span>É possível visualizar se está as conexões estão corretas ao abrir as propriedades e ver se Outputs e Inputs estão compatíveis.</span></div>
+<div class="properties">
+<div class="property">
+<div class="property-title"><span class="flex-plus" aria-hidden="true">+</span>Output</div>
+<div class="property-content">
+Send To Port:<br><img class="flexsim-icon" src="images/down_arrow.bmp" alt="down_arrow.bmp"> Port By Case:<br>Case Function: item.MODELO<br>2x <span class="green-plus" aria-hidden="true">+</span> Para adicionar “Case + Port”:<br>Case: 1  Port: 1<br>Case: 2  Port: 2
+</div></div>
+</div>
+</article>
+<article class="instruction-card">
+<h3 class="card-title">Configurando objeto</h3>
+<div class="media">
+<img src="images/AULA2_MODELO4_ETAPA1_3.png" alt="AULA2_MODELO4_ETAPA1_3.png" loading="eager">
+<img src="images/AULA2_MODELO4_ETAPA1_4.png" alt="AULA2_MODELO4_ETAPA1_4.png" loading="eager">
+</div>
+<div class="script"><div class="script-label">ROTEIRO</div><p>
+SENDO QUE:<br>O MOVIMENTADOR_1 LEVARÁ AS PLACAS MODELO 1 PARA O “ PROCESSOR: IMPRESSORA_1 ”<br>E O MOVIMETADOR_2 LEVARÁ AS PLACAS MODELO 2 PARA O “ PROCESSOR: IMPRESSORA_2 ”
+</p></div>
+<div class="field"><b>Objeto</b><span>Queue – “PLACAS_IMPRESSAS_REPROVADAS”<br>Operator – “MOVIMENTADOR_1”<br>Operator - "MOVIMENTADOR_2”<br>Processor – “IMPRESSORA_1”<br>Processor – “IMPRESSORA_2”</span></div>
+<div class="field"><b>Ação do mouse</b><span>Conectar objetos na porta central (Atalho: Letra “S” do teclado - clicar no Operator e no Processor.)<br>Conforme orientado a seguir:<br>Operator “MOVIMENTADOR_1” → Queue “PLACAS_IMPRESSAS_REPROVADAS”<br>Operator “MOVIMENTADOR_2” → Queue “PLACAS_IMPRESSAS_REPROVADAS”</span></div>
+<div class="note"><b>Observação</b><span>É possível visualizar se está as conexões estão corretas ao abrir as propriedades e ver se Central Ports está compatível.<br>A prioridade sempre é a Porta 1 em qualquer situação, portanto, como os retrabalhos são prioridades para as impressoras, deve-se mudar a posição do input das impressoras de forma a alterar a prioridade de input delas.<br>Observe o passo a seguir “Alterando prioridade de input”.</span></div>
+<div class="properties">
+<div class="property">
+<div class="property-title"><span class="flex-plus" aria-hidden="true">+</span>Output</div>
+<div class="property-content">
+<span class="check-box" aria-hidden="true">✓</span> Use Transport:<br><img class="flexsim-icon" src="images/down_arrow.bmp" alt="down_arrow.bmp"> Center Port By Case:<br>Case Function: item.MODELO<br>2x <span class="green-plus" aria-hidden="true">+</span> Para adicionar “Case + Port”:<br>Case: 1  Port: 1<br>Case: 2  Port: 2
+</div></div>
+</div>
+</article>
+<article class="instruction-card">
+<h3 class="card-title">Alterando prioridade de input</h3>
+<div class="media">
+<img src="images/AULA2_MODELO4_ETAPA1_5.png" alt="AULA2_MODELO4_ETAPA1_5.png" loading="eager">
+</div>
+<div class="script"><div class="script-label">ROTEIRO</div><p>
+MAS ATENÇÃO:<br>AS PLACAS PARA RETRABALHO TERÃO PRIORIDADE NAS IMPRESSORAS,
+</p></div>
+<div class="field"><b>Objeto</b><span>Processor – “IMPRESSORA_1”1<br>Processor – “IMPRESSORA_2”</span></div>
+<div class="field"><b>Caminho onde encontrar objeto</b><span>Barra da Direita → Properties (Propriedades) → Ports (Portas) → <img class="flexsim-icon" src="images/down_arrow.bmp" alt="down_arrow.bmp">Input Ports (Portas de entrada).</span></div>
+<div class="field"><b>Ação do mouse</b><span>Dentro de Input Ports, selecione uma das duas portas disponíveis na impressora para move-las.<br>Conforme orientação a seguir:<br>Selecione “2: PLACAS_IMPRESSAS_REPROVADAS” e clique no botão <img class="flexsim-icon" src="images/uparrow_blue.png" alt="uparrow_blue.png"> para colocá-la na posição 1 e automaticamente “PLACAS_VIRGENS” descer para a posição 2.<br>Outra opção é realizar o oposto, selecionar “1: PLACAS_VIRGENS” e clicar no botão <img class="flexsim-icon" src="images/downarrow_blue.png" alt="downarrow_blue.png"> para realizar o movimento de colocá-la na posição 2 e automaticamente subir “PLACAS_IMPRESSAS_REPROVADAS” para a posição 1.</span></div>
+<div class="note"><b>Observação</b><span>Repita para o processor da “IMPRESSORA_2”, ficando igual imagem.</span></div>
+<div class="properties">
+<div class="property">
+<div class="property-title"><span class="flex-plus" aria-hidden="true">+</span>Ports</div>
+<div class="property-content">
+Antes:<br>1: PLACAS_VIRGENS<br>2: PLACAS_IMPRESSAS_REPROVADAS<br>Depois:<br>1:PLACAS_IMPRESSAS_REPROVADAS<br>2:PLACAS_VIRGENS
+</div></div>
+</div>
+</article>
+</div></details>
+<details class="stage" id="stage-2-4">
+<summary><span class="stage-number">02</span><span>Etapa 02 – Tempo de processo diferente para retrabalho</span></summary>
+<div class="stage-content multi-cols">
+<article class="instruction-card">
+<h3 class="card-title">Configurando objeto</h3>
+<div class="media">
+<img src="images/AULA2_MODELO4_ETAPA2_2.png" alt="AULA2_MODELO4_ETAPA2_2.png" loading="eager">
+</div>
+<div class="script"><div class="script-label">ROTEIRO</div><p>
+O TEMPO DE CICLO PARA RETRABALHO SERÁ DE 10 [ s / u ] /<br>E QUANDO ESSAS PLACAS ENTRAREM NOS “ PROCESSOR: IMPRESSORAS_1 ; 2 ”,<br>DEFINA TEMPOS DE CICLO DE 20 [ s / u ] PARA AS ORIGINAIS E DE 10 [ s / u ] PARA AS REPROVADAS
+</p></div>
+<div class="field"><b>Objeto</b><span>Processor – “IMPRESSORA_1”<br>Processor – “IMPRESSORA_2”</span></div>
+<div class="note"><b>Observação</b><span>Repita no processor “IMPRESSORA_2” igualmente para a “IMPRESSORA_1”.<br>É possível fazer uma forma de verificar se a lógica está funcionando, basta procurar na barra de pesquisa do site como foi Feito o “TC_TESTE”, mas agora você reproduz um Text para a “IMPRESSORA_1” e outro para a “IMPRESSORA_2”.</span></div>
+<div class="properties">
+<div class="property">
+<div class="property-title"><span class="flex-plus" aria-hidden="true">+</span>Processor</div>
+<div class="property-content">
+Process Time → <img class="flexsim-icon" src="images/down_arrow.bmp" alt="down_arrow.bmp"> Values By Case:<br>Case Function: item.MODELO<br>2x <span class="green-plus" aria-hidden="true">+</span> Para adicionar “Case + Time”:<br>Case: “ORIGINAL”  Time: 20<br>Case: “REPROVADA”  Time: 10
+</div></div>
+</div>
+</article>
+<article class="instruction-card">
+<h3 class="card-title">Configurando objeto</h3>
+<div class="media">
+<img src="images/AULA2_MODELO4_ETAPA2_3.png" alt="AULA2_MODELO4_ETAPA2_3.png" loading="eager">
+</div>
+<div class="script"><div class="script-label">ROTEIRO</div><p>
+E,<br>APÓS RETRABALHADAS, AS PLACAS RETORNARÃO ÀS COLORAÇÕES ORIGINAIS
+</p></div>
+<div class="field"><b>Objeto</b><span>Processor - “IMPRESSORA_1”<br>Processor - “IMPRESSORA_2”</span></div>
+<div class="field"><b>Ação do mouse</b><span>Segure a Tecla CTRL e clique nas duas impressoras, até que elas fiquem com o paralelepípedo Vermelho ao redor. Após isso, configure de forma idêntica as duas.<br>Ao finalizer, segure a Tecla Shift e clique em algum local vazio no Mapa 3D para remover a seleção das duas impressoras.</span></div>
+<div class="note"><b>Observação</b><span>Com as duas impressoras selecionadas, qualquer commando que fizer, altera nas duas igualmente.</span></div>
+<div class="properties">
+<div class="property">
+<div class="property-title"><span class="flex-plus" aria-hidden="true">+</span>Triggers</div>
+<div class="property-content">
+<span class="green-plus" aria-hidden="true">+</span> → On Exit → <span class="green-plus" aria-hidden="true">+</span> Visual → Set Color By Case:<br>Value: item.MODELO<br>2x <span class="green-plus" aria-hidden="true">+</span> Para adicionar “Case Value + Color”:<br>:  <img class="flexsim-icon" src="images/down_arrow.bmp" alt="down_arrow.bmp"> Color.green<br>:  <img class="flexsim-icon" src="images/down_arrow.bmp" alt="down_arrow.bmp"> Color.yellow
+</div></div>
+</div>
+</article>
+</div></details>
+<details class="stage" id="stage-3-4">
+<summary><span class="stage-number">03</span><span>Etapa 03 – Controle de quantidade de reprovações.</span></summary>
+<div class="stage-content one-col">
+<article class="instruction-card">
+<h3 class="card-title">Incrementando valor a um rótulo</h3>
+<div class="media">
+<img src="images/AULA2_MODELO4_ETAPA3_3.png" alt="AULA2_MODELO4_ETAPA3_3.png" loading="eager">
+</div>
+<div class="script"><div class="script-label">ROTEIRO</div><p>
+E QUANDO PLACAS REPROVADAS ENTRAREM NA ESTEIRA VERTICAL APÓS O “PROCESSOR: TESTE”,<br>ESSA LABEL DEVERÁ SER ACRESCIDA EM UMA UNIDADE
+</p></div>
+<div class="field"><b>Objeto</b><span>Conveyor – “StraightConveyor2”</span></div>
+<div class="properties">
+<div class="property">
+<div class="property-title"><span class="flex-plus" aria-hidden="true">+</span>Triggers</div>
+<div class="property-content">
+<span class="green-plus" aria-hidden="true">+</span> → On Entry → Data → Increment Value:<br>Increment: item.labels[“REPROVACOES”]<br>by: 1
+</div></div>
+</div>
+</article>
+</div></details>
+<details class="stage" id="stage-4-4">
+<summary><span class="stage-number">04</span><span>Etapa 04 – Peças com mais de uma reprovação se tornam refugo</span></summary>
+<div class="stage-content multi-cols">
+<article class="instruction-card">
+<h3 class="card-title">Adicionando e configurando objeto</h3>
+<div class="media">
+<img src="images/AULA2_MODELO4_ETAPA4_2.png" alt="AULA2_MODELO4_ETAPA4_2.png" loading="eager">
+</div>
+<div class="script"><div class="script-label">ROTEIRO</div><p>
+QUE LEVARÁ AS PLACAS PARA O “ QUEUE: PLACAS_IMPRESSAS_REFUGADAS ”<br>( com capacidade infinita )<br>POSICIONADO EM X = 20.00 ; Y = -10.00 ; Z = 0.00<br>( MAS AO ENTRAREM NESSE ESTOQUE, AS PLACAS DEVERÃO FICAR NA COR CINZA )
+</p></div>
+<div class="field"><b>Objeto</b><span>Queue – “PLACAS_IMPRESSAS_REFUGADAS”</span></div>
+<div class="properties">
+<div class="property">
+<div class="property-title"><span class="flex-plus" aria-hidden="true">+</span>Nome</div>
+<div class="property-content">
+PLACAS_IMPRESSAS_REFUGADAS
+</div></div>
+<div class="property">
+<div class="property-title"><span class="flex-plus" aria-hidden="true">+</span>Visuals</div>
+<div class="property-content">
+<img class="flexsim-icon" src="images/Mid6_small.png" alt="Mid6_small.png"> X= 20.00 ; Y= -10.00 ; Z= 0.00
+</div></div>
+<div class="property">
+<div class="property-title"><span class="flex-plus" aria-hidden="true">+</span>Queue</div>
+<div class="property-content">
+Max Content: 1000000
+</div></div>
+<div class="property">
+<div class="property-title"><span class="flex-plus" aria-hidden="true">+</span>Triggers</div>
+<div class="property-content">
+<span class="green-plus" aria-hidden="true">+</span> → On Entry → <span class="green-plus" aria-hidden="true">+</span> Visual → Set Color By Case:<br>Value: item.REPROVACOES<br>2x <span class="green-plus" aria-hidden="true">+</span> Para adicionar “Case Value + Color”:<br>: <img class="flexsim-icon" src="images/down_arrow.bmp" alt="down_arrow.bmp"> Color.blue<br>: <img class="flexsim-icon" src="images/down_arrow.bmp" alt="down_arrow.bmp"> Color.gray
+</div></div>
+</div>
+</article>
+<article class="instruction-card">
+<h3 class="card-title">Adicionando e configurando objeto</h3>
+<div class="media">
+<img src="images/AULA2_MODELO4_ETAPA4_3.png" alt="AULA2_MODELO4_ETAPA4_3.png" loading="eager">
+<img src="images/AULA2_MODELO4_ETAPA4_4.png" alt="AULA2_MODELO4_ETAPA4_4.png" loading="eager">
+</div>
+<div class="script"><div class="script-label">ROTEIRO</div><p>
+SENDO QUE SOMENTE AS PLACAS REPROVADAS UMA ÚNICA VEZ PODERÃO SER RETRABALHADAS.<br>PARA DIRECIONAR CADA PLACA, UTILIZE OS SEGUINTES DECISION POINTS:<br>DP_2, POSICIONADO EM X = 22.00 ; Y = -20.00 ; Z = 0.00<br>DP_3, POSICIONADO EM X = 20.00 ; Y = -17.50 ; Z = 0.00
+</p></div>
+<div class="field"><b>Objeto</b><span>Decision Point – “DP_2”<br>Decision Point – “DP_3”</span></div>
+<div class="field"><b>Ação do mouse</b><span>Conectar os objetos utilizando o comando de conexão. Como atalho, pressione a tecla “A” do teclado.<br>Conforme orientado a seguir:<br>Decision Point “DP_2” → Decision Point “DP_3”</span></div>
+<div class="note"><b>Observação</b><span>Para verificar se as conexões foram feitas corretamente, selecione o Decision Point que deseja verificar, e veja se seu Output Port/Input Port está corretamente conectado.<br>Conforme segue nas imagens 1 e 2 deste passo, destacado dentro de retângulos amarelos.</span></div>
+<div class="properties">
+<div class="property">
+<div class="property-title"><span class="flex-plus" aria-hidden="true">+</span>Nome</div>
+<div class="property-content">
+DP_2<br>DP_3
+</div></div>
+<div class="property">
+<div class="property-title"><span class="flex-plus" aria-hidden="true">+</span>Decision Point</div>
+<div class="property-content">
+DP_2:<br><img class="flexsim-icon" src="images/_resize.png" alt="_resize.png"> X= 22.00 ; Y= -20.00 ; Z= 0.00<br>DP_3:<br><img class="flexsim-icon" src="images/_resize.png" alt="_resize.png"> X= 20.00 ; Y= -17.50 ; Z= 0.00
+</div></div>
+</div>
+</article>
+<article class="instruction-card">
+<h3 class="card-title">Configurando lógica do objeto</h3>
+<div class="media">
+<img src="images/AULA2_MODELO4_ETAPA4_5.png" alt="AULA2_MODELO4_ETAPA4_5.png" loading="eager">
+<img src="images/AULA2_MODELO4_ETAPA4_6.png" alt="AULA2_MODELO4_ETAPA4_6.png" loading="eager">
+</div>
+<div class="field"><b>Objeto</b><span>Decision Point – “DP_2”</span></div>
+<div class="properties">
+<div class="property">
+<div class="property-title"><span class="flex-plus" aria-hidden="true">+</span>Triggers</div>
+<div class="property-content">
+<span class="green-plus" aria-hidden="true">+</span> → On arrival → Send Item By Case:<br>Case Function: item.REPROVACOES<br><span class="green-plus" aria-hidden="true">+</span> Para adicionar um novo “Case + Destination”:<br>Case: “2”<br>Destination: current.outObjects[1]
+</div></div>
+</div>
+</article>
+</div></details>
+<details class="stage" id="stage-5-4">
+<summary><span class="stage-number final">05</span><span>Resultados</span></summary>
+<div class="stage-content one-col">
+<article class="instruction-card">
+<h3 class="card-title">Resultados</h3>
+<div class="media print-grid"><img src="images/AULA2_MODELO4_RESULTADOS_1.png" alt="AULA2_MODELO4_RESULTADOS_1.png" loading="eager"></div>
+<div class="script"><div class="script-label">ROTEIRO</div><p>Quantidade expedida<br>1.021 unidades<br>Elaborar e interpretar os gráficos de estados<br>PROCESSING<br>IMPRESSORA_1: 58,87% ; IMPRESSORA_2: 60,35% ; TESTE: 51,36%</p></div>
+</article>
+</div></details>
+</div></details></div></details>
     </section>
   </div>
 </main>
 
 <div class="lightbox" id="lightbox" aria-hidden="true">
-  <button class="lightbox-close" aria-label="Fechar">×</button>
-  <img id="lightbox-img" alt="">
-  <button id="lightbox-prev" class="lightbox-nav lightbox-prev" type="button" aria-label="Imagem anterior">‹</button>
-  <button id="lightbox-next" class="lightbox-nav lightbox-next" type="button" aria-label="Próxima imagem">›</button>
-  <div id="lightbox-counter" class="lightbox-counter"></div>
-  <div class="lightbox-help">← → navegar pelos prints desta coluna · clique ou use a roda do mouse para zoom · ESC para fechar</div>
+  <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Fechar imagem">×</button>
+  <button class="lightbox-nav lightbox-prev" id="lightbox-prev" type="button" aria-label="Imagem anterior">‹</button>
+  <img id="lightbox-img" src="" alt="">
+  <button class="lightbox-nav lightbox-next" id="lightbox-next" type="button" aria-label="Próxima imagem">›</button>
+  <div class="lightbox-counter" id="lightbox-counter"></div>
+  <div class="lightbox-help">Clique para ampliar • Use ← → para navegar • Esc para fechar</div>
 </div>
-
-<script src="script.js?v=8"></script>
+<script src="script.js?v=9"></script>
 </body>
 </html>

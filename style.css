@@ -192,3 +192,23 @@
 .pdf-selection-actions{display:flex;gap:8px;margin:9px 0 18px}.pdf-small-button{border:1px solid #c7d3df;background:#fff;border-radius:7px;padding:6px 9px;color:#41556e;font-size:12px;cursor:pointer}.pdf-small-button:hover{background:#f5f9fd}
 .pdf-dialog-footer{display:flex;justify-content:flex-end;gap:8px;border-top:1px solid #edf1f5;padding-top:15px}
 @media print{.pdf-dialog{display:none!important}}
+
+.sidebar-course-group { margin-top: 18px; }
+.sidebar-course-toggle {
+  width:100%; border:0; background:transparent; padding:8px 8px 10px;
+  text-align:left; color:var(--ink); font:700 15px/1.35 "Segoe UI",Arial,sans-serif;
+  cursor:pointer; display:flex; gap:7px; align-items:flex-start;
+}
+.sidebar-course-toggle .course-caret { width:12px; color:#58708b; flex:0 0 auto; }
+.sidebar-course-toggle .course-label { flex:1; }
+.course-section.model-view.model-link
+.plain-text { margin:10px 0 14px; font-size:14px; color:#3b4a5e; }
+.property-content .flexsim-icon { max-width:18px; max-height:18px; }
+
+@media print{
+  body[data-print-models] .model-view{display:none!important}
+  body[data-print-models] .model-view.print-selected{display:block!important}
+  body[data-print-models] .course-section{display:none!important}
+  body[data-print-models] .course-section.print-selected-course{display:block!important}
+}
+
