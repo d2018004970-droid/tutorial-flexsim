@@ -152,8 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let firstMatchModel = null;
     stages.forEach(stage => {
       const model = stage.closest('.model');
-      const visibleModel = model && modelIsPublished(model);
-      const match = visibleModel && stage.innerText.toLowerCase().includes(q);
+      const match = !!model && stage.innerText.toLowerCase().includes(q);
       stage.classList.toggle('search-hidden', !match);
       stage.classList.toggle('search-hit', match);
       if (match) {
