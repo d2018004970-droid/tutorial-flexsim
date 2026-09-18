@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tutorial de Modelagem — FlexSim Education v2027-0</title>
+<meta name="color-scheme" content="light dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css?v=1">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <button class="icon-btn sidebar-toggle" id="sidebar-toggle" type="button" aria-label="Abrir sumário" aria-expanded="false">
+      <svg viewBox="0 0 24 24" width="20" height="20"><path d="M4 6h16M4 12h16M4 18h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="22" height="22"><path d="M4 17V7l8-4 8 4v10l-8 4-8-4Z" stroke="white" stroke-width="1.6" stroke-linejoin="round" fill="none"/><path d="M4 7l8 4 8-4M12 11v10" stroke="white" stroke-width="1.6" stroke-linejoin="round" fill="none"/></svg>
+      </div>
+      <div class="brand-copy">
+        <div class="brand-eyebrow">TUTORIAL DE MODELAGEM</div>
+        <h1 id="site-title">FlexSim Education</h1>
+      </div>
+    </div>
+
+    <div class="search-bar-wrap">
+      <div class="search-bar">
+        <svg class="search-icon" viewBox="0 0 24 24" width="17" height="17"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" fill="none"/><path d="M21 21l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input id="search" type="search" placeholder="Pesquisar — ex.: Source, Queue, Triggers, Visuals..." autocomplete="off">
+        <button id="clear-search" class="icon-btn" type="button" aria-label="Limpar pesquisa" hidden>
+          <svg viewBox="0 0 24 24" width="16" height="16"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="topbar-actions">
+      <button class="icon-btn" id="open-glossary" type="button" aria-label="Glossário e atalhos" title="Glossário e atalhos">
+        <svg viewBox="0 0 24 24" width="19" height="19"><path d="M4 19.5V6a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v13.5" stroke="currentColor" stroke-width="1.7" fill="none"/><path d="M6 21.5h13" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+      </button>
+      <button class="icon-btn" id="open-pdf-dialog" type="button" aria-label="Imprimir / baixar PDF" title="Imprimir / baixar PDF">
+        <svg viewBox="0 0 24 24" width="19" height="19"><path d="M6 9V3h12v6M6 18H4a1 1 0 0 1-1-1v-5a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-2M6 14h12v7H6z" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="icon-btn" id="theme-toggle" type="button" aria-label="Alternar tema claro/escuro" title="Alternar tema">
+        <svg class="icon-sun" viewBox="0 0 24 24" width="19" height="19"><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.8" fill="none"/><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" width="19" height="19" hidden><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="search-status" id="search-status" aria-live="polite"></div>
+</header>
+
+<div class="shell">
+  <aside class="sidebar" id="sidebar" aria-label="Sumário">
+    <div class="sidebar-label">SUMÁRIO</div>
+    <nav id="sidebar-nav" class="sidebar-nav"></nav>
+    <button class="presentation-btn" id="open-presentation" type="button">
+      <svg viewBox="0 0 24 24" width="16" height="16"><path d="M8 5v14l11-7-11-7Z" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linejoin="round"/></svg>
+      Modo apresentação
+    </button>
+  </aside>
+  <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
+  <main class="main-area" id="main-area">
+    <div id="course-list"></div>
+    <div id="empty-state" class="empty-state" hidden>Nenhum conteúdo encontrado no arquivo de dados.</div>
+  </main>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Fechar imagem">
+    <svg viewBox="0 0 24 24" width="22" height="22"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+  </button>
+  <button class="lightbox-nav lightbox-prev" id="lightbox-prev" type="button" aria-label="Imagem anterior">‹</button>
+  <div class="lightbox-stage">
+    <img id="lightbox-img" src="" alt="">
+  </div>
+  <button class="lightbox-nav lightbox-next" id="lightbox-next" type="button" aria-label="Próxima imagem">›</button>
+  <div class="lightbox-caption" id="lightbox-caption"></div>
+  <div class="lightbox-counter" id="lightbox-counter"></div>
+  <div class="lightbox-help">Clique/scroll para ampliar • arraste para mover • ← → navega • Esc fecha</div>
+</div>
+
+<!-- GLOSSARIO -->
+<div class="panel-backdrop" id="glossary-backdrop"></div>
+<aside class="glossary-panel" id="glossary-panel" aria-hidden="true" aria-label="Glossário e atalhos">
+  <div class="panel-header">
+    <h2>Glossário &amp; atalhos</h2>
+    <button class="icon-btn" id="close-glossary" type="button" aria-label="Fechar">
+      <svg viewBox="0 0 24 24" width="20" height="20"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <div class="panel-tabs">
+    <button class="panel-tab active" data-tab="objects" type="button">Objetos</button>
+    <button class="panel-tab" data-tab="shortcuts" type="button">Atalhos</button>
+  </div>
+  <div class="panel-body">
+    <div class="panel-pane active" id="tab-objects"></div>
+    <div class="panel-pane" id="tab-shortcuts"></div>
+  </div>
+</aside>
+
+<!-- MODO APRESENTACAO -->
+<div class="presentation-overlay" id="presentation-overlay" aria-hidden="true">
+  <div class="presentation-bar">
+    <button class="icon-btn" id="presentation-exit" type="button" aria-label="Sair do modo apresentação">
+      <svg viewBox="0 0 24 24" width="20" height="20"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+    </button>
+    <div class="presentation-crumb" id="presentation-crumb"></div>
+    <button class="icon-btn" id="presentation-fullscreen" type="button" aria-label="Tela cheia">
+      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 9V5a1 1 0 0 1 1-1h4M20 9V5a1 1 0 0 1-1-1h-4M4 15v4a1 1 0 0 0 1 1h4M20 15v4a1 1 0 0 1-1 1h-4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <div class="presentation-content" id="presentation-content"></div>
+  <div class="presentation-nav">
+    <button class="presentation-arrow" id="presentation-prev" type="button" aria-label="Etapa anterior">‹</button>
+    <button class="presentation-arrow" id="presentation-next" type="button" aria-label="Próxima etapa">›</button>
+  </div>
+</div>
+
+<!-- PDF DIALOG -->
+<div class="pdf-dialog" id="pdf-dialog" aria-hidden="true">
+  <div class="pdf-dialog-backdrop" data-close-pdf></div>
+  <section class="pdf-dialog-panel" role="dialog" aria-modal="true" aria-labelledby="pdf-dialog-title">
+    <button type="button" class="pdf-dialog-close" id="close-pdf-dialog" aria-label="Fechar">
+      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+    </button>
+    <h3 id="pdf-dialog-title">Imprimir / baixar PDF</h3>
+    <p class="pdf-dialog-help">Escolha se deseja imprimir todo o material ou somente alguns modelos.</p>
+    <div class="pdf-choice-group">
+      <label class="pdf-choice"><input type="radio" name="pdf-scope" value="all" checked><span><strong>Material completo</strong><small>Inclui todos os modelos disponíveis.</small></span></label>
+      <label class="pdf-choice"><input type="radio" name="pdf-scope" value="selected"><span><strong>Selecionar modelos</strong><small>Marque somente os modelos que deseja incluir.</small></span></label>
+    </div>
+    <div class="pdf-model-selection" id="pdf-model-selection" aria-label="Modelos disponíveis para impressão"></div>
+    <div class="pdf-selection-actions">
+      <button type="button" class="pdf-small-button" id="pdf-select-all">Marcar todos</button>
+      <button type="button" class="pdf-small-button" id="pdf-clear-all">Desmarcar todos</button>
+    </div>
+    <div class="pdf-dialog-footer">
+      <button type="button" class="pdf-button secondary" data-close-pdf>Cancelar</button>
+      <button type="button" class="pdf-button" id="confirm-pdf">Gerar PDF</button>
+    </div>
+  </section>
+</div>
+
+<script src="assets/js/content.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
