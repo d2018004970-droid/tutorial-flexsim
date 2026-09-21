@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guia do Word-Mestre — Tutorial FlexSim</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F5F7FB;--surface:#FFFFFF;--surface-alt:#FBFCFE;--ink:#17233A;--muted:#64748B;
+    --line:rgba(15,23,42,.10);--accent:#2563EB;--accent-2:#06B6D4;--accent-soft:rgba(37,99,235,.08);
+    --note-bg:#FFFBEB;--note-line:#F0E6B6;--note-ink:#806c1b;
+    --warn-bg:#FEF2F2;--warn-line:#F5C2C2;--warn-ink:#9f1d1d;
+    --ok-bg:#F0FDF4;--ok-line:#bbf0cc;--ok-ink:#146c2e;
+    --radius:14px;--shadow:0 8px 24px rgba(25,52,82,.07);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:15.5px;line-height:1.6}
+  h1,h2,h3{font-family:'Manrope',system-ui,sans-serif}
+  .wrap{max-width:920px;margin:0 auto;padding:40px 24px 90px}
+  header.hero{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;border-radius:18px;padding:34px 32px;margin-bottom:30px;box-shadow:var(--shadow)}
+  header.hero .eyebrow{font-size:12px;font-weight:800;letter-spacing:1.6px;opacity:.85}
+  header.hero h1{font-size:30px;margin:6px 0 8px}
+  header.hero p{margin:0;opacity:.92;max-width:640px}
+  nav.toc{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px 22px;margin-bottom:30px;box-shadow:var(--shadow)}
+  nav.toc h2{font-size:13px;letter-spacing:1px;color:var(--accent);margin:0 0 10px}
+  nav.toc ol{margin:0;padding-left:20px;columns:2;gap:24px}
+  nav.toc a{color:var(--ink);text-decoration:none;font-size:14px}
+  nav.toc a:hover{color:var(--accent)}
+  section{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px 28px;margin-bottom:22px;box-shadow:var(--shadow)}
+  section h2{font-size:21px;margin:0 0 6px;display:flex;align-items:center;gap:10px}
+  section h2 .num{width:30px;height:30px;border-radius:9px;background:var(--accent-soft);color:var(--accent);display:inline-flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;flex:0 0 auto}
+  section h3{font-size:15.5px;margin:22px 0 8px;color:var(--ink)}
+  section p{color:#33455e}
+  code, .mono{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.92em;background:var(--surface-alt);border:1px solid var(--line);border-radius:5px;padding:1px 6px}
+  table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13.5px}
+  th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{background:var(--surface-alt);font-size:11.5px;letter-spacing:.4px;color:var(--muted);text-transform:uppercase}
+  tr:last-child td{border-bottom:0}
+  .callout{border-radius:10px;padding:13px 15px;margin:14px 0;font-size:13.5px}
+  .callout b{display:block;margin-bottom:4px;font-size:12px;letter-spacing:.4px;text-transform:uppercase}
+  .callout.note{background:var(--note-bg);border:1px solid var(--note-line);color:var(--note-ink)}
+  .callout.warn{background:var(--warn-bg);border:1px solid var(--warn-line);color:var(--warn-ink)}
+  .callout.ok{background:var(--ok-bg);border:1px solid var(--ok-line);color:var(--ok-ink)}
+  .issue{border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0;background:var(--surface-alt)}
+  .issue .loc{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.5px;color:#fff;background:var(--accent);border-radius:999px;padding:3px 10px;margin-bottom:8px}
+  .issue .loc.low{background:var(--muted)}
+  .issue p{margin:6px 0}
+  .issue .fix{color:var(--ok-ink);font-weight:600}
+  .badge-optional{display:inline-block;font-size:11px;font-weight:700;color:var(--muted);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:2px 9px;margin-left:8px}
+  ul{padding-left:22px}
+  ul li{margin-bottom:5px}
+  .flow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-family:'JetBrains Mono',monospace;font-size:13px;background:var(--surface-alt);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:12px 0}
+  .flow span.step{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:6px 10px}
+  .flow span.arrow{color:var(--accent);font-weight:800}
+  footer{text-align:center;color:var(--muted);font-size:12.5px;margin-top:30px}
+  @media print{
+    body{background:#fff}
+    nav.toc{break-after:page}
+    section{break-inside:avoid;box-shadow:none;border:1px solid #ddd}
+    header.hero{box-shadow:none}
+  }
+  @media(max-width:640px){
+    nav.toc ol{columns:1}
+    section{padding:20px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="eyebrow">DOCUMENTAÇÃO DO PROJETO</div>
+    <h1>Guia do Word-Mestre</h1>
+    <p>Como preencher o documento-fonte do Tutorial FlexSim, como gerar o site a partir dele, e o
+    levantamento das inconsistências de conteúdo encontradas na versão atual — para você corrigir no seu
+    ritmo, sem travar o funcionamento do site.</p>
+  </header>
+
+  <nav class="toc">
+    <h2>NESTE DOCUMENTO</h2>
+    <ol>
+      <li><a href="#fluxo">Como o site é gerado</a></li>
+      <li><a href="#marcadores">Tabela de marcadores</a></li>
+      <li><a href="#tolerancia">O que o conversor tolera</a></li>
+      <li><a href="#minimapa">Convenção para o mini-mapa</a></li>
+      <li><a href="#opcionais">Marcadores opcionais novos</a></li>
+      <li><a href="#relatorio">Como ler o relatório</a></li>
+      <li><a href="#inconsistencias">Inconsistências encontradas</a></li>
+    </ol>
+  </nav>
+
+  <section id="fluxo">
+    <h2><span class="num">1</span> Como o site é gerado</h2>
+    <p>O site não é mais escrito à mão a cada atualização. Um script (<code>build/build.ps1</code>) lê o
+    Word-Mestre diretamente e monta os dados do site de forma mecânica — a mesma entrada sempre produz a
+    mesma saída.</p>
+    <div class="flow">
+      <span class="step">Editar o Word</span><span class="arrow">&rarr;</span>
+      <span class="step">Salvar</span><span class="arrow">&rarr;</span>
+      <span class="step">Duplo clique em Gerar_Site.bat</span><span class="arrow">&rarr;</span>
+      <span class="step">Ler relatorio-build.txt</span><span class="arrow">&rarr;</span>
+      <span class="step">Abrir/recarregar index.html</span>
+    </div>
+    <p>O <code>index.html</code>, o CSS e o JavaScript do site <b>nunca mudam</b> quando você edita o Word —
+    só o arquivo de dados (<code>assets/js/content.js</code>) é regenerado. Por isso não existe mais o risco
+    de o visual quebrar ou de marcadores vazarem na tela a cada atualização de conteúdo.</p>
+    <div class="callout ok"><b>Importante</b>Você só edita a seção 6 (Área de Trabalho) do Word. As seções 1–5 e 7 são
+    de referência/instrução e não entram no site.</div>
+  </section>
+
+  <section id="marcadores">
+    <h2><span class="num">2</span> Tabela de marcadores</h2>
+    <p>Esta é a tabela atualizada — inclui os marcadores originais, o <code>[Run Time]</code> adicionado
+    recentemente, e os apelidos (aliases) que o conversor já entende.</p>
+    <table>
+      <tr><th>Marcador</th><th>O que colocar</th><th>Como aparece no site</th></tr>
+      <tr><td><code>[ETAPA]</code></td><td>Título da etapa</td><td>Título minimizável da etapa</td></tr>
+      <tr><td><code>[COLUNA]</code> / <code>[FIM_COLUNA]</code></td><td>Início/fim de um bloco de conteúdo</td><td>Uma coluna; use <code>[TITULO]</code> para nomeá-la</td></tr>
+      <tr><td><code>[TITULO]</code></td><td>Título da coluna</td><td>Título visual da coluna</td></tr>
+      <tr><td><code>[PRINT]</code></td><td>Nome exato do arquivo de imagem</td><td>Print clicável e ampliável</td></tr>
+      <tr><td><code>[ROTEIRO]</code></td><td>Trecho do roteiro atendido pela etapa</td><td>Bloco de roteiro após o print</td></tr>
+      <tr><td><code>[OBJETO]</code></td><td>Nome do objeto</td><td>Informação simples</td></tr>
+      <tr><td><code>[CAMINHO]</code></td><td>Onde encontrar o objeto</td><td>Informação simples</td></tr>
+      <tr><td><code>[ACAO_MOUSE]</code></td><td>Ação realizada com o mouse</td><td>Informação simples</td></tr>
+      <tr><td><code>[OBSERVACAO]</code></td><td>Observação complementar</td><td>Última informação da coluna (pode repetir)</td></tr>
+      <tr><td><code>[PROPERTIES]</code></td><td>Início das propriedades do FlexSim</td><td>Apenas organiza visualmente o Word; opcional</td></tr>
+      <tr><td><code>[NOME]</code></td><td>Valor de Name</td><td>Propriedade "Nome"</td></tr>
+      <tr><td><code>[VISUALS]</code></td><td>Posição/visual (X, Y, Z, rotação)</td><td>Propriedade "Visuals"</td></tr>
+      <tr><td><code>[SOURCE]</code> / <code>[QUEUE]</code> / <code>[PROCESSOR]</code> / <code>[CONVEYOR]</code></td><td>Propriedades específicas do objeto</td><td>Propriedade com o nome do objeto</td></tr>
+      <tr><td><code>[DECISION_POINT]</code></td><td>Nome + posição do Decision Point</td><td>Propriedade "Decision Point"</td></tr>
+      <tr><td><code>[OPTIONS]</code></td><td>Opções de Dashboard</td><td>Propriedade "Options"</td></tr>
+      <tr><td><code>[A*NAVIGATION]</code> <span class="badge-optional">alias: [A*_NAVIGATOR]</span></td><td>Propriedades do A*</td><td>Propriedade "A* Navigator Properties"</td></tr>
+      <tr><td><code>[GLOBAL_TABLE]</code></td><td>Global Tables do FlexSim</td><td>Propriedade "Global Table"</td></tr>
+      <tr><td><code>[TABLE]</code></td><td>Propriedade da Global Table</td><td>Propriedade "Table"</td></tr>
+      <tr><td><code>[PORTS]</code></td><td>Portas do objeto</td><td>Propriedade "Ports"</td></tr>
+      <tr><td><code>[TRIGGERS]</code></td><td>Triggers do objeto</td><td>Propriedade "Triggers" (pode repetir)</td></tr>
+      <tr><td><code>[OUTPUT]</code></td><td>Configuração de saída do objeto</td><td>Propriedade "Output"</td></tr>
+      <tr><td><code>[Run Time]</code></td><td>Configuração de tempo de execução</td><td>Propriedade "Run Time"</td></tr>
+    </table>
+    <h3>Tokens usados dentro do texto (não abrem/fecham bloco)</h3>
+    <table>
+      <tr><th>Token</th><th>Vira no site</th></tr>
+      <tr><td><code>[CHECK]</code></td><td>Caixinha marcada (✓)</td></tr>
+      <tr><td><code>[UNCHECK]</code></td><td>Caixinha vazia</td></tr>
+      <tr><td><code>[PLUS]</code></td><td>Badge verde "+" (o botão de adicionar do FlexSim)</td></tr>
+      <tr><td><code>[LETRA_VERMELHA]texto[FIM_LETRA_VERMELHA]</code></td><td>Texto em vermelho/destaque</td></tr>
+      <tr><td><code>[nome_do_icone.png]</code> (ou .bmp/.ico/.jpg/.svg)</td><td>Ícone pequeno inline (o arquivo precisa estar em <code>images/</code>)</td></tr>
+    </table>
+  </section>
+
+  <section id="tolerancia">
+    <h2><span class="num">3</span> O que o conversor tolera (e avisa)</h2>
+    <p>O script não trava o site por um marcador fora do lugar — ele sempre tenta gerar algo razoável e
+    registra um aviso no relatório. Isso é o que muda em relação a antes.</p>
+    <ul>
+      <li><b>Marcador desconhecido</b> (ex.: <code>[Run Time]</code> antes de entrar na tabela): vira uma
+      propriedade genérica com esse nome. Nada é perdido, nada quebra.</li>
+      <li><b><code>[TITULO]</code> sem <code>[COLUNA]</code> antes:</b> uma coluna é criada automaticamente.</li>
+      <li><b>Print referenciado que não existe em <code>images/</code>:</b> vira um aviso — o card daquela
+      imagem simplesmente não aparece, o resto da etapa segue normal.</li>
+      <li><b>Posição sem prefixo de nome, com mais de um objeto citado:</b> o script tenta resolver pela
+      ordem em que os objetos foram citados; quando não consegue com segurança, avisa qual nome escolheu.</li>
+    </ul>
+    <div class="callout note"><b>Dica</b>Depois de editar o Word, sempre dê uma olhada rápida em
+    <code>build/relatorio-build.txt</code>. Zero avisos novos = pode confiar no site.</div>
+  </section>
+
+  <section id="minimapa">
+    <h2><span class="num">4</span> Convenção para o mini-mapa (importante)</h2>
+    <p>O mini-mapa de cada modelo é desenhado automaticamente a partir das coordenadas que você já escreve em
+    <code>[VISUALS]</code>/<code>[DECISION_POINT]</code>/<code>[CONVEYOR]</code>. Para isso funcionar bem:</p>
+    <ul>
+      <li>Sempre que citar coordenadas de <b>mais de um objeto</b> na mesma propriedade, prefira o formato
+      <code class="mono">NOME: X = .. ; Y = ..</code> (nome antes dos dois-pontos) em vez de deixar os
+      objetos "soltos" um embaixo do outro. Isso evita ambiguidade.</li>
+      <li><b>Sempre que reposicionar um objeto que já existia em um modelo anterior</b> (ex.: mover o Sink de
+      lugar), inclua um bloco <code>[VISUALS]</code> com a <b>nova</b> coordenada — não basta escrever "coloque
+      em X = 50" só no Roteiro ou na Observação. O mini-mapa só lê coordenadas de dentro de
+      <code>[VISUALS]</code>/<code>[DECISION_POINT]</code>, então uma reposição mencionada apenas em texto
+      livre não é capturada, e o objeto continua aparecendo na posição antiga no mapa.</li>
+    </ul>
+    <div class="callout warn"><b>Situação encontrada</b>Isso já aconteceu com o Sink "SAIDA_CLIENTES": a
+    reposição para X=50 (Modelo 03) e X=80 (Modelo 05) está apenas em texto corrido, então o mini-mapa desses
+    modelos ainda mostra o Sink na posição original (X=30). Veja a seção 7, item 4.</div>
+  </section>
+
+  <section id="opcionais">
+    <h2><span class="num">5</span> Marcadores opcionais novos <span class="badge-optional">sugestão, não obrigatório</span></h2>
+    <p>O site (renderer) já sabe exibir estes três marcadores como caixas de destaque, caso você queira
+    usá-los no futuro. Eles são <b>opcionais</b> — nenhuma etapa existente precisa deles.</p>
+    <table>
+      <tr><th>Marcador</th><th>Uso sugerido</th></tr>
+      <tr><td><code>[DICA]texto[FIM_DICA]</code></td><td>Uma dica rápida, não essencial ao procedimento.</td></tr>
+      <tr><td><code>[ATENCAO]texto[FIM_ATENCAO]</code></td><td>Um alerta mais forte que uma Observação comum.</td></tr>
+      <tr><td><code>[ATALHO]texto[FIM_ATALHO]</code></td><td>Destaca um atalho de teclado citado no meio do texto.</td></tr>
+    </table>
+  </section>
+
+  <section id="relatorio">
+    <h2><span class="num">6</span> Como ler o relatório de geração</h2>
+    <p><code>build/relatorio-build.txt</code> é gerado a cada execução do <code>Gerar_Site.bat</code> e traz:</p>
+    <ul>
+      <li>Contagem de aulas, modelos, etapas, colunas e prints — útil para conferir que nada "sumiu".</li>
+      <li>Lista de avisos, cada um dizendo em qual Modelo/Etapa ocorreu.</li>
+      <li>Quantas imagens foram otimizadas nessa execução (a otimização só roda de novo quando o print
+      original muda).</li>
+    </ul>
+  </section>
+
+  <section id="inconsistencias">
+    <h2><span class="num">7</span> Inconsistências de conteúdo encontradas</h2>
+    <p>Estas são diferenças entre o que está escrito no Word e o que parece ter sido a intenção — nenhuma
+    delas quebra o site (o conversor sempre gera algo), mas corrigi-las deixa o conteúdo mais fiel e o
+    mini-mapa mais preciso. Revisadas em <span class="mono">18/09/2026</span> contra a versão mais recente do
+    Word.</p>
+
+    <div class="issue">
+      <span class="loc">MODELO 01 · ETAPA 02</span>
+      <p>A propriedade da Queue "PLACAS_VIRGENS" (Max Content = 1000000) está marcada como
+      <code>[SOURCE]</code> em vez de <code>[QUEUE]</code>.</p>
+      <p class="fix">Correção: trocar o marcador para <code>[QUEUE]</code>.</p>
+    </div>
+
+    <div class="issue">
+      <span class="loc">MODELO 01 · ETAPA 05</span>
+      <p>O texto de <code>[ACAO_MOUSE]</code> diz "clicar primeiro no Source e depois na Queue", mas essa
+      etapa é sobre conectar as Impressoras ao Sink (parece um texto copiado da Etapa 02 e não atualizado).</p>
+      <p class="fix">Correção: atualizar para algo como "clicar primeiro na Impressora e depois no Sink".</p>
+    </div>
+
+    <div class="issue">
+      <span class="loc">MODELO 01 · ETAPA 05</span>
+      <p>O <code>[OBJETO]</code> desta coluna está escrito "Sink – SAÍDAS_CLIENTES" (plural, com acento),
+      enquanto o restante do documento usa "SAIDA_CLIENTES" (singular, sem acento) a partir do Modelo 03.
+      Como são nomes diferentes para o site, isso faz um Sink "fantasma" aparecer no mini-mapa do Modelo 01,
+      na posição antiga, mesmo depois de reposicionado.</p>
+      <p class="fix">Correção: trocar para "Sink – SAIDA_CLIENTES", igual ao resto do documento.</p>
+    </div>
+
+    <div class="issue">
+      <span class="loc">MODELO 03 · ETAPA 01  /  MODELO 05 · ETAPA 01</span>
+      <p>A reposição do Sink "SAIDA_CLIENTES" (para X=50 no Modelo 03, depois X=80 no Modelo 05) está descrita
+      apenas em texto corrido (Roteiro/Observação), sem um bloco <code>[VISUALS]</code> com a nova
+      coordenada. Por isso o mini-mapa desses modelos continua mostrando o Sink na posição original (X=30).</p>
+      <p class="fix">Correção: adicionar um bloco <code>[VISUALS]</code> com a nova posição nessas duas etapas.
+      Veja a convenção na seção 4 deste guia.</p>
+    </div>
+
+    <div class="issue">
+      <span class="loc">MODELO 03 · ETAPA 05</span>
+      <p>O marcador <code>[OBJETO] Conveyor</code> aparece duas vezes seguidas na mesma coluna
+      ("Adicionando e configurando objeto (Esteira aprovados)").</p>
+      <p class="fix">Correção: remover uma das duas ocorrências (é só redundância visual, não afeta os dados).</p>
+    </div>
+
+    <div class="issue">
+      <span class="loc">MODELO 04 · ETAPA 01</span>
+      <p>Duas pequenas sobras de edição: um "2°" sozinho sem o texto que deveria vir depois, e
+      "Processor – "IMPRESSORA_1"1" com um "1" extra no final do nome.</p>
+      <p class="fix">Correção: completar a frase do "2°" (provavelmente instrução de conectar/abrir
+      propriedades) e remover o "1" solto.</p>
+    </div>
+
+    <div class="issue">
+      <span class="loc">MODELO 04 · ETAPA 02</span>
+      <p>No Processor "IMPRESSORA_1/2", o <code>Case Function</code> está definido como
+      <code class="mono">item.MODELO</code>, mas os valores dos casos são "ORIGINAL" e "REPROVADA" — que são
+      valores da label <code class="mono">QUALIDADE</code>, não de <code class="mono">MODELO</code> (que
+      guarda 1 ou 2).</p>
+      <p class="fix">Correção: trocar para <code class="mono">Case Function: item.QUALIDADE</code>.</p>
+    </div>
+
+    <div class="issue">
+      <span class="loc">MODELO 06 · ETAPA 03</span><span class="loc low">baixa prioridade</span>
+      <p>O título está como "Etapa 3 – Resultados", enquanto em todos os outros modelos a etapa final se
+      chama apenas "Resultados". Funciona igual no site (o conversor reconhece pela palavra "Resultados"),
+      é só uma questão de padronização visual do Word.</p>
+      <p class="fix">Correção (opcional): renomear para apenas "Resultados", como nos demais modelos.</p>
+    </div>
+
+    <div class="issue">
+      <span class="loc">DIGITAÇÃO</span><span class="loc low">cosmético</span>
+      <p>Pequenos erros de digitação espalhados pelo documento:</p>
+      <ul>
+        <li>"NA AMESMA PROPORÇÃO" → "na mesma proporção" (Modelo 01, Etapa 03)</li>
+        <li>"SERÃO LERVADAS" → "serão levadas" (Modelo 04, Etapa 01)</li>
+        <li>"O MOVIMETADOR_2" → "O MOVIMENTADOR_2" (Modelo 04, Etapa 01)</li>
+        <li>"Ao finalizer" → "Ao finalizar" (Modelo 04, Etapa 02)</li>
+        <li>"qualquer commando" → "qualquer comando" (Modelo 04, Etapa 02)</li>
+        <li>"APÓS 60 SEGUNDO DE ÍNICIO" → "de início" (Modelos 05 e 06)</li>
+        <li>"send mensage + on mensage" → "send message + on message" (Modelos 05 e 06)</li>
+        <li>"OS CLILINDROS DE COMPONENTES" → "os cilindros de componentes" (Modelo 05, Etapa 03)</li>
+        <li>"From Inpurt Port 3" → "From Input Port 3" (Modelo 06, Etapa 01 — esse é texto de captura de tela do próprio FlexSim, então pode não dar para corrigir; deixado como nota)</li>
+      </ul>
+    </div>
+
+    <div class="callout ok"><b>Já corrigido nesta revisão</b>Prints ausentes do Modelo 04, títulos de aula,
+    marcador <code>[Run Time]</code> na tabela, <code>[COLUNA]</code> faltando nos Modelos 02 e 03, quebra de
+    parágrafo no meio de "Etapa 02" (Modelo 06) e a posição ambígua do Modelo 05 — nenhuma ação adicional
+    necessária para esses itens.</div>
+  </section>
+
+  <footer>Gerado a partir da análise do Word-Mestre em 18/09/2026 · Tutorial FlexSim Education v2027-0</footer>
+</div>
+</body>
+</html>
