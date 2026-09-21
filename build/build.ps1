@@ -518,6 +518,8 @@ function Normalize-ObjName([string]$n) {
 
 $typeRegex = '(Source|Queue|Processor|Sink|Operator|Conveyor|Decision Point|Combiner|Separator|Global Table|A\*? ?Navigation)'
 $globalLayout = @{}   # nome normalizado -> objeto layout (persistente entre modelos)
+$nameTypeMap = @{}    # nome normalizado -> tipo (persistente no documento inteiro, para nao depender
+                       # de qual foi o ULTIMO tipo mencionado na mesma coluna quando ha mais de um objeto)
 
 foreach ($course in $Courses) {
   foreach ($model in $course.models) {
@@ -534,7 +536,10 @@ foreach ($course in $Courses) {
           if ($mm.Success) {
             $typeInObjeto = $mm.Groups[1].Value.Trim()
             $nm = Normalize-ObjName $mm.Groups[2].Value
-            if ($nm) { $namesInObjeto.Add($nm) }
+            if ($nm) {
+              $namesInObjeto.Add($nm)
+              $nameTypeMap[$nm] = $typeInObjeto
+            }
           }
         }
 
@@ -570,7 +575,8 @@ foreach ($course in $Courses) {
               $rotVal = 0
               if ($rotMatches.Count -eq $coordMatches.Count) { $rotVal = [double]($rotMatches[$ci].Groups[1].Value -replace ',', '.') }
               elseif ($rotMatches.Count -eq 1) { $rotVal = [double]($rotMatches[0].Groups[1].Value -replace ',', '.') }
-              $obj = [PSCustomObject]@{ name = $targetName; type = $typeInObjeto; x = $x; y = $y; rot = $rotVal; stageId = $stage.id }
+              $resolvedType = if ($nameTypeMap.ContainsKey($targetName)) { $nameTypeMap[$targetName] } else { $typeInObjeto }
+              $obj = [PSCustomObject]@{ name = $targetName; type = $resolvedType; x = $x; y = $y; rot = $rotVal; stageId = $stage.id }
               $globalLayout[$targetName] = $obj
               [void]$newNamesThisModel.Add($targetName)
             }

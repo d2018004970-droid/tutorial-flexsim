@@ -1,7 +1,7 @@
 ﻿window.TUTORIAL_CONTENT = {
     "meta":  {
                  "title":  "Tutorial de Modelagem utilizando FlexSim Education v2027-0",
-                 "generatedAt":  "2026-09-21T18:41:27.8173870-03:00",
+                 "generatedAt":  "2026-09-21T18:58:27.7542071-03:00",
                  "source":  "Word_Mestre_Tutorial_FlexSim_ongoing.docx",
                  "counts":  {
                                 "courses":  3,
@@ -1426,7 +1426,8 @@
                                                                                                          "key":  "VISUALS",
                                                                                                          "title":  "Visuals",
                                                                                                          "lines":  [
-                                                                                                                       "PLACAS_IMPRESSAS - [Mid6_small.png] X = 30.00 ; Y = 0.00 ; Z = 0.00"
+                                                                                                                       "PLACAS_IMPRESSAS - [Mid6_small.png] X = 30.00 ; Y = 0.00 ; Z = 0.00",
+                                                                                                                       "SAIDA_CLIENTES - [Mid6_small.png] X = 50.00 ; Y = 0.00 ; Z = 0.00"
                                                                                                                    ]
                                                                                                      },
                                                                                                      {
@@ -1896,9 +1897,6 @@
                                                                                                   "QUE AGORA ESTARÁ POSICIONADO EM X = 50.00 ; Y = 0.00 ; Z = 0.00"
                                                                                               ],
                                                                                   "objeto":  [
-                                                                                                 "Conveyor",
-                                                                                                 "",
-                                                                                                 "",
                                                                                                  "Conveyor"
                                                                                              ],
                                                                                   "caminho":  [
@@ -2410,11 +2408,11 @@
                                                                           {
                                                                               "name":  "SAIDA_CLIENTES",
                                                                               "type":  "Sink",
-                                                                              "x":  30,
+                                                                              "x":  50,
                                                                               "y":  0,
                                                                               "rot":  0,
-                                                                              "stageId":  "modelo-01-etapa-05",
-                                                                              "isNew":  false
+                                                                              "stageId":  "modelo-03-etapa-01",
+                                                                              "isNew":  true
                                                                           }
                                                                       ]
                                                       }
@@ -3263,10 +3261,10 @@
                                                                           {
                                                                               "name":  "SAIDA_CLIENTES",
                                                                               "type":  "Sink",
-                                                                              "x":  30,
+                                                                              "x":  50,
                                                                               "y":  0,
                                                                               "rot":  0,
-                                                                              "stageId":  "modelo-01-etapa-05",
+                                                                              "stageId":  "modelo-03-etapa-01",
                                                                               "isNew":  false
                                                                           }
                                                                       ]
@@ -3694,8 +3692,7 @@
                                                                                                          "key":  "VISUALS",
                                                                                                          "title":  "Visuals",
                                                                                                          "lines":  [
-                                                                                                                       "Sink – “SAIDA_CLIENTES”",
-                                                                                                                       "[Mid6_small.png] X = 80.00 ; Y = 0.00 ; Z = 0.00"
+                                                                                                                       "SAIDA_CLIENTES: [Mid6_small.png] X = 80.00 ; Y = 0.00 ; Z = 0.00"
                                                                                                                    ]
                                                                                                      }
                                                                                                  ],
@@ -4923,9 +4920,10 @@
                      },
                      {
                          "type":  "Sink",
-                         "count":  2,
+                         "count":  3,
                          "stages":  [
                                         "modelo-01-etapa-05",
+                                        "modelo-03-etapa-01",
                                         "modelo-05-etapa-03"
                                     ]
                      },
@@ -4984,7 +4982,6 @@
                      "Texto fora de qualquer campo ignorado: \u0027\u003cb\u003eIMPORTANTE: \u003c/b\u003eÉ nesta seção que você irá inserir as etapas reais. A seção 5 é apenas consulta.\u0027",
                      "Aula 1 sem titulo apos o traco.",
                      "Aula 2 sem titulo apos o traco.",
-                     "Aula 3 sem titulo apos o traco.",
-                     "Posicao ambigua (varios objetos, sem prefixo de nome) em Modelo 5, Etapa 03 — associada a \u0027SAIDA_CLIENTES\u0027."
+                     "Aula 3 sem titulo apos o traco."
                  ]
 };

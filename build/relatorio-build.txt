@@ -1,5 +1,5 @@
 ﻿=== RELATORIO DE GERACAO DO SITE — Tutorial FlexSim ===
-Gerado em: 21/09/2026 18:41:27
+Gerado em: 21/09/2026 18:58:27
 
 Aulas: 3
 Modelos: 6
@@ -8,9 +8,8 @@ Colunas: 73
 Prints referenciados: 110
 Imagens otimizadas nesta execucao: 0
 
-=== AVISOS (5) ===
+=== AVISOS (4) ===
 - Texto fora de qualquer campo ignorado: '<b>IMPORTANTE: </b>É nesta seção que você irá inserir as etapas reais. A seção 5 é apenas consulta.'
 - Aula 1 sem titulo apos o traco.
 - Aula 2 sem titulo apos o traco.
 - Aula 3 sem titulo apos o traco.
-- Posicao ambigua (varios objetos, sem prefixo de nome) em Modelo 5, Etapa 03 — associada a 'SAIDA_CLIENTES'.
