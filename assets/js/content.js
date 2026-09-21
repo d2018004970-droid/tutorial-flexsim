@@ -1,7 +1,7 @@
 ﻿window.TUTORIAL_CONTENT = {
     "meta":  {
                  "title":  "Tutorial de Modelagem utilizando FlexSim Education v2027-0",
-                 "generatedAt":  "2026-09-21T17:52:35.0415013-03:00",
+                 "generatedAt":  "2026-09-21T18:41:27.8173870-03:00",
                  "source":  "Word_Mestre_Tutorial_FlexSim_ongoing.docx",
                  "counts":  {
                                 "courses":  3,
@@ -196,8 +196,8 @@
                                                                                                                    ]
                                                                                                      },
                                                                                                      {
-                                                                                                         "key":  "SOURCE",
-                                                                                                         "title":  "Source",
+                                                                                                         "key":  "QUEUE",
+                                                                                                         "title":  "Queue",
                                                                                                          "lines":  [
                                                                                                                        "Max Content = 1000000"
                                                                                                                    ]
@@ -231,7 +231,7 @@
                                                                                              ],
                                                                                   "roteiro":  [
                                                                                                   "CHEGAM DOIS MODELOS DIFERENTES,",
-                                                                                                  "ALEATORIAMENTE NA AMESMA PROPORÇÃO",
+                                                                                                  "ALEATORIAMENTE NA MESMA PROPORÇÃO",
                                                                                                   "MODELOS E COLOCAÇÕES:",
                                                                                                   "1 – GREEN; 2 - YELLOW"
                                                                                               ],
@@ -454,7 +454,7 @@
 
                                                                                               ],
                                                                                   "acao":  [
-                                                                                               "Conectar objetos (Atalho: Letra “A” do teclado - clicar primeiro no Source e depois na Queue.)"
+                                                                                               "Conectar objetos (Atalho: Letra “A” do teclado - clicar primeiro na Impressora e depois no Sink.)"
                                                                                            ],
                                                                                   "properties":  [
                                                                                                      {
@@ -2446,7 +2446,7 @@
                                                                                              ],
                                                                                   "roteiro":  [
                                                                                                   "NESTE NOVO MODELO, DO “QUEUE: PLACAS_IMPRESSAS_REPROVADAS”,",
-                                                                                                  "AS PLACAS SERÃO LERVADAS PELOS MOVIMENTADORES PARA SEREM",
+                                                                                                  "AS PLACAS SERÃO LEVADAS PELOS MOVIMENTADORES PARA SEREM",
                                                                                                   "RETRABALHADAS NAS IMPRESSORAS NAS QUAIS FORAM IMPRESSAS:"
                                                                                               ],
                                                                                   "objeto":  [
@@ -2464,7 +2464,7 @@
                                                                                                "Queue “PLACAS_IMPRESSAS_REPROVADAS” → Processor “IMPRESSORA_1”",
                                                                                                "Queue “PLACAS_IMPRESSAS_REPROVADAS” → Processor “IMPRESSORA_2”",
                                                                                                "",
-                                                                                               "2°"
+                                                                                               "2°: Para abrir as propriedades do objeto, clique sobre ele com o botão esquerdo do mouse ou clique duas vezes com o botão esquerdo do mouse."
                                                                                            ],
                                                                                   "properties":  [
                                                                                                      {
@@ -2503,7 +2503,7 @@
                                                                                   "roteiro":  [
                                                                                                   "SENDO QUE:",
                                                                                                   "O MOVIMENTADOR_1 LEVARÁ AS PLACAS MODELO 1 PARA O “ PROCESSOR: IMPRESSORA_1 ”",
-                                                                                                  "E O MOVIMETADOR_2 LEVARÁ AS PLACAS MODELO 2 PARA O “ PROCESSOR: IMPRESSORA_2 ”"
+                                                                                                  "E O MOVIMENTADOR_2 LEVARÁ AS PLACAS MODELO 2 PARA O “ PROCESSOR: IMPRESSORA_2 ”"
                                                                                               ],
                                                                                   "objeto":  [
                                                                                                  "Queue – “PLACAS_IMPRESSAS_REPROVADAS”",
@@ -2559,7 +2559,7 @@
                                                                                                   "AS PLACAS PARA RETRABALHO TERÃO PRIORIDADE NAS IMPRESSORAS,"
                                                                                               ],
                                                                                   "objeto":  [
-                                                                                                 "Processor – “IMPRESSORA_1”1",
+                                                                                                 "Processor – “IMPRESSORA_1”",
                                                                                                  "Processor – “IMPRESSORA_2”"
                                                                                              ],
                                                                                   "caminho":  [
@@ -2669,7 +2669,7 @@
                                                                                                          "title":  "Processor",
                                                                                                          "lines":  [
                                                                                                                        "Process Time → [down_arrow.bmp] Values By Case:",
-                                                                                                                       "Case Function: \u003cb\u003eitem.MODELO\u003c/b\u003e",
+                                                                                                                       "Case Function: \u003cb\u003eitem.QUALIDADE\u003c/b\u003e",
                                                                                                                        "2x [PLUS] Para adicionar “Case + Time”:",
                                                                                                                        "Case: \u003cb\u003e“ORIGINAL”\u003c/b\u003e  Time: \u003cb\u003e20\u003c/b\u003e",
                                                                                                                        "Case: \u003cb\u003e“REPROVADA”\u003c/b\u003e  Time: \u003cb\u003e10\u003c/b\u003e"
@@ -2706,7 +2706,7 @@
                                                                                               ],
                                                                                   "acao":  [
                                                                                                "Segure a Tecla CTRL e clique nas duas impressoras, até que elas fiquem com o paralelepípedo Vermelho ao redor. Após isso, configure de forma idêntica as duas.",
-                                                                                               "Ao finalizer, segure a Tecla Shift e clique em algum local vazio no Mapa 3D para remover a seleção das duas impressoras."
+                                                                                               "Ao finalizar, segure a Tecla Shift e clique em algum local vazio no Mapa 3D para remover a seleção das duas impressoras."
                                                                                            ],
                                                                                   "properties":  [
                                                                                                      {
@@ -2723,7 +2723,7 @@
                                                                                                  ],
                                                                                   "observacoes":  [
                                                                                                       [
-                                                                                                          "Com as duas impressoras selecionadas, qualquer commando que fizer, altera nas duas igualmente."
+                                                                                                          "Com as duas impressoras selecionadas, qualquer comando que fizer, altera nas duas igualmente."
                                                                                                       ]
                                                                                                   ]
                                                                               }
@@ -3550,8 +3550,8 @@
                                                                                              ],
                                                                                   "roteiro":  [
                                                                                                   "SERÃO CRIADOS 2880 CILINDROS DE DIMENSÕES 0.25 x 0.25 x 0.25 NA COR CINZA,",
-                                                                                                  "QUE ENTRARÃO NESSE ESTOQUE APÓS 60 SEGUNDO DE ÍNICIO DO TURNO,",
-                                                                                                  "( utilize as funções send mensage + on mensage ) "
+                                                                                                  "QUE ENTRARÃO NESSE ESTOQUE APÓS 60 SEGUNDO DE INÍCIO DO TURNO,",
+                                                                                                  "( utilize as funções send message + on message ) "
                                                                                               ],
                                                                                   "objeto":  [
                                                                                                  "Queue – “COMPONENTES_CILINDROS_CHEIOS”"
@@ -3675,7 +3675,7 @@
                                                                                              ],
                                                                                   "roteiro":  [
                                                                                                   "ESSE PROCESSO, ALÉM DE FAZER O ACABAMENTO, REALIZARÁ A SEPARAÇÃO ENTRE",
-                                                                                                  "AS PLACAS IMPRESSAS MONTADAS E OS CLILINDROS DE COMPONENTES VAZIOS,",
+                                                                                                  "AS PLACAS IMPRESSAS MONTADAS E OS CILINDROS DE COMPONENTES VAZIOS,",
                                                                                                   "SENDO AS PLACAS ENVIADAS PARA O “ SINK: SAIDA_CLIENTES ”,",
                                                                                                   "POSICIONADO EM X = 80.00 ; Y = 0.00 ; Z = 0.00"
                                                                                               ],
@@ -4339,8 +4339,8 @@
                                                                                                   "( com capacidade infinita )",
                                                                                                   "POSICIONADO EM X = 57.00 ; Y = -10.00 ; Z = 0.00",
                                                                                                   "SERÃO CRIADOS 1.440 CILINDROS DE DIMENSÕES 0.25 x 0.25 x 0.25 NA COR VERDE,",
-                                                                                                  "QUE ENTRARÃO NESSE ESTOQUE APÓS 60 SEGUNDO DE ÍNICIO DO TURNO",
-                                                                                                  "( mais uma vez, você deverá utilizar as funções send mensage + on mensage )"
+                                                                                                  "QUE ENTRARÃO NESSE ESTOQUE APÓS 60 SEGUNDO DE INÍCIO DO TURNO",
+                                                                                                  "( mais uma vez, você deverá utilizar as funções send message + on message )"
                                                                                               ],
                                                                                   "objeto":  [
                                                                                                  "Antes: Queue – “COMPONENTES_CILINDROS_CHEIOS”",
@@ -4394,8 +4394,8 @@
                                                                                                   "( com capacidade infinita )",
                                                                                                   "POSICIONADO EM X = 63.00 ; Y = -10.00 ; Z = 0.00",
                                                                                                   "SERÃO CRIADOS 1.440 CILINDROS DE DIMENSÕES 0.25 x 0.25 x 0.25 NA COR AMARELA,",
-                                                                                                  "QUE ENTRARÃO NESSE ESTOQUE APÓS 60 SEGUNDO DE ÍNICIO DO TURNO",
-                                                                                                  "( mais uma vez, você deverá utilizar as funções send mensage + on mensage )"
+                                                                                                  "QUE ENTRARÃO NESSE ESTOQUE APÓS 60 SEGUNDO DE INÍCIO DO TURNO",
+                                                                                                  "( mais uma vez, você deverá utilizar as funções send message + on message )"
                                                                                               ],
                                                                                   "objeto":  [
                                                                                                  "Queue – “COMPONENTES_CILINDROS_CHEIOS_MOD_2”"
@@ -4540,7 +4540,7 @@
                                                               "id":  "modelo-06-etapa-03",
                                                               "number":  "03",
                                                               "type":  "results",
-                                                              "title":  "Etapa 3 – Resultados",
+                                                              "title":  "Resultados",
                                                               "columns":  [
                                                                               {
                                                                                   "title":  "Validando o modelo simulado.",

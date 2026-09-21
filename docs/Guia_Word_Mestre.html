@@ -183,7 +183,7 @@
     </ul>
     <div class="callout warn"><b>Situação encontrada</b>Isso já aconteceu com o Sink "SAIDA_CLIENTES": a
     reposição para X=50 (Modelo 03) e X=80 (Modelo 05) está apenas em texto corrido, então o mini-mapa desses
-    modelos ainda mostra o Sink na posição original (X=30). Veja a seção 7, item 4.</div>
+    modelos ainda mostra o Sink na posição original (X=30). Veja a seção 7 ("Ainda precisam da sua ação").</div>
   </section>
 
   <section id="opcionais">
@@ -212,89 +212,48 @@
   <section id="inconsistencias">
     <h2><span class="num">7</span> Inconsistências de conteúdo encontradas</h2>
     <p>Estas são diferenças entre o que está escrito no Word e o que parece ter sido a intenção — nenhuma
-    delas quebra o site (o conversor sempre gera algo), mas corrigi-las deixa o conteúdo mais fiel e o
-    mini-mapa mais preciso. Revisadas em <span class="mono">18/09/2026</span> contra a versão mais recente do
-    Word.</p>
+    delas quebra o site (o conversor sempre gera algo). Revisadas em <span class="mono">21/09/2026</span>.</p>
 
-    <div class="issue">
-      <span class="loc">MODELO 01 · ETAPA 02</span>
-      <p>A propriedade da Queue "PLACAS_VIRGENS" (Max Content = 1000000) está marcada como
-      <code>[SOURCE]</code> em vez de <code>[QUEUE]</code>.</p>
-      <p class="fix">Correção: trocar o marcador para <code>[QUEUE]</code>.</p>
-    </div>
-
-    <div class="issue">
-      <span class="loc">MODELO 01 · ETAPA 05</span>
-      <p>O texto de <code>[ACAO_MOUSE]</code> diz "clicar primeiro no Source e depois na Queue", mas essa
-      etapa é sobre conectar as Impressoras ao Sink (parece um texto copiado da Etapa 02 e não atualizado).</p>
-      <p class="fix">Correção: atualizar para algo como "clicar primeiro na Impressora e depois no Sink".</p>
-    </div>
-
-    <div class="issue">
-      <span class="loc">MODELO 01 · ETAPA 05</span>
-      <p>O <code>[OBJETO]</code> desta coluna está escrito "Sink – SAÍDAS_CLIENTES" (plural, com acento),
-      enquanto o restante do documento usa "SAIDA_CLIENTES" (singular, sem acento) a partir do Modelo 03.
-      Como são nomes diferentes para o site, isso faz um Sink "fantasma" aparecer no mini-mapa do Modelo 01,
-      na posição antiga, mesmo depois de reposicionado.</p>
-      <p class="fix">Correção: trocar para "Sink – SAIDA_CLIENTES", igual ao resto do documento.</p>
-    </div>
-
-    <div class="issue">
-      <span class="loc">MODELO 03 · ETAPA 01  /  MODELO 05 · ETAPA 01</span>
-      <p>A reposição do Sink "SAIDA_CLIENTES" (para X=50 no Modelo 03, depois X=80 no Modelo 05) está descrita
-      apenas em texto corrido (Roteiro/Observação), sem um bloco <code>[VISUALS]</code> com a nova
-      coordenada. Por isso o mini-mapa desses modelos continua mostrando o Sink na posição original (X=30).</p>
-      <p class="fix">Correção: adicionar um bloco <code>[VISUALS]</code> com a nova posição nessas duas etapas.
-      Veja a convenção na seção 4 deste guia.</p>
-    </div>
-
-    <div class="issue">
-      <span class="loc">MODELO 03 · ETAPA 05</span>
-      <p>O marcador <code>[OBJETO] Conveyor</code> aparece duas vezes seguidas na mesma coluna
-      ("Adicionando e configurando objeto (Esteira aprovados)").</p>
-      <p class="fix">Correção: remover uma das duas ocorrências (é só redundância visual, não afeta os dados).</p>
-    </div>
-
-    <div class="issue">
-      <span class="loc">MODELO 04 · ETAPA 01</span>
-      <p>Duas pequenas sobras de edição: um "2°" sozinho sem o texto que deveria vir depois, e
-      "Processor – "IMPRESSORA_1"1" com um "1" extra no final do nome.</p>
-      <p class="fix">Correção: completar a frase do "2°" (provavelmente instrução de conectar/abrir
-      propriedades) e remover o "1" solto.</p>
-    </div>
-
-    <div class="issue">
-      <span class="loc">MODELO 04 · ETAPA 02</span>
-      <p>No Processor "IMPRESSORA_1/2", o <code>Case Function</code> está definido como
-      <code class="mono">item.MODELO</code>, mas os valores dos casos são "ORIGINAL" e "REPROVADA" — que são
-      valores da label <code class="mono">QUALIDADE</code>, não de <code class="mono">MODELO</code> (que
-      guarda 1 ou 2).</p>
-      <p class="fix">Correção: trocar para <code class="mono">Case Function: item.QUALIDADE</code>.</p>
-    </div>
-
-    <div class="issue">
-      <span class="loc">MODELO 06 · ETAPA 03</span><span class="loc low">baixa prioridade</span>
-      <p>O título está como "Etapa 3 – Resultados", enquanto em todos os outros modelos a etapa final se
-      chama apenas "Resultados". Funciona igual no site (o conversor reconhece pela palavra "Resultados"),
-      é só uma questão de padronização visual do Word.</p>
-      <p class="fix">Correção (opcional): renomear para apenas "Resultados", como nos demais modelos.</p>
-    </div>
-
-    <div class="issue">
-      <span class="loc">DIGITAÇÃO</span><span class="loc low">cosmético</span>
-      <p>Pequenos erros de digitação espalhados pelo documento:</p>
+    <div class="callout ok"><b>Corrigido automaticamente nesta revisão (direto no .docx)</b>
+    A IA corrigiu os itens abaixo diretamente no Word-Mestre, validando depois que o site continua gerando
+    exatamente as mesmas 3 aulas / 6 modelos / 33 etapas / 73 colunas / 110 prints de antes — nada foi
+    quebrado:
       <ul>
-        <li>"NA AMESMA PROPORÇÃO" → "na mesma proporção" (Modelo 01, Etapa 03)</li>
-        <li>"SERÃO LERVADAS" → "serão levadas" (Modelo 04, Etapa 01)</li>
-        <li>"O MOVIMETADOR_2" → "O MOVIMENTADOR_2" (Modelo 04, Etapa 01)</li>
-        <li>"Ao finalizer" → "Ao finalizar" (Modelo 04, Etapa 02)</li>
-        <li>"qualquer commando" → "qualquer comando" (Modelo 04, Etapa 02)</li>
-        <li>"APÓS 60 SEGUNDO DE ÍNICIO" → "de início" (Modelos 05 e 06)</li>
-        <li>"send mensage + on mensage" → "send message + on message" (Modelos 05 e 06)</li>
-        <li>"OS CLILINDROS DE COMPONENTES" → "os cilindros de componentes" (Modelo 05, Etapa 03)</li>
-        <li>"From Inpurt Port 3" → "From Input Port 3" (Modelo 06, Etapa 01 — esse é texto de captura de tela do próprio FlexSim, então pode não dar para corrigir; deixado como nota)</li>
+        <li>Marcador <code>[SOURCE]</code> → <code>[QUEUE]</code> na propriedade Max Content da Queue
+        "PLACAS_VIRGENS" (Modelo 01, Etapa 02).</li>
+        <li>Ação do mouse corrigida de "clicar no Source e na Queue" para "clicar na Impressora e no Sink"
+        (Modelo 01, Etapa 05).</li>
+        <li>"2°" completado com o texto padrão ("Para abrir as propriedades do objeto...") (Modelo 04, Etapa 01).</li>
+        <li>"IMPRESSORA_1"1" → "IMPRESSORA_1"" (dígito solto removido) (Modelo 04, Etapa 01).</li>
+        <li><code class="mono">Case Function: item.MODELO</code> → <code class="mono">item.QUALIDADE</code>
+        no Processor das impressoras (Modelo 04, Etapa 02).</li>
+        <li>"Etapa 3 – Resultados" → "Resultados", padronizado com os demais modelos (Modelo 06).</li>
+        <li>Digitação: "AMESMA" → "MESMA" (Modelo 01), "LERVADAS" → "LEVADAS" e "MOVIMETADOR" → "MOVIMENTADOR"
+        (Modelo 04), "finalizer" → "finalizar" e "commando" → "comando" (Modelo 04), "SEGUNDO DE ÍNICIO" → "DE
+        INÍCIO" (Modelos 05 e 06, 3x), "send/on mensage" → "send/on message" (Modelos 05 e 06, 3x),
+        "CLILINDROS" → "CILINDROS" (Modelo 05).</li>
+      </ul>
+      Já confirmado também: <b>"Sink – SAÍDAS_CLIENTES"</b> foi padronizado para "SAIDA_CLIENTES" (você já
+      havia corrigido isso).
+    </div>
+
+    <div class="callout warn"><b>Ainda precisam da sua ação (não corrigidos — risco de mexer estrutura sem
+    ver o resultado)</b>
+      <ul>
+        <li><b>Modelo 03 · Etapa 05:</b> o marcador <code>[OBJETO] Conveyor</code> aparece duas vezes seguidas
+        na coluna "Adicionando e configurando objeto (Esteira aprovados)". É só apagar uma das duas linhas —
+        preferi não mexer para não arriscar remover a coluna errada sem você conferir visualmente.</li>
+        <li><b>Modelo 03 · Etapa 01 e Modelo 05 · Etapa 01:</b> a reposição do Sink "SAIDA_CLIENTES" (para
+        X=50 e depois X=80) ainda está descrita só em texto corrido, sem um bloco <code>[VISUALS]</code> com a
+        nova coordenada — por isso o mini-mapa desses dois modelos ainda mostra o Sink na posição antiga
+        (X=30). Veja a convenção da seção 4 para adicionar o bloco certo. Não fiz essa automaticamente porque
+        é uma inserção de conteúdo novo, não uma correção de texto existente.</li>
       </ul>
     </div>
+
+    <div class="callout note"><b>Deixado como está (não é erro)</b>"From Inpurt Port 3" (Modelo 06, Etapa 01)
+    é texto de um print de tela do próprio FlexSim — não dá pra corrigir porque é a interface do software, não
+    um texto seu.</div>
 
     <div class="callout ok"><b>Já corrigido nesta revisão</b>Prints ausentes do Modelo 04, títulos de aula,
     marcador <code>[Run Time]</code> na tabela, <code>[COLUNA]</code> faltando nos Modelos 02 e 03, quebra de
