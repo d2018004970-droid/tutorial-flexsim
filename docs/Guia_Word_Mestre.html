@@ -93,21 +93,39 @@
 
   <section id="fluxo">
     <h2><span class="num">1</span> Como o site é gerado</h2>
-    <p>O site não é mais escrito à mão a cada atualização. Um script (<code>build/build.ps1</code>) lê o
-    Word-Mestre diretamente e monta os dados do site de forma mecânica — a mesma entrada sempre produz a
-    mesma saída.</p>
+    <div class="callout ok"><b>Atualização (21/09/2026)</b> O Word-Mestre não existe mais como arquivo de
+    edição. Agora você edita <code>Word_Mestre.md</code> — um arquivo de texto simples, aberto no
+    <b>VS Code</b> (ou qualquer editor de texto) — sem precisar do Word aberto em paralelo. Os mesmos
+    marcadores entre colchetes continuam funcionando exatamente igual.</div>
+    <p>Um script (<code>build/build.ps1</code>) lê o <code>Word_Mestre.md</code> diretamente e monta os dados
+    do site de forma mecânica — a mesma entrada sempre produz a mesma saída.</p>
     <div class="flow">
-      <span class="step">Editar o Word</span><span class="arrow">&rarr;</span>
+      <span class="step">Editar Word_Mestre.md no VS Code</span><span class="arrow">&rarr;</span>
       <span class="step">Salvar</span><span class="arrow">&rarr;</span>
       <span class="step">Duplo clique em Gerar_Site.bat</span><span class="arrow">&rarr;</span>
       <span class="step">Ler relatorio-build.txt</span><span class="arrow">&rarr;</span>
       <span class="step">Abrir/recarregar index.html</span>
     </div>
-    <p>O <code>index.html</code>, o CSS e o JavaScript do site <b>nunca mudam</b> quando você edita o Word —
-    só o arquivo de dados (<code>assets/js/content.js</code>) é regenerado. Por isso não existe mais o risco
-    de o visual quebrar ou de marcadores vazarem na tela a cada atualização de conteúdo.</p>
-    <div class="callout ok"><b>Importante</b>Você só edita a seção 6 (Área de Trabalho) do Word. As seções 1–5 e 7 são
-    de referência/instrução e não entram no site.</div>
+    <p>O <code>index.html</code>, o CSS e o JavaScript do site <b>nunca mudam</b> quando você edita o
+    conteúdo — só o arquivo de dados (<code>assets/js/content.js</code>) é regenerado.</p>
+    <h3>Como o Markdown é estruturado</h3>
+    <p>Cada Aula vira uma linha começando com <code>##</code>, cada Modelo uma linha começando com
+    <code>###</code>. O resto (etapas, colunas, campos) é exatamente igual ao que você já digitava, só que
+    sem o Word por trás:</p>
+    <table>
+      <tr><th>No Word (antigo)</th><th>No Markdown (agora)</th></tr>
+      <tr><td>Estilo de título "Título 2" na linha da Aula</td><td><code>## 1) Aula 01</code></td></tr>
+      <tr><td>Estilo de título "Título 3" na linha do Modelo</td><td><code>### 1.1) Modelo 01</code></td></tr>
+      <tr><td>Texto em <b>negrito</b> selecionado no Word</td><td><code>&lt;b&gt;texto&lt;/b&gt;</code> (o VS Code mostra isso destacado)</td></tr>
+      <tr><td>Todo o resto (<code>[ETAPA]</code>, <code>[COLUNA]</code>, <code>[PRINT]</code>...)</td><td>Idêntico, sem mudança nenhuma</td></tr>
+    </table>
+    <div class="callout note"><b>Quer ver o conteúdo "bonito"?</b> Toda vez que você roda o
+    <code>Gerar_Site.bat</code>, ele também gera <code>Word_Mestre_Visualizacao.docx</code> — um Word de
+    <b>somente leitura</b>, com títulos coloridos e negrito, montado automaticamente a partir do
+    <code>Word_Mestre.md</code>. É só para conferir visualmente; edições feitas nele são <b>perdidas</b> na
+    próxima geração (o arquivo que vale é sempre o <code>.md</code>).</div>
+    <div class="callout warn"><b>Não delete <code>build/modelo_estilos.docx</code></b> — é o "molde" de onde
+    o site copia as fontes/cores dos títulos para montar o Word de visualização.</div>
   </section>
 
   <section id="marcadores">
@@ -128,7 +146,7 @@
       <tr><td><code>[PROPERTIES]</code></td><td>Início das propriedades do FlexSim</td><td>Apenas organiza visualmente o Word; opcional</td></tr>
       <tr><td><code>[NOME]</code></td><td>Valor de Name</td><td>Propriedade "Nome"</td></tr>
       <tr><td><code>[VISUALS]</code></td><td>Posição/visual (X, Y, Z, rotação)</td><td>Propriedade "Visuals"</td></tr>
-      <tr><td><code>[SOURCE]</code> / <code>[QUEUE]</code> / <code>[PROCESSOR]</code> / <code>[CONVEYOR]</code></td><td>Propriedades específicas do objeto</td><td>Propriedade com o nome do objeto</td></tr>
+      <tr><td><code>[SOURCE]</code> / <code>[QUEUE]</code> / <code>[PROCESSOR]</code> / <code>[MULTIPROCESSOR]</code> / <code>[CONVEYOR]</code></td><td>Propriedades específicas do objeto</td><td>Propriedade com o nome do objeto</td></tr>
       <tr><td><code>[DECISION_POINT]</code></td><td>Nome + posição do Decision Point</td><td>Propriedade "Decision Point"</td></tr>
       <tr><td><code>[OPTIONS]</code></td><td>Opções de Dashboard</td><td>Propriedade "Options"</td></tr>
       <tr><td><code>[A*NAVIGATION]</code> <span class="badge-optional">alias: [A*_NAVIGATOR]</span></td><td>Propriedades do A*</td><td>Propriedade "A* Navigator Properties"</td></tr>

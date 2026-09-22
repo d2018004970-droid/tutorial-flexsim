@@ -1,0 +1,175 @@
+{
+  "Aula nova": {
+    "scope": "markdown",
+    "prefix": "aula",
+    "description": "Cabeçalho de uma nova Aula",
+    "body": [
+      "## ${1:4}) Aula ${1:4}${2: - Nome da aula (opcional)}",
+      ""
+    ]
+  },
+
+  "Modelo novo": {
+    "scope": "markdown",
+    "prefix": "modelo",
+    "description": "Cabeçalho de um novo Modelo",
+    "body": [
+      "### ${1:4}.${2:1}) Modelo ${3:07}",
+      ""
+    ]
+  },
+
+  "Etapa com 1 coluna": {
+    "scope": "markdown",
+    "prefix": "etapa1",
+    "description": "Etapa com um único bloco de conteúdo (largura toda)",
+    "body": [
+      "[ETAPA] Etapa ${1:01} – ${2:Título da etapa}",
+      "[COLUNA]",
+      "[TITULO]",
+      "${3:Título da coluna}",
+      "",
+      "[PRINT]",
+      "${4:NOME_DO_ARQUIVO.png}",
+      "",
+      "[ROTEIRO]",
+      "${5:Trecho do roteiro atendido por esta etapa}",
+      "",
+      "[OBJETO]",
+      "${6:Nome do objeto}",
+      "",
+      "[CAMINHO]",
+      "${7:Barra da Esquerda → Library (Biblioteca) → ...}",
+      "",
+      "[ACAO_MOUSE]",
+      "${8:Ação realizada com o mouse}",
+      "",
+      "[OBSERVACAO]",
+      "${9:Observação complementar (opcional)}",
+      "[FIM_COLUNA]",
+      "",
+      "$0"
+    ]
+  },
+
+  "Etapa com 2 colunas (Adicionando + Setup)": {
+    "scope": "markdown",
+    "prefix": "etapa2",
+    "description": "Etapa com duas colunas lado a lado: Adicionando objeto / Setup do objeto",
+    "body": [
+      "[ETAPA] Etapa ${1:01} – ${2:Título da etapa}",
+      "[COLUNA]",
+      "[TITULO]",
+      "Adicionando objeto",
+      "",
+      "[PRINT]",
+      "${3:NOME_DO_ARQUIVO_1.png}",
+      "",
+      "[ROTEIRO]",
+      "${4:Trecho do roteiro}",
+      "",
+      "[OBJETO]",
+      "${5:Nome do objeto}",
+      "",
+      "[CAMINHO]",
+      "${6:Barra da Esquerda → Library (Biblioteca) → ...}",
+      "",
+      "[ACAO_MOUSE]",
+      "Clique e mantenha pressionado o botão esquerdo do mouse sobre o objeto e arraste-o até o local desejado no Mapa 3D.",
+      "",
+      "Como alternativa, clique uma vez com o botão esquerdo para selecionar o objeto e, em seguida, clique novamente no local desejado do Mapa 3D para adicioná-lo.",
+      "",
+      "[OBSERVACAO]",
+      "Ao utilizar a segunda forma, o objeto permanece selecionado após ser adicionado. Dessa maneira, você pode clicar em outros locais do Mapa 3D para inserir rapidamente outros objetos do mesmo tipo.",
+      "[FIM_COLUNA]",
+      "",
+      "[COLUNA]",
+      "[TITULO]",
+      "Setup do objeto",
+      "",
+      "[PRINT]",
+      "${7:NOME_DO_ARQUIVO_2.png}",
+      "",
+      "[ROTEIRO]",
+      "${8:Trecho do roteiro}",
+      "",
+      "[ACAO_MOUSE]",
+      "Para abrir as propriedades do objeto, clique sobre ele com o botão esquerdo do mouse ou clique duas vezes com o botão esquerdo do mouse.",
+      "",
+      "[PROPERTIES]",
+      "[NOME]",
+      "${9:NOME_DO_OBJETO}",
+      "",
+      "[VISUALS]",
+      "[Mid6_small.png] X = ${10:0.00} ; Y = ${11:0.00} ; Z = 0.00",
+      "[FIM_COLUNA]",
+      "",
+      "$0"
+    ]
+  },
+
+  "Coluna (bloco avulso)": {
+    "scope": "markdown",
+    "prefix": "coluna",
+    "description": "Um bloco [COLUNA]...[FIM_COLUNA] avulso, para adicionar a uma etapa existente",
+    "body": [
+      "[COLUNA]",
+      "[TITULO]",
+      "${1:Título da coluna}",
+      "",
+      "[PRINT]",
+      "${2:NOME_DO_ARQUIVO.png}",
+      "",
+      "[ROTEIRO]",
+      "${3:Trecho do roteiro}",
+      "",
+      "[OBJETO]",
+      "${4:Nome do objeto}",
+      "",
+      "[ACAO_MOUSE]",
+      "${5:Ação realizada com o mouse}",
+      "",
+      "[OBSERVACAO]",
+      "${6:Observação complementar (opcional)}",
+      "[FIM_COLUNA]",
+      "$0"
+    ]
+  },
+
+  "Propriedade Triggers": {
+    "scope": "markdown",
+    "prefix": "triggers",
+    "description": "Bloco de propriedade Triggers",
+    "body": [
+      "[TRIGGERS]",
+      "${1:On Entry} → ${2:Data} → ${3:Set Label}:",
+      "Label: “${4:NOME_LABEL}”",
+      "Value: ${5:valor}",
+      "$0"
+    ]
+  },
+
+  "Etapa de Resultados": {
+    "scope": "markdown",
+    "prefix": "resultados",
+    "description": "Etapa final de Resultados do modelo",
+    "body": [
+      "[ETAPA] Resultados",
+      "[COLUNA]",
+      "[TITULO]",
+      "Checando performance do modelo simulado.",
+      "",
+      "[PRINT]",
+      "${1:NOME_DO_ARQUIVO_RESULTADOS_1.png}",
+      "",
+      "[ROTEIRO]",
+      "Quantidade expedida",
+      "${2:0} unidades",
+      "PROCESSING",
+      "${3:NOME_OBJETO}: ${4:0,00}%",
+      "[FIM_COLUNA]",
+      "",
+      "$0"
+    ]
+  }
+}

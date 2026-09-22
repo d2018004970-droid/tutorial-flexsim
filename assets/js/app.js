@@ -84,6 +84,7 @@
     'Source': 'Gera a chegada de itens (flowitems) no modelo, conforme um padrao de tempo entre chegadas.',
     'Queue': 'Armazena itens aguardando a proxima etapa do processo; pode ter capacidade limitada ou infinita.',
     'Processor': 'Executa uma operacao sobre o item com um tempo de processamento definido.',
+    'MultiProcessor': 'Como o Processor, mas processa varios itens ao mesmo tempo (capacidade multipla).',
     'Sink': 'Remove os itens do modelo, representando a saida do sistema.',
     'Operator': 'Executor de tarefas (transporte, setup, processamento) que pode ser alocado a outros objetos.',
     'Conveyor': 'Esteira que transporta itens fisicamente entre dois pontos do modelo.',
@@ -503,15 +504,26 @@
     return panel;
   }
 
+  var evoChartCounter = 0;
+
   function buildEvolutionChart(globalResults, currentModelId) {
     var wrap = el('div', 'results-evolution');
     wrap.appendChild(el('div', 'roteiro-label', 'EVOLUÇÃO DA QUANTIDADE EXPEDIDA ENTRE MODELOS'));
     var svgNs = 'http://www.w3.org/2000/svg';
-    var w = 480, h = 130, padB = 22, padT = 10, barGap = 14;
+    var w = 480, h = 140, padB = 22, padT = 20, barGap = 14;
+    var gradId = 'gradAccent-' + (++evoChartCounter);
     var max = Math.max.apply(null, globalResults.map(function (g) { return g.throughput || 0; })) || 1;
     var barW = (w - (globalResults.length + 1) * barGap) / globalResults.length;
     var svg = document.createElementNS(svgNs, 'svg');
     svg.setAttribute('viewBox', '0 0 ' + w + ' ' + h);
+
+    // defs precisa existir no DOM antes das barras referenciarem o gradiente,
+    // senao o fill nao pinta no primeiro paint (falha de sincronizacao do navegador).
+    var defs = document.createElementNS(svgNs, 'defs');
+    defs.innerHTML = '<linearGradient id="' + gradId + '" x1="0" y1="0" x2="0" y2="1">' +
+      '<stop offset="0%" stop-color="var(--accent-2)"/><stop offset="100%" stop-color="var(--accent)"/></linearGradient>';
+    svg.appendChild(defs);
+
     globalResults.forEach(function (g, i) {
       var bh = ((g.throughput || 0) / max) * (h - padB - padT);
       var x = barGap + i * (barW + barGap);
@@ -519,20 +531,24 @@
       var rect = document.createElementNS(svgNs, 'rect');
       rect.setAttribute('x', x); rect.setAttribute('y', y); rect.setAttribute('width', barW); rect.setAttribute('height', bh);
       rect.setAttribute('rx', 4);
-      rect.setAttribute('fill', g.modelId === currentModelId ? 'url(#gradAccent)' : 'var(--line-strong)');
+      rect.setAttribute('fill', g.modelId === currentModelId ? 'url(#' + gradId + ')' : 'var(--line-strong)');
       var tt = document.createElementNS(svgNs, 'title'); tt.textContent = g.label + ': ' + g.throughput;
       rect.appendChild(tt);
       svg.appendChild(rect);
+
+      var valueLabel = document.createElementNS(svgNs, 'text');
+      valueLabel.setAttribute('x', x + barW / 2); valueLabel.setAttribute('y', Math.max(y - 6, padT - 6));
+      valueLabel.setAttribute('text-anchor', 'middle'); valueLabel.setAttribute('class', 'evo-value-label');
+      valueLabel.textContent = (g.throughput || 0).toLocaleString('pt-BR');
+      svg.appendChild(valueLabel);
+
       var label = document.createElementNS(svgNs, 'text');
       label.setAttribute('x', x + barW / 2); label.setAttribute('y', h - 6);
       label.setAttribute('text-anchor', 'middle'); label.setAttribute('class', 'map-label');
       label.textContent = 'M' + (i + 1);
       svg.appendChild(label);
     });
-    var defs = document.createElementNS(svgNs, 'defs');
-    defs.innerHTML = '<linearGradient id="gradAccent" x1="0" y1="0" x2="0" y2="1">' +
-      '<stop offset="0%" stop-color="var(--accent-2)"/><stop offset="100%" stop-color="var(--accent)"/></linearGradient>';
-    svg.insertBefore(defs, svg.firstChild);
+
     wrap.appendChild(svg);
     return wrap;
   }

@@ -1,11 +1,12 @@
 ﻿<#
-  build.ps1 — Conversor Word-Mestre -> assets/js/content.js
-  Le o Word_Mestre_Tutorial_FlexSim_ongoing.docx (secao "AREA DE TRABALHO"),
+  build.ps1 — Conversor Word-Mestre (.md) -> assets/js/content.js
+  Le o Word_Mestre.md (texto simples com marcadores entre colchetes),
   monta a hierarquia Aula -> Modelo -> Etapa -> Coluna -> Campos/Propriedades
   de forma deterministica (sem IA) e gera:
     - assets/js/content.js   (window.TUTORIAL_CONTENT = {...})
     - build/relatorio-build.txt (contagens + avisos)
     - images/web/*.jpg        (copias otimizadas para o site)
+    - Word_Mestre_Visualizacao.docx (documento Word so-leitura, para visualizar)
   Uso: duplo clique em build/Gerar_Site.bat, ou:
     powershell -NoProfile -ExecutionPolicy Bypass -File build\build.ps1
 #>
@@ -18,21 +19,20 @@ Add-Type -AssemblyName System.IO.Compression.FileSystem
 # Caminhos
 # ------------------------------------------------------------------
 $RootDir       = Split-Path -Parent $PSScriptRoot
-$DocxPath      = Join-Path $RootDir 'Word_Mestre_Tutorial_FlexSim_ongoing.docx'
+$MdPath        = Join-Path $RootDir 'Word_Mestre.md'
 $ImagesDir     = Join-Path $RootDir 'images'
 $WebImagesDir  = Join-Path $ImagesDir 'web'
 $WordMediaDir  = Join-Path $ImagesDir 'word-media'
 $AssetsJsDir   = Join-Path $RootDir 'assets\js'
 $ContentJsPath = Join-Path $AssetsJsDir 'content.js'
 $ReportPath    = Join-Path $PSScriptRoot 'relatorio-build.txt'
-$TempDir       = Join-Path $env:TEMP ('flexsim_build_' + [guid]::NewGuid().ToString('N'))
 
 foreach ($d in @($WebImagesDir, $WordMediaDir, $AssetsJsDir)) {
   if (-not (Test-Path $d)) { New-Item -ItemType Directory -Path $d -Force | Out-Null }
 }
 
-if (-not (Test-Path $DocxPath)) {
-  Write-Host "ERRO: nao encontrei $DocxPath" -ForegroundColor Red
+if (-not (Test-Path $MdPath)) {
+  Write-Host "ERRO: nao encontrei $MdPath" -ForegroundColor Red
   exit 1
 }
 
@@ -43,163 +43,40 @@ $Warnings = New-Object System.Collections.Generic.List[string]
 function Add-Warning([string]$msg) { [void]$Warnings.Add($msg) }
 
 function Escape-Html([string]$s) {
+  # Escapa & < > do texto digitado pelo autor, MAS preserva as tags literais
+  # <b> e </b> (usadas para negrito), trocando-as por marcadores temporarios
+  # antes de escapar e devolvendo-as depois.
   if ($null -eq $s) { return '' }
+  $s = $s -replace '<b>', "`u{E000}"
+  $s = $s -replace '</b>', "`u{E001}"
   $s = $s -replace '&', '&amp;'
   $s = $s -replace '<', '&lt;'
   $s = $s -replace '>', '&gt;'
+  $s = $s -replace "`u{E000}", '<b>'
+  $s = $s -replace "`u{E001}", '</b>'
   return $s
 }
 
 # ------------------------------------------------------------------
-# 1) Extrair o .docx (copia antes: o Word pode manter o arquivo aberto)
+# 1)-3) Ler o Word_Mestre.md e achatar em uma lista de "linhas"
+#       {text, style}. style='Ttulo2' para "## Aula", 'Ttulo3' para "### Modelo".
+#       Tudo antes do primeiro "## " e ignorado (preambulo/comentarios).
 # ------------------------------------------------------------------
-New-Item -ItemType Directory -Path $TempDir -Force | Out-Null
-$CopyPath = Join-Path $TempDir 'source.docx'
-$fsIn = [System.IO.File]::Open($DocxPath, 'Open', 'Read', 'ReadWrite')
-$fsOut = [System.IO.File]::Create($CopyPath)
-$fsIn.CopyTo($fsOut)
-$fsOut.Close(); $fsIn.Close()
-
-$ExtractDir = Join-Path $TempDir 'extract'
-[System.IO.Compression.ZipFile]::ExtractToDirectory($CopyPath, $ExtractDir)
-
-[xml]$DocXml = Get-Content -Raw -Encoding UTF8 (Join-Path $ExtractDir 'word\document.xml')
-[xml]$NumXml = Get-Content -Raw -Encoding UTF8 (Join-Path $ExtractDir 'word\numbering.xml')
-[xml]$RelsXml = Get-Content -Raw -Encoding UTF8 (Join-Path $ExtractDir 'word\_rels\document.xml.rels')
-
-$Ns = New-Object System.Xml.XmlNamespaceManager($DocXml.NameTable)
-$Ns.AddNamespace('w', 'http://schemas.openxmlformats.org/wordprocessingml/2006/main')
-$Ns.AddNamespace('a', 'http://schemas.openxmlformats.org/drawingml/2006/main')
-$Ns.AddNamespace('r', 'http://schemas.openxmlformats.org/officeDocument/2006/relationships')
-
-$RelMap = @{}
-foreach ($rel in $RelsXml.Relationships.Relationship) {
-  if ($rel.Type -like '*/image') { $RelMap[$rel.Id] = Split-Path $rel.Target -Leaf }
-}
-if ($RelMap.Count -gt 0) {
-  $mediaSrcDir = Join-Path $ExtractDir 'word\media'
-  foreach ($fname in $RelMap.Values) {
-    $src = Join-Path $mediaSrcDir $fname
-    if (Test-Path $src) { Copy-Item $src (Join-Path $WordMediaDir $fname) -Force }
-  }
-}
-
-# ------------------------------------------------------------------
-# 2) Numeracao automatica (numbering.xml) — usada para valores tipo "1 :", "2 :"
-# ------------------------------------------------------------------
-$NumCounters = @{}
-function Get-NextNumber([string]$numId, [string]$ilvl) {
-  $key = "$numId|$ilvl"
-  if (-not $NumCounters.ContainsKey($key)) {
-    $start = 1
-    $numNode = $NumXml.SelectSingleNode("//w:num[@w:numId='$numId']", $Ns)
-    if ($numNode) {
-      $absId = $numNode.SelectSingleNode('w:abstractNumId/@w:val', $Ns).Value
-      $lvl = $NumXml.SelectSingleNode("//w:abstractNum[@w:abstractNumId='$absId']/w:lvl[@w:ilvl='$ilvl']", $Ns)
-      if ($lvl) {
-        $s = $lvl.SelectSingleNode('w:start/@w:val', $Ns)
-        if ($s) { $start = [int]$s.Value }
-      }
-    }
-    $NumCounters[$key] = $start
-  } else {
-    $NumCounters[$key] = $NumCounters[$key] + 1
-  }
-  return $NumCounters[$key]
-}
-
-# ------------------------------------------------------------------
-# 3) Achatar document.xml em uma lista de "linhas" (quebra em w:br)
-# ------------------------------------------------------------------
+$RawLines = Get-Content -Path $MdPath -Encoding UTF8
 $Lines = New-Object System.Collections.Generic.List[object]
-$Body = $DocXml.SelectSingleNode('//w:body', $Ns)
+$seenFirstHeading = $false
 
-foreach ($p in $Body.ChildNodes) {
-  if ($p.LocalName -ne 'p') { continue }
-
-  $styleNode = $p.SelectSingleNode('w:pPr/w:pStyle/@w:val', $Ns)
-  $style = if ($styleNode) { $styleNode.Value } else { $null }
-  $numIdNode = $p.SelectSingleNode('w:pPr/w:numPr/w:numId/@w:val', $Ns)
-  $ilvlNode  = $p.SelectSingleNode('w:pPr/w:numPr/w:ilvl/@w:val', $Ns)
-  $numId = if ($numIdNode) { $numIdNode.Value } else { $null }
-  $ilvl  = if ($ilvlNode) { $ilvlNode.Value } else { '0' }
-
-  $curLine = New-Object System.Text.StringBuilder
-  $paraLines = New-Object System.Collections.Generic.List[string]
-  # O Word costuma fragmentar runs em negrito adjacentes (mesma formatacao,
-  # varios <w:r>). Envolver cada run isoladamente em <b> quebraria numeros e
-  # palavras no meio (ex.: "X= " + "42.50" -> "X= </b><b>42.50"). Por isso o
-  # <b>/</b> so abre/fecha nas TRANSICOES de estado, nunca por run.
-  $boldOpen = $false
-  function Set-BoldState([bool]$want) {
-    if ($want -and -not $script:boldOpen) { [void]$script:curLine.Append('<b>'); $script:boldOpen = $true }
-    elseif (-not $want -and $script:boldOpen) { [void]$script:curLine.Append('</b>'); $script:boldOpen = $false }
-  }
-
-  foreach ($run in $p.SelectNodes('.//w:r', $Ns)) {
-    $bold = $false
-    $bNode = $run.SelectSingleNode('w:rPr/w:b', $Ns)
-    if ($bNode) {
-      $bVal = $bNode.GetAttribute('val', 'http://schemas.openxmlformats.org/wordprocessingml/2006/main')
-      $bold = ($bVal -ne '0' -and $bVal -ne 'false')
-    }
-    foreach ($child in $run.ChildNodes) {
-      switch ($child.LocalName) {
-        't' {
-          Set-BoldState $bold
-          [void]$curLine.Append((Escape-Html $child.InnerText))
-        }
-        'tab' { [void]$curLine.Append(' ') }
-        'br' {
-          Set-BoldState $false
-          [void]$paraLines.Add($curLine.ToString())
-          [void]$curLine.Clear()
-        }
-        'drawing' {
-          $blip = $child.SelectSingleNode('.//a:blip/@r:embed', $Ns)
-          if ($blip -and $RelMap.ContainsKey($blip.Value)) {
-            Set-BoldState $bold
-            [void]$curLine.Append("[IMG:$($RelMap[$blip.Value])]")
-          }
-        }
-        'pict' { Set-BoldState $bold; [void]$curLine.Append('[IMG:?]') }
-        default { }
-      }
-    }
-  }
-  Set-BoldState $false
-  [void]$paraLines.Add($curLine.ToString())
-
-  for ($i = 0; $i -lt $paraLines.Count; $i++) {
-    $lineText = $paraLines[$i]
-    $lineNumId = $null
-    if ($i -eq 0 -and $numId) {
-      $n = Get-NextNumber $numId $ilvl
-      $lineText = "$n$lineText"
-    }
-    $Lines.Add([PSCustomObject]@{
-      text  = $lineText
-      style = $style
-    })
-  }
+foreach ($raw in $RawLines) {
+  if ($raw -match '^\s*<!--.*-->\s*$') { continue }  # comentarios HTML no .md, ignorados
+  $style = $null
+  $text = $raw
+  if ($raw -match '^##\s+(.*)$') { $style = 'Ttulo2'; $text = Escape-Html $Matches[1].Trim(); $seenFirstHeading = $true }
+  elseif ($raw -match '^###\s+(.*)$') { $style = 'Ttulo3'; $text = Escape-Html $Matches[1].Trim(); $seenFirstHeading = $true }
+  elseif (-not $seenFirstHeading) { continue }  # preambulo antes da 1a Aula
+  else { $text = Escape-Html $raw }
+  $Lines.Add([PSCustomObject]@{ text = $text; style = $style })
 }
-
-# ------------------------------------------------------------------
-# 4) Recortar a secao "AREA DE TRABALHO" ... "Checklist"
-# ------------------------------------------------------------------
-$startIdx = -1
-$endIdx = $Lines.Count
-for ($i = 0; $i -lt $Lines.Count; $i++) {
-  if ($Lines[$i].style -eq 'Ttulo1') {
-    if ($Lines[$i].text -match 'REA DE TRABALHO') { $startIdx = $i + 1 }
-    elseif ($startIdx -ge 0 -and $Lines[$i].text -match '(?i)checklist') { $endIdx = $i; break }
-  }
-}
-if ($startIdx -lt 0) {
-  Write-Host 'ERRO: nao encontrei o marcador "AREA DE TRABALHO" (Ttulo1) no Word-Mestre.' -ForegroundColor Red
-  exit 1
-}
-$WorkLines = $Lines.GetRange($startIdx, $endIdx - $startIdx)
+$WorkLines = $Lines
 
 # ------------------------------------------------------------------
 # 5) Tabelas de marcadores
@@ -210,6 +87,7 @@ $PropertyTitleMap = @{
   'SOURCE'          = 'Source'
   'QUEUE'           = 'Queue'
   'PROCESSOR'       = 'Processor'
+  'MULTIPROCESSOR'  = 'MultiProcessor'
   'CONVEYOR'        = 'Conveyor'
   'DECISION_POINT'  = 'Decision Point'
   'OPTIONS'         = 'Options'
@@ -222,6 +100,8 @@ $PropertyTitleMap = @{
   'OUTPUT'          = 'Output'
   'RUN TIME'        = 'Run Time'
   'RUN_TIME'        = 'Run Time'
+  'TASKEXECUTER'    = 'TaskExecuter'
+  'ROBOT'           = 'Robot'
 }
 $InlineOnlyTokens = @('CHECK', 'UNCHECK', 'PLUS', 'LETRA_VERMELHA', 'FIM_LETRA_VERMELHA')
 $KnownSimpleMarkers = @('TITULO','PRINT','ROTEIRO','OBJETO','CAMINHO','ACAO_MOUSE','OBSERVACAO','PROPERTIES','ETAPA','COLUNA','FIM_COLUNA')
@@ -516,7 +396,7 @@ function Normalize-ObjName([string]$n) {
   return $n
 }
 
-$typeRegex = '(Source|Queue|Processor|Sink|Operator|Conveyor|Decision Point|Combiner|Separator|Global Table|A\*? ?Navigation)'
+$typeRegex = '(Source|Queue|MultiProcessor|Processor|Sink|Operator|Conveyor|Decision Point|Combiner|Separator|Global Table|A\*? ?Navigation)'
 $globalLayout = @{}   # nome normalizado -> objeto layout (persistente entre modelos)
 $nameTypeMap = @{}    # nome normalizado -> tipo (persistente no documento inteiro, para nao depender
                        # de qual foi o ULTIMO tipo mencionado na mesma coluna quando ha mais de um objeto)
@@ -703,7 +583,7 @@ $Content = [PSCustomObject]@{
   meta = [PSCustomObject]@{
     title = 'Tutorial de Modelagem utilizando FlexSim Education v2027-0'
     generatedAt = (Get-Date -Format 'o')
-    source = 'Word_Mestre_Tutorial_FlexSim_ongoing.docx'
+    source = 'Word_Mestre.md'
     counts = [PSCustomObject]@{ courses = $Courses.Count; models = $countModels; stages = $countStages; columns = $countColumns; prints = $countPrints }
   }
   courses   = $Courses
@@ -714,6 +594,83 @@ $Content = [PSCustomObject]@{
 
 $json = $Content | ConvertTo-Json -Depth 30
 Set-Content -Path $ContentJsPath -Value "window.TUTORIAL_CONTENT = $json;" -Encoding UTF8
+
+# ------------------------------------------------------------------
+# 12.5) Gerar Word_Mestre_Visualizacao.docx — documento so-leitura, bonito
+#       de olhar, montado a partir do mesmo Word_Mestre.md, reaproveitando
+#       os estilos (fontes, cores, cabecalhos) de build/modelo_estilos.docx.
+# ------------------------------------------------------------------
+$StyleTemplatePath = Join-Path $PSScriptRoot 'modelo_estilos.docx'
+$VisualizacaoPath  = Join-Path $RootDir 'Word_Mestre_Visualizacao.docx'
+
+function Escape-Xml([string]$s) {
+  if ($null -eq $s) { return '' }
+  return ($s -replace '&', '&amp;' -replace '<', '&lt;' -replace '>', '&gt;')
+}
+
+function ConvertTo-DocxParagraph([string]$lineText, [string]$pStyle) {
+  # lineText ja vem com <b>/</b> literais (do Escape-Html) e & < > ja
+  # escapados como entidades — ou seja, e seguro tratar <b> e </b> como
+  # os UNICOS marcadores de tag reais dentro da string.
+  $sb = New-Object System.Text.StringBuilder
+  [void]$sb.Append('<w:p>')
+  if ($pStyle) { [void]$sb.Append("<w:pPr><w:pStyle w:val=`"$pStyle`"/></w:pPr>") }
+  if ($lineText) {
+    $parts = $lineText -split '(<b>|</b>)'
+    $bold = $false
+    foreach ($part in $parts) {
+      if ($part -eq '<b>') { $bold = $true; continue }
+      if ($part -eq '</b>') { $bold = $false; continue }
+      if ($part -eq '') { continue }
+      $rPr = if ($bold) { '<w:rPr><w:b/></w:rPr>' } else { '' }
+      [void]$sb.Append("<w:r>$rPr<w:t xml:space=`"preserve`">$part</w:t></w:r>")
+    }
+  }
+  [void]$sb.Append('</w:p>')
+  return $sb.ToString()
+}
+
+if (-not (Test-Path $StyleTemplatePath)) {
+  Add-Warning "modelo_estilos.docx nao encontrado em build/ — Word_Mestre_Visualizacao.docx nao foi gerado."
+} else {
+  try {
+    $VisTempDir = Join-Path $env:TEMP ('flexsim_vis_' + [guid]::NewGuid().ToString('N'))
+    New-Item -ItemType Directory -Path $VisTempDir -Force | Out-Null
+    Add-Type -AssemblyName System.IO.Compression.FileSystem
+    [System.IO.Compression.ZipFile]::ExtractToDirectory($StyleTemplatePath, $VisTempDir)
+
+    $templateDocXml = Get-Content -Raw -Encoding UTF8 (Join-Path $VisTempDir 'word\document.xml')
+    $rootOpenTag = [regex]::Match($templateDocXml, '<w:document\b[^>]*>').Value
+    $sectPr = [regex]::Match($templateDocXml, '<w:sectPr\b.*</w:sectPr>').Value
+    if (-not $sectPr) { $sectPr = '<w:sectPr><w:pgSz w:w="11906" w:h="16838"/><w:pgMar w:top="1417" w:right="1701" w:bottom="1417" w:left="1701" w:header="708" w:footer="708" w:gutter="0"/></w:sectPr>' }
+
+    $bodyParts = New-Object System.Collections.Generic.List[string]
+    $bodyParts.Add(($rootOpenTag))
+    $bodyParts.Add('<w:body>')
+    $bodyParts.Add((ConvertTo-DocxParagraph (Escape-Xml 'Word-Mestre — Visualizacao (gerado automaticamente a partir de Word_Mestre.md)') 'Ttulo1'))
+    $bodyParts.Add((ConvertTo-DocxParagraph (Escape-Xml 'Este documento e SOMENTE PARA LEITURA. Para editar o conteudo, edite Word_Mestre.md no VS Code e rode Gerar_Site.bat de novo.') $null))
+    foreach ($ln in $WorkLines) {
+      $pStyle = $ln.style
+      $bodyParts.Add((ConvertTo-DocxParagraph $ln.text $pStyle))
+    }
+    $bodyParts.Add($sectPr)
+    $bodyParts.Add('</w:body></w:document>')
+
+    $newDocXml = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>' + ($bodyParts -join '')
+    [System.IO.File]::WriteAllText((Join-Path $VisTempDir 'word\document.xml'), $newDocXml, (New-Object System.Text.UTF8Encoding($false)))
+
+    if (Test-Path $VisualizacaoPath) { Remove-Item $VisualizacaoPath -Force }
+    $zip = [System.IO.Compression.ZipFile]::Open($VisualizacaoPath, [System.IO.Compression.ZipArchiveMode]::Create)
+    Get-ChildItem $VisTempDir -Recurse -File | ForEach-Object {
+      $relPath = $_.FullName.Substring($VisTempDir.Length + 1) -replace '\\', '/'
+      [System.IO.Compression.ZipFileExtensions]::CreateEntryFromFile($zip, $_.FullName, $relPath) | Out-Null
+    }
+    $zip.Dispose()
+    Remove-Item $VisTempDir -Recurse -Force -ErrorAction SilentlyContinue
+  } catch {
+    Add-Warning "Falha ao gerar Word_Mestre_Visualizacao.docx: $($_.Exception.Message)"
+  }
+}
 
 # ------------------------------------------------------------------
 # 13) Relatorio
@@ -736,8 +693,6 @@ if ($Warnings.Count -eq 0) {
   foreach ($w in $Warnings) { [void]$report.Add("- $w") }
 }
 Set-Content -Path $ReportPath -Value $report -Encoding UTF8
-
-Remove-Item $TempDir -Recurse -Force -ErrorAction SilentlyContinue
 
 Write-Host ''
 Write-Host '=== Site gerado com sucesso ===' -ForegroundColor Green

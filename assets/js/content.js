@@ -1,14 +1,14 @@
 ﻿window.TUTORIAL_CONTENT = {
     "meta":  {
                  "title":  "Tutorial de Modelagem utilizando FlexSim Education v2027-0",
-                 "generatedAt":  "2026-09-21T19:06:44.9546630-03:00",
-                 "source":  "Word_Mestre_Tutorial_FlexSim_ongoing.docx",
+                 "generatedAt":  "2026-09-22T13:33:02.1083777-03:00",
+                 "source":  "Word_Mestre.md",
                  "counts":  {
-                                "courses":  3,
-                                "models":  6,
-                                "stages":  33,
-                                "columns":  73,
-                                "prints":  110
+                                "courses":  4,
+                                "models":  7,
+                                "stages":  39,
+                                "columns":  86,
+                                "prints":  130
                             }
              },
     "courses":  [
@@ -4897,6 +4897,1070 @@
                                                       }
                                        }
                                    ]
+                    },
+                    {
+                        "id":  "aula-04",
+                        "number":  4,
+                        "title":  "",
+                        "models":  [
+                                       {
+                                           "id":  "modelo-07",
+                                           "number":  7,
+                                           "label":  "4.1) Modelo 07",
+                                           "stages":  [
+                                                          {
+                                                              "id":  "modelo-07-etapa-01",
+                                                              "number":  "01",
+                                                              "type":  "normal",
+                                                              "title":  "Etapa 01 – Estoque de placas acabadas",
+                                                              "columns":  [
+                                                                              {
+                                                                                  "title":  "Adicionando e configurando objeto",
+                                                                                  "prints":  [
+                                                                                                 {
+                                                                                                     "file":  "AULA4_MODELO7_ETAPA1_1.png",
+                                                                                                     "w":  1918,
+                                                                                                     "h":  917
+                                                                                                 },
+                                                                                                 {
+                                                                                                     "file":  "AULA4_MODELO7_ETAPA1_2.png",
+                                                                                                     "w":  1715,
+                                                                                                     "h":  914
+                                                                                                 },
+                                                                                                 {
+                                                                                                     "file":  "AULA4_MODELO7_ETAPA1_3.png",
+                                                                                                     "w":  1715,
+                                                                                                     "h":  916
+                                                                                                 }
+                                                                                             ],
+                                                                                  "roteiro":  [
+                                                                                                  "NESTE MODELO, AS PLACAS ACABADAS AO SAÍREM DO “ SEPARATOR: ACABAMENTO ” IRÃO",
+                                                                                                  "PARA O “ QUEUE: PLACAS_ACABADAS ”,",
+                                                                                                  "( com capacidade infinita )",
+                                                                                                  "POSICIONADO EM X = 75.00 ; Y = 0.00 ; Z = 1.00",
+                                                                                                  "",
+                                                                                                  "“ SINK: SAIDAS_CLIENTES ” ",
+                                                                                                  "POSICIONADO EM X = 100.00 ; Y = 0.00 ; Z = 0.00"
+                                                                                              ],
+                                                                                  "objeto":  [
+                                                                                                 "Queue – “PLACAS_ACABADAS”",
+                                                                                                 "Sink – “SAIDAS_CLIENTES”"
+                                                                                             ],
+                                                                                  "caminho":  [
+
+                                                                                              ],
+                                                                                  "acao":  [
+
+                                                                                           ],
+                                                                                  "properties":  [
+                                                                                                     {
+                                                                                                         "key":  "NOME",
+                                                                                                         "title":  "Nome",
+                                                                                                         "lines":  [
+                                                                                                                       "PLACAS_ACABADAS",
+                                                                                                                       "SAIDAS_CLIENTES"
+                                                                                                                   ]
+                                                                                                     },
+                                                                                                     {
+                                                                                                         "key":  "VISUALS",
+                                                                                                         "title":  "Visuals",
+                                                                                                         "lines":  [
+                                                                                                                       "PLACAS_ACABADAS - [Mid6_small.png] X = 75.00 ; Y = 0.00 ; Z = 1.00",
+                                                                                                                       "SAIDAS_CLIENTES - [Mid6_small.png] X = 100.00 ; Y = 0.00 ; Z = 0.00"
+                                                                                                                   ]
+                                                                                                     },
+                                                                                                     {
+                                                                                                         "key":  "QUEUE",
+                                                                                                         "title":  "Queue",
+                                                                                                         "lines":  [
+                                                                                                                       "Max Content – 1000000"
+                                                                                                                   ]
+                                                                                                     },
+                                                                                                     {
+                                                                                                         "key":  "PORTS",
+                                                                                                         "title":  "Ports",
+                                                                                                         "lines":  [
+                                                                                                                       "[LETRA_VERMELHA] - Após a conexão, deve-se estar exibido da seguinte forma as portas de saída do Separator: [FIM_LETRA_VERMELHA]",
+                                                                                                                       "",
+                                                                                                                       "[down_arrow.bmp] - Output Ports:",
+                                                                                                                       "1: PLACAS_ACABADAS",
+                                                                                                                       "2: SAIDAS_CLIENTES"
+                                                                                                                   ]
+                                                                                                     }
+                                                                                                 ],
+                                                                                  "observacoes":  [
+
+                                                                                                  ]
+                                                                              }
+                                                                          ]
+                                                          },
+                                                          {
+                                                              "id":  "modelo-07-etapa-02",
+                                                              "number":  "02",
+                                                              "type":  "normal",
+                                                              "title":  "Etapa 02 – Inspeção de embalagem",
+                                                              "columns":  [
+                                                                              {
+                                                                                  "title":  "Adicionando e configurando objeto",
+                                                                                  "prints":  [
+                                                                                                 {
+                                                                                                     "file":  "AULA4_MODELO7_ETAPA2_1.png",
+                                                                                                     "w":  1917,
+                                                                                                     "h":  914
+                                                                                                 },
+                                                                                                 {
+                                                                                                     "file":  "AULA4_MODELO7_ETAPA2_2.png",
+                                                                                                     "w":  1710,
+                                                                                                     "h":  919
+                                                                                                 }
+                                                                                             ],
+                                                                                  "roteiro":  [
+                                                                                                  "EM SEGUIDA, IRÃO PARA O “ MULTIPROCESSOR: INSPECAO_EMBALAGEM ”,",
+                                                                                                  "POSICIONADO EM X = 80.00 ; Y = 0.00 ; Z = 0.00",
+                                                                                                  "COM TEMPO DE INSPEÇÃO DE 4 [ s / u ] E TEMPO DE EMBALAGEM DE 4 [ s / u ] "
+                                                                                              ],
+                                                                                  "objeto":  [
+                                                                                                 "MultiProcessor – “INSPECAO_EMBALAGEM”"
+                                                                                             ],
+                                                                                  "caminho":  [
+
+                                                                                              ],
+                                                                                  "acao":  [
+
+                                                                                           ],
+                                                                                  "properties":  [
+                                                                                                     {
+                                                                                                         "key":  "NOME",
+                                                                                                         "title":  "Nome",
+                                                                                                         "lines":  [
+                                                                                                                       "INSPECAO_EMBALAGEM"
+                                                                                                                   ]
+                                                                                                     },
+                                                                                                     {
+                                                                                                         "key":  "VISUALS",
+                                                                                                         "title":  "Visuals",
+                                                                                                         "lines":  [
+                                                                                                                       "[Mid6_small.png] X = 80.00 ; Y = 0.00 ; Z = 0.00"
+                                                                                                                   ]
+                                                                                                     },
+                                                                                                     {
+                                                                                                         "key":  "MULTIPROCESSOR",
+                                                                                                         "title":  "MultiProcessor",
+                                                                                                         "lines":  [
+                                                                                                                       "1- INSPECAO",
+                                                                                                                       "Process Time – 4 (s)",
+                                                                                                                       "Clique no [PLUS] ao lado de INSPECAO para adicionar um novo Processo.",
+                                                                                                                       "2- EMBALAGEM",
+                                                                                                                       "Process Time – 4 (s)"
+                                                                                                                   ]
+                                                                                                     }
+                                                                                                 ],
+                                                                                  "observacoes":  [
+
+                                                                                                  ]
+                                                                              },
+                                                                              {
+                                                                                  "title":  "Extra – Indicador de tempo de StayTime no MultiProcessor no Mapa 3D",
+                                                                                  "prints":  [
+                                                                                                 {
+                                                                                                     "file":  "AULA4_MODELO7_ETAPA2_3.png",
+                                                                                                     "w":  1715,
+                                                                                                     "h":  913
+                                                                                                 }
+                                                                                             ],
+                                                                                  "roteiro":  [
+
+                                                                                              ],
+                                                                                  "objeto":  [
+
+                                                                                             ],
+                                                                                  "caminho":  [
+
+                                                                                              ],
+                                                                                  "acao":  [
+
+                                                                                           ],
+                                                                                  "properties":  [
+
+                                                                                                 ],
+                                                                                  "observacoes":  [
+                                                                                                      [
+                                                                                                          "O procedimento para adicionar este Text foi feito dando um CTRL+C no TC_TESTE e um CTRL+V, editando então as configurações para exibir o valor de StayTime do MultiProcessor.",
+                                                                                                          "",
+                                                                                                          "Apenas um método de verificação da lógica de tempo de permanência para múltiplos processos. Se o tempo de permanência de cada processo é 4 segundos, deve aparecer \"TC_INSPECAO_EMBALAGEM: 8\"."
+                                                                                                      ]
+                                                                                                  ]
+                                                                              }
+                                                                          ]
+                                                          },
+                                                          {
+                                                              "id":  "modelo-07-etapa-03",
+                                                              "number":  "03",
+                                                              "type":  "normal",
+                                                              "title":  "Etapa 03 – Inserindo Robô na linha de produção",
+                                                              "columns":  [
+                                                                              {
+                                                                                  "title":  "Adicionando e configurando objeto",
+                                                                                  "prints":  [
+                                                                                                 {
+                                                                                                     "file":  "AULA4_MODELO7_ETAPA3_1.png",
+                                                                                                     "w":  1917,
+                                                                                                     "h":  915
+                                                                                                 }
+                                                                                             ],
+                                                                                  "roteiro":  [
+                                                                                                  "VAMOS TAMBÉM ACRESCENTAR O “ ROBOT: ROBO_INSPECAO_EMBALAGEM ”,",
+                                                                                                  "POSICIONADO EM X = 80.00 ; Y = 2.50 ; Z = 0.00",
+                                                                                                  "( ajuste o Move Time para 2 m / s )"
+                                                                                              ],
+                                                                                  "objeto":  [
+                                                                                                 "Robot – “ROBO_INSPECAO_EMBALAGEM”   "
+                                                                                             ],
+                                                                                  "caminho":  [
+
+                                                                                              ],
+                                                                                  "acao":  [
+
+                                                                                           ],
+                                                                                  "properties":  [
+                                                                                                     {
+                                                                                                         "key":  "NOME",
+                                                                                                         "title":  "Nome",
+                                                                                                         "lines":  [
+                                                                                                                       "ROBO_INSPECAO_EMBALAGEM"
+                                                                                                                   ]
+                                                                                                     },
+                                                                                                     {
+                                                                                                         "key":  "VISUALS",
+                                                                                                         "title":  "Visuals",
+                                                                                                         "lines":  [
+                                                                                                                       "[Mid6_small.png] X = 80.00 ; Y = 2.50 ; Z = 0.00"
+                                                                                                                   ]
+                                                                                                     },
+                                                                                                     {
+                                                                                                         "key":  "ROBOT",
+                                                                                                         "title":  "Robot",
+                                                                                                         "lines":  [
+                                                                                                                       "Move Time: 2 (s)"
+                                                                                                                   ]
+                                                                                                     }
+                                                                                                 ],
+                                                                                  "observacoes":  [
+
+                                                                                                  ]
+                                                                              },
+                                                                              {
+                                                                                  "title":  "Configurando Atividade 1 do Robô",
+                                                                                  "prints":  [
+                                                                                                 {
+                                                                                                     "file":  "AULA4_MODELO7_ETAPA3_2.png",
+                                                                                                     "w":  1714,
+                                                                                                     "h":  914
+                                                                                                 }
+                                                                                             ],
+                                                                                  "roteiro":  [
+                                                                                                  "QUE TRANSPORTARÁ AS PLACAS ACABADAS",
+                                                                                                  "DO “ QUEUE: PLACAS_ACABADAS ” PARA O “ MULTIPROCESSOR: INSPECAO_EMBALAGEM ”;"
+                                                                                              ],
+                                                                                  "objeto":  [
+                                                                                                 "Queue – “PLACAS_ACABADAS”"
+                                                                                             ],
+                                                                                  "caminho":  [
+
+                                                                                              ],
+                                                                                  "acao":  [
+                                                                                               "Fazer a ligação de portas central (Atalho: Letra “S” do teclado - clicar no Robot e no Processor.)"
+                                                                                           ],
+                                                                                  "properties":  [
+                                                                                                     {
+                                                                                                         "key":  "OUTPUT",
+                                                                                                         "title":  "Output",
+                                                                                                         "lines":  [
+                                                                                                                       "[CHECK] Use Transport:",
+                                                                                                                       "current.centerObjects[1]"
+                                                                                                                   ]
+                                                                                                     }
+                                                                                                 ],
+                                                                                  "observacoes":  [
+
+                                                                                                  ]
+                                                                              },
+                                                                              {
+                                                                                  "title":  "Configurando Atividade 2, 3 e 4 do Robô",
+                                                                                  "prints":  [
+                                                                                                 {
+                                                                                                     "file":  "AULA4_MODELO7_ETAPA3_3.png",
+                                                                                                     "w":  1720,
+                                                                                                     "h":  915
+                                                                                                 },
+                                                                                                 {
+                                                                                                     "file":  "AULA4_MODELO7_ETAPA3_4.png",
+                                                                                                     "w":  1712,
+                                                                                                     "h":  915
+                                                                                                 },
+                                                                                                 {
+                                                                                                     "file":  "AULA4_MODELO7_ETAPA3_5.png",
+                                                                                                     "w":  1718,
+                                                                                                     "h":  914
+                                                                                                 }
+                                                                                             ],
+                                                                                  "roteiro":  [
+                                                                                                  "QUE EXECUTARÁ A INSPEÇÃO E A EMBALAGEM DAS PLACAS;"
+                                                                                              ],
+                                                                                  "objeto":  [
+                                                                                                 "MultiProcessor – “INSPECAO_EMBALAGEM”"
+                                                                                             ],
+                                                                                  "caminho":  [
+
+                                                                                              ],
+                                                                                  "acao":  [
+                                                                                               "Fazer a ligação de portas central (Atalho: Letra “S” do teclado - clicar no Robot e no MultiProcessor.)"
+                                                                                           ],
+                                                                                  "properties":  [
+                                                                                                     {
+                                                                                                         "key":  "MULTIPROCESSOR",
+                                                                                                         "title":  "MultiProcessor",
+                                                                                                         "lines":  [
+                                                                                                                       "1 - INSPECAO",
+                                                                                                                       "Number of Operators: \u003cb\u003e1\u003c/b\u003e",
+                                                                                                                       "",
+                                                                                                                       "2 - EMBALAGEM",
+                                                                                                                       "Number of Operators: \u003cb\u003e1\u003c/b\u003e",
+                                                                                                                       "",
+                                                                                                                       "Operator: current.centerObjects[1]"
+                                                                                                                   ]
+                                                                                                     },
+                                                                                                     {
+                                                                                                         "key":  "OUTPUT",
+                                                                                                         "title":  "Output",
+                                                                                                         "lines":  [
+                                                                                                                       "[CHECK] Use Operator(s): 1",
+                                                                                                                       "",
+                                                                                                                       "Operator:",
+                                                                                                                       "current.centerObjects[1]   "
+                                                                                                                   ]
+                                                                                                     },
+                                                                                                     {
+                                                                                                         "key":  "PORTS",
+                                                                                                         "title":  "Ports",
+                                                                                                         "lines":  [
+                                                                                                                       "Para o MultiProcessor “INSPECAO_EMBALAGEM”:",
+                                                                                                                       "[LETRA_VERMELHA] - Após a conexão, deve-se estar exibido da seguinte forma as portas de entrada do MultiProcessor: [FIM_LETRA_VERMELHA]",
+                                                                                                                       "",
+                                                                                                                       "[down_arrow.bmp] - Central Ports:",
+                                                                                                                       "1: ROBO_INSPECAO_EMBALAGEM",
+                                                                                                                       "",
+                                                                                                                       "Para o Robot “ROBO_INSPECAO_EMBALAGEM”:",
+                                                                                                                       "1: PLACAS_ACABADAS",
+                                                                                                                       "2: INSPECAO_EMBALAGEM"
+                                                                                                                   ]
+                                                                                                     }
+                                                                                                 ],
+                                                                                  "observacoes":  [
+                                                                                                      [
+                                                                                                          "Após todas as configurações, note que o TC_INSPECAO_EMBALAGEM é de 10 segundos, o que significa que a inspeção e a embalagem serão realizadas em 8 segundos + 2 segundos de espera do movimento do robô configurado com o Move Time = 2 segundos."
+                                                                                                      ]
+                                                                                                  ]
+                                                                              },
+                                                                              {
+                                                                                  "title":  "Adicionando objetos",
+                                                                                  "prints":  [
+                                                                                                 {
+                                                                                                     "file":  "AULA4_MODELO7_ETAPA3_6.png",
+                                                                                                     "w":  1918,
+                                                                                                     "h":  912
+                                                                                                 },
+                                                                                                 {
+                                                                                                     "file":  "AULA4_MODELO7_ETAPA3_7.png",
+                                                                                                     "w":  1716,
+                                                                                                     "h":  915
+                                                                                                 }
+                                                                                             ],
+                                                                                  "roteiro":  [
+                                                                                                  "E QUE TRANSPORTARÁ:",
+                                                                                                  "AS PLACAS EMBALADAS MODELO 1 PARA O “ QUEUE: PLACAS_EMBALADAS_MOD_1 ”,",
+                                                                                                  "( com capacidade infinita )",
+                                                                                                  "POSICIONADO EM X = 85.00 ; Y = 1.00 ; Z = 0.00",
+                                                                                                  "E AS PLACAS EMBALADAS MODELO 2 PARA O “ QUEUE: PLACAS_EMBALADAS_MOD_2 ”,",
+                                                                                                  "( com capacidade infinita )",
+                                                                                                  "POSICIONADO EM X = 85.00 ; Y = -1.00 ; Z = 0.00"
+                                                                                              ],
+                                                                                  "objeto":  [
+                                                                                                 "Queue – “PLACAS_EMBALADAS_MOD_1”",
+                                                                                                 "Queue – “PLACAS_EMBALADAS_MOD_2”"
+                                                                                             ],
+                                                                                  "caminho":  [
+
+                                                                                              ],
+                                                                                  "acao":  [
+
+                                                                                           ],
+                                                                                  "properties":  [
+                                                                                                     {
+                                                                                                         "key":  "NOME",
+                                                                                                         "title":  "Nome",
+                                                                                                         "lines":  [
+                                                                                                                       "PLACAS_EMBALADAS_MOD_1",
+                                                                                                                       "PLACAS_EMBALADAS_MOD_2"
+                                                                                                                   ]
+                                                                                                     },
+                                                                                                     {
+                                                                                                         "key":  "VISUALS",
+                                                                                                         "title":  "Visuals",
+                                                                                                         "lines":  [
+                                                                                                                       "PLACAS_EMBALADAS_MOD_1 - [Mid6_small.png] X = 85.00 ; Y = 1.00 ; Z = 0.00",
+                                                                                                                       "PLACAS_EMBALADAS_MOD_2 - [Mid6_small.png] X = 85.00 ; Y = -1.00 ; Z = 0.00"
+                                                                                                                   ]
+                                                                                                     },
+                                                                                                     {
+                                                                                                         "key":  "QUEUE",
+                                                                                                         "title":  "Queue",
+                                                                                                         "lines":  [
+                                                                                                                       "Max Content – 1000000"
+                                                                                                                   ]
+                                                                                                     }
+                                                                                                 ],
+                                                                                  "observacoes":  [
+
+                                                                                                  ]
+                                                                              },
+                                                                              {
+                                                                                  "title":  "Reconfigurando Atividade 4 do Robô",
+                                                                                  "prints":  [
+                                                                                                 {
+                                                                                                     "file":  "AULA4_MODELO7_ETAPA3_8.png",
+                                                                                                     "w":  1717,
+                                                                                                     "h":  916
+                                                                                                 }
+                                                                                             ],
+                                                                                  "roteiro":  [
+                                                                                                  "COMPLEMENTANDO O ROTEIRO DO PASSO ANTERIOR, EM QUE O “ ROBOT: ROBO_INSPECAO_EMBALAGEM ” TRANSPORTARÁ AS PLACAS EMBALADAS DO MODELO 1 PARA O “ QUEUE: PLACAS_EMBALADAS_MOD_1 ”,",
+                                                                                                  "E AS PLACAS EMBALADAS DO MODELO 2 PARA O “ QUEUE: PLACAS_EMBALADAS_MOD_2 ”"
+                                                                                              ],
+                                                                                  "objeto":  [
+                                                                                                 "MultiProcessor – “INSPECAO_EMBALAGEM”"
+                                                                                             ],
+                                                                                  "caminho":  [
+
+                                                                                              ],
+                                                                                  "acao":  [
+
+                                                                                           ],
+                                                                                  "properties":  [
+                                                                                                     {
+                                                                                                         "key":  "OUTPUT",
+                                                                                                         "title":  "Output",
+                                                                                                         "lines":  [
+                                                                                                                       "Send To Port → [down_arrow.bmp] Port By Case:",
+                                                                                                                       "Case Function: \u003cb\u003eitem.MODELO\u003c/b\u003e",
+                                                                                                                       "2x [PLUS] Para adicionar “Case Value + Port”:",
+                                                                                                                       "Case: \u003cb\u003e1\u003c/b\u003e  Port: \u003cb\u003e1\u003c/b\u003e",
+                                                                                                                       "Case: \u003cb\u003e2\u003c/b\u003ePort: \u003cb\u003e2\u003c/b\u003e"
+                                                                                                                   ]
+                                                                                                     },
+                                                                                                     {
+                                                                                                         "key":  "PORTS",
+                                                                                                         "title":  "Ports",
+                                                                                                         "lines":  [
+                                                                                                                       "Para o MultiProcessor “INSPECAO_EMBALAGEM”:",
+                                                                                                                       "",
+                                                                                                                       "[down_arrow.bmp] - Output Ports:",
+                                                                                                                       "1: PLACAS_EMBALADAS_MOD_1",
+                                                                                                                       "2: PLACAS_EMBALADAS_MOD_2"
+                                                                                                                   ]
+                                                                                                     }
+                                                                                                 ],
+                                                                                  "observacoes":  [
+
+                                                                                                  ]
+                                                                              }
+                                                                          ]
+                                                          },
+                                                          {
+                                                              "id":  "modelo-07-etapa-04",
+                                                              "number":  "04",
+                                                              "type":  "normal",
+                                                              "title":  "Etapa 04 – Formação de lotes de produção",
+                                                              "columns":  [
+                                                                              {
+                                                                                  "title":  "Configurando objeto",
+                                                                                  "prints":  [
+                                                                                                 {
+                                                                                                     "file":  "AULA4_MODELO7_ETAPA4_1.png",
+                                                                                                     "w":  1716,
+                                                                                                     "h":  913
+                                                                                                 },
+                                                                                                 {
+                                                                                                     "file":  "AULA4_MODELO7_ETAPA4_2.png",
+                                                                                                     "w":  1716,
+                                                                                                     "h":  911
+                                                                                                 }
+                                                                                             ],
+                                                                                  "roteiro":  [
+                                                                                                  "NOS ESTOQUES DE PLACAS EMBALADAS DEVERÃO SER FORMADOS LOTES DE 20 UNIDADES,",
+                                                                                                  "QUE SERÃO ENVIADOS PARA O “ SINK: SAIDAS_CLIENTES ”"
+                                                                                              ],
+                                                                                  "objeto":  [
+                                                                                                 "Queue – “PLACAS_EMBALADAS_MOD_1”",
+                                                                                                 "Queue – “PLACAS_EMBALADAS_MOD_2”"
+                                                                                             ],
+                                                                                  "caminho":  [
+
+                                                                                              ],
+                                                                                  "acao":  [
+
+                                                                                           ],
+                                                                                  "properties":  [
+                                                                                                     {
+                                                                                                         "key":  "QUEUE",
+                                                                                                         "title":  "Queue",
+                                                                                                         "lines":  [
+                                                                                                                       "[CHECK] Perform Batching",
+                                                                                                                       "Target Batch Size: \u003cb\u003e20\u003c/b\u003e"
+                                                                                                                   ]
+                                                                                                     }
+                                                                                                 ],
+                                                                                  "observacoes":  [
+
+                                                                                                  ]
+                                                                              }
+                                                                          ]
+                                                          },
+                                                          {
+                                                              "id":  "modelo-07-etapa-05",
+                                                              "number":  "05",
+                                                              "type":  "normal",
+                                                              "title":  "Etapa 05 – Utilizando Empilhadeira para transportar lotes",
+                                                              "columns":  [
+                                                                              {
+                                                                                  "title":  "Adicionando e configurando objeto",
+                                                                                  "prints":  [
+                                                                                                 {
+                                                                                                     "file":  "AULA4_MODELO7_ETAPA5_1.png",
+                                                                                                     "w":  1918,
+                                                                                                     "h":  915
+                                                                                                 }
+                                                                                             ],
+                                                                                  "roteiro":  [
+                                                                                                  "AGORA, VAMOS INSERIR A EMPILHADEIRA EMP_PLACAS_EMBALADAS,",
+                                                                                                  "POSICIONADA EM X = 90.00 ; Y = 0.00 ; Z = 0.00",
+                                                                                                  "( com rotação de 180º no eixo Z )",
+                                                                                                  "PARA LEVAR OS LOTES DE PLACAS EMBALADAS PARA O SINK",
+                                                                                                  "( ajustar a capacidade da empilhadeira )"
+                                                                                              ],
+                                                                                  "objeto":  [
+                                                                                                 "Transporter – “EMP_PLACAS_EMBALADAS”"
+                                                                                             ],
+                                                                                  "caminho":  [
+
+                                                                                              ],
+                                                                                  "acao":  [
+
+                                                                                           ],
+                                                                                  "properties":  [
+                                                                                                     {
+                                                                                                         "key":  "NOME",
+                                                                                                         "title":  "Nome",
+                                                                                                         "lines":  [
+                                                                                                                       "EMP_PLACAS_EMBALADAS"
+                                                                                                                   ]
+                                                                                                     },
+                                                                                                     {
+                                                                                                         "key":  "VISUALS",
+                                                                                                         "title":  "Visuals",
+                                                                                                         "lines":  [
+                                                                                                                       "[Mid6_small.png] X = 90.00 ; Y = 0.00 ; Z = 0.00",
+                                                                                                                       "[rotate_arrow.png] Z = 180.00"
+                                                                                                                   ]
+                                                                                                     },
+                                                                                                     {
+                                                                                                         "key":  "TASKEXECUTER",
+                                                                                                         "title":  "TaskExecuter",
+                                                                                                         "lines":  [
+                                                                                                                       "Capacity: \u003cb\u003e20\u003c/b\u003e"
+                                                                                                                   ]
+                                                                                                     },
+                                                                                                     {
+                                                                                                         "key":  "PORTS",
+                                                                                                         "title":  "Ports",
+                                                                                                         "lines":  [
+                                                                                                                       "Para o Transporter “EMP_PLACAS_EMBALADAS”:",
+                                                                                                                       "[LETRA_VERMELHA] - Após a conexão, deve-se estar exibido da seguinte forma as portas de entrada do Transporter: [FIM_LETRA_VERMELHA]",
+                                                                                                                       "",
+                                                                                                                       "[down_arrow.bmp] - Central Ports:",
+                                                                                                                       "1: PLACAS_EMBALADAS_MOD_1",
+                                                                                                                       "2: PLACAS_EMBALADAS_MOD_2"
+                                                                                                                   ]
+                                                                                                     }
+                                                                                                 ],
+                                                                                  "observacoes":  [
+
+                                                                                                  ]
+                                                                              },
+                                                                              {
+                                                                                  "title":  "Configurando Atividade 1 do Transporter",
+                                                                                  "prints":  [
+                                                                                                 {
+                                                                                                     "file":  "AULA4_MODELO7_ETAPA5_2.png",
+                                                                                                     "w":  1716,
+                                                                                                     "h":  916
+                                                                                                 }
+                                                                                             ],
+                                                                                  "roteiro":  [
+                                                                                                  "COMPLEMENTANDO O ROTEIRO DO PASSO ANTERIOR, EM QUE A EMPILHADEIRA SERÁ USADA PARA TRANSPORTAR OS LOTES DE PLACAS EMBALADAS PARA O “ SINK: SAIDAS_CLIENTES ”"
+                                                                                              ],
+                                                                                  "objeto":  [
+                                                                                                 "Queue – “PLACAS_EMBALADAS_MOD_1”",
+                                                                                                 "Queue – “PLACAS_EMBALADAS_MOD_2”"
+                                                                                             ],
+                                                                                  "caminho":  [
+
+                                                                                              ],
+                                                                                  "acao":  [
+
+                                                                                           ],
+                                                                                  "properties":  [
+                                                                                                     {
+                                                                                                         "key":  "OUTPUT",
+                                                                                                         "title":  "Output",
+                                                                                                         "lines":  [
+                                                                                                                       "[CHECK] Use Transport:",
+                                                                                                                       "current.centerObjects[1]"
+                                                                                                                   ]
+                                                                                                     },
+                                                                                                     {
+                                                                                                         "key":  "PORTS",
+                                                                                                         "title":  "Ports",
+                                                                                                         "lines":  [
+                                                                                                                       "Para Queue “PLACAS_EMBALADAS_MOD_1” + “PLACAS_EMBALADAS_MOD_2”:",
+                                                                                                                       "[down_arrow.bmp] Central Ports:",
+                                                                                                                       "1: EMP_PLACAS_EMBALADAS"
+                                                                                                                   ]
+                                                                                                     }
+                                                                                                 ],
+                                                                                  "observacoes":  [
+
+                                                                                                  ]
+                                                                              },
+                                                                              {
+                                                                                  "title":  "Configurando retorno da empilhadeira",
+                                                                                  "prints":  [
+                                                                                                 {
+                                                                                                     "file":  "AULA4_MODELO7_ETAPA5_3.png",
+                                                                                                     "w":  1715,
+                                                                                                     "h":  935
+                                                                                                 }
+                                                                                             ],
+                                                                                  "roteiro":  [
+                                                                                                  "E VOLTAR À POSIÇÃO ORIGINAL QUANDO DESCARREGAR"
+                                                                                              ],
+                                                                                  "objeto":  [
+                                                                                                 "Transporter – “EMP_PLACAS_EMBALADAS”"
+                                                                                             ],
+                                                                                  "caminho":  [
+
+                                                                                              ],
+                                                                                  "acao":  [
+
+                                                                                           ],
+                                                                                  "properties":  [
+                                                                                                     {
+                                                                                                         "key":  "TRIGGERS",
+                                                                                                         "title":  "Triggers",
+                                                                                                         "lines":  [
+                                                                                                                       "[PLUS] → On Unload → Travel to a Specific Location:",
+                                                                                                                       "X: \u003cb\u003e90\u003c/b\u003e",
+                                                                                                                       "Y: \u003cb\u003e0\u003c/b\u003e",
+                                                                                                                       "Z: \u003cb\u003e0\u003c/b\u003e"
+                                                                                                                   ]
+                                                                                                     }
+                                                                                                 ],
+                                                                                  "observacoes":  [
+
+                                                                                                  ]
+                                                                              }
+                                                                          ]
+                                                          },
+                                                          {
+                                                              "id":  "modelo-07-etapa-06",
+                                                              "number":  "06",
+                                                              "type":  "results",
+                                                              "title":  "Resultados",
+                                                              "columns":  [
+                                                                              {
+                                                                                  "title":  "Validando o modelo simulado.",
+                                                                                  "prints":  [
+                                                                                                 {
+                                                                                                     "file":  "AULA4_MODELO7_RESULTADOS_1.png",
+                                                                                                     "w":  1916,
+                                                                                                     "h":  944
+                                                                                                 }
+                                                                                             ],
+                                                                                  "roteiro":  [
+                                                                                                  "Quantidade expedida",
+                                                                                                  "640 unidades",
+                                                                                                  "",
+                                                                                                  "Elaborar e interpretar os gráficos de estados",
+                                                                                                  "PROCESSING",
+                                                                                                  "IMPRESSORA_1: 58,87% ; IMPRESSORA_2: 60,35% ; TESTE: 51,36% ;",
+                                                                                                  "MONTAGEM: 22,33% ; ACABAMENTO: 22,30%; INSPECAO_EMBALAGEM: 17,83%"
+                                                                                              ],
+                                                                                  "objeto":  [
+
+                                                                                             ],
+                                                                                  "caminho":  [
+
+                                                                                              ],
+                                                                                  "acao":  [
+
+                                                                                           ],
+                                                                                  "properties":  [
+
+                                                                                                 ],
+                                                                                  "observacoes":  [
+
+                                                                                                  ]
+                                                                              }
+                                                                          ],
+                                                              "results":  {
+                                                                              "throughput":  "640",
+                                                                              "processing":  [
+                                                                                                 {
+                                                                                                     "name":  "IMPRESSORA_1",
+                                                                                                     "pct":  58.87
+                                                                                                 },
+                                                                                                 {
+                                                                                                     "name":  "IMPRESSORA_2",
+                                                                                                     "pct":  60.35
+                                                                                                 },
+                                                                                                 {
+                                                                                                     "name":  "TESTE",
+                                                                                                     "pct":  51.36
+                                                                                                 },
+                                                                                                 {
+                                                                                                     "name":  "MONTAGEM",
+                                                                                                     "pct":  22.33
+                                                                                                 },
+                                                                                                 {
+                                                                                                     "name":  "ACABAMENTO",
+                                                                                                     "pct":  22.3
+                                                                                                 },
+                                                                                                 {
+                                                                                                     "name":  "INSPECAO_EMBALAGEM",
+                                                                                                     "pct":  17.83
+                                                                                                 }
+                                                                                             ],
+                                                                              "raw":  "Quantidade expedida\n640 unidades\n\nElaborar e interpretar os gráficos de estados\nPROCESSING\nIMPRESSORA_1: 58,87% ; IMPRESSORA_2: 60,35% ; TESTE: 51,36% ;\nMONTAGEM: 22,33% ; ACABAMENTO: 22,30%; INSPECAO_EMBALAGEM: 17,83%"
+                                                                          }
+                                                          }
+                                                      ],
+                                           "layout":  {
+                                                          "objects":  [
+                                                                          {
+                                                                              "name":  "PLACAS_IMPRESSAS",
+                                                                              "type":  "Queue",
+                                                                              "x":  30,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-03-etapa-01",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "IMPRESSORA_2",
+                                                                              "type":  "Processor",
+                                                                              "x":  20,
+                                                                              "y":  -3.5,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-01-etapa-04",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "COMPONENTES_CILINDROS_VAZIOS",
+                                                                              "type":  "Queue",
+                                                                              "x":  70,
+                                                                              "y":  -10,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-05-etapa-03",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "SAIDAS_CLIENTES",
+                                                                              "type":  "Sink",
+                                                                              "x":  100,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-07-etapa-01",
+                                                                              "isNew":  true
+                                                                          },
+                                                                          {
+                                                                              "name":  "PLACAS_ACABADAS",
+                                                                              "type":  "Queue",
+                                                                              "x":  75,
+                                                                              "y":  0,
+                                                                              "rot":  1,
+                                                                              "stageId":  "modelo-07-etapa-01",
+                                                                              "isNew":  true
+                                                                          },
+                                                                          {
+                                                                              "name":  "MOVIMENTADOR_2",
+                                                                              "type":  "Operator",
+                                                                              "x":  15,
+                                                                              "y":  -3.5,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-02-etapa-02",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "DP_0",
+                                                                              "type":  "Decision Point",
+                                                                              "x":  42.5,
+                                                                              "y":  0.2,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-03-etapa-06",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "MONTAGEM",
+                                                                              "type":  "Combiner",
+                                                                              "x":  60,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-05-etapa-02",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "CONVEYOR_modelo-04-etapa-04_Adicionando_e_configurando_objeto",
+                                                                              "type":  "Conveyor",
+                                                                              "x1":  20,
+                                                                              "y1":  -19.5,
+                                                                              "x2":  20,
+                                                                              "y2":  -12,
+                                                                              "stageId":  "modelo-04-etapa-04",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "PLACAS_IMPRESSAS_APROVADAS",
+                                                                              "type":  "Queue",
+                                                                              "x":  50,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-05-etapa-01",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "PLACAS_EMBALADAS_MOD_1",
+                                                                              "type":  "Queue",
+                                                                              "x":  85,
+                                                                              "y":  1,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-07-etapa-03",
+                                                                              "isNew":  true
+                                                                          },
+                                                                          {
+                                                                              "name":  "TESTE",
+                                                                              "type":  "Processor",
+                                                                              "x":  40,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-03-etapa-02",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "DP_1",
+                                                                              "type":  "Decision Point",
+                                                                              "x":  45,
+                                                                              "y":  -1.5,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-03-etapa-06",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "SAIDA_CLIENTES",
+                                                                              "type":  "Sink",
+                                                                              "x":  80,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-05-etapa-03",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "CHEGADA_PLACAS_VIRGENS",
+                                                                              "type":  "Source",
+                                                                              "x":  0,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-01-etapa-01",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "ACABAMENTO",
+                                                                              "type":  "Separator",
+                                                                              "x":  70,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-05-etapa-03",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "CONVEYOR_modelo-03-etapa-05_Adicionando_e_configurando_objeto_(Esteira_aprovados)",
+                                                                              "type":  "Conveyor",
+                                                                              "x1":  42,
+                                                                              "y1":  0,
+                                                                              "x2":  48,
+                                                                              "y2":  0,
+                                                                              "stageId":  "modelo-03-etapa-05",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "PLACAS_VIRGENS",
+                                                                              "type":  "Queue",
+                                                                              "x":  10,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-01-etapa-02",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "MOVIMENTADOR_1",
+                                                                              "type":  "Operator",
+                                                                              "x":  15,
+                                                                              "y":  3.5,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-02-etapa-02",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "CONVEYOR_modelo-03-etapa-07_Adicionando_e_configurando_objetos_(Esteira_horizontal)",
+                                                                              "type":  "Conveyor",
+                                                                              "x1":  43,
+                                                                              "y1":  -20,
+                                                                              "x2":  12,
+                                                                              "y2":  -20,
+                                                                              "stageId":  "modelo-03-etapa-07",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "INSPECAO_EMBALAGEM",
+                                                                              "type":  "MultiProcessor",
+                                                                              "x":  80,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-07-etapa-02",
+                                                                              "isNew":  true
+                                                                          },
+                                                                          {
+                                                                              "name":  "OPERADOR_MONTAGEM_ACABAMENTO",
+                                                                              "type":  "Operator",
+                                                                              "x":  60,
+                                                                              "y":  2.5,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-05-etapa-03",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "PLACAS_EMBALADAS_MOD_2",
+                                                                              "type":  "Queue",
+                                                                              "x":  85,
+                                                                              "y":  -1,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-07-etapa-03",
+                                                                              "isNew":  true
+                                                                          },
+                                                                          {
+                                                                              "name":  "PLACAS_IMPRESSAS_REPROVADAS",
+                                                                              "type":  "Queue",
+                                                                              "x":  10,
+                                                                              "y":  -20,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-03-etapa-07",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "DP_3",
+                                                                              "type":  "Decision Point",
+                                                                              "x":  20,
+                                                                              "y":  -17.5,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-04-etapa-04",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "IMPRESSORA_1",
+                                                                              "type":  "Processor",
+                                                                              "x":  20,
+                                                                              "y":  3.5,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-01-etapa-04",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "OPERADOR_IMPRESSORA_2",
+                                                                              "type":  "Operator",
+                                                                              "x":  20,
+                                                                              "y":  -1,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-02-etapa-01",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "DP_2",
+                                                                              "type":  "Decision Point",
+                                                                              "x":  22,
+                                                                              "y":  -20,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-04-etapa-04",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "CONVEYOR_modelo-03-etapa-05_Adicionando_e_configurando_objeto_(Esteira_reprovados)",
+                                                                              "type":  "Conveyor",
+                                                                              "x1":  45,
+                                                                              "y1":  -0.5,
+                                                                              "x2":  45,
+                                                                              "y2":  -16.5,
+                                                                              "stageId":  "modelo-03-etapa-05",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "COMPONENTES_CILINDROS_CHEIOS",
+                                                                              "type":  "Queue",
+                                                                              "x":  60,
+                                                                              "y":  -10,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-05-etapa-02",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "COMPONENTES_CILINDROS_CHEIOS_MOD_2",
+                                                                              "type":  "Queue",
+                                                                              "x":  63,
+                                                                              "y":  -10,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-06-etapa-01",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "OPERADOR_IMPRESSORA_1",
+                                                                              "type":  "Operator",
+                                                                              "x":  20,
+                                                                              "y":  6,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-02-etapa-01",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "PLACAS_IMPRESSAS_REFUGADAS",
+                                                                              "type":  "Queue",
+                                                                              "x":  20,
+                                                                              "y":  -10,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-04-etapa-04",
+                                                                              "isNew":  false
+                                                                          }
+                                                                      ]
+                                                      }
+                                       }
+                                   ]
                     }
                 ],
     "glossary":  [
@@ -4925,6 +5989,13 @@
                                     ]
                      },
                      {
+                         "type":  "MultiProcessor",
+                         "count":  1,
+                         "stages":  [
+                                        "modelo-07-etapa-02"
+                                    ]
+                     },
+                     {
                          "type":  "Operator",
                          "count":  3,
                          "stages":  [
@@ -4943,7 +6014,7 @@
                      },
                      {
                          "type":  "Queue",
-                         "count":  8,
+                         "count":  10,
                          "stages":  [
                                         "modelo-01-etapa-02",
                                         "modelo-03-etapa-07",
@@ -4952,7 +6023,9 @@
                                         "modelo-05-etapa-03",
                                         "modelo-05-etapa-01",
                                         "modelo-05-etapa-02",
-                                        "modelo-06-etapa-01"
+                                        "modelo-06-etapa-01",
+                                        "modelo-07-etapa-01",
+                                        "modelo-07-etapa-03"
                                     ]
                      },
                      {
@@ -4964,11 +6037,12 @@
                      },
                      {
                          "type":  "Sink",
-                         "count":  3,
+                         "count":  4,
                          "stages":  [
                                         "modelo-01-etapa-05",
                                         "modelo-03-etapa-01",
-                                        "modelo-05-etapa-03"
+                                        "modelo-05-etapa-03",
+                                        "modelo-07-etapa-01"
                                     ]
                      },
                      {
@@ -5023,9 +6097,9 @@
                       }
                   ],
     "warnings":  [
-                     "Texto fora de qualquer campo ignorado: \u0027\u003cb\u003eIMPORTANTE: \u003c/b\u003eÉ nesta seção que você irá inserir as etapas reais. A seção 5 é apenas consulta.\u0027",
                      "Aula 1 sem titulo apos o traco.",
                      "Aula 2 sem titulo apos o traco.",
-                     "Aula 3 sem titulo apos o traco."
+                     "Aula 3 sem titulo apos o traco.",
+                     "Aula 4 sem titulo apos o traco."
                  ]
 };
