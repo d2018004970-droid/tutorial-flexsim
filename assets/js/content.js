@@ -1,14 +1,14 @@
 ﻿window.TUTORIAL_CONTENT = {
     "meta":  {
                  "title":  "Tutorial de Modelagem utilizando FlexSim Education v2027-0",
-                 "generatedAt":  "2026-09-22T13:33:02.1083777-03:00",
+                 "generatedAt":  "2026-09-23T11:42:37.0992754-03:00",
                  "source":  "Word_Mestre.md",
                  "counts":  {
                                 "courses":  4,
-                                "models":  7,
-                                "stages":  39,
-                                "columns":  86,
-                                "prints":  130
+                                "models":  8,
+                                "stages":  44,
+                                "columns":  99,
+                                "prints":  152
                             }
              },
     "courses":  [
@@ -5959,6 +5959,1136 @@
                                                                           }
                                                                       ]
                                                       }
+                                       },
+                                       {
+                                           "id":  "modelo-08",
+                                           "number":  8,
+                                           "label":  "4.2) Modelo 08",
+                                           "stages":  [
+                                                          {
+                                                              "id":  "modelo-08-etapa-01",
+                                                              "number":  "01",
+                                                              "type":  "normal",
+                                                              "title":  "Etapa 01 – Paletização de placas embaladas",
+                                                              "columns":  [
+                                                                              {
+                                                                                  "title":  "Adicionando e configurando objetos",
+                                                                                  "prints":  [
+                                                                                                 {
+                                                                                                     "file":  "AULA4_MODELO8_ETAPA1_1.png",
+                                                                                                     "w":  1731,
+                                                                                                     "h":  910
+                                                                                                 },
+                                                                                                 {
+                                                                                                     "file":  "AULA4_MODELO8_ETAPA1_2.png",
+                                                                                                     "w":  1918,
+                                                                                                     "h":  917
+                                                                                                 }
+                                                                                             ],
+                                                                                  "roteiro":  [
+                                                                                                  "NESTE MODELO, OS LOTES COM 20 UNIDADES DE PLACAS EMBALADAS SERÃO PALETIZADOS NO “ COMBINER: PALETIZACAO ” TOTALMENTE AUTOMATIZADO,",
+                                                                                                  "POSICIONADO EM X = 100.00 ; Y = 0.00 ; Z = 0.00 E",
+                                                                                                  "COM TEMPO DE CICLO DE 240 [ s / pallet ]",
+                                                                                                  "",
+                                                                                                  "APÓS A PALETIZAÇÃO OS PALLETS SERÃO ENVIADOS PARA O “ SINK: SAIDAS_CLIENTES ”",
+                                                                                                  "POSICIONADO EM X = 120.00 ; Y = 0.00 ; Z = 0.00"
+                                                                                              ],
+                                                                                  "objeto":  [
+                                                                                                 "Sink – “SAIDAS_CLIENTES”",
+                                                                                                 "Combiner – “PALETIZACAO”"
+                                                                                             ],
+                                                                                  "caminho":  [
+
+                                                                                              ],
+                                                                                  "acao":  [
+
+                                                                                           ],
+                                                                                  "properties":  [
+                                                                                                     {
+                                                                                                         "key":  "NOME",
+                                                                                                         "title":  "Nome",
+                                                                                                         "lines":  [
+                                                                                                                       "PALETIZACAO"
+                                                                                                                   ]
+                                                                                                     },
+                                                                                                     {
+                                                                                                         "key":  "VISUALS",
+                                                                                                         "title":  "Visuals",
+                                                                                                         "lines":  [
+                                                                                                                       "SAIDAS_CLIENTES - [Mid6_small.png] X = 120.00 ; Y = 0.00 ; Z = 0.00",
+                                                                                                                       "PALETIZACAO - [Mid6_small.png] X = 100.00 ; Y = 0.00 ; Z = 0.00"
+                                                                                                                   ]
+                                                                                                     },
+                                                                                                     {
+                                                                                                         "key":  "PROCESSOR",
+                                                                                                         "title":  "Processor",
+                                                                                                         "lines":  [
+                                                                                                                       "[CHECK] Animate Items",
+                                                                                                                       "Process Time: 240 (s)"
+                                                                                                                   ]
+                                                                                                     }
+                                                                                                 ],
+                                                                                  "observacoes":  [
+
+                                                                                                  ]
+                                                                              },
+                                                                              {
+                                                                                  "title":  "Adicionando e configurando objeto",
+                                                                                  "prints":  [
+                                                                                                 {
+                                                                                                     "file":  "AULA4_MODELO8_ETAPA1_3.png",
+                                                                                                     "w":  1914,
+                                                                                                     "h":  911
+                                                                                                 },
+                                                                                                 {
+                                                                                                     "file":  "AULA4_MODELO8_ETAPA1_4.png",
+                                                                                                     "w":  1001,
+                                                                                                     "h":  509
+                                                                                                 }
+                                                                                             ],
+                                                                                  "roteiro":  [
+                                                                                                  "OS PALLETS SERÃO CRIADOS PELO “ SOURCE: CHEGADAS_PALLETS ”,",
+                                                                                                  "POSICIONADO EM X = 100.00 ; Y = -20.00 ; Z = 0.00",
+                                                                                                  "( com rotação de 90º no eixo Z )",
+                                                                                                  "",
+                                                                                                  "DEVERÃO SER CRIADOS DOIS MODELOS DE PALLETS ALTERNADAMENTE:",
+                                                                                                  "PARA ISSO, VOCÊ DEVERÁ:",
+                                                                                                  "UTILIZAR ARRIVAL SEQUENCE COM REPEAT TABLE COMO ARRIVAL STYLE",
+                                                                                                  "E, NESSA TABLE, CRIAR UMA LABEL CHAMADA DE PALLET"
+                                                                                              ],
+                                                                                  "objeto":  [
+                                                                                                 "Source – “CHEGADAS_PALLETS”"
+                                                                                             ],
+                                                                                  "caminho":  [
+
+                                                                                              ],
+                                                                                  "acao":  [
+
+                                                                                           ],
+                                                                                  "properties":  [
+                                                                                                     {
+                                                                                                         "key":  "NOME",
+                                                                                                         "title":  "Nome",
+                                                                                                         "lines":  [
+                                                                                                                       "CHEGADAS_PALLETS"
+                                                                                                                   ]
+                                                                                                     },
+                                                                                                     {
+                                                                                                         "key":  "VISUALS",
+                                                                                                         "title":  "Visuals",
+                                                                                                         "lines":  [
+                                                                                                                       "[Mid6_small.png] X = 100.00 ; Y = -20.00 ; Z = 0.00",
+                                                                                                                       "[rotate_arrow.png] Z = 90.00"
+                                                                                                                   ]
+                                                                                                     },
+                                                                                                     {
+                                                                                                         "key":  "SOURCE",
+                                                                                                         "title":  "Source",
+                                                                                                         "lines":  [
+                                                                                                                       "FlowItem Class: [down_arrow.bmp] \u003cb\u003e Pallet \u003c/b\u003e",
+                                                                                                                       "Arrival Style: Arrival Sequence",
+                                                                                                                       "[CHECK] Repeat Table",
+                                                                                                                       "",
+                                                                                                                       "Click em [view_table.ico] Edit Table",
+                                                                                                                       "",
+                                                                                                                       "1x [up_arrow.bmp] Add Arrivals",
+                                                                                                                       "Arrivals: \u003cb\u003e2\u003c/b\u003e             ",
+                                                                                                                       "",
+                                                                                                                       "1x [up_arrow.bmp] Add Labels",
+                                                                                                                       "Labels: \u003cb\u003e1\u003c/b\u003e",
+                                                                                                                       "",
+                                                                                                                       "Dentro da tabela:",
+                                                                                                                       "Renomeie MyLabel1 para \u003cb\u003ePALLET\u003c/b\u003e",
+                                                                                                                       "Na coluna de PALLET, digite 1 para Arrival1 e 2 para Arrival2."
+                                                                                                                   ]
+                                                                                                     }
+                                                                                                 ],
+                                                                                  "observacoes":  [
+                                                                                                      [
+                                                                                                          "A interpretação da tabela de Arrival Sequence é a seguinte:",
+                                                                                                          "",
+                                                                                                          "O primeiro PALLET é criado com a label PALLET = 1, apenas uma unidade.",
+                                                                                                          "O segundo PALLET é criado com a label PALLET = 2, apenas uma unidade.",
+                                                                                                          "",
+                                                                                                          "Ao utilizar Repeat Table, essa sequência é repetida sempre que permitida a criação de novos PALLETS com as mesmas labels."
+                                                                                                      ]
+                                                                                                  ]
+                                                                              },
+                                                                              {
+                                                                                  "title":  "Adicionando e configurando objeto",
+                                                                                  "prints":  [
+                                                                                                 {
+                                                                                                     "file":  "AULA4_MODELO8_ETAPA1_5.png",
+                                                                                                     "w":  1917,
+                                                                                                     "h":  912
+                                                                                                 },
+                                                                                                 {
+                                                                                                     "file":  "AULA4_MODELO8_ETAPA1_6.png",
+                                                                                                     "w":  1727,
+                                                                                                     "h":  934
+                                                                                                 }
+                                                                                             ],
+                                                                                  "roteiro":  [
+                                                                                                  "SENDO QUE OS PALLETS CRIADOS SERÃO ENVIADOS PARA O “ QUEUE: FILA_PALLETS_VAZIOS ”,",
+                                                                                                  "POSICIONADO EM X = 100.00 ; Y = -4.00 ; Z = 0.00",
+                                                                                                  "( com capacidade infinita, com rotação de 90º no eixo Z e com formato de linha horizontal )",
+                                                                                                  "",
+                                                                                                  "PALLET 1, NA COR VERDE, E, PALLET 2, NA COR AMARELA"
+                                                                                              ],
+                                                                                  "objeto":  [
+                                                                                                 "Queue – “FILA_PALLETS_VAZIOS”"
+                                                                                             ],
+                                                                                  "caminho":  [
+
+                                                                                              ],
+                                                                                  "acao":  [
+
+                                                                                           ],
+                                                                                  "properties":  [
+                                                                                                     {
+                                                                                                         "key":  "NOME",
+                                                                                                         "title":  "Nome",
+                                                                                                         "lines":  [
+                                                                                                                       "FILA_PALLETS_VAZIOS"
+                                                                                                                   ]
+                                                                                                     },
+                                                                                                     {
+                                                                                                         "key":  "VISUALS",
+                                                                                                         "title":  "Visuals",
+                                                                                                         "lines":  [
+                                                                                                                       "[Mid6_small.png] X = 100.00 ; Y = -4.00 ; Z = 0.00",
+                                                                                                                       "[rotate_arrow.png] Z = 90.00"
+                                                                                                                   ]
+                                                                                                     },
+                                                                                                     {
+                                                                                                         "key":  "QUEUE",
+                                                                                                         "title":  "Queue",
+                                                                                                         "lines":  [
+                                                                                                                       "Max Content – 1000000",
+                                                                                                                       "Item Placement: [down_arrow.bmp] Horizontal Line"
+                                                                                                                   ]
+                                                                                                     },
+                                                                                                     {
+                                                                                                         "key":  "TRIGGERS",
+                                                                                                         "title":  "Triggers",
+                                                                                                         "lines":  [
+                                                                                                                       "[PLUS] On Entry → Visuals → Set Color By Case:  ",
+                                                                                                                       "Value: \u003cb\u003eitem.PALLET\u003c/b\u003e",
+                                                                                                                       "2x [PLUS] Para adicionar “Case Value + Color”:",
+                                                                                                                       "1\u003cb\u003e:  [down_arrow.bmp] Color.green\u003c/b\u003e",
+                                                                                                                       "2\u003cb\u003e:  [down_arrow.bmp] Color.yellow\u003c/b\u003e"
+                                                                                                                   ]
+                                                                                                     }
+                                                                                                 ],
+                                                                                  "observacoes":  [
+
+                                                                                                  ]
+                                                                              },
+                                                                              {
+                                                                                  "title":  "Configurando estoque de PALLETS",
+                                                                                  "prints":  [
+                                                                                                 {
+                                                                                                     "file":  "AULA4_MODELO8_ETAPA1_7.png",
+                                                                                                     "w":  1729,
+                                                                                                     "h":  915
+                                                                                                 }
+                                                                                             ],
+                                                                                  "roteiro":  [
+                                                                                                  "QUE SÓ PERMITIRÁ A ENTRADA DE LOTES DE 8 PALLETS POR VEZ E SÓ APÓS FICAR VAZIO"
+                                                                                              ],
+                                                                                  "objeto":  [
+                                                                                                 "Queue – “FILA_PALLETS_VAZIOS”"
+                                                                                             ],
+                                                                                  "caminho":  [
+
+                                                                                              ],
+                                                                                  "acao":  [
+
+                                                                                           ],
+                                                                                  "properties":  [
+                                                                                                     {
+                                                                                                         "key":  "QUEUE",
+                                                                                                         "title":  "Queue",
+                                                                                                         "lines":  [
+                                                                                                                       "[CHECK] Perform Batching",
+                                                                                                                       "Target Batch Size: \u003cb\u003e8\u003c/b\u003e",
+                                                                                                                       "[CHECK] Flush contents between batches"
+                                                                                                                   ]
+                                                                                                     }
+                                                                                                 ],
+                                                                                  "observacoes":  [
+
+                                                                                                  ]
+                                                                              }
+                                                                          ]
+                                                          },
+                                                          {
+                                                              "id":  "modelo-08-etapa-02",
+                                                              "number":  "02",
+                                                              "type":  "normal",
+                                                              "title":  "Etapa 02 – Regra de puxar utilizando Global Table",
+                                                              "columns":  [
+                                                                              {
+                                                                                  "title":  "Adicionando e configurando objeto",
+                                                                                  "prints":  [
+                                                                                                 {
+                                                                                                     "file":  "AULA4_MODELO8_ETAPA2_1.png",
+                                                                                                     "w":  1614,
+                                                                                                     "h":  894
+                                                                                                 },
+                                                                                                 {
+                                                                                                     "file":  "AULA4_MODELO8_ETAPA2_2.png",
+                                                                                                     "w":  1723,
+                                                                                                     "h":  593
+                                                                                                 }
+                                                                                             ],
+                                                                                  "roteiro":  [
+                                                                                                  "EM SEGUIDA, CRIE A “ GLOBAL TABLE: REGRA_PUXADA_PLACAS_EMBALADAS, DE MODO QUE:",
+                                                                                                  "OS PALLETS 1, NA COR VERDE, PUXEM OS LOTES DE 20 UNIDADES DAS PLACAS MODELO 1 E",
+                                                                                                  "OS PALLETS 2, NA COR AMARELA, PUXEM OS LOTES DE 20 UNIDADES DAS PLACAS MODELO 2"
+                                                                                              ],
+                                                                                  "objeto":  [
+                                                                                                 "Combiner – “PALETIZACAO”",
+                                                                                                 "Global Table – “REGRA_PUXADA_PLACAS_EMBALADAS”"
+                                                                                             ],
+                                                                                  "caminho":  [
+
+                                                                                              ],
+                                                                                  "acao":  [
+                                                                                               "Abra a aba [view_tools.ico]Toolbox, clique em [PLUS] e selecione Global Table."
+                                                                                           ],
+                                                                                  "properties":  [
+                                                                                                     {
+                                                                                                         "key":  "GLOBAL_TABLE",
+                                                                                                         "title":  "Global Table",
+                                                                                                         "lines":  [
+                                                                                                                       "[view_table.ico] GlobalTable1"
+                                                                                                                   ]
+                                                                                                     },
+                                                                                                     {
+                                                                                                         "key":  "TABLE",
+                                                                                                         "title":  "Table",
+                                                                                                         "lines":  [
+                                                                                                                       "REGRA_PUXADA_PLACAS_EMBALADAS",
+                                                                                                                       "ROWS: 2     COLUMNS: 2"
+                                                                                                                   ]
+                                                                                                     }
+                                                                                                 ],
+                                                                                  "observacoes":  [
+                                                                                                      [
+                                                                                                          "Nomes das linhas e colunas são mostrados na Imagem 2 deste passo. Assim como os valores que devem ser inseridos.",
+                                                                                                          "",
+                                                                                                          "Cuidado principal é com os valores nas posições corretas dentro da Global Table, pois eles determinam qual e quantos lotes de placas devem ser enviados para cada placa impressa na paletização."
+                                                                                                      ]
+                                                                                                  ]
+                                                                              },
+                                                                              {
+                                                                                  "title":  "Configurando objeto",
+                                                                                  "prints":  [
+                                                                                                 {
+                                                                                                     "file":  "AULA4_MODELO8_ETAPA2_3.png",
+                                                                                                     "w":  1727,
+                                                                                                     "h":  913
+                                                                                                 },
+                                                                                                 {
+                                                                                                     "file":  "AULA4_MODELO8_ETAPA2_4.png",
+                                                                                                     "w":  1724,
+                                                                                                     "h":  936
+                                                                                                 }
+                                                                                             ],
+                                                                                  "roteiro":  [
+
+                                                                                              ],
+                                                                                  "objeto":  [
+                                                                                                 "Combiner – “PALETIZACAO”"
+                                                                                             ],
+                                                                                  "caminho":  [
+
+                                                                                              ],
+                                                                                  "acao":  [
+
+                                                                                           ],
+                                                                                  "properties":  [
+                                                                                                     {
+                                                                                                         "key":  "TRIGGERS",
+                                                                                                         "title":  "Triggers",
+                                                                                                         "lines":  [
+                                                                                                                       "[PLUS] On Entry → [PLUS] Update Combiner Component List With Labels:",
+                                                                                                                       "Table: [down_arrow.bmp] REGRA_PUXADA_PLACAS_EMBALADAS",
+                                                                                                                       "Label: \"PALLET\""
+                                                                                                                   ]
+                                                                                                     }
+                                                                                                 ],
+                                                                                  "observacoes":  [
+                                                                                                      [
+                                                                                                          "É possível visualizar se está as conexões estão corretas ao abrir as propriedades e ver se Inputs Ports estão compatíveis, exatamente na mesma sequência das imagens deste passo.",
+                                                                                                          "",
+                                                                                                          "[LETRA_VERMELHA]Lembrando que para o funcionamento correto do Combiner com a Global Table, deve-se estar exatamente configurado como mostrado neste passo, o Combiner, e no passo anterior, a Global Table.[FIM_LETRA_VERMELHA]"
+                                                                                                      ]
+                                                                                                  ]
+                                                                              }
+                                                                          ]
+                                                          },
+                                                          {
+                                                              "id":  "modelo-08-etapa-03",
+                                                              "number":  "03",
+                                                              "type":  "final",
+                                                              "title":  "Etapa 03 – Empilhadeira para Pallets finalizados",
+                                                              "columns":  [
+                                                                              {
+                                                                                  "title":  "Adicionando e configurando objeto",
+                                                                                  "prints":  [
+                                                                                                 {
+                                                                                                     "file":  "AULA4_MODELO8_ETAPA3_1.png",
+                                                                                                     "w":  1915,
+                                                                                                     "h":  916
+                                                                                                 }
+                                                                                             ],
+                                                                                  "roteiro":  [
+                                                                                                  "AGORA, VAMOS INSERIR A EMPILHADEIRA EMP_PALLETS_FINALIZADOS,",
+                                                                                                  "POSICIONADA EM X = 105.00 ; Y = 0.00 ; Z = 0.00",
+                                                                                                  "( com rotação de 180º no eixo Z )"
+                                                                                              ],
+                                                                                  "objeto":  [
+                                                                                                 "Transporter – “EMP_PALLETS_FINALIZADOS”"
+                                                                                             ],
+                                                                                  "caminho":  [
+
+                                                                                              ],
+                                                                                  "acao":  [
+
+                                                                                           ],
+                                                                                  "properties":  [
+                                                                                                     {
+                                                                                                         "key":  "NOME",
+                                                                                                         "title":  "Nome",
+                                                                                                         "lines":  [
+                                                                                                                       "EMP_PALLETS_FINALIZADOS"
+                                                                                                                   ]
+                                                                                                     },
+                                                                                                     {
+                                                                                                         "key":  "VISUALS",
+                                                                                                         "title":  "Visuals",
+                                                                                                         "lines":  [
+                                                                                                                       "[Mid6_small.png] X = 105.00 ; Y = 0.00 ; Z = 0.00",
+                                                                                                                       "[rotate_arrow.png] Z = 180.00"
+                                                                                                                   ]
+                                                                                                     },
+                                                                                                     {
+                                                                                                         "key":  "PORTS",
+                                                                                                         "title":  "Ports",
+                                                                                                         "lines":  [
+                                                                                                                       "[LETRA_VERMELHA] - Após a conexão, deve-se estar exibido da seguinte forma as portas de entrada do Transporter: [FIM_LETRA_VERMELHA]",
+                                                                                                                       "",
+                                                                                                                       "[down_arrow.bmp] - Central Ports:",
+                                                                                                                       "1: PALETIZACAO"
+                                                                                                                   ]
+                                                                                                     }
+                                                                                                 ],
+                                                                                  "observacoes":  [
+
+                                                                                                  ]
+                                                                              },
+                                                                              {
+                                                                                  "title":  "Configurando Atividade 1 do Transporter",
+                                                                                  "prints":  [
+                                                                                                 {
+                                                                                                     "file":  "AULA4_MODELO8_ETAPA3_2.png",
+                                                                                                     "w":  1724,
+                                                                                                     "h":  917
+                                                                                                 }
+                                                                                             ],
+                                                                                  "roteiro":  [
+                                                                                                  "PARA LEVAR OS PALLETS JÁ FINALIZADOS PARA O SINK"
+                                                                                              ],
+                                                                                  "objeto":  [
+                                                                                                 "Combiner – “PALETIZACAO”"
+                                                                                             ],
+                                                                                  "caminho":  [
+
+                                                                                              ],
+                                                                                  "acao":  [
+
+                                                                                           ],
+                                                                                  "properties":  [
+                                                                                                     {
+                                                                                                         "key":  "OUTPUT",
+                                                                                                         "title":  "Output",
+                                                                                                         "lines":  [
+                                                                                                                       "[CHECK] Use Transport:",
+                                                                                                                       "current.centerObjects[1]"
+                                                                                                                   ]
+                                                                                                     },
+                                                                                                     {
+                                                                                                         "key":  "PORTS",
+                                                                                                         "title":  "Ports",
+                                                                                                         "lines":  [
+                                                                                                                       "Para o Combiner “PALETIZACAO”:",
+                                                                                                                       "[LETRA_VERMELHA] - Após a conexão, deve-se estar exibido da seguinte forma as portas de entrada do Combiner: [FIM_LETRA_VERMELHA]",
+                                                                                                                       "",
+                                                                                                                       "[down_arrow.bmp] - Central Ports:",
+                                                                                                                       "1: EMP_PALLETS_FINALIZADOS"
+                                                                                                                   ]
+                                                                                                     }
+                                                                                                 ],
+                                                                                  "observacoes":  [
+
+                                                                                                  ]
+                                                                              },
+                                                                              {
+                                                                                  "title":  "Configurando retorno da empilhadeira",
+                                                                                  "prints":  [
+                                                                                                 {
+                                                                                                     "file":  "AULA4_MODELO8_ETAPA3_3.png",
+                                                                                                     "w":  1726,
+                                                                                                     "h":  935
+                                                                                                 }
+                                                                                             ],
+                                                                                  "roteiro":  [
+                                                                                                  "E VOLTAR À PALETIZAÇÃO QUANDO DESCARREGAR"
+                                                                                              ],
+                                                                                  "objeto":  [
+                                                                                                 "Transporter – “EMP_PALLETS_FINALIZADOS”"
+                                                                                             ],
+                                                                                  "caminho":  [
+
+                                                                                              ],
+                                                                                  "acao":  [
+
+                                                                                           ],
+                                                                                  "properties":  [
+                                                                                                     {
+                                                                                                         "key":  "TRIGGERS",
+                                                                                                         "title":  "Triggers",
+                                                                                                         "lines":  [
+                                                                                                                       "[PLUS] → On Unload → Travel to an Object:",
+                                                                                                                       "Clique no [eyedropper.png] para selecionar o objeto \"PALETIZACAO\"",
+                                                                                                                       "Selecione a opção: Model.find(\"PALETIZACAO\")",
+                                                                                                                       "",
+                                                                                                                       "Então terá",
+                                                                                                                       "Destination: Model.find(\"PALETIZACAO\")"
+                                                                                                                   ]
+                                                                                                     }
+                                                                                                 ],
+                                                                                  "observacoes":  [
+
+                                                                                                  ]
+                                                                              }
+                                                                          ]
+                                                          },
+                                                          {
+                                                              "id":  "modelo-08-etapa-04",
+                                                              "number":  "04",
+                                                              "type":  "normal",
+                                                              "title":  "Etapa 04 – Definindo caminho que a empilhadeira deve percorrer",
+                                                              "columns":  [
+                                                                              {
+                                                                                  "title":  "Adicionando e posicionando objetos",
+                                                                                  "prints":  [
+                                                                                                 {
+                                                                                                     "file":  "AULA4_MODELO8_ETAPA4_1.png",
+                                                                                                     "w":  1917,
+                                                                                                     "h":  916
+                                                                                                 },
+                                                                                                 {
+                                                                                                     "file":  "AULA4_MODELO8_ETAPA4_2.png",
+                                                                                                     "w":  1728,
+                                                                                                     "h":  914
+                                                                                                 },
+                                                                                                 {
+                                                                                                     "file":  "AULA4_MODELO8_ETAPA4_3.png",
+                                                                                                     "w":  773,
+                                                                                                     "h":  609
+                                                                                                 }
+                                                                                             ],
+                                                                                  "roteiro":  [
+                                                                                                  "PROSSEGUINDO, VAMOS CRIAR UM CAMINHO PARA ESSA EMPILHADEIRA, COM:",
+                                                                                                  "NN1, POSICIONADO EM X = 105.00 ; Y = 0.00 ; Z = 0.00",
+                                                                                                  "NN2,  POSICIONADO EM X = 110.00 ; Y = -3.50 ; Z = 0.00",
+                                                                                                  "NN3, POSICIONADO EM X = 115.00 ; Y = 0.00 ; Z = 0.00",
+                                                                                                  "NN4, POSICIONADO EM X = 110.00 ; Y = 3.50 ; Z = 0.00"
+                                                                                              ],
+                                                                                  "objeto":  [
+                                                                                                 "NetworkNode - \"NN1\"",
+                                                                                                 "NetworkNode - \"NN2\"",
+                                                                                                 "NetworkNode - \"NN3\"",
+                                                                                                 "NetworkNode - \"NN4\""
+                                                                                             ],
+                                                                                  "caminho":  [
+
+                                                                                              ],
+                                                                                  "acao":  [
+
+                                                                                           ],
+                                                                                  "properties":  [
+                                                                                                     {
+                                                                                                         "key":  "VISUALS",
+                                                                                                         "title":  "Visuals",
+                                                                                                         "lines":  [
+                                                                                                                       "NN1 - [Mid6_small.png] X = 105.00 ; Y = 0.00 ; Z = 0.00",
+                                                                                                                       "NN2 - [Mid6_small.png] X = 110.00 ; Y = -3.50 ; Z = 0.00",
+                                                                                                                       "NN3 - [Mid6_small.png] X = 115.00 ; Y = 0.00 ; Z = 0.00",
+                                                                                                                       "NN4 - [Mid6_small.png] X = 110.00 ; Y = 3.50 ; Z = 0.00"
+                                                                                                                   ]
+                                                                                                     }
+                                                                                                 ],
+                                                                                  "observacoes":  [
+
+                                                                                                  ]
+                                                                              },
+                                                                              {
+                                                                                  "title":  "Configurando objetos",
+                                                                                  "prints":  [
+                                                                                                 {
+                                                                                                     "file":  "AULA4_MODELO8_ETAPA4_4.png",
+                                                                                                     "w":  1400,
+                                                                                                     "h":  916
+                                                                                                 },
+                                                                                                 {
+                                                                                                     "file":  "AULA4_MODELO8_ETAPA4_5.png",
+                                                                                                     "w":  1729,
+                                                                                                     "h":  914
+                                                                                                 }
+                                                                                             ],
+                                                                                  "roteiro":  [
+                                                                                                  "A EMPILHADEIRA DEVERÁ IR ATÉ O SINK PELO TRECHO NN1, NN2 E NN3",
+                                                                                                  "E ENTÃO RETORNAR À PALETIZAÇÃO PELO TRECHO NN3, NN4 E NN1"
+                                                                                              ],
+                                                                                  "objeto":  [
+
+                                                                                             ],
+                                                                                  "caminho":  [
+
+                                                                                              ],
+                                                                                  "acao":  [
+                                                                                               "1°: Conectar os objetos utilizando o comando de conexão. Como atalho, pressione a tecla “A” do teclado. ",
+                                                                                               "Conforme orientado a seguir:",
+                                                                                               "NetworkNode “NN1” → NetworkNode “NN2”",
+                                                                                               "NetworkNode “NN2” → NetworkNode “NN3”",
+                                                                                               "NetworkNode “NN3” → NetworkNode “NN4”",
+                                                                                               "NetworkNode “NN4” → NetworkNode “NN1”",
+                                                                                               "",
+                                                                                               "Transporter “EMP_PALETAS_FINALIZADAS” → NetworkNode “NN1”",
+                                                                                               "",
+                                                                                               "Combiner “PALETIZACAO” → NetworkNode “NN1”",
+                                                                                               "Sink “SAIDAS_CLIENTES” → NetworkNode “NN3”",
+                                                                                               "",
+                                                                                               "2°: Para desabilitar um caminho de conexão, clique com o botão direito do mouse na seta da direção que deseja desabilitar e selecione No_Connection."
+                                                                                           ],
+                                                                                  "properties":  [
+
+                                                                                                 ],
+                                                                                  "observacoes":  [
+
+                                                                                                  ]
+                                                                              },
+                                                                              {
+                                                                                  "title":  "Configurando caminho",
+                                                                                  "prints":  [
+                                                                                                 {
+                                                                                                     "file":  "AULA4_MODELO8_ETAPA4_6.png",
+                                                                                                     "w":  1714,
+                                                                                                     "h":  913
+                                                                                                 },
+                                                                                                 {
+                                                                                                     "file":  "AULA4_MODELO8_ETAPA4_7.png",
+                                                                                                     "w":  716,
+                                                                                                     "h":  888
+                                                                                                 }
+                                                                                             ],
+                                                                                  "roteiro":  [
+                                                                                                  "E PARA FINALIZAR, COLOQUE DISTÂNCIAS VIRTUAIS DE 200 m ENTRE CADA PAR DE NÓS"
+                                                                                              ],
+                                                                                  "objeto":  [
+                                                                                                 "NetworkNode - \"NN1\"",
+                                                                                                 "NetworkNode - \"NN2\"",
+                                                                                                 "NetworkNode - \"NN3\"",
+                                                                                                 "NetworkNode - \"NN4\""
+                                                                                             ],
+                                                                                  "caminho":  [
+
+                                                                                              ],
+                                                                                  "acao":  [
+
+                                                                                           ],
+                                                                                  "properties":  [
+                                                                                                     {
+                                                                                                         "key":  "NETWORKNODE",
+                                                                                                         "title":  "NetworkNode",
+                                                                                                         "lines":  [
+                                                                                                                       "Para NetworkNode “NN1”:",
+                                                                                                                       "Path 1 - [down_arrow.bmp]\u003cb\u003eTo NN2\u003c/b\u003e",
+                                                                                                                       "Virtual Distance: \u003cb\u003e200\u003c/b\u003e m",
+                                                                                                                       "",
+                                                                                                                       "Para NetworkNode “NN2”:",
+                                                                                                                       "Path 2 - [down_arrow.bmp]\u003cb\u003eTo NN3\u003c/b\u003e",
+                                                                                                                       "Virtual Distance: \u003cb\u003e200\u003c/b\u003e m  ",
+                                                                                                                       "",
+                                                                                                                       "Para NetworkNode “NN3”:",
+                                                                                                                       "Path 2 - [down_arrow.bmp]\u003cb\u003eTo NN4\u003c/b\u003e",
+                                                                                                                       "Virtual Distance: \u003cb\u003e200\u003c/b\u003e m",
+                                                                                                                       "",
+                                                                                                                       "Para NetworkNode “NN4”:",
+                                                                                                                       "Path 2 - [down_arrow.bmp]\u003cb\u003eTo NN1\u003c/b\u003e",
+                                                                                                                       "Virtual Distance: \u003cb\u003e200\u003c/b\u003e m"
+                                                                                                                   ]
+                                                                                                     }
+                                                                                                 ],
+                                                                                  "observacoes":  [
+                                                                                                      [
+                                                                                                          "[LETRA_VERMELHA]Para conseguir acessar o NetworkNode NN1, precisa movimentar o Transporter \"EMP_PALLETS_FINALIZADOS\" no Mapa 3D para outro local. ",
+                                                                                                          "Após realizar toda a configuração exibida neste passo, deve retornar o Transporter para sua posição inicial.[FIM_LETRA_VERMELHA]"
+                                                                                                      ]
+                                                                                                  ]
+                                                                              }
+                                                                          ]
+                                                          },
+                                                          {
+                                                              "id":  "modelo-08-etapa-05",
+                                                              "number":  "05",
+                                                              "type":  "results",
+                                                              "title":  "Resultados",
+                                                              "columns":  [
+                                                                              {
+                                                                                  "title":  "Validando o modelo simulado.",
+                                                                                  "prints":  [
+                                                                                                 {
+                                                                                                     "file":  "AULA4_MODELO8_RESULTADOS_1.png",
+                                                                                                     "w":  1919,
+                                                                                                     "h":  913
+                                                                                                 }
+                                                                                             ],
+                                                                                  "roteiro":  [
+                                                                                                  "Quantidade expedida",
+                                                                                                  "30 pallets = 30 * 20 = 600 unidades",
+                                                                                                  "",
+                                                                                                  "Elaborar e interpretar os gráficos de estados",
+                                                                                                  "PROCESSING",
+                                                                                                  "IMPRESSORA_1: 58,87% ; IMPRESSORA_2: 60,35% ; TESTE: 51,36% ;",
+                                                                                                  "MONTAGEM: 22,33% ; ACABAMENTO: 22,30%;",
+                                                                                                  "INSPECAO_EMBALAGEM: 17,83%; PALETIZACAO: 25,34%"
+                                                                                              ],
+                                                                                  "objeto":  [
+
+                                                                                             ],
+                                                                                  "caminho":  [
+
+                                                                                              ],
+                                                                                  "acao":  [
+
+                                                                                           ],
+                                                                                  "properties":  [
+
+                                                                                                 ],
+                                                                                  "observacoes":  [
+
+                                                                                                  ]
+                                                                              }
+                                                                          ],
+                                                              "results":  {
+                                                                              "throughput":  "600",
+                                                                              "processing":  [
+                                                                                                 {
+                                                                                                     "name":  "IMPRESSORA_1",
+                                                                                                     "pct":  58.87
+                                                                                                 },
+                                                                                                 {
+                                                                                                     "name":  "IMPRESSORA_2",
+                                                                                                     "pct":  60.35
+                                                                                                 },
+                                                                                                 {
+                                                                                                     "name":  "TESTE",
+                                                                                                     "pct":  51.36
+                                                                                                 },
+                                                                                                 {
+                                                                                                     "name":  "MONTAGEM",
+                                                                                                     "pct":  22.33
+                                                                                                 },
+                                                                                                 {
+                                                                                                     "name":  "ACABAMENTO",
+                                                                                                     "pct":  22.3
+                                                                                                 },
+                                                                                                 {
+                                                                                                     "name":  "INSPECAO_EMBALAGEM",
+                                                                                                     "pct":  17.83
+                                                                                                 },
+                                                                                                 {
+                                                                                                     "name":  "PALETIZACAO",
+                                                                                                     "pct":  25.34
+                                                                                                 }
+                                                                                             ],
+                                                                              "raw":  "Quantidade expedida\n30 pallets = 30 * 20 = 600 unidades\n\nElaborar e interpretar os gráficos de estados\nPROCESSING\nIMPRESSORA_1: 58,87% ; IMPRESSORA_2: 60,35% ; TESTE: 51,36% ;\nMONTAGEM: 22,33% ; ACABAMENTO: 22,30%;\nINSPECAO_EMBALAGEM: 17,83%; PALETIZACAO: 25,34%"
+                                                                          }
+                                                          }
+                                                      ],
+                                           "layout":  {
+                                                          "objects":  [
+                                                                          {
+                                                                              "name":  "PLACAS_IMPRESSAS",
+                                                                              "type":  "Queue",
+                                                                              "x":  30,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-03-etapa-01",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "IMPRESSORA_2",
+                                                                              "type":  "Processor",
+                                                                              "x":  20,
+                                                                              "y":  -3.5,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-01-etapa-04",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "COMPONENTES_CILINDROS_VAZIOS",
+                                                                              "type":  "Queue",
+                                                                              "x":  70,
+                                                                              "y":  -10,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-05-etapa-03",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "SAIDAS_CLIENTES",
+                                                                              "type":  "Sink",
+                                                                              "x":  120,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-08-etapa-01",
+                                                                              "isNew":  true
+                                                                          },
+                                                                          {
+                                                                              "name":  "PLACAS_ACABADAS",
+                                                                              "type":  "Queue",
+                                                                              "x":  75,
+                                                                              "y":  0,
+                                                                              "rot":  1,
+                                                                              "stageId":  "modelo-07-etapa-01",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "MOVIMENTADOR_2",
+                                                                              "type":  "Operator",
+                                                                              "x":  15,
+                                                                              "y":  -3.5,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-02-etapa-02",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "DP_0",
+                                                                              "type":  "Decision Point",
+                                                                              "x":  42.5,
+                                                                              "y":  0.2,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-03-etapa-06",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "MONTAGEM",
+                                                                              "type":  "Combiner",
+                                                                              "x":  60,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-05-etapa-02",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "CONVEYOR_modelo-04-etapa-04_Adicionando_e_configurando_objeto",
+                                                                              "type":  "Conveyor",
+                                                                              "x1":  20,
+                                                                              "y1":  -19.5,
+                                                                              "x2":  20,
+                                                                              "y2":  -12,
+                                                                              "stageId":  "modelo-04-etapa-04",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "PLACAS_IMPRESSAS_APROVADAS",
+                                                                              "type":  "Queue",
+                                                                              "x":  50,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-05-etapa-01",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "PLACAS_EMBALADAS_MOD_1",
+                                                                              "type":  "Queue",
+                                                                              "x":  85,
+                                                                              "y":  1,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-07-etapa-03",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "TESTE",
+                                                                              "type":  "Processor",
+                                                                              "x":  40,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-03-etapa-02",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "DP_1",
+                                                                              "type":  "Decision Point",
+                                                                              "x":  45,
+                                                                              "y":  -1.5,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-03-etapa-06",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "SAIDA_CLIENTES",
+                                                                              "type":  "Sink",
+                                                                              "x":  80,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-05-etapa-03",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "CHEGADA_PLACAS_VIRGENS",
+                                                                              "type":  "Source",
+                                                                              "x":  0,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-01-etapa-01",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "ACABAMENTO",
+                                                                              "type":  "Separator",
+                                                                              "x":  70,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-05-etapa-03",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "NN1",
+                                                                              "type":  "NetworkNode",
+                                                                              "x":  105,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-08-etapa-04",
+                                                                              "isNew":  true
+                                                                          },
+                                                                          {
+                                                                              "name":  "CONVEYOR_modelo-03-etapa-05_Adicionando_e_configurando_objeto_(Esteira_aprovados)",
+                                                                              "type":  "Conveyor",
+                                                                              "x1":  42,
+                                                                              "y1":  0,
+                                                                              "x2":  48,
+                                                                              "y2":  0,
+                                                                              "stageId":  "modelo-03-etapa-05",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "PLACAS_VIRGENS",
+                                                                              "type":  "Queue",
+                                                                              "x":  10,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-01-etapa-02",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "FILA_PALLETS_VAZIOS",
+                                                                              "type":  "Queue",
+                                                                              "x":  100,
+                                                                              "y":  -4,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-08-etapa-01",
+                                                                              "isNew":  true
+                                                                          },
+                                                                          {
+                                                                              "name":  "NN2",
+                                                                              "type":  "NetworkNode",
+                                                                              "x":  110,
+                                                                              "y":  -3.5,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-08-etapa-04",
+                                                                              "isNew":  true
+                                                                          },
+                                                                          {
+                                                                              "name":  "MOVIMENTADOR_1",
+                                                                              "type":  "Operator",
+                                                                              "x":  15,
+                                                                              "y":  3.5,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-02-etapa-02",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "CONVEYOR_modelo-03-etapa-07_Adicionando_e_configurando_objetos_(Esteira_horizontal)",
+                                                                              "type":  "Conveyor",
+                                                                              "x1":  43,
+                                                                              "y1":  -20,
+                                                                              "x2":  12,
+                                                                              "y2":  -20,
+                                                                              "stageId":  "modelo-03-etapa-07",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "CHEGADAS_PALLETS",
+                                                                              "type":  "Source",
+                                                                              "x":  100,
+                                                                              "y":  -20,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-08-etapa-01",
+                                                                              "isNew":  true
+                                                                          },
+                                                                          {
+                                                                              "name":  "INSPECAO_EMBALAGEM",
+                                                                              "type":  "MultiProcessor",
+                                                                              "x":  80,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-07-etapa-02",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "OPERADOR_MONTAGEM_ACABAMENTO",
+                                                                              "type":  "Operator",
+                                                                              "x":  60,
+                                                                              "y":  2.5,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-05-etapa-03",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "PLACAS_EMBALADAS_MOD_2",
+                                                                              "type":  "Queue",
+                                                                              "x":  85,
+                                                                              "y":  -1,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-07-etapa-03",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "PALETIZACAO",
+                                                                              "type":  "Combiner",
+                                                                              "x":  100,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-08-etapa-01",
+                                                                              "isNew":  true
+                                                                          },
+                                                                          {
+                                                                              "name":  "NN4",
+                                                                              "type":  "NetworkNode",
+                                                                              "x":  110,
+                                                                              "y":  3.5,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-08-etapa-04",
+                                                                              "isNew":  true
+                                                                          },
+                                                                          {
+                                                                              "name":  "PLACAS_IMPRESSAS_REPROVADAS",
+                                                                              "type":  "Queue",
+                                                                              "x":  10,
+                                                                              "y":  -20,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-03-etapa-07",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "DP_3",
+                                                                              "type":  "Decision Point",
+                                                                              "x":  20,
+                                                                              "y":  -17.5,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-04-etapa-04",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "NN3",
+                                                                              "type":  "NetworkNode",
+                                                                              "x":  115,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-08-etapa-04",
+                                                                              "isNew":  true
+                                                                          },
+                                                                          {
+                                                                              "name":  "IMPRESSORA_1",
+                                                                              "type":  "Processor",
+                                                                              "x":  20,
+                                                                              "y":  3.5,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-01-etapa-04",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "OPERADOR_IMPRESSORA_2",
+                                                                              "type":  "Operator",
+                                                                              "x":  20,
+                                                                              "y":  -1,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-02-etapa-01",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "DP_2",
+                                                                              "type":  "Decision Point",
+                                                                              "x":  22,
+                                                                              "y":  -20,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-04-etapa-04",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "CONVEYOR_modelo-03-etapa-05_Adicionando_e_configurando_objeto_(Esteira_reprovados)",
+                                                                              "type":  "Conveyor",
+                                                                              "x1":  45,
+                                                                              "y1":  -0.5,
+                                                                              "x2":  45,
+                                                                              "y2":  -16.5,
+                                                                              "stageId":  "modelo-03-etapa-05",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "COMPONENTES_CILINDROS_CHEIOS",
+                                                                              "type":  "Queue",
+                                                                              "x":  60,
+                                                                              "y":  -10,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-05-etapa-02",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "COMPONENTES_CILINDROS_CHEIOS_MOD_2",
+                                                                              "type":  "Queue",
+                                                                              "x":  63,
+                                                                              "y":  -10,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-06-etapa-01",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "OPERADOR_IMPRESSORA_1",
+                                                                              "type":  "Operator",
+                                                                              "x":  20,
+                                                                              "y":  6,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-02-etapa-01",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "PLACAS_IMPRESSAS_REFUGADAS",
+                                                                              "type":  "Queue",
+                                                                              "x":  20,
+                                                                              "y":  -10,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-04-etapa-04",
+                                                                              "isNew":  false
+                                                                          }
+                                                                      ]
+                                                      }
                                        }
                                    ]
                     }
@@ -5966,9 +7096,10 @@
     "glossary":  [
                      {
                          "type":  "Combiner",
-                         "count":  1,
+                         "count":  2,
                          "stages":  [
-                                        "modelo-05-etapa-02"
+                                        "modelo-05-etapa-02",
+                                        "modelo-08-etapa-01"
                                     ]
                      },
                      {
@@ -5996,6 +7127,13 @@
                                     ]
                      },
                      {
+                         "type":  "NetworkNode",
+                         "count":  1,
+                         "stages":  [
+                                        "modelo-08-etapa-04"
+                                    ]
+                     },
+                     {
                          "type":  "Operator",
                          "count":  3,
                          "stages":  [
@@ -6014,7 +7152,7 @@
                      },
                      {
                          "type":  "Queue",
-                         "count":  10,
+                         "count":  11,
                          "stages":  [
                                         "modelo-01-etapa-02",
                                         "modelo-03-etapa-07",
@@ -6025,7 +7163,8 @@
                                         "modelo-05-etapa-02",
                                         "modelo-06-etapa-01",
                                         "modelo-07-etapa-01",
-                                        "modelo-07-etapa-03"
+                                        "modelo-07-etapa-03",
+                                        "modelo-08-etapa-01"
                                     ]
                      },
                      {
@@ -6037,19 +7176,21 @@
                      },
                      {
                          "type":  "Sink",
-                         "count":  4,
+                         "count":  5,
                          "stages":  [
                                         "modelo-01-etapa-05",
                                         "modelo-03-etapa-01",
                                         "modelo-05-etapa-03",
-                                        "modelo-07-etapa-01"
+                                        "modelo-07-etapa-01",
+                                        "modelo-08-etapa-01"
                                     ]
                      },
                      {
                          "type":  "Source",
-                         "count":  1,
+                         "count":  2,
                          "stages":  [
-                                        "modelo-01-etapa-01"
+                                        "modelo-01-etapa-01",
+                                        "modelo-08-etapa-01"
                                     ]
                      }
                  ],
@@ -6086,7 +7227,8 @@
                                            "modelo-04-etapa-04",
                                            "modelo-05-etapa-02",
                                            "modelo-05-etapa-03",
-                                           "modelo-06-etapa-01"
+                                           "modelo-06-etapa-01",
+                                           "modelo-08-etapa-04"
                                        ]
                       },
                       {

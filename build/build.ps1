@@ -89,6 +89,7 @@ $PropertyTitleMap = @{
   'PROCESSOR'       = 'Processor'
   'MULTIPROCESSOR'  = 'MultiProcessor'
   'CONVEYOR'        = 'Conveyor'
+  'NETWORKNODE'     = 'NetworkNode'
   'DECISION_POINT'  = 'Decision Point'
   'OPTIONS'         = 'Options'
   'A*NAVIGATION'    = 'A* Navigator Properties'
@@ -396,7 +397,7 @@ function Normalize-ObjName([string]$n) {
   return $n
 }
 
-$typeRegex = '(Source|Queue|MultiProcessor|Processor|Sink|Operator|Conveyor|Decision Point|Combiner|Separator|Global Table|A\*? ?Navigation)'
+$typeRegex = '(Source|Queue|MultiProcessor|Processor|Sink|Operator|Conveyor|NetworkNode|Decision Point|Combiner|Separator|Global Table|A\*? ?Navigation)'
 $globalLayout = @{}   # nome normalizado -> objeto layout (persistente entre modelos)
 $nameTypeMap = @{}    # nome normalizado -> tipo (persistente no documento inteiro, para nao depender
                        # de qual foi o ULTIMO tipo mencionado na mesma coluna quando ha mais de um objeto)

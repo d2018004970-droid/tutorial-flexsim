@@ -2583,5 +2583,418 @@ MONTAGEM: 22,33% ; ACABAMENTO: 22,30%; INSPECAO_EMBALAGEM: 17,83%
 
 [FIM_COLUNA]
 
+### 4.2) Modelo 08
+[ETAPA] Etapa 01 – Paletização de placas embaladas
+[COLUNA]
+[TITULO]
+Adicionando e configurando objetos
+
+[PRINT]
+AULA4_MODELO8_ETAPA1_1.png
+[PRINT]
+AULA4_MODELO8_ETAPA1_2.png
+
+[ROTEIRO]
+NESTE MODELO, OS LOTES COM 20 UNIDADES DE PLACAS EMBALADAS SERÃO PALETIZADOS NO “ COMBINER: PALETIZACAO ” TOTALMENTE AUTOMATIZADO,
+POSICIONADO EM X = 100.00 ; Y = 0.00 ; Z = 0.00 E
+COM TEMPO DE CICLO DE 240 [ s / pallet ]
+
+APÓS A PALETIZAÇÃO OS PALLETS SERÃO ENVIADOS PARA O “ SINK: SAIDAS_CLIENTES ”
+POSICIONADO EM X = 120.00 ; Y = 0.00 ; Z = 0.00
+
+[OBJETO]
+Sink – “SAIDAS_CLIENTES”
+Combiner – “PALETIZACAO”
+
+[PROPERTIES]
+[NOME]
+PALETIZACAO
+
+[VISUALS]
+SAIDAS_CLIENTES - [Mid6_small.png] X = 120.00 ; Y = 0.00 ; Z = 0.00
+PALETIZACAO - [Mid6_small.png] X = 100.00 ; Y = 0.00 ; Z = 0.00
+
+[PROCESSOR]
+[CHECK] Animate Items
+Process Time: 240 (s)
+[FIM_COLUNA]
+
+[COLUNA]
+[TITULO]
+Adicionando e configurando objeto
+
+[PRINT]
+AULA4_MODELO8_ETAPA1_3.png
+[PRINT]
+AULA4_MODELO8_ETAPA1_4.png
+
+[ROTEIRO]
+OS PALLETS SERÃO CRIADOS PELO “ SOURCE: CHEGADAS_PALLETS ”,
+POSICIONADO EM X = 100.00 ; Y = -20.00 ; Z = 0.00
+( com rotação de 90º no eixo Z )
+
+DEVERÃO SER CRIADOS DOIS MODELOS DE PALLETS ALTERNADAMENTE:
+PARA ISSO, VOCÊ DEVERÁ:
+UTILIZAR ARRIVAL SEQUENCE COM REPEAT TABLE COMO ARRIVAL STYLE
+E, NESSA TABLE, CRIAR UMA LABEL CHAMADA DE PALLET
+
+[OBJETO]
+Source – “CHEGADAS_PALLETS”
+
+[PROPERTIES]
+[NOME]
+CHEGADAS_PALLETS
+
+[VISUALS]
+[Mid6_small.png] X = 100.00 ; Y = -20.00 ; Z = 0.00
+[rotate_arrow.png] Z = 90.00
+
+[SOURCE]
+FlowItem Class: [down_arrow.bmp] <b> Pallet </b>
+Arrival Style: Arrival Sequence
+[CHECK] Repeat Table
+
+Click em [view_table.ico] Edit Table
+
+1x [up_arrow.bmp] Add Arrivals
+Arrivals: <b>2</b>             
+
+1x [up_arrow.bmp] Add Labels
+Labels: <b>1</b>
+
+Dentro da tabela:
+Renomeie MyLabel1 para <b>PALLET</b>
+Na coluna de PALLET, digite 1 para Arrival1 e 2 para Arrival2.
+
+[OBSERVACAO]
+A interpretação da tabela de Arrival Sequence é a seguinte:
+
+O primeiro PALLET é criado com a label PALLET = 1, apenas uma unidade.
+O segundo PALLET é criado com a label PALLET = 2, apenas uma unidade.
+
+Ao utilizar Repeat Table, essa sequência é repetida sempre que permitida a criação de novos PALLETS com as mesmas labels.
+[FIM_COLUNA]
+
+[COLUNA]
+[TITULO]
+Adicionando e configurando objeto
+
+[PRINT]
+AULA4_MODELO8_ETAPA1_5.png
+[PRINT]
+AULA4_MODELO8_ETAPA1_6.png
+
+[ROTEIRO]
+SENDO QUE OS PALLETS CRIADOS SERÃO ENVIADOS PARA O “ QUEUE: FILA_PALLETS_VAZIOS ”,
+POSICIONADO EM X = 100.00 ; Y = -4.00 ; Z = 0.00
+( com capacidade infinita, com rotação de 90º no eixo Z e com formato de linha horizontal )
+
+PALLET 1, NA COR VERDE, E, PALLET 2, NA COR AMARELA
+
+[OBJETO]
+Queue – “FILA_PALLETS_VAZIOS”
+
+[PROPERTIES]
+[NOME]
+FILA_PALLETS_VAZIOS
+
+[VISUALS]
+[Mid6_small.png] X = 100.00 ; Y = -4.00 ; Z = 0.00
+[rotate_arrow.png] Z = 90.00
+
+[QUEUE]
+Max Content – 1000000
+Item Placement: [down_arrow.bmp] Horizontal Line
+
+[TRIGGERS]
+[PLUS] On Entry → Visuals → Set Color By Case:  
+Value: <b>item.PALLET</b>
+2x [PLUS] Para adicionar “Case Value + Color”:
+1<b>:  [down_arrow.bmp] Color.green</b>
+2<b>:  [down_arrow.bmp] Color.yellow</b>
+[FIM_COLUNA]
+
+[COLUNA]
+[TITULO]
+Configurando estoque de PALLETS
+
+[PRINT]
+AULA4_MODELO8_ETAPA1_7.png
+
+[ROTEIRO]
+QUE SÓ PERMITIRÁ A ENTRADA DE LOTES DE 8 PALLETS POR VEZ E SÓ APÓS FICAR VAZIO
+
+[OBJETO]
+Queue – “FILA_PALLETS_VAZIOS”
+
+[PROPERTIES]
+[QUEUE]
+[CHECK] Perform Batching
+Target Batch Size: <b>8</b>
+[CHECK] Flush contents between batches
+[FIM_COLUNA]
+
+[ETAPA] Etapa 02 – Regra de puxar utilizando Global Table
+[COLUNA]
+[TITULO]
+Adicionando e configurando objeto
+
+[PRINT]
+AULA4_MODELO8_ETAPA2_1.png
+[PRINT]
+AULA4_MODELO8_ETAPA2_2.png
+
+[ROTEIRO]
+EM SEGUIDA, CRIE A “ GLOBAL TABLE: REGRA_PUXADA_PLACAS_EMBALADAS, DE MODO QUE:
+OS PALLETS 1, NA COR VERDE, PUXEM OS LOTES DE 20 UNIDADES DAS PLACAS MODELO 1 E
+OS PALLETS 2, NA COR AMARELA, PUXEM OS LOTES DE 20 UNIDADES DAS PLACAS MODELO 2
+
+[OBJETO]
+Combiner – “PALETIZACAO”
+Global Table – “REGRA_PUXADA_PLACAS_EMBALADAS”
+
+[ACAO_MOUSE]
+Abra a aba [view_tools.ico]Toolbox, clique em [PLUS] e selecione Global Table.
+
+[GLOBAL_TABLE]
+[view_table.ico] GlobalTable1
+[PROPERTIES]
+[TABLE]
+REGRA_PUXADA_PLACAS_EMBALADAS
+ROWS: 2     COLUMNS: 2
 
 
+[OBSERVACAO]
+Nomes das linhas e colunas são mostrados na Imagem 2 deste passo. Assim como os valores que devem ser inseridos.
+
+Cuidado principal é com os valores nas posições corretas dentro da Global Table, pois eles determinam qual e quantos lotes de placas devem ser enviados para cada placa impressa na paletização.
+[FIM_COLUNA]
+
+[COLUNA]
+[TITULO]
+Configurando objeto
+
+[PRINT]
+AULA4_MODELO8_ETAPA2_3.png
+[PRINT]
+AULA4_MODELO8_ETAPA2_4.png
+
+[OBJETO]
+Combiner – “PALETIZACAO”
+
+[PROPERTIES]
+[TRIGGERS]
+[PLUS] On Entry → [PLUS] Update Combiner Component List With Labels:
+Table: [down_arrow.bmp] REGRA_PUXADA_PLACAS_EMBALADAS
+Label: "PALLET"
+
+[OBSERVACAO]
+É possível visualizar se está as conexões estão corretas ao abrir as propriedades e ver se Inputs Ports estão compatíveis, exatamente na mesma sequência das imagens deste passo.
+
+[LETRA_VERMELHA]Lembrando que para o funcionamento correto do Combiner com a Global Table, deve-se estar exatamente configurado como mostrado neste passo, o Combiner, e no passo anterior, a Global Table.[FIM_LETRA_VERMELHA]
+
+[FIM_COLUNA]
+
+[ETAPA] Etapa 03 – Empilhadeira para Pallets finalizados
+[COLUNA]
+[TITULO]
+Adicionando e configurando objeto
+
+[PRINT]
+AULA4_MODELO8_ETAPA3_1.png
+
+[ROTEIRO]
+AGORA, VAMOS INSERIR A EMPILHADEIRA EMP_PALLETS_FINALIZADOS,
+POSICIONADA EM X = 105.00 ; Y = 0.00 ; Z = 0.00
+( com rotação de 180º no eixo Z )
+
+[OBJETO]
+Transporter – “EMP_PALLETS_FINALIZADOS”
+
+[PROPERTIES]
+[NOME]
+EMP_PALLETS_FINALIZADOS
+
+[VISUALS]
+[Mid6_small.png] X = 105.00 ; Y = 0.00 ; Z = 0.00
+[rotate_arrow.png] Z = 180.00
+
+[PORTS]
+[LETRA_VERMELHA] - Após a conexão, deve-se estar exibido da seguinte forma as portas de entrada do Transporter: [FIM_LETRA_VERMELHA]
+
+[down_arrow.bmp] - Central Ports:
+1: PALETIZACAO
+[FIM_COLUNA]
+
+[COLUNA]
+[TITULO]
+Configurando Atividade 1 do Transporter
+
+[PRINT]
+AULA4_MODELO8_ETAPA3_2.png
+
+[ROTEIRO]
+PARA LEVAR OS PALLETS JÁ FINALIZADOS PARA O SINK
+
+[OBJETO]
+Combiner – “PALETIZACAO”
+
+[PROPERTIES]
+[OUTPUT]
+[CHECK] Use Transport:
+current.centerObjects[1]
+
+[PORTS]
+Para o Combiner “PALETIZACAO”:
+[LETRA_VERMELHA] - Após a conexão, deve-se estar exibido da seguinte forma as portas de entrada do Combiner: [FIM_LETRA_VERMELHA]
+
+[down_arrow.bmp] - Central Ports:
+1: EMP_PALLETS_FINALIZADOS
+
+[FIM_COLUNA]
+
+[COLUNA]
+[TITULO]
+Configurando retorno da empilhadeira
+
+[PRINT]
+AULA4_MODELO8_ETAPA3_3.png
+
+[ROTEIRO]
+E VOLTAR À PALETIZAÇÃO QUANDO DESCARREGAR
+
+[OBJETO]
+Transporter – “EMP_PALLETS_FINALIZADOS”
+
+[PROPERTIES]
+[TRIGGERS]
+[PLUS] → On Unload → Travel to an Object:
+Clique no [eyedropper.png] para selecionar o objeto "PALETIZACAO"
+Selecione a opção: Model.find("PALETIZACAO")
+
+Então terá
+Destination: Model.find("PALETIZACAO")
+[FIM_COLUNA]
+
+[ETAPA] Etapa 04 – Definindo caminho que a empilhadeira deve percorrer
+[COLUNA]
+[TITULO]
+Adicionando e posicionando objetos
+
+[PRINT]
+AULA4_MODELO8_ETAPA4_1.png
+[PRINT]
+AULA4_MODELO8_ETAPA4_2.png
+[PRINT]
+AULA4_MODELO8_ETAPA4_3.png
+
+[ROTEIRO]
+PROSSEGUINDO, VAMOS CRIAR UM CAMINHO PARA ESSA EMPILHADEIRA, COM:
+NN1, POSICIONADO EM X = 105.00 ; Y = 0.00 ; Z = 0.00
+NN2,  POSICIONADO EM X = 110.00 ; Y = -3.50 ; Z = 0.00
+NN3, POSICIONADO EM X = 115.00 ; Y = 0.00 ; Z = 0.00
+NN4, POSICIONADO EM X = 110.00 ; Y = 3.50 ; Z = 0.00
+
+[OBJETO]
+NetworkNode - "NN1"
+NetworkNode - "NN2"
+NetworkNode - "NN3"
+NetworkNode - "NN4"
+
+[PROPERTIES]
+[VISUALS]
+NN1 - [Mid6_small.png] X = 105.00 ; Y = 0.00 ; Z = 0.00
+NN2 - [Mid6_small.png] X = 110.00 ; Y = -3.50 ; Z = 0.00
+NN3 - [Mid6_small.png] X = 115.00 ; Y = 0.00 ; Z = 0.00
+NN4 - [Mid6_small.png] X = 110.00 ; Y = 3.50 ; Z = 0.00
+[FIM_COLUNA]
+
+[COLUNA]
+[TITULO]
+Configurando objetos
+[PRINT]
+AULA4_MODELO8_ETAPA4_4.png
+[PRINT]
+AULA4_MODELO8_ETAPA4_5.png
+
+[ROTEIRO]
+A EMPILHADEIRA DEVERÁ IR ATÉ O SINK PELO TRECHO NN1, NN2 E NN3
+E ENTÃO RETORNAR À PALETIZAÇÃO PELO TRECHO NN3, NN4 E NN1
+
+
+[ACAO_MOUSE]
+1°: Conectar os objetos utilizando o comando de conexão. Como atalho, pressione a tecla “A” do teclado. 
+Conforme orientado a seguir:
+NetworkNode “NN1” → NetworkNode “NN2”
+NetworkNode “NN2” → NetworkNode “NN3”
+NetworkNode “NN3” → NetworkNode “NN4”
+NetworkNode “NN4” → NetworkNode “NN1”
+
+Transporter “EMP_PALETAS_FINALIZADAS” → NetworkNode “NN1”
+
+Combiner “PALETIZACAO” → NetworkNode “NN1”
+Sink “SAIDAS_CLIENTES” → NetworkNode “NN3”
+
+2°: Para desabilitar um caminho de conexão, clique com o botão direito do mouse na seta da direção que deseja desabilitar e selecione No_Connection.
+[FIM_COLUNA]
+
+[COLUNA]
+[TITULO]
+Configurando caminho
+
+[PRINT]
+AULA4_MODELO8_ETAPA4_6.png
+[PRINT]
+AULA4_MODELO8_ETAPA4_7.png
+
+[ROTEIRO]
+E PARA FINALIZAR, COLOQUE DISTÂNCIAS VIRTUAIS DE 200 m ENTRE CADA PAR DE NÓS
+
+[OBJETO]
+NetworkNode - "NN1"
+NetworkNode - "NN2"
+NetworkNode - "NN3"
+NetworkNode - "NN4"
+
+[PROPERTIES]
+[NETWORKNODE]
+Para NetworkNode “NN1”:
+Path 1 - [down_arrow.bmp]<b>To NN2</b>
+Virtual Distance: <b>200</b> m
+
+Para NetworkNode “NN2”:
+Path 2 - [down_arrow.bmp]<b>To NN3</b>
+Virtual Distance: <b>200</b> m  
+
+Para NetworkNode “NN3”:
+Path 2 - [down_arrow.bmp]<b>To NN4</b>
+Virtual Distance: <b>200</b> m
+
+Para NetworkNode “NN4”:
+Path 2 - [down_arrow.bmp]<b>To NN1</b>
+Virtual Distance: <b>200</b> m
+
+[OBSERVACAO]
+[LETRA_VERMELHA]Para conseguir acessar o NetworkNode NN1, precisa movimentar o Transporter "EMP_PALLETS_FINALIZADOS" no Mapa 3D para outro local. 
+Após realizar toda a configuração exibida neste passo, deve retornar o Transporter para sua posição inicial.[FIM_LETRA_VERMELHA]
+
+[FIM_COLUNA]
+
+[ETAPA] Resultados
+[COLUNA]
+[TITULO]
+Validando o modelo simulado.
+
+[PRINT]
+AULA4_MODELO8_RESULTADOS_1.png
+
+[ROTEIRO]
+Quantidade expedida
+30 pallets = 30 * 20 = 600 unidades
+
+Elaborar e interpretar os gráficos de estados
+PROCESSING
+IMPRESSORA_1: 58,87% ; IMPRESSORA_2: 60,35% ; TESTE: 51,36% ;
+MONTAGEM: 22,33% ; ACABAMENTO: 22,30%;
+INSPECAO_EMBALAGEM: 17,83%; PALETIZACAO: 25,34%
+[FIM_COLUNA]
