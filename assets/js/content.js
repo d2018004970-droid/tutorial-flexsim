@@ -1,7 +1,7 @@
 ﻿window.TUTORIAL_CONTENT = {
     "meta":  {
                  "title":  "Tutorial de Modelagem utilizando FlexSim Education v2027-0",
-                 "generatedAt":  "2026-09-23T11:42:37.0992754-03:00",
+                 "generatedAt":  "2026-09-23T11:51:13.4964960-03:00",
                  "source":  "Word_Mestre.md",
                  "counts":  {
                                 "courses":  4,
@@ -6636,8 +6636,8 @@
                                                                                                  ],
                                                                                   "observacoes":  [
                                                                                                       [
-                                                                                                          "[LETRA_VERMELHA]Para conseguir acessar o NetworkNode NN1, precisa movimentar o Transporter \"EMP_PALLETS_FINALIZADOS\" no Mapa 3D para outro local. ",
-                                                                                                          "Após realizar toda a configuração exibida neste passo, deve retornar o Transporter para sua posição inicial.[FIM_LETRA_VERMELHA]"
+                                                                                                          "Para conseguir acessar o NetworkNode NN1, precisa movimentar o Transporter \"EMP_PALLETS_FINALIZADOS\" no Mapa 3D para outro local. ",
+                                                                                                          "Após realizar toda a configuração exibida neste passo, deve retornar o Transporter para sua posição inicial."
                                                                                                       ]
                                                                                                   ]
                                                                               }

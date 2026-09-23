@@ -2975,9 +2975,9 @@ Path 2 - [down_arrow.bmp]<b>To NN1</b>
 Virtual Distance: <b>200</b> m
 
 [OBSERVACAO]
-[LETRA_VERMELHA]Para conseguir acessar o NetworkNode NN1, precisa movimentar o Transporter "EMP_PALLETS_FINALIZADOS" no Mapa 3D para outro local. 
-Após realizar toda a configuração exibida neste passo, deve retornar o Transporter para sua posição inicial.[FIM_LETRA_VERMELHA]
 
+Para conseguir acessar o NetworkNode NN1, precisa movimentar o Transporter "EMP_PALLETS_FINALIZADOS" no Mapa 3D para outro local. 
+Após realizar toda a configuração exibida neste passo, deve retornar o Transporter para sua posição inicial.
 [FIM_COLUNA]
 
 [ETAPA] Resultados
