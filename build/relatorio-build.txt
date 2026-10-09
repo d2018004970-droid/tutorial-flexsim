@@ -1,11 +1,11 @@
 ﻿=== RELATORIO DE GERACAO DO SITE — Tutorial FlexSim ===
-Gerado em: 09/10/2026 14:24:06
+Gerado em: 09/10/2026 14:29:42
 
 Aulas: 5
 Modelos: 10
 Etapas: 55
 Colunas: 123
-Prints referenciados: 200
+Prints referenciados: 202
 Roteiros para download (downloads/roteiros): 10
 Arquivos para download referenciados: 2
 Imagens otimizadas nesta execucao: 0

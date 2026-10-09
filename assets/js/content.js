@@ -1,14 +1,14 @@
 ﻿window.TUTORIAL_CONTENT = {
     "meta":  {
                  "title":  "Tutorial de Modelagem utilizando FlexSim Education v2027-0",
-                 "generatedAt":  "2026-10-09T14:24:05.6141497-03:00",
+                 "generatedAt":  "2026-10-09T14:29:41.8523502-03:00",
                  "source":  "Word_Mestre.md",
                  "counts":  {
                                 "courses":  5,
                                 "models":  10,
                                 "stages":  55,
                                 "columns":  123,
-                                "prints":  200,
+                                "prints":  202,
                                 "roteiros":  10,
                                 "downloads":  2
                             }
@@ -7413,6 +7413,16 @@
                                                                                                      "file":  "AULA5_MODELO9_ETAPA3_2.png",
                                                                                                      "w":  1713,
                                                                                                      "h":  913
+                                                                                                 },
+                                                                                                 {
+                                                                                                     "file":  "AULA5_MODELO9_ETAPA3_3.png",
+                                                                                                     "w":  1714,
+                                                                                                     "h":  934
+                                                                                                 },
+                                                                                                 {
+                                                                                                     "file":  "AULA5_MODELO9_ETAPA3_4.png",
+                                                                                                     "w":  1713,
+                                                                                                     "h":  937
                                                                                                  }
                                                                                              ],
                                                                                   "roteiro":  [
