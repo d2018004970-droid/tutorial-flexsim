@@ -3070,7 +3070,7 @@ Combiner – “PALETIZACAO”
 
 [PROPERTIES]
 [PROCESSOR]
-[disable.bmp] Animate Items
+[UNCHECK] Animate Items
 
 [TRIGGERS]
 On Entry [properties.png] → [PLUS] Visual → Set Location, Rotation or Size:
