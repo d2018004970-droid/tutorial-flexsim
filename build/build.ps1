@@ -326,6 +326,7 @@ $countColumns = 0
 $countPrints = 0
 $countStages = 0
 $countModels = 0
+$usedPrints = New-Object 'System.Collections.Generic.HashSet[string]'
 
 foreach ($course in $Courses) {
   foreach ($model in $course.models) {
@@ -345,6 +346,7 @@ foreach ($course in $Courses) {
         }
         foreach ($pr in $col.prints) {
           $countPrints++
+          [void]$usedPrints.Add($pr.file.ToLowerInvariant())
           $imgPath = Join-Path $ImagesDir $pr.file
           if (-not (Test-Path $imgPath)) {
             Add-Warning "Print ausente: '$($pr.file)' (Modelo $($model.number), Etapa $($stage.number))."
@@ -360,6 +362,17 @@ foreach ($course in $Courses) {
     }
   }
 }
+
+# prints soltos: arquivos AULAX_MODELOY_* em images/ que nenhum [PRINT] do Word_Mestre.md cita.
+# So olha nomes no padrao de print; icones repetidos (down_arrow.bmp etc.) sao ignorados.
+Get-ChildItem -LiteralPath $ImagesDir -File |
+  Where-Object { $_.Name -match '^AULA\d+_MODELO\d+_.+\.(png|jpe?g|bmp)$' } |
+  Sort-Object Name |
+  ForEach-Object {
+    if (-not $usedPrints.Contains($_.Name.ToLowerInvariant())) {
+      Add-Warning "Print na pasta images/ que nao esta no Word_Mestre.md: '$($_.Name)'."
+    }
+  }
 
 # ------------------------------------------------------------------
 # 8) Dados derivados: resultados (KPIs) por etapa final/resultados

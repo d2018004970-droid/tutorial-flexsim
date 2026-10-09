@@ -1,14 +1,14 @@
 ﻿window.TUTORIAL_CONTENT = {
     "meta":  {
                  "title":  "Tutorial de Modelagem utilizando FlexSim Education v2027-0",
-                 "generatedAt":  "2026-10-09T14:29:41.8523502-03:00",
+                 "generatedAt":  "2026-10-09T14:36:11.5594690-03:00",
                  "source":  "Word_Mestre.md",
                  "counts":  {
                                 "courses":  5,
                                 "models":  10,
                                 "stages":  55,
                                 "columns":  123,
-                                "prints":  202,
+                                "prints":  203,
                                 "roteiros":  10,
                                 "downloads":  2
                             }
@@ -3575,6 +3575,11 @@
                                                                                                      "file":  "AULA3_MODELO5_ETAPA2_6.png",
                                                                                                      "w":  1725,
                                                                                                      "h":  908
+                                                                                                 },
+                                                                                                 {
+                                                                                                     "file":  "AULA3_MODELO5_ETAPA2_7.png",
+                                                                                                     "w":  1728,
+                                                                                                     "h":  906
                                                                                                  }
                                                                                              ],
                                                                                   "roteiro":  [
