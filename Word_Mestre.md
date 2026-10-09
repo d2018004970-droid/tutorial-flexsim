@@ -2998,3 +2998,643 @@ IMPRESSORA_1: 58,87% ; IMPRESSORA_2: 60,35% ; TESTE: 51,36% ;
 MONTAGEM: 22,33% ; ACABAMENTO: 22,30%;
 INSPECAO_EMBALAGEM: 17,83%; PALETIZACAO: 25,34%
 [FIM_COLUNA]
+
+## 5) Aula 05
+### 5.1) Modelo 09
+[ETAPA] Etapa 01 – Alterando o visual da Paletizadora 3D
+[COLUNA]
+[TITULO]
+Alterando o ícone de um objeto
+
+[PRINT]
+AULA5_MODELO9_ETAPA1_1.png
+
+[PRINT]
+AULA5_MODELO9_ETAPA1_2.png
+
+[ROTEIRO]
+NESTE MODELO, O ÍCONE PADRÃO DE COMBINER DO FLEXSIM
+DEVERÁ SER SUBSTITUÍDO PELO OBJETO 3 D: MODELO 09 – PALETIZADORA 3D.skp
+
+[OBJETO]
+Combiner – “PALETIZACAO”
+MODELO 09 – PALETIZADORA 3D.skp [MODELO 09 - PALETIZADORA 3D.skp]
+
+[ACAO_MOUSE]
+Clique com o botão esquerdo do mouse no [down_arrow.bmp] ao lado de "fs3d\Processor\Combiner.3ds" como mostra na imagem. E depois selecione "Browser..." para buscar o arquivo "MODELO 09 – PALETIZADORA 3D.skp" na pasta em que estiver baixado o arquivo..
+
+[PROPERTIES]
+[VISUALS]
+[down_arrow.bmp] → Browse... → MODELO 09 – PALETIZADORA 3D.skp → Abrir
+[FIM_COLUNA]
+
+[COLUNA]
+[TITULO]
+Configurando objeto
+
+[PRINT]
+AULA5_MODELO9_ETAPA1_3.png
+
+[ROTEIRO]
+APÓS FAZER ESSA SUBSTITUIÇÃO DO ÍCONE PADRÃO PELO OBJETO 3D,
+VOCÊ DEVERÁ ALTERAR A DIMENSÃO DO OBJETO 3D PARA 
+X = 4.00 ; Y = 6.00 ; Z = 4.00
+E, EM SEGUIDA, VOCÊ DEVERÁ REPOSICIONAR ESSE OBJETO 3D PARA X = 100.00 ; Y = 1.00 ; Z = 0.00
+
+[OBJETO]
+Combiner – “PALETIZACAO”
+
+[PROPERTIES]
+[VISUALS]
+[Mid6_small.png] X = 100.00 ; Y = 1.00 ; Z = 0.00
+
+[resize.png] X = 4.00 ; Y = 6.00 ; Z = 4.00
+
+[OBSERVACAO]
+Primeiro altere a dimensão ([resize.png]) do objeto 3D para depois alterar a posição([Mid6_small.png]).
+Caso você altere primeiramente a posição e depois a dimensão, pode acontecer de o objeto se mover da posição exata que você colocou.
+[FIM_COLUNA]
+
+[COLUNA]
+[TITULO]
+Reposicionando entidade sobre o Objeto 3D
+
+[PRINT]
+AULA5_MODELO9_ETAPA1_4.png
+
+[ROTEIRO]
+( enquanto recebem a aplicação do filme, os paletts deverão ficar parados no centro do círculo preto da máquina e,    para isso, desabilite Animate Items e, em Triggers/On Entry/Visual/Set Location, defina X = 1.25 ; Y = -3.75 ; Z = 0.20 )
+
+[OBJETO]
+Combiner – “PALETIZACAO”
+
+[PROPERTIES]
+[PROCESSOR]
+[disable.bmp] Animate Items
+
+[TRIGGERS]
+On Entry [properties.png] → [PLUS] Visual → Set Location, Rotation or Size:
+Set: [down_arrow.bmp] → Location:
+X: <b>1.25</b>
+Y: <b>-3.75</b>
+Z: <b>0.20</b>
+[FIM_COLUNA]
+
+[ETAPA] Etapa 02 – Rack após a Paletização
+[COLUNA]
+[TITULO]
+Desconectando objetos e reposicionando-os
+
+[PRINT]
+AULA5_MODELO9_ETAPA2_1.png
+
+[PRINT]
+AULA5_MODELO9_ETAPA2_2.png
+
+
+[ROTEIRO]
+ “ SINK: SAÍDAS_CLIENTES ”,
+POSICIONADO EM X = 140.00 ; Y = 0.00 ; Z = 0.00
+
+[OBJETO]
+Sink – “SAIDAS_CLIENTES”
+
+[PROPERTIES]
+[VISUALS]
+[Mid6_small.png] X = 140.00 ; Y = 0.00 ; Z = 0.00
+[FIM_COLUNA]
+
+[COLUNA]
+[TITULO]
+Adicionando e configurando objeto
+
+[PRINT]
+AULA5_MODELO9_ETAPA2_3.png
+
+[ROTEIRO]
+AGORA, AO SAÍREM DO “ COMBINER: PALETIZACAO ”,
+OS PALLETS SERÃO LEVADOS PARA O “RACK: PALLETS_FINALIZADOS ”
+POSICIONADO EM X = 120.00 ; Y = 0.00 ; Z = 0.00
+( com 270º de rotação no eixo Z )
+
+[OBJETO]
+Rack – “PALLETS_FINALIZADOS”
+
+[ACAO_MOUSE]
+Conectar objeto na Paletizadora e no Network Node como mostra na imagem 1, usando o atalho "A" do teclado.
+
+[PROPERTIES]
+[NOME]
+PALLETS_FINALIZADOS
+[VISUALS]
+[Mid6_small.png] X = 120.00 ; Y = 0.00 ; Z = 0.00
+[rotate_arrow.png] Z = 270.00
+[FIM_COLUNA]
+
+[COLUNA]
+[TITULO]
+Configurando objeto
+
+[PRINT]
+AULA5_MODELO9_ETAPA2_4.png
+
+[ROTEIRO]
+PARA DIMENSIONAR O RACK:
+SELECIONE SLOT STACKING ORDER COMO X+ >> NONE >> NONE
+E, EM SEGUIDA, EDITE AS DIMENSÕES:
+NUMBER OF BAYS = 20 ; NUMBER OF LEVELS = 8 ; SLOT PER BAY = 1
+BAY WIDTH = 1.25 ; LEVEL HEIGHT = 2.00 ; SLOT WIDTH = 1.25
+REPOSICIONE O RACK EM X = 120.00 ; Y = 0.00 ; Z = 0.00
+
+[OBJETO]
+Rack – “PALLETS_FINALIZADOS”
+
+[PROPERTIES]
+[VISUALS]
+[Mid6_small.png] X = 120.00 ; Y = 0.00 ; Z = 0.00
+
+[STORAGE_OBJECT]
+Edit Dimensions:
+Number of Bays: <b>20</b>
+Number of Levels: <b>8</b>
+Slot per Bay: <b>1</b>
+Bay Width: <b>1.25</b>
+Level Height: <b>2.00</b>
+Slot Width: <b>1.25</b>
+
+Slot Stacking Order: X+ >> NONE >> NONE
+[FIM_COLUNA]
+
+[ETAPA] Etapa 03 – Programação da saída do Rack para o Sink
+[COLUNA]
+[TITULO]
+Configurando objeto
+
+[PRINT]
+AULA5_MODELO9_ETAPA3_1.png
+[PRINT]
+AULA5_MODELO9_ETAPA3_2.png
+
+[ROTEIRO]
+QUANDO ATINGIR 144 PALLETS ARMAZENADOS
+OU QUANDO FALTAR 1 SEGUNDO PARA ENCERRAR O TURNO,
+OS PALLETS DEIXARÃO O RACK E SAIRÃO
+PARA O “ SINK: SAIDAS_CLIENTES ”
+[OBJETO]
+Rack – “PALLETS_FINALIZADOS”
+
+[PROPERTIES]
+[TRIGGERS]
+Trigger 1:
+[PLUS] On Reset → [PLUS] Close and Open Ports:
+Action: closeoutput
+
+Trigger 2:
+[PLUS] On Entry → [PLUS] Control → Close and Open Ports:
+Action: openoutput
+Condition: [eyedropper.png] → Rack “PALLETS_FINALIZADOS” → current.stats.input.value == 144
+
+Trigger 3:
+On Reset [properties.png] → [PLUS] Send Message:
+To: Current
+Delay Time: 28799
+
+Trigger 4:
+[PLUS] On Message → [PLUS] Close and Open Ports:
+Action: openoutput
+[FIM_COLUNA]
+
+[ETAPA] Etapa 04 – Adicionando FALHAS DE MÁQUINA no modelo
+[COLUNA]
+[TITULO]
+Adicionando e configurando ferramenta
+
+[PRINT]
+AULA5_MODELO9_ETAPA4_1.png
+
+[ROTEIRO]
+AGORA VAMOS CRIAR A “ MTBF MTTR: MTBF_MTTR_INSPECAO_EMBALAGEM ”,
+( adicione somente a INSPECAO_EMBALAGEM )
+
+[OBJETO]
+MTBF MTTR – “MTBF_MTTR_INSPECAO_EMBALAGEM”
+
+[ACAO_MOUSE]
+Na aba Members, clique em [eyedropper.png] e selecione o objeto MultiProcessor “INSPECAO_EMBALAGEM”.
+[FIM_COLUNA]
+
+[COLUNA]
+[TITULO]
+Configurando ferramenta
+
+[PRINT]
+AULA5_MODELO9_ETAPA4_2.png
+
+[PRINT]
+AULA5_MODELO9_ETAPA4_3.png
+
+[ROTEIRO]
+COM OS SEGUINTES PARÂMETROS:
+MTBF = 36.000 s ; MTTR = 1.800 ; FIRST FAILURE = 7.200
+( QUANDO OCORRER A FALHA, A MÁQUINA DEVERÁ FICAR NA COR VERMELHA,
+VOLTANDO À ORIGINAL QUANDO A FALHA FOR ELIMINADA E O PROCESSO RETOMADO )
+
+[OBJETO]
+MTBF MTTR – “MTBF_MTTR_INSPECAO_EMBALAGEM”
+
+[PROPERTIES]
+[FUNCTIONS]
+First Failure Time: <b>7.200</b>
+Down Time: <b>1.800</b>
+Up Time: <b>36.000</b>
+
+On Break Down [PLUS] → Set Color (individual):
+Color: Color.red
+
+On Repair [PLUS] → Set Color (individual):
+Color: Color.orange
+[FIM_COLUNA]
+
+[ETAPA] Etapa 05 – Adicionando MANUTENÇÃO PREVENTIVA de Máquina no modelo utilizando Time Table
+[COLUNA]
+[TITULO]
+Adicionando Time Table
+
+[PRINT]
+AULA5_MODELO9_ETAPA5_1.png
+
+[ROTEIRO]
+MAS VAMOS PROGRAMAR PREVENTIVAS DAS 08h00 ÀS 08h30 POR MEIO DA
+“ TIME TABLE: MAN_PREV_INSPECAO_EMBALAGEM ”
+( adicione somente a INSPECAO_EMBALAGEM...)
+
+[OBJETO]
+Time Table – “MAN_PREV_INSPECAO_EMBALAGEM”
+
+[ACAO_MOUSE]
+Clique em [eyedropper.png] e selecione o objeto MultiProcessor “INSPECAO_EMBALAGEM”.
+[FIM_COLUNA]
+
+[COLUNA]
+[TITULO]
+Configurando Time Table
+
+[PRINT]
+AULA5_MODELO9_ETAPA5_2.png
+
+[PRINT]
+AULA5_MODELO9_ETAPA5_3.png
+
+[PRINT]
+AULA5_MODELO9_ETAPA5_4.gif
+
+[ROTEIRO]
+(... e coloque prioridade 1000 para down function )
+O OBJETIVO É FUTURAMENTE ELIMINARMOS AS MANUTENÇÕES CORRETIVAS
+( AO LONGO DAS MANUTENÇÕES PREVENTIVAS, A MÁQUINA DEVERÁ FICAR NA COR AQUA,
+VOLTANDO À ORIGINAL QUANDO AS PARADAS TERMINAREM ...)
+
+[PROPERTIES]
+[FUNCTIONS]
+Down Function [eyedropper.png] → Priority: <b>1000.00</b>
+
+On Down [PLUS] → Set Color (group):
+Color: Aqua
+
+On Resume [PLUS] → Set Color (group):
+Color: Orange
+[TABLE]
+Mode: Daily Repeat
+Start: 08:00
+End: 08:30
+
+Down State: 33 - maintenance
+
+Veja o GIF presente neste passo para visualizar como selecionar esse Range de Start e End.
+[FIM_COLUNA]
+
+[COLUNA]
+[TITULO]
+Configurando objeto
+
+[PRINT]
+AULA5_MODELO9_ETAPA5_5.png
+
+[ROTEIRO]
+(... E O PROCESSO FOR RETOMADO )
+
+[OBJETO]
+MultiProcessor – “INSPECAO_EMBALAGEM”
+
+[PROPERTIES]
+[TRIGGERS]
+[PLUS] On Reset → [PLUS] Visuals → Set Object Color:
+Object: current
+Color: Color.orange
+[FIM_COLUNA]
+
+[ETAPA] Etapa 06 – Estendendo o turno e inserindo parada para almoço.
+[COLUNA]
+[TITULO]
+Adicionando e configurando Time Table
+
+[PRINT]
+AULA5_MODELO9_ETAPA6_1.png
+[PRINT]
+AULA5_MODELO9_ETAPA6_2.png
+[PRINT]
+AULA5_MODELO9_ETAPA6_3.gif
+[PRINT]
+AULA5_MODELO9_ETAPA6_4.png
+
+[ROTEIRO]
+CRIE A “ TIME TABLE: TURNO_TRABALHO ”,
+( adicione todos os objetos e coloque prioridade 1000 para down function ),
+ACRECENTE INTERVALO DE ALMOÇO DAS 12h00 ÀS 14h00
+
+[OBJETO]
+Time Table – “TURNO_TRABALHO”
+
+[ACAO_MOUSE]
+Clique em [PLUS] e selecione todos os tipos de objetos presentes no modelo. Depois click em select.
+
+[PROPERTIES]
+[MEMBERS]
+Tudo que existe no modelo.
+
+[FUNCTIONS]
+Down Function [eyedropper.png] → Priority: <b>1000.00</b>
+
+[TABLE]
+Mode: Daily Repeat
+Start: 12:00
+End: 14:00
+Down State: 34 - lunch
+
+Veja o GIF presente neste passo para visualizar como selecionar esse Range de Start e End.
+[FIM_COLUNA]
+
+[COLUNA]
+[TITULO]
+Configurando Run Time
+
+[PRINT]
+AULA5_MODELO9_ETAPA6_5.png
+
+[ROTEIRO]ESTENDA O TURNO DE TRABALHO PARA ÀS 18h00
+
+[CAMINHO]
+Barra Superior → Run Time [down_arrow.bmp]
+
+Stop Times: 18:00:00
+[FIM_COLUNA]
+
+[ETAPA] Resultados
+[COLUNA]
+[TITULO]
+Validando o modelo simulado.
+
+[PRINT]
+AULA5_MODELO9_RESULTADOS_1.png
+
+[ROTEIRO]
+Quantidade expedida
+30 pallets = 30 * 20 = 600 unidades
+
+Elaborar e interpretar os gráficos de estados
+PROCESSING
+IMPRESSORA_1: 58,87% ; IMPRESSORA_2: 60,35% ; TESTE: 51,36% ;
+MONTAGEM: 22,33% ; ACABAMENTO: 22,30%;
+INSPECAO_EMBALAGEM: 17,83%; PALETIZACAO: 25,34%
+
+### 5.2) Modelo 10
+[ETAPA] Etapa 01 - Alternando o tempo de processo para estocástico, que antes era determinístico.
+[COLUNA]
+[TITULO]
+Adicionando a distribuição de probabilidade
+
+[PRINT]
+AULA5_MODELO10_ETAPA1_1.png
+[PRINT]
+AULA5_MODELO10_ETAPA1_2.png
+[PRINT]
+AULA5_MODELO10_ETAPA1_3.png
+
+[ROTEIRO]
+NESTE MODELO,
+VAMOS TRABALHAR COM DADOS ESTOCÁSTICOS
+...
+...
+
+EM TOOLBOX:
+PROCURE STATISTICS E SELECIONE FITTED DISTRIBUTION;
+ANTES DE INCIAIR, DENOMINE DE FIT_MONTAGEM_Process_Time
+
+Observe que a distribuição com o menor erro esperado é a loglaplace: 0.03267 ou 3,267%;
+mas embora a normal tenha ficado além da décima posição, seu erro é pequeno: 0,05763 ou 5,763%
+SENDO ASSIM, UTILIZAREMOS A NORMAL, COM LIMITAÇÕES PARA OS VALORES MIN. E MÁX.
+
+[OBJETO]
+Fitted Distribution – “FIT_MONTAGEM_Process_Time”
+
+[PROPERTIES]
+[DATA]
+Rows: <b>30</b>
+
+Cole os dados nas 30 linhas adicionadas.
+
+[SAMPLE_GENERATION]
+Sampling Bounds:
+[CHECK] Min: 9.00
+[CHECK] Max: 11.07
+
+[CHECK] normal - 0.05763
+[FIM_COLUNA]
+
+[COLUNA]
+[TITULO]
+Configurando objeto
+
+[PRINT]
+AULA5_MODELO10_ETAPA1_4.png
+[PRINT]
+AULA5_MODELO10_ETAPA1_5.png
+
+[ROTEIRO]
+...
+( faremos o FIT somente para o Process Time da MONTAGEM,
+mas a sistemática pode ser repetida para outros tempos e processos )
+...
+
+[OBJETO]
+Combiner – “MONTAGEM”
+
+[PROPERTIES]
+[PROCESSOR]
+Process Time: [down_arrow.bmp] → Statistical Distribution → Empirical Distribution:
+
+Distribution: FIT_MONTAGEM_Process_Time
+[FIM_COLUNA]
+
+[ETAPA] Etapa 02 - Fazendo a validação estatística
+[COLUNA]
+[TITULO]
+Adicionando Experimenter
+
+[PRINT]
+AULA5_MODELO10_ETAPA2_1.png
+[PRINT]
+AULA5_MODELO10_ETAPA2_2.png
+
+[OBJETO]
+Experimenter – “REPLICACOES_VALIDACOES”
+
+[PROPERTIES]
+[EXPERIMENTER]
+Name: REPLICACOES_VALIDACOES
+Stop Time: <b> 36.000 </b>
+Replication per Scenario: <b> 30 </b>
+[FIM_COLUNA]
+
+[COLUNA]
+[TITULO]
+Adicionando as variáveis de saída dos experimentos
+
+[PRINT]
+AULA5_MODELO10_ETAPA2_3.png
+[PRINT]
+AULA5_MODELO10_ETAPA2_4.png
+[PRINT]
+AULA5_MODELO10_ETAPA2_5.gif
+
+[OBJETO]
+Performance Measures Tables - "REPLICACOES_VALIDACOES"
+
+[PROPERTIES]
+[TABLE]
+Coluna "Name":
+QUANTIDADE EXPEDIDA
+
+Seguir o GIF para configurar esta coluna.
+Coluna "Value" [down_arrow.bmp]:
+Reference: /PALLETS_FINALIZADOS
+Value: Statistic by individual object
+
+[FIM_COLUNA]
+
+[COLUNA]
+[TITULO]
+Rodando o experimento
+
+[PRINT]
+AULA5_MODELO10_ETAPA2_6.png
+[PRINT]
+AULA5_MODELO10_ETAPA2_7.png
+
+[OBJETO]
+Experimenter – “REPLICACOES_VALIDACOES”
+
+[OBSERVACAO]
+Após clicar em Run, aguarde até que o experimenter termine. Quando todos os 30 cenários estiverem na cor verde. Clique então e m "View Results" para ver os resultados.
+[FIM_COLUNA]
+
+[COLUNA]
+[TITULO]
+Levantando dados para validação do modelo simulado.
+
+[PRINT]
+AULA5_MODELO10_ETAPA2_8.png
+[PRINT]
+AULA5_MODELO10_ETAPA2_9.png
+[PRINT]
+AULA5_MODELO10_ETAPA2_10.png
+[PRINT]
+AULA5_MODELO10_ETAPA2_11.png
+
+
+[OBJETO]
+Experimenter – “REPLICACOES_VALIDACOES”
+Excel - "Modelo 10 - Validação Estatística" [MODELO 10 - Validação Estatística.xlsx]
+
+[OBSERVACAO]
+O experimenter irá gerar 30 linhas de dados, cada uma com a quantidade de pallets que foram entregues ao Sink “SAIDAS_CLIENTES” em cada cenário.
+
+Para fazer a validação estatística, vamos usar o Excel e o Minitab. Para isso você deve usar a planilha MODELO 10 - Validação Estatística, onde estão os dados reais.
+
+Posteriormente, irá levar os dados reais e os dados simulados para o Minitab, onde deverá ser feito o teste de hipótese.
+
+Nas imagens deste passo, você pode acompanhar o processo de validação estatística sequencialmente.
+
+No último passo, você deverá copiar as linhas de dados real e simulados, e os rótulos "REAL" E "SIMULADA".
+[FIM_COLUNA]
+
+[COLUNA]
+[TITULO]
+Validando o modelo simulado.
+
+[PRINT]
+AULA5_MODELO10_ETAPA2_12.png
+[PRINT]
+AULA5_MODELO10_ETAPA2_13.gif
+[PRINT]
+AULA5_MODELO10_ETAPA2_14.png
+[PRINT]
+AULA5_MODELO10_ETAPA2_15.png
+
+[OBJETO]
+Minitab - "Modelo 10 - Validação Estatística"
+
+[OBSERVACAO]
+Com essa validação estatística, você pode ver que o modelo simulado pode representar os dados reais de entrega de pallets.
+[FIM_COLUNA]
+
+[ETAPA] Etapa 03 - Calculando Lead Times entre etapas
+[COLUNA]
+[TITULO]
+Adicionando gráficos ao Dashboard
+
+[PRINT]
+AULA5_MODELO10_ETAPA3_1.png
+[PRINT]
+AULA5_MODELO10_ETAPA3_2.png
+[PRINT]
+AULA5_MODELO10_ETAPA3_3.png
+
+
+[OBJETO]
+Dashboard - "LT MÉDIO até saída da embalagem"
+Dashboard - "LT MÉDIO até saída da embalagem por modelo"
+Performance Measures Tables - "REPLICACOES_VALIDACOES"
+
+[OBSERVACAO]
+Para validar os dados de Lead Times, além do Dashboard, deve criar a nova linha de Performance Measures Tables - "REPLICACOES_VALIDACOES" e adicionar a coluna "LT MÉDIO até saída da embalagem". Assim, consegue exportar os dados para o Excel. E posteriormente para o Minitab.
+
+Seria repetir o processo de validação estatística usando a planilha "Modelo 10 - Validação Estatística" na aba "LT MÉDIO até saída da embalagem" e o Minitab.
+[FIM_COLUNA]
+
+[ETAPA] Resultados
+[COLUNA]
+[TITULO]
+Validando resultados do modelo simulado.
+
+[PRINT]
+AULA5_MODELO10_RESULTADOS_1.png
+
+[ROTEIRO]
+Quantidade expedida
+30 pallets = 30*20 = 600 unidades
+
+Elaborar e interpretar os gráficos de estados
+PROCESSING
+IMPRESSORA_1: 58,87% ; IMPRESSORA_2: 60,35% ; TESTE: 51,36% ;
+MONTAGEM: 22,36% ; ACABAMENTO: 22,29%;
+INSPECAO_EMBALAGEM: 17,83%; PALETIZACAO: 25,28%;
+LT MÉDIO: 15.070,78 s ; LT MÉDIO por modelo: 15.563,89 E 14.577,67 RESPECTIVAMENTE
+[FIM_COLUNA]
+
+
+
+
+
+
+

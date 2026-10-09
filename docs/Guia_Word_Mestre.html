@@ -88,6 +88,7 @@
       <li><a href="#opcionais">Marcadores opcionais novos</a></li>
       <li><a href="#relatorio">Como ler o relatório</a></li>
       <li><a href="#inconsistencias">Inconsistências encontradas</a></li>
+      <li><a href="#downloads">Arquivos para download</a></li>
     </ol>
   </nav>
 
@@ -155,6 +156,12 @@
       <tr><td><code>[PORTS]</code></td><td>Portas do objeto</td><td>Propriedade "Ports"</td></tr>
       <tr><td><code>[TRIGGERS]</code></td><td>Triggers do objeto</td><td>Propriedade "Triggers" (pode repetir)</td></tr>
       <tr><td><code>[OUTPUT]</code></td><td>Configuração de saída do objeto</td><td>Propriedade "Output"</td></tr>
+      <tr><td><code>[STORAGE_OBJECT]</code></td><td>Configurações do Storage Object (ex.: Rack)</td><td>Propriedade "Storage Object"</td></tr>
+      <tr><td><code>[FUNCTIONS]</code></td><td>Funções do objeto (ex.: MTBF MTTR, Down Function)</td><td>Propriedade "Functions"</td></tr>
+      <tr><td><code>[MEMBERS]</code></td><td>Membros afetados (ex.: Time Table)</td><td>Propriedade "Members"</td></tr>
+      <tr><td><code>[DATA]</code></td><td>Dados da Fitted Distribution (linhas, valores colados)</td><td>Propriedade "Data"</td></tr>
+      <tr><td><code>[SAMPLE_GENERATION]</code></td><td>Geração de amostras (limites, distribuição escolhida)</td><td>Propriedade "Sample Generation"</td></tr>
+      <tr><td><code>[EXPERIMENTER]</code></td><td>Configurações do Experimenter (stop time, replicações)</td><td>Propriedade "Experimenter"</td></tr>
       <tr><td><code>[Run Time]</code></td><td>Configuração de tempo de execução</td><td>Propriedade "Run Time"</td></tr>
     </table>
     <h3>Tokens usados dentro do texto (não abrem/fecham bloco)</h3>
@@ -279,6 +286,40 @@
     marcador <code>[Run Time]</code> na tabela, <code>[COLUNA]</code> faltando nos Modelos 02 e 03, quebra de
     parágrafo no meio de "Etapa 02" (Modelo 06) e a posição ambígua do Modelo 05 — nenhuma ação adicional
     necessária para esses itens.</div>
+  </section>
+
+  <section id="downloads">
+    <h2><span class="num">8</span> Arquivos para download (roteiros, Excel, .skp...)</h2>
+    <p>Os arquivos ficam na pasta <code>downloads/</code> do projeto (junto de <code>index.html</code>) e vão para o
+    GitHub junto com o resto (Commit + Push). O site monta os botões sozinho ao rodar o <code>Gerar_Site.bat</code>.</p>
+
+    <h3>1) Roteiro de cada modelo</h3>
+    <p>Coloque o arquivo em <code>downloads/roteiros/</code> com <code>Modelo N</code> em qualquer parte do nome
+    (ex.: <code>ROTEIRO DO MODELO 01 - Education Vídeo Tutorial.docx</code>, <code>Modelo 01.docx</code>).
+    O botão <b>Roteiro</b> aparece no fim, à direita, da barra do modelo (a linha que abre/fecha o modelo).
+    Não precisa escrever nada no <code>Word_Mestre.md</code>.</p>
+
+    <h3>2) Arquivo usado dentro de uma etapa (Excel, .skp, etc.)</h3>
+    <p>Coloque o arquivo em <code>downloads/</code> e, no <code>Word_Mestre.md</code>, escreva o nome do arquivo
+    com a extensão <b>entre colchetes, no fim da linha</b>. Funciona em qualquer campo de texto, o mais comum é
+    <code>[OBJETO]</code>:</p>
+    <pre>[OBJETO]
+Experimenter – “REPLICACOES_VALIDACOES”
+Excel - "Modelo 10 - Validação Estatística" [Modelo 10 - Validação Estatística.xlsx]</pre>
+    <p>A linha inteira vira um botão com ícone de download e a extensão (XLSX) ao lado. O que está entre
+    colchetes não aparece no site, é só o nome real do arquivo na pasta <code>downloads/</code>.</p>
+
+    <h3>Regras e cuidados</h3>
+    <ul>
+      <li>Extensões reconhecidas: <code>xlsx xlsm xls csv skp docx doc pdf pptx ppt zip fsm txt</code>.</li>
+      <li>O nome entre colchetes tem que ser <b>idêntico</b> ao do arquivo (acentos, espaços e maiúsculas). Se o
+      arquivo não estiver na pasta, o relatório avisa: <i>"Arquivo para download '...' nao encontrado"</i>.</li>
+      <li>Evite <code>&amp;</code> e colchetes no nome do arquivo.</li>
+      <li>Tudo em <code>downloads/</code> fica público no site. Não coloque gabaritos ou dados de alunos.</li>
+      <li>GitHub aceita arquivos de até 100 MB (avisa a partir de 50 MB).</li>
+      <li>Para atualizar um arquivo, basta substituí-lo na pasta (mesmo nome) e fazer Commit + Push.</li>
+      <li>Na impressão/PDF os botões viram texto simples e o botão de roteiro some.</li>
+    </ul>
   </section>
 
   <footer>Gerado a partir da análise do Word-Mestre em 18/09/2026 · Tutorial FlexSim Education v2027-0</footer>

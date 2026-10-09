@@ -421,6 +421,16 @@ mark.search-mark{background:var(--accent-soft);color:var(--accent-ink);border-ra
   .presentation-content{padding:22px 5vw 90px}
 }
 
+/* ---------------- Downloads ---------------- */
+.download-btn{display:inline-flex;align-items:center;gap:8px;max-width:100%;padding:6px 12px;border:1px solid var(--accent);border-radius:10px;background:var(--accent-soft);color:var(--accent-ink);font-weight:650;line-height:1.35;text-decoration:none;cursor:pointer;transition:background .15s ease,color .15s ease}
+.download-btn:hover{background:var(--accent);color:#fff}
+.download-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.download-btn .download-ico{flex:0 0 auto}
+.download-btn .download-label{flex:0 1 auto;font-size:inherit;min-width:0;overflow-wrap:anywhere}
+.download-btn .download-ext{flex:0 0 auto;font-size:10.5px;font-weight:800;letter-spacing:.6px;padding:2px 6px;border-radius:6px;background:var(--surface);color:var(--accent);border:1px solid var(--line)}
+.model-download{margin-left:auto;font-size:13px;padding:5px 11px;font-family:inherit;flex:0 0 auto}
+@media(max-width:640px){.model-download .download-label{display:none}}
+
 /* ---------------- Impressao ---------------- */
 @page{size:A4 portrait;margin:12mm}
 @media print{
@@ -445,6 +455,9 @@ mark.search-mark{background:var(--accent-soft);color:var(--accent-ink);border-ra
   .media img{max-width:100%!important;height:auto!important;max-height:230mm!important;box-shadow:none!important}
   .media.print-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important}
   .properties,.note,.roteiro{break-inside:avoid}
+  .model-download,.download-btn .download-ico{display:none!important}
+  .download-btn{border:0!important;background:none!important;padding:0!important;color:inherit!important;text-decoration:none!important;font-weight:inherit!important}
+  .download-btn .download-ext{border:0;background:none;padding:0;color:inherit}
   .model-map-wrap{display:block!important;break-inside:avoid}
   img{print-color-adjust:exact;-webkit-print-color-adjust:exact}
 }

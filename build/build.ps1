@@ -7,6 +7,8 @@
     - build/relatorio-build.txt (contagens + avisos)
     - images/web/*.jpg        (copias otimizadas para o site)
     - Word_Mestre_Visualizacao.docx (documento Word so-leitura, para visualizar)
+  Downloads: arquivos em downloads/ (roteiros em downloads/roteiros/) sao detectados aqui;
+  o site monta os botoes de download automaticamente (ver docs/Guia_Word_Mestre.html, secao 8).
   Uso: duplo clique em build/Gerar_Site.bat, ou:
     powershell -NoProfile -ExecutionPolicy Bypass -File build\build.ps1
 #>
@@ -99,6 +101,12 @@ $PropertyTitleMap = @{
   'PORTS'           = 'Ports'
   'TRIGGERS'        = 'Triggers'
   'OUTPUT'          = 'Output'
+  'STORAGE_OBJECT'  = 'Storage Object'
+  'FUNCTIONS'       = 'Functions'
+  'MEMBERS'         = 'Members'
+  'DATA'            = 'Data'
+  'SAMPLE_GENERATION' = 'Sample Generation'
+  'EXPERIMENTER'    = 'Experimenter'
   'RUN TIME'        = 'Run Time'
   'RUN_TIME'        = 'Run Time'
   'TASKEXECUTER'    = 'TaskExecuter'
@@ -186,6 +194,7 @@ foreach ($ln in $WorkLines) {
         label  = $text.Trim()
         stages = (New-Object System.Collections.Generic.List[object])
         layout = $null
+        roteiroFile = $null
       }
       $curCourse.models.Add($curModel)
       $curStage = $null; $curColumn = $null; $currentTarget = $null
@@ -578,6 +587,63 @@ Get-ChildItem $ImagesDir -File | Where-Object { $_.Extension -match '\.(png|jpg|
 }
 
 # ------------------------------------------------------------------
+# 11.5) Downloads: roteiro de cada modelo (downloads/roteiros/) e arquivos
+#       citados como [arquivo.ext] dentro das colunas (downloads/)
+# ------------------------------------------------------------------
+$DownloadsDir = Join-Path $RootDir 'downloads'
+$RoteirosDir  = Join-Path $DownloadsDir 'roteiros'
+foreach ($d in @($DownloadsDir, $RoteirosDir)) {
+  if (-not (Test-Path $d)) { New-Item -ItemType Directory -Path $d -Force | Out-Null }
+}
+$DownloadTokenRe = '\[([^\[\]]+\.(?:xlsx|xlsm|xls|csv|skp|docx|doc|pdf|pptx|ppt|zip|fsm|txt))\]'
+$roteiroFiles = @(Get-ChildItem -LiteralPath $RoteirosDir -File | Sort-Object Name)
+$countRoteiros = 0
+$countDownloads = 0
+
+foreach ($course in $Courses) {
+  foreach ($model in $course.models) {
+    # roteiro do modelo: arquivo em downloads/roteiros cujo nome contem "Modelo N" (qualquer posicao,
+    # maiusculas/minusculas tanto faz). Ex.: "ROTEIRO DO MODELO 01 - Education Video Tutorial.docx"
+    $matchFiles = @()
+    foreach ($rf in $roteiroFiles) {
+      if ($rf.Name -match 'modelo[\s_\-]*0*(\d+)(?!\d)') {
+        if ([int]$Matches[1] -eq [int]$model.number) { $matchFiles += $rf }
+      }
+    }
+    if ($matchFiles.Count -ge 1) {
+      $model.roteiroFile = 'roteiros/' + $matchFiles[0].Name
+      $countRoteiros++
+      if ($matchFiles.Count -gt 1) {
+        Add-Warning "Mais de um roteiro para o Modelo $($model.number) em downloads/roteiros — usando '$($matchFiles[0].Name)'."
+      }
+    }
+
+    # arquivos citados como [arquivo.ext] nos textos das colunas
+    foreach ($stage in $model.stages) {
+      foreach ($col in $stage.columns) {
+        $texts = New-Object System.Collections.Generic.List[string]
+        foreach ($fld in @($col.objeto, $col.caminho, $col.acao, $col.roteiro)) {
+          foreach ($t in $fld) { [void]$texts.Add([string]$t) }
+        }
+        foreach ($blk in $col.observacoes) {
+          foreach ($t in $blk) { [void]$texts.Add([string]$t) }
+        }
+        foreach ($t in $texts) {
+          foreach ($mm in [regex]::Matches($t, $DownloadTokenRe, 'IgnoreCase')) {
+            $fname = ($mm.Groups[1].Value -replace '&amp;', '&')
+            if (Test-Path -LiteralPath (Join-Path $DownloadsDir $fname)) {
+              $countDownloads++
+            } else {
+              Add-Warning "Arquivo para download '$fname' nao encontrado na pasta downloads/ (Modelo $($model.number), Etapa $($stage.number))."
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+# ------------------------------------------------------------------
 # 12) Montar objeto final e serializar
 # ------------------------------------------------------------------
 $Content = [PSCustomObject]@{
@@ -585,7 +651,7 @@ $Content = [PSCustomObject]@{
     title = 'Tutorial de Modelagem utilizando FlexSim Education v2027-0'
     generatedAt = (Get-Date -Format 'o')
     source = 'Word_Mestre.md'
-    counts = [PSCustomObject]@{ courses = $Courses.Count; models = $countModels; stages = $countStages; columns = $countColumns; prints = $countPrints }
+    counts = [PSCustomObject]@{ courses = $Courses.Count; models = $countModels; stages = $countStages; columns = $countColumns; prints = $countPrints; roteiros = $countRoteiros; downloads = $countDownloads }
   }
   courses   = $Courses
   glossary  = $Glossary
@@ -685,6 +751,8 @@ $report = New-Object System.Collections.Generic.List[string]
 [void]$report.Add("Etapas: $countStages")
 [void]$report.Add("Colunas: $countColumns")
 [void]$report.Add("Prints referenciados: $countPrints")
+[void]$report.Add("Roteiros para download (downloads/roteiros): $countRoteiros")
+[void]$report.Add("Arquivos para download referenciados: $countDownloads")
 [void]$report.Add("Imagens otimizadas nesta execucao: $optimizedCount")
 [void]$report.Add('')
 [void]$report.Add("=== AVISOS ($($Warnings.Count)) ===")

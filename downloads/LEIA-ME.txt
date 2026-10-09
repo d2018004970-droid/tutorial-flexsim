@@ -1,0 +1,9 @@
+Coloque aqui os arquivos que os alunos poderao baixar no site (Excel, .skp, etc.).
+
+No Word_Mestre.md, cite o arquivo entre colchetes no fim da linha, por exemplo no [OBJETO]:
+Excel - "Modelo 10 - Validacao Estatistica" [Modelo 10 - Validacao Estatistica.xlsx]
+
+O nome entre colchetes tem que ser identico ao nome do arquivo desta pasta.
+Depois rode build\Gerar_Site.bat e faca Commit + Push.
+
+Os roteiros dos modelos ficam na subpasta roteiros\ (veja o LEIA-ME de la).

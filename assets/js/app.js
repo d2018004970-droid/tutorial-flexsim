@@ -39,9 +39,40 @@
   var ICON_FILE_RE = /\[([A-Za-z0-9_\-]+\.(?:png|bmp|ico|jpe?g|svg))\]/gi;
   var IMG_TOKEN_RE = /\[IMG:([^\]]+)\]/g;
 
+  // ---------------------------------------------------------------
+  // Downloads: [arquivo.ext] no fim de uma linha (ex.: em [OBJETO]) vira um botao
+  // que baixa o arquivo da pasta downloads/. Fora do fim da linha, vira um botao
+  // so com o nome do arquivo.
+  // ---------------------------------------------------------------
+  var DL_EXT = 'xlsx|xlsm|xls|csv|skp|docx|doc|pdf|pptx|ppt|zip|fsm|txt';
+  var DL_TRAIL_RE = new RegExp('^([\\s\\S]*?)\\s*\\[([^\\[\\]]+\\.(?:' + DL_EXT + '))\\]\\s*$', 'i');
+  var DL_TOKEN_RE = new RegExp('\\[([^\\[\\]]+\\.(?:' + DL_EXT + '))\\]', 'gi');
+  var DL_ICON = '<svg class="download-ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 5 5-5"/><path d="M5 20h14"/></svg>';
+
+  function downloadFileName(file) {
+    return String(file).replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+  }
+  function downloadHref(file) {
+    return 'downloads/' + downloadFileName(file).split('/').map(encodeURIComponent).join('/');
+  }
+  function downloadButton(file, labelHtml, extraClass) {
+    var clean = downloadFileName(file);
+    var shortName = clean.split('/').pop();
+    var ext = (shortName.split('.').pop() || '').toUpperCase();
+    return '<a class="download-btn' + (extraClass ? ' ' + extraClass : '') + '" href="' + escapeHtml(downloadHref(file)) +
+      '" download="' + escapeHtml(shortName).replace(/"/g, '&quot;') + '" title="Baixar ' + escapeHtml(shortName).replace(/"/g, '&quot;') + '">' +
+      DL_ICON + '<span class="download-label">' + labelHtml + '</span><span class="download-ext">' + escapeHtml(ext) + '</span></a>';
+  }
+
   function renderInline(raw) {
     if (raw == null) return '';
     var s = String(raw);
+    var dlTrail = DL_TRAIL_RE.exec(s);
+    if (dlTrail && dlTrail[1].trim()) return downloadButton(dlTrail[2], renderInline(dlTrail[1]));
+    s = s.replace(DL_TOKEN_RE, function (_, file) {
+      var nm = downloadFileName(file).split('/').pop();
+      return downloadButton(file, escapeHtml(nm.replace(/\.[^.]+$/, '')));
+    });
     s = s.replace(IMG_TOKEN_RE, function (_, file) {
       return '<img class="flexsim-icon" src="images/word-media/' + file + '" alt="' + file + '">';
     });
@@ -214,6 +245,12 @@
     var details = el('details', 'model');
     details.id = model.id;
     var summary = el('summary', '', '<span class="model-caret">&#9660;</span><span>' + escapeHtml(model.label) + '</span>');
+    if (model.roteiroFile) {
+      summary.insertAdjacentHTML('beforeend', downloadButton(model.roteiroFile, 'Roteiro', 'model-download'));
+      var roteiroLink = summary.querySelector('.model-download');
+      // clicar no botao baixa o arquivo, sem abrir/fechar o modelo
+      roteiroLink.addEventListener('click', function (e) { e.stopPropagation(); });
+    }
     details.appendChild(summary);
     var content = el('div', 'model-content');
 

@@ -30,6 +30,10 @@ Word_Mestre.md (usuário edita no VS Code)
   original já formatado; usado só para gerar `Word_Mestre_Visualizacao.docx`. Não editar/apagar.
 - `build/docx_para_md.ps1` — utilitário usado uma vez para migrar o Word antigo para `.md`; útil de
   novo só se alguém mandar conteúdo pronto em `.docx`.
+- `downloads/` — arquivos para o usuário baixar no site (Excel, `.skp`, etc.); `downloads/roteiros/` guarda o
+  roteiro de cada modelo (nome começando por `Modelo N`). O `build.ps1` detecta os roteiros e valida os
+  `[arquivo.ext]` citados no `.md` (avisa se faltar o arquivo); o `app.js` monta os botões de download
+  (roteiro na barra do modelo; `[arquivo.ext]` no fim de uma linha vira botão). Ver seção 8 do guia.
 - `docs/Guia_Word_Mestre.html` — guia completo pro usuário (tabela de marcadores, convenções,
   como ler o relatório, histórico de inconsistências já corrigidas no conteúdo). **Sempre consultar
   antes de responder dúvidas sobre marcadores/sintaxe** — é a fonte oficial, mantida atualizada.

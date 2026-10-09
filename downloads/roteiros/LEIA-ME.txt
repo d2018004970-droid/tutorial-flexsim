@@ -1,0 +1,8 @@
+Coloque aqui o roteiro de cada modelo para download (Word, PDF...).
+
+O nome do arquivo deve conter "Modelo N" (maiusculas ou minusculas), por exemplo:
+  ROTEIRO DO MODELO 01 - Education Video Tutorial.docx
+  Modelo 01.docx
+
+O botao "Roteiro" aparece no fim da barra do modelo, a direita. Nao precisa escrever nada no Word_Mestre.md.
+Depois rode build\Gerar_Site.bat e faca Commit + Push.
