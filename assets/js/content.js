@@ -1,7 +1,7 @@
 ﻿window.TUTORIAL_CONTENT = {
     "meta":  {
                  "title":  "Tutorial de Modelagem utilizando FlexSim Education v2027-0",
-                 "generatedAt":  "2026-10-09T14:14:00.3456863-03:00",
+                 "generatedAt":  "2026-10-09T14:24:05.6141497-03:00",
                  "source":  "Word_Mestre.md",
                  "counts":  {
                                 "courses":  5,
@@ -7227,7 +7227,7 @@
                                                                                                          "key":  "PROCESSOR",
                                                                                                          "title":  "Processor",
                                                                                                          "lines":  [
-                                                                                                                       "[disable.bmp] Animate Items"
+                                                                                                                       "[UNCHECK] Animate Items"
                                                                                                                    ]
                                                                                                      },
                                                                                                      {
