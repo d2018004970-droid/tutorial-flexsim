@@ -3638,8 +3638,353 @@ INSPECAO_EMBALAGEM: 17,83%; PALETIZACAO: 25,28%;
 LT MÉDIO: 15.070,78 s ; LT MÉDIO por modelo: 15.563,89 E 14.577,67 RESPECTIVAMENTE
 [FIM_COLUNA]
 
+## 90) Aula 90 - Extra: Modelo Aplicado em Serviços
+### 90.1) Modelo 90 (Modos A e B)
+
+[ETAPA] Etapa 01 - Inserção dos objetos
+[COLUNA]
+[TITULO]
+Adicionando objetos
+
+[PRINT]
+AULA90_MODELO90_ETAPA1_1.png
+[PRINT]
+AULA90_MODELO90_ETAPA1_2.png
+
+[OBJETO]
+Source
+Processor
+Queue
+Processor
+Sink
+
+[ACAO_MOUSE]
+Clique e mantenha pressionado o botão esquerdo do mouse sobre o objeto e arraste-o até o local desejado no Mapa 3D.
+[FIM_COLUNA]
+
+[COLUNA]
+[TITULO]
+Nomeando e posicionando objetos
+[PRINT]
+AULA90_MODELO90_ETAPA1_3.png
+[PRINT]
+AULA90_MODELO90_ETAPA1_4.png
+[PRINT]
+AULA90_MODELO90_ETAPA1_5.png
+[PRINT]
+AULA90_MODELO90_ETAPA1_6.png
+[PRINT]
+AULA90_MODELO90_ETAPA1_7.png
+
+[OBJETO]
+Source - "ENTRADAS_CLIENTES"
+Processor - "PROCESSO_SERVICOS"
+Queue - "QUEUE_SERVICOS"
+Processor - "PROCESSO_SERVICOS"
+Sink - "SAIDAS_CLIENTES"
+
+[PROPERTIES]
+[NOME]
+Source - "ENTRADA_CLIENTES"
+Processor - "POSTO_DE_SENHA"
+Queue - "FILA"
+Processor - "POSTO_DE_ATENDIMENTO"
+Sink - "SAIDA_CLIENTES"
+
+[VISUALS]
+"ENTRADA_CLIENTES" - [Mid6_small.png] X = 0.00 ; Y = 0.00 ; Z = 0.00
+"POSTO_DE_SENHA" - [Mid6_small.png] X = 10.00 ; Y = 0.00 ; Z = 0.00
+"FILA" - [Mid6_small.png] X = 20.00 ; Y = 0.00 ; Z = 0.00
+"POSTO_DE_ATENDIMENTO" - [Mid6_small.png] X = 30.00 ; Y = 0.00 ; Z = 0.00
+"SAIDA_CLIENTES" - [Mid6_small.png] X = 40.00 ; Y = 0.00 ; Z = 0.00
+
+[PROCESSOR]
+"POSTO_DE_SENHA" - Process Time: 30 [s]
+[QUEUE]
+"FILA" - Max Content: 1000000
+
+[OBSERVACAO]
+Após a inserção de todos esses parâmetros, deverá realizar a conexão dos objetos, obedecendo o sentido do fluxo.
+[FIM_COLUNA]
+
+[ETAPA] Etapa 02 - Configurando os objetos
+[COLUNA]
+[TITULO]
+Configurando o Source
+[PRINT]
+AULA90_MODELO90_ETAPA2_1.png
+[PRINT]
+AULA90_MODELO90_ETAPA2_2.png
+[PRINT]
+AULA90_MODELO90_ETAPA2_3.png
+
+[OBJETO]
+Source - "ENTRADA_CLIENTES"
+
+[PROPERTIES]
+[SOURCE]
+Flow Item Class: [down_arrow.bmp] <b> Man </b>
+[CHECK] Arrival at time 0
+
+Inter-Arrival Time: [down_arrow.bmp] Periodic Rates → Hourly Rates, Custom Daily Repeat:
+Interval Variabity: [down_arrow.bmp] Constant Rate
+
+Preencher a tabela conforme a imagem. Os valores são conforme o a seguinte lógica:
+De 0:00 a 07:59 → 0 pessoas por hora
+De 08:00 a 10:59 → 10 pessoas por hora
+De 11:00 a 12:59 → 20 pessoas por hora
+De 13:00 a 15:59 → 10 pessoas por hora
+De 16:00 a 23:59 → 0 pessoas por hora
+
+[OBSERVACAO]
+Aproveitando a lógica de entrada dos dados, configure também o Run Time do modelo. Start Time: 08:00:00 ; Stop Time: 16:00:00
+
+No final do turno, somando a entrada por hora, o número de pessoas deverá ser igual a 100. Após configurar o Run Time, deverá ver que o valor da entrada é igual a 100.
+[FIM_COLUNA]
+
+[COLUNA]
+[TITULO]
+Configurando os Processors
+[PRINT]
+AULA90_MODELO90_ETAPA2_4.png
+[PRINT]
+AULA90_MODELO90_ETAPA2_5.png
+[PRINT]
+AULA90_MODELO90_ETAPA2_6.png
+[PRINT]
+AULA90_MODELO90_ETAPA2_7.png
+
+[OBJETO]
+Processor - "POSTO_DE_SENHA"
+Processor - "POSTO_DE_ATENDIMENTO"
+
+[PROPERTIES]
+[VISUALS]
+[Templatesmall.png] [down_arrow.bmp] → Fixed Resources (Recursos fixos) → Queue.3ds
+
+[PROCESSOR]
+[UNCHECK] Animate Items
+
+[TRIGGERS]
+[PLUS] On Entry → [PLUS] Visuals → Set Location, Rotation or Size:
+Set: [down_arrow.bmp] → Rotation:
+X Rotation: 0
+Y Rotation: 0
+Z Rotation: 90
+
+[OBSERVACAO]
+Após a alteração do template, reposicione o Processor como no passo de Nomear e Posicionar, pois com a alteração de suas dimensões sua referência de posição muda, necessitando esse retrabalho.
+[FIM_COLUNA]
+
+[COLUNA]
+[TITULO]
+Adicionando Objetos Visuais
+
+[PRINT]
+AULA90_MODELO90_ETAPA2_8.png
+[PRINT]
+AULA90_MODELO90_ETAPA2_9.png
+[PRINT]
+AULA90_MODELO90_ETAPA2_10.png
+[PRINT]
+AULA90_MODELO90_ETAPA2_11.png
+
+[OBJETO]
+Location - Kiosk - "POSTO_DE_SENHA_3D"
+Location - Registration - "POSTO_DE_ATENDIMENTO_3D"
+Operator - "ATENDENTE"
 
 
+[PROPERTIES]
+[VISUALS]
+"POSTO_DE_SENHA_3D" - [Mid6_small.png] X = 10.00 ; Y = 0.00 ; Z = 0.00
+"POSTO_DE_SENHA_3D" - [rotate_arrow.png] Z = 90.00
+
+"POSTO_DE_ATENDIMENTO_3D" - [Mid6_small.png] X = 30.00 ; Y = 1.25 ; Z = 0.00
+"POSTO_DE_ATENDIMENTO_3D" - [rotate_arrow.png] Z = 180.00
+
+"ATENDENTE" - [Mid6_small.png] X = 30.00 ; Y = 1.50 ; Z = 0.00
+"ATENDENTE" - [rotate_arrow.png] Z = 270.00
+
+[OBSERVACAO]
+Este objeto neste Modelo é um Totem, apenas visual, não tem nenhuma funcionalidade, visto que não foi conectado ao fluxo e nem configurado.
+[FIM_COLUNA]
+
+[COLUNA]
+[TITULO]
+Redimensionando a Fila e girando o objeto
+
+[PRINT]
+AULA90_MODELO90_ETAPA2_12.png
+[PRINT]
+AULA90_MODELO90_ETAPA2_13.png
+
+[OBJETO]
+Queue - "FILA"
+
+[PROPERTIES]
+[VISUALS]
+Cor: [down_arrow.bmp] → Branco
+[_resize.png] X = 10.00 ; Y = 1.00 ; Z = 0.01
+
+[QUEUE]
+Item Placement: [down_arrow.bmp] Horizontal Line
+
+[TRIGGERS]
+[PLUS] On Entry → [PLUS] Visuals → Set Location, Rotation or Size:
+Set: [down_arrow.bmp] → Rotation:
+X Rotation: 0
+Y Rotation: 0
+Z Rotation: 0
+
+[OBSERVACAO]
+Após a alteração do template, reposicione a Queue como no passo de Nomear e Posicionar, pois com a alteração de suas dimensões sua referência de posição muda, necessitando esse retrabalho.
+
+[ETAPA] Etapa 03 - Configurando o objeto para andar como Task Executer
+[COLUNA]
+[TITULO]
+Configurando objetos
+
+[PRINT]
+AULA90_MODELO90_ETAPA3_1.png
+
+[OBJETO]
+Source - "ENTRADA_CLIENTES"
+Processor - "POSTO_DE_SENHA"
+Queue - "FILA"
+Processor - "POSTO_DE_ATENDIMENTO"
+
+[PROPERTIES]
+[OUTPUT]
+[CHECK] Use Transport:
+[down_arrow.bmp] Task Executer as FlowItem
+[FIM_COLUNA]
+
+[ETAPA] Etapa 04 - Criando o Dashboard
+[COLUNA]
+[TITULO]
+Tabela de Clientes Atendidos
+
+[PRINT]
+AULA90_MODELO90_ETAPA4_1.png
+[PRINT]
+AULA90_MODELO90_ETAPA4_2.png
+[PRINT]
+AULA90_MODELO90_ETAPA4_3.png
+[PRINT]
+AULA90_MODELO90_ETAPA4_4.png
+
+[CAMINHO]
+Imagem 1 - Barra Superior → Dashboards → Add Blank Dashboard
+Imagem 2 – Barra Esquerda → Output → Output → Table
+
+[PROPERTIES]
+[NOME]
+CLIENTES_ATENDIDOS
+[FIM_COLUNA]
+
+[COLUNA]
+[TITULO]
+Gráfico de Clientes no sistema
+
+[PRINT]
+AULA90_MODELO90_ETAPA4_5.png
+
+[CAMINHO]
+Barra Esquerda → Content → Composite WIP → Line Chart
+
+[PROPERTIES]
+[NOME]
+CLIENTES NO SISTEMA
+[OPTIONS]
+Entrance Objects:
+[eyedropper.png] → Source “ENTRADA_CLIENTES”
+
+Exit Objects:
+[eyedropper.png] → Sink “SAIDA_CLIENTES”
+
+[OBSERVACAO]
+Como a fila é algo não desejado, muda-se a cor da curva do gráfico para vermelho.
+Para ganhar espaço, pode-se desabilitar em Settings → Show Legend.
+[FIM_COLUNA]
+
+[COLUNA]
+[TITULO]
+Gráficos de Estados dos Postos
+
+[PRINT]
+AULA90_MODELO90_ETAPA4_6.png
+
+[CAMINHO]
+Barra Esquerda → State → State → Pie Chart
+
+[PROPERTIES]
+[NOME]
+GRÁFICOS DE ESTADOS DOS POSTOS
+[OPTIONS]
+Objects:
+[eyedropper.png] → Processor “POSTO_DE_SENHA”
+[eyedropper.png] → Processor “POSTO_DE_ATENDIMENTO”
+
+[OBSERVACAO]
+É interessante habilitar em State Table Properties todos os estados, com exceção do Lunch, como foi feito no Modelo 01 da Aula 01, Etapa Final, no passo de Gráficos de Estados, a última imagem.
+[FIM_COLUNA]
+
+[COLUNA]
+[TITULO]
+Gráfico do tempo total de permanência em minutos.
+
+[PRINT]
+AULA90_MODELO90_ETAPA4_7.png
+
+[CAMINHO]
+Barra Esquerda → Staytime → Composite Staytime By Hour
+
+[PROPERTIES]
+[NOME]
+TEMPO TOTAL DE PERMANÊNCIA EM MINUTOS
+[OPTIONS]
+Entrance Objects:
+[eyedropper.png] → Source “ENTRADA_CLIENTES”
+
+Exit Objects:
+[eyedropper.png] → Sink “SAIDA_CLIENTES”
+[FIM_COLUNA]
+
+[ETAPA] Etapa 05 - Resultados
+[COLUNA]
+[TITULO]
+Validando o modelo simulado.
+
+[PRINT]
+AULA90_MODELO90_RESULTADOS_1.png
+
+[ROTEIRO]
+Quantidade de clientes atendidos: 100
+
+Posto de Senha: 10.42%
+Posto de Atendimento: 83.33%
+[FIM_COLUNA]
+
+[ETAPA] Etapa 06 - Alterando o modelo para Modo B
+[COLUNA]
+[TITULO]
+Alterando o modelo para Modo B
+
+[PRINT]
+AULA90_MODELO90_ETAPA6_1.png
+[PRINT]
+AULA90_MODELO90_ETAPA6_2.png
+[PRINT]
+AULA90_MODELO90_ETAPA6_3.png
+[PRINT]
+AULA90_MODELO90_ETAPA6_4.png
+
+[OBSERVACAO]
+O Modo B é uma alternativa para o Modo A, onde apenas altera o layout dos Processors, do Source e do Sink, mantendo a mesma lógica de funcionamento, com o acréscimo apenas de reposicionar o item para que o "Cliente" não ande sob o "Posto de Senha" e o "Posto de Atendimento".
+
+Os resultados devem ser o mesmo.
+[FIM_COLUNA]
 
 
 
