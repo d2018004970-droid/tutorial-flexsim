@@ -167,8 +167,8 @@
         var model = batch[0];
         if (counted[model.id] || !window.goatcounter || !window.goatcounter.count) return;
         counted[model.id] = true;
-        var summary = model.querySelector('summary');
-        var title = summary ? summary.textContent.replace(/\s+/g, ' ').trim().slice(0, 90) : model.id;
+        var label = model.querySelector('summary .model-caret + span');
+        var title = label ? label.textContent.replace(/\s+/g, ' ').trim().slice(0, 90) : model.id;
         window.goatcounter.count({ path: location.pathname + 'modelo/' + model.id, title: title, event: false });
       }, 400);
     }, true);
