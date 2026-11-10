@@ -82,7 +82,7 @@
   <button class="lightbox-nav lightbox-next" id="lightbox-next" type="button" aria-label="Próxima imagem">›</button>
   <div class="lightbox-caption" id="lightbox-caption"></div>
   <div class="lightbox-counter" id="lightbox-counter"></div>
-  <div class="lightbox-help">Clique/scroll para ampliar • arraste para mover • ← → navega • Esc fecha</div>
+  <div class="lightbox-help">Clique ou scroll no ponto desejado para ampliar • arraste para mover • ← → navega • Esc fecha</div>
 </div>
 
 <!-- GLOSSARIO -->
@@ -152,18 +152,26 @@
 
 <!-- Contador de acessos (GoatCounter, sem cookies). Painel: https://tutorial-flexsim.goatcounter.com -->
 <script>
-  // Conta a abertura do site + cada modelo visitado (ex.: "#modelo-03"), uma vez por modelo por sessão de página.
+  // Conta a abertura do site (automático) + cada modelo aberto, pelo menu ou clicando no título do modelo.
+  // Cada modelo conta no máximo 1 vez por visita. Se vários modelos abrem juntos (ex.: seleção para PDF), não conta.
   (function () {
-    var lastModel = null;
-    function modelFromHash() { var h = location.hash.replace('#', ''); return h ? h.split('/')[0] : null; }
-    function countModel() {
-      var m = modelFromHash();
-      if (!m || m === lastModel || !window.goatcounter || !window.goatcounter.count) return;
-      lastModel = m;
-      window.goatcounter.count({ path: location.pathname + '#' + m, title: m });
-    }
-    window.addEventListener('hashchange', countModel);
-    window.addEventListener('load', function () { setTimeout(countModel, 500); });
+    var counted = {}, pending = [], timer = null;
+    document.addEventListener('toggle', function (e) {
+      var m = e.target;
+      if (!m.classList || !m.classList.contains('model') || !m.open || !m.id) return;
+      pending.push(m);
+      clearTimeout(timer);
+      timer = setTimeout(function () {
+        var batch = pending; pending = [];
+        if (batch.length !== 1) return;
+        var model = batch[0];
+        if (counted[model.id] || !window.goatcounter || !window.goatcounter.count) return;
+        counted[model.id] = true;
+        var summary = model.querySelector('summary');
+        var title = summary ? summary.textContent.replace(/\s+/g, ' ').trim().slice(0, 90) : model.id;
+        window.goatcounter.count({ path: location.pathname + 'modelo/' + model.id, title: title, event: false });
+      }, 400);
+    }, true);
   })();
 </script>
 <script data-goatcounter="https://tutorial-flexsim.goatcounter.com/count"

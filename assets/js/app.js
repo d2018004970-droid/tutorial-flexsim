@@ -751,28 +751,69 @@
     LB.closeBtn.addEventListener('click', closeLightbox);
     LB.root.addEventListener('click', function (e) { if (e.target === LB.root) closeLightbox(); });
 
+    // Clique: amplia no ponto clicado (ou volta ao normal se já ampliado).
+    // Um clique que veio de um arraste é ignorado (antes ele desfazia o zoom).
     LB.img.addEventListener('click', function (e) {
       e.stopPropagation();
-      LB.zoom = LB.zoom === 1 ? 2 : 1; LB.pan = { x: 0, y: 0 };
-      applyZoom();
+      if (LB.moved) { LB.moved = false; return; }
+      if (LB.zoom === 1) zoomAt(2.5, e.clientX, e.clientY);
+      else { LB.zoom = 1; LB.pan = { x: 0, y: 0 }; applyZoom(); }
     });
+    // Roda do mouse: amplia/reduz em direção ao cursor.
     LB.img.addEventListener('wheel', function (e) {
       e.preventDefault();
-      LB.zoom = Math.min(4, Math.max(1, LB.zoom + (e.deltaY < 0 ? 0.25 : -0.25)));
-      if (LB.zoom === 1) LB.pan = { x: 0, y: 0 };
-      applyZoom();
+      zoomAt(LB.zoom * (e.deltaY < 0 ? 1.2 : 1 / 1.2), e.clientX, e.clientY);
     }, { passive: false });
-    LB.img.addEventListener('mousedown', function (e) {
-      if (LB.zoom === 1) return;
-      LB.dragging = true; LB.dragStart = { x: e.clientX - LB.pan.x, y: e.clientY - LB.pan.y };
+
+    // Arrastar (mouse, caneta ou dedo) e pinça com dois dedos.
+    LB.pointers = {};
+    LB.img.addEventListener('pointerdown', function (e) {
       e.preventDefault();
+      LB.pointers[e.pointerId] = { x: e.clientX, y: e.clientY };
+      try { LB.img.setPointerCapture(e.pointerId); } catch (err) {}
+      var ids = Object.keys(LB.pointers);
+      LB.moved = false;
+      if (ids.length === 1) {
+        LB.dragging = LB.zoom > 1;
+        LB.dragOrigin = { x: e.clientX, y: e.clientY };
+        LB.dragStart = { x: e.clientX - LB.pan.x, y: e.clientY - LB.pan.y };
+      } else if (ids.length === 2) {
+        LB.dragging = false;
+        LB.pinchDist = pointerDistance();
+      }
+      LB.img.classList.add('is-dragging');
     });
-    window.addEventListener('mousemove', function (e) {
-      if (!LB.dragging) return;
-      LB.pan = { x: e.clientX - LB.dragStart.x, y: e.clientY - LB.dragStart.y };
-      applyZoom();
+    LB.img.addEventListener('pointermove', function (e) {
+      if (!LB.pointers[e.pointerId]) return;
+      LB.pointers[e.pointerId] = { x: e.clientX, y: e.clientY };
+      var ids = Object.keys(LB.pointers);
+      if (ids.length === 2 && LB.pinchDist) {
+        var d = pointerDistance(), c = pointerCenter();
+        zoomAt(LB.zoom * d / LB.pinchDist, c.x, c.y);
+        LB.pinchDist = d; LB.moved = true;
+      } else if (LB.dragging) {
+        if (Math.abs(e.clientX - LB.dragOrigin.x) + Math.abs(e.clientY - LB.dragOrigin.y) > 4) LB.moved = true;
+        LB.pan = { x: e.clientX - LB.dragStart.x, y: e.clientY - LB.dragStart.y };
+        clampPan(); applyZoom();
+      }
     });
-    window.addEventListener('mouseup', function () { LB.dragging = false; });
+    function endPointer(e) {
+      delete LB.pointers[e.pointerId];
+      var ids = Object.keys(LB.pointers);
+      LB.pinchDist = null;
+      if (ids.length === 1) { // sobrou um dedo depois da pinça: continua arrastando a partir dele
+        var p = LB.pointers[ids[0]];
+        LB.dragging = LB.zoom > 1;
+        LB.dragOrigin = { x: p.x, y: p.y };
+        LB.dragStart = { x: p.x - LB.pan.x, y: p.y - LB.pan.y };
+      } else if (ids.length === 0) {
+        LB.dragging = false;
+        LB.img.classList.remove('is-dragging');
+        applyZoom();
+      }
+    }
+    LB.img.addEventListener('pointerup', endPointer);
+    LB.img.addEventListener('pointercancel', endPointer);
 
     document.addEventListener('keydown', function (e) {
       if (!LB.root.classList.contains('open')) return;
@@ -783,8 +824,39 @@
   }
 
   function applyZoom() {
-    LB.img.style.cursor = LB.zoom > 1 ? 'grab' : 'zoom-in';
+    LB.img.style.cursor = LB.zoom > 1 ? (LB.dragging ? 'grabbing' : 'grab') : 'zoom-in';
     LB.img.style.transform = 'translate(' + LB.pan.x + 'px,' + LB.pan.y + 'px) scale(' + LB.zoom + ')';
+  }
+  // Muda o zoom mantendo fixo o ponto da imagem que está sob (clientX, clientY).
+  function zoomAt(newZoom, clientX, clientY) {
+    newZoom = Math.min(6, Math.max(1, newZoom));
+    if (Math.abs(newZoom - 1) < 0.02) newZoom = 1;
+    var r = LB.img.getBoundingClientRect();
+    // centro da imagem sem o deslocamento atual (o scale é aplicado a partir do centro)
+    var cx = r.left + r.width / 2 - LB.pan.x, cy = r.top + r.height / 2 - LB.pan.y;
+    var k = newZoom / LB.zoom;
+    LB.pan = {
+      x: (clientX - cx) - k * (clientX - cx - LB.pan.x),
+      y: (clientY - cy) - k * (clientY - cy - LB.pan.y)
+    };
+    LB.zoom = newZoom;
+    if (LB.zoom === 1) LB.pan = { x: 0, y: 0 };
+    clampPan(); applyZoom();
+  }
+  // Impede que a imagem ampliada seja arrastada para fora (as bordas param na moldura original).
+  function clampPan() {
+    var w = LB.img.offsetWidth, h = LB.img.offsetHeight;
+    var mx = w * (LB.zoom - 1) / 2, my = h * (LB.zoom - 1) / 2;
+    LB.pan.x = Math.max(-mx, Math.min(mx, LB.pan.x));
+    LB.pan.y = Math.max(-my, Math.min(my, LB.pan.y));
+  }
+  function pointerDistance() {
+    var p = Object.keys(LB.pointers).map(function (k) { return LB.pointers[k]; });
+    return Math.hypot(p[0].x - p[1].x, p[0].y - p[1].y) || 1;
+  }
+  function pointerCenter() {
+    var p = Object.keys(LB.pointers).map(function (k) { return LB.pointers[k]; });
+    return { x: (p[0].x + p[1].x) / 2, y: (p[0].y + p[1].y) / 2 };
   }
 
   function openLightbox(gallery, index, captionEl) {

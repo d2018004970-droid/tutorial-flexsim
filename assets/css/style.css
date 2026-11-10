@@ -308,7 +308,8 @@ details.course-section:not([open]) .course-chevron{transform:rotate(-90deg)}
 .lightbox{position:fixed;inset:0;background:rgba(6,10,18,.92);display:none;align-items:center;justify-content:center;z-index:100;padding:40px;flex-direction:column}
 .lightbox.open{display:flex}
 .lightbox-stage{flex:1;display:flex;align-items:center;justify-content:center;width:100%;overflow:hidden}
-.lightbox img{max-width:92vw;max-height:80vh;object-fit:contain;border-radius:6px;box-shadow:0 12px 50px rgba(0,0,0,.4);cursor:zoom-in;transition:transform .1s ease}
+.lightbox img{max-width:92vw;max-height:80vh;object-fit:contain;border-radius:6px;box-shadow:0 12px 50px rgba(0,0,0,.4);cursor:zoom-in;transition:transform .1s ease;touch-action:none;user-select:none;-webkit-user-drag:none}
+.lightbox img.is-dragging{transition:none}
 .lightbox-close{position:fixed;right:20px;top:16px;border:0;background:rgba(255,255,255,.12);color:#fff;width:40px;height:40px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center}
 .lightbox-close:hover{background:rgba(255,255,255,.22)}
 .lightbox-nav{position:fixed;top:50%;transform:translateY(-50%);z-index:110;width:52px;height:76px;border:0;border-radius:12px;background:rgba(255,255,255,.10);color:#fff;font-size:46px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s ease, opacity .15s ease}
