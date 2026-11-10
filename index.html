@@ -149,5 +149,24 @@
 
 <script src="assets/js/content.js"></script>
 <script src="assets/js/app.js"></script>
+
+<!-- Contador de acessos (GoatCounter, sem cookies). Painel: https://tutorial-flexsim.goatcounter.com -->
+<script>
+  // Conta a abertura do site + cada modelo visitado (ex.: "#modelo-03"), uma vez por modelo por sessão de página.
+  (function () {
+    var lastModel = null;
+    function modelFromHash() { var h = location.hash.replace('#', ''); return h ? h.split('/')[0] : null; }
+    function countModel() {
+      var m = modelFromHash();
+      if (!m || m === lastModel || !window.goatcounter || !window.goatcounter.count) return;
+      lastModel = m;
+      window.goatcounter.count({ path: location.pathname + '#' + m, title: m });
+    }
+    window.addEventListener('hashchange', countModel);
+    window.addEventListener('load', function () { setTimeout(countModel, 500); });
+  })();
+</script>
+<script data-goatcounter="https://tutorial-flexsim.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
