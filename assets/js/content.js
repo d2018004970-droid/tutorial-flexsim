@@ -1,7 +1,7 @@
 ﻿window.TUTORIAL_CONTENT = {
     "meta":  {
                  "title":  "Tutorial de Modelagem utilizando FlexSim Education v2027-0",
-                 "generatedAt":  "2026-11-13T14:09:13.6242965-03:00",
+                 "generatedAt":  "2026-11-13T14:13:30.3524114-03:00",
                  "source":  "Word_Mestre.md",
                  "counts":  {
                                 "courses":  7,
@@ -10287,7 +10287,7 @@
                     {
                         "id":  "aula-06",
                         "number":  6,
-                        "title":  "Experimenter",
+                        "title":  "",
                         "models":  [
                                        {
                                            "id":  "modelo-11",
@@ -11633,6 +11633,7 @@
                      "Aula 2 sem titulo apos o traco.",
                      "Aula 3 sem titulo apos o traco.",
                      "Aula 4 sem titulo apos o traco.",
-                     "Aula 5 sem titulo apos o traco."
+                     "Aula 5 sem titulo apos o traco.",
+                     "Aula 6 sem titulo apos o traco."
                  ]
 };

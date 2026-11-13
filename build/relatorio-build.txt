@@ -1,5 +1,5 @@
 ﻿=== RELATORIO DE GERACAO DO SITE — Tutorial FlexSim ===
-Gerado em: 13/11/2026 14:09:14
+Gerado em: 13/11/2026 14:13:30
 
 Aulas: 7
 Modelos: 12
@@ -10,9 +10,10 @@ Roteiros para download (downloads/roteiros): 10
 Arquivos para download referenciados: 2
 Imagens otimizadas nesta execucao: 0
 
-=== AVISOS (5) ===
+=== AVISOS (6) ===
 - Aula 1 sem titulo apos o traco.
 - Aula 2 sem titulo apos o traco.
 - Aula 3 sem titulo apos o traco.
 - Aula 4 sem titulo apos o traco.
 - Aula 5 sem titulo apos o traco.
+- Aula 6 sem titulo apos o traco.

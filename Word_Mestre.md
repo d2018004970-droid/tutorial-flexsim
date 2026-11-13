@@ -3986,7 +3986,7 @@ O Modo B é uma alternativa para o Modo A, onde apenas altera o layout dos Proce
 Os resultados devem ser o mesmo.
 [FIM_COLUNA]
 
-## 6) Aula 06 - Experimenter
+## 6) Aula 06
 ### 6.1) Modelo 11
 
 [ETAPA] Etapa 01 - Aproximando os estoque de placas virgens, reprovadas e impressas das impressoras
