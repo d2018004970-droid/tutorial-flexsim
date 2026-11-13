@@ -145,8 +145,8 @@
       <tr><td><code>[ACAO_MOUSE]</code></td><td>Ação realizada com o mouse</td><td>Informação simples</td></tr>
       <tr><td><code>[OBSERVACAO]</code></td><td>Observação complementar</td><td>Última informação da coluna (pode repetir)</td></tr>
       <tr><td><code>[PROPERTIES]</code></td><td>Início das propriedades do FlexSim</td><td>Apenas organiza visualmente o Word; opcional</td></tr>
-      <tr><td><code>[NOME]</code></td><td>Valor de Name</td><td>Propriedade "Nome"</td></tr>
-      <tr><td><code>[VISUALS]</code></td><td>Posição/visual (X, Y, Z, rotação)</td><td>Propriedade "Visuals"</td></tr>
+      <tr><td><code>[NOME]</code> / <code>[NAME]</code></td><td>Valor de Name (com <code>Tipo - "NOVO_NOME"</code>, renomeia o objeto no mini-mapa — ver seção 4)</td><td>Propriedade "Nome" / "Name"</td></tr>
+      <tr><td><code>[VISUALS]</code></td><td>Posição, rotação e tamanho (ícones do Quick Properties — ver seção 4)</td><td>Propriedade "Visuals"</td></tr>
       <tr><td><code>[SOURCE]</code> / <code>[QUEUE]</code> / <code>[PROCESSOR]</code> / <code>[MULTIPROCESSOR]</code> / <code>[CONVEYOR]</code> / <code>[NETWORKNODE]</code></td><td>Propriedades específicas do objeto</td><td>Propriedade com o nome do objeto</td></tr>
       <tr><td><code>[DECISION_POINT]</code></td><td>Nome + posição do Decision Point</td><td>Propriedade "Decision Point"</td></tr>
       <tr><td><code>[OPTIONS]</code></td><td>Opções de Dashboard</td><td>Propriedade "Options"</td></tr>
@@ -163,6 +163,8 @@
       <tr><td><code>[SAMPLE_GENERATION]</code></td><td>Geração de amostras (limites, distribuição escolhida)</td><td>Propriedade "Sample Generation"</td></tr>
       <tr><td><code>[EXPERIMENTER]</code></td><td>Configurações do Experimenter (stop time, replicações)</td><td>Propriedade "Experimenter"</td></tr>
       <tr><td><code>[Run Time]</code></td><td>Configuração de tempo de execução</td><td>Propriedade "Run Time"</td></tr>
+      <tr><td><code>[GROUP_PROPERTIES]</code></td><td>Propriedades de um Group (ex.: Members)</td><td>Propriedade "Group Properties"</td></tr>
+      <tr><td><code>[JOBS]</code></td><td>Jobs do Experimenter (nome, stop time, parâmetros)</td><td>Propriedade "Jobs"</td></tr>
     </table>
     <h3>Tokens usados dentro do texto (não abrem/fecham bloco)</h3>
     <table>
@@ -200,18 +202,66 @@
     <p>O mini-mapa de cada modelo é desenhado automaticamente a partir das coordenadas que você já escreve em
     <code>[VISUALS]</code>/<code>[DECISION_POINT]</code>/<code>[CONVEYOR]</code>. Para isso funcionar bem:</p>
     <ul>
-      <li>Sempre que citar coordenadas de <b>mais de um objeto</b> na mesma propriedade, prefira o formato
-      <code class="mono">NOME: X = .. ; Y = ..</code> (nome antes dos dois-pontos) em vez de deixar os
-      objetos "soltos" um embaixo do outro. Isso evita ambiguidade.</li>
+      <li>Sempre que citar coordenadas de <b>mais de um objeto</b> na mesma propriedade, coloque o nome antes
+      da coordenada — <code class="mono">"NOME" - [Mid6_small.png] X = .. ; Y = ..</code> (com aspas) ou
+      <code class="mono">NOME: X = .. ; Y = ..</code> — em vez de deixar os objetos "soltos" um embaixo do
+      outro. Isso evita ambiguidade.</li>
       <li><b>Sempre que reposicionar um objeto que já existia em um modelo anterior</b> (ex.: mover o Sink de
       lugar), inclua um bloco <code>[VISUALS]</code> com a <b>nova</b> coordenada — não basta escrever "coloque
       em X = 50" só no Roteiro ou na Observação. O mini-mapa só lê coordenadas de dentro de
       <code>[VISUALS]</code>/<code>[DECISION_POINT]</code>, então uma reposição mencionada apenas em texto
       livre não é capturada, e o objeto continua aparecendo na posição antiga no mapa.</li>
     </ul>
-    <div class="callout warn"><b>Situação encontrada</b>Isso já aconteceu com o Sink "SAIDA_CLIENTES": a
-    reposição para X=50 (Modelo 03) e X=80 (Modelo 05) está apenas em texto corrido, então o mini-mapa desses
-    modelos ainda mostra o Sink na posição original (X=30). Veja a seção 7 ("Ainda precisam da sua ação").</div>
+
+    <h3>Mini-mapa em escala: posição, rotação e tamanho</h3>
+    <p>O mini-mapa desenha cada objeto com o tamanho real (X × Y, em metros) e a rotação do FlexSim, na mesma
+    escala em X e Y. Dentro do <code>[VISUALS]</code>, cada linha é reconhecida pelo ícone, igual ao Quick
+    Properties do FlexSim:</p>
+    <table>
+      <tr><th>Ícone na linha</th><th>Significa</th><th>Exemplo</th></tr>
+      <tr><td><code>[Mid6_small.png]</code></td><td>Posição (o <b>centro</b> do objeto)</td><td><code class="mono">"FILA" - [Mid6_small.png] X = 20.00 ; Y = 0.00 ; Z = 0.00</code></td></tr>
+      <tr><td><code>[rotate_arrow.png]</code></td><td>Rotação em Z (graus)</td><td><code class="mono">"ATENDENTE" - [rotate_arrow.png] Z = 270.00</code></td></tr>
+      <tr><td><code>[_resize.png]</code> ou <code>[resize.png]</code></td><td>Tamanho (X × Y × Z)</td><td><code class="mono">"PALLETS_FINALIZADOS" - [_resize.png] X = 25.00 ; Y = 1.50</code></td></tr>
+    </table>
+    <ul>
+      <li><b>Tamanho só para objetos redimensionados.</b> Os demais usam automaticamente o tamanho padrão do
+      tipo (o que o FlexSim mostra num objeto recém-inserido): Source 1,06 × 1,06 · Queue 2 × 2 ·
+      Processor 4 × 3 · MultiProcessor 5 × 3,08 · Combiner/Separator 4,02 × 3,01 · Sink 1,06 × 1,06 ·
+      Operator 0,4 × 0,58 · Rack 20 × 1,5 · Location Kiosk 0,36 × 0,58 · Location Registration 2 × 2.
+      NetworkNode e Decision Point são pontos e aparecem com um tamanho mínimo.</li>
+      <li><b>Escreva o tamanho como o Quick Properties mostra</b>, sem trocar X por Y por causa da rotação — o
+      site gira o desenho sozinho (ex.: o Rack de 25 × 1,5 girado 270° aparece na vertical).</li>
+      <li>Mover um objeto <b>não</b> desfaz a rotação nem o tamanho que ele já tinha.</li>
+      <li>Exceção: dentro do <code>[DECISION_POINT]</code>, o <code>[_resize.png]</code> continua sendo lido como
+      <b>posição</b> (é assim que os Decision Points dos Modelos 03 e 04 estão escritos).</li>
+      <li>Objetos muito pequenos (Operator, NetworkNode…) aparecem com um tamanho mínimo na tela, para continuar
+      visíveis e clicáveis. Passe o mouse sobre um objeto para ver nome, posição, tamanho e rotação.</li>
+    </ul>
+
+    <h3>Renomear um objeto</h3>
+    <p>Se um objeto citado no <code>[OBJETO]</code> é renomeado na mesma coluna, escreva o novo nome no
+    <code>[NOME]</code>/<code>[NAME]</code> com o tipo na frente — o nome antigo sai do mini-mapa (senão ele vira
+    um objeto "fantasma") e o novo herda a posição. Os nomes são casados pelo tipo, na ordem:</p>
+    <pre class="mono" style="display:block;padding:10px 14px;overflow-x:auto;line-height:1.5">[OBJETO]
+Processor - "TESTE"
+Operator - "OPERADOR_TESTE"
+[PROPERTIES]
+[NAME]
+Operator - "OPERADOR_TESTE_1"
+Processor - "TESTE_1"</pre>
+
+    <h3>Remover um objeto</h3>
+    <p>Quando um objeto é apagado do modelo, liste-o no <code>[OBJETO]</code> com <code>(REMOVIDO)</code> no fim
+    da linha — ele some do mini-mapa a partir daquela etapa (os modelos anteriores continuam mostrando-o):</p>
+    <pre class="mono" style="display:block;padding:10px 14px;overflow-x:auto;line-height:1.5">[OBJETO]
+Operator - "MOVIMENTADOR_1" (REMOVIDO)
+Operator - "MOVIMENTADOR_2" (REMOVIDO)</pre>
+
+    <h3>Aulas Extras têm mapa próprio</h3>
+    <p>Aulas numeradas a partir de 90 (ex.: <code>## 90) Aula 90 - Extra...</code>) são modelos independentes da
+    fábrica dos Modelos 01–11: o mini-mapa delas começa vazio e nada delas aparece nas aulas normais (nem o
+    contrário). Por isso o Modelo 90 pode ter um Sink <code>SAIDA_CLIENTES</code> próprio sem afetar o Sink
+    <code>SAIDAS_CLIENTES</code> da fábrica.</p>
   </section>
 
   <section id="opcionais">
@@ -289,6 +339,20 @@
     marcador <code>[Run Time]</code> na tabela, <code>[COLUNA]</code> faltando nos Modelos 02 e 03, quebra de
     parágrafo no meio de "Etapa 02" (Modelo 06) e a posição ambígua do Modelo 05 — nenhuma ação adicional
     necessária para esses itens.</div>
+
+    <div class="callout ok"><b>Revisão do mini-mapa (13/11/2026)</b>
+      <ul>
+        <li>Sink da fábrica padronizado como <b>"SAIDAS_CLIENTES"</b> (com S) também nos Modelos 01–06 — a partir
+        do Modelo 07 o texto já usava essa grafia, e a diferença criava um Sink fantasma em X=80 no mapa. (Isto
+        substitui a padronização antiga para "SAIDA_CLIENTES" citada acima.) O Modelo 90 mantém o seu próprio
+        "SAIDA_CLIENTES".</li>
+        <li>Linhas <code>[resize.png]</code>/<code>[_resize.png]</code> no <code>[VISUALS]</code> eram lidas como
+        posição: a PALETIZACAO (Modelo 09+) aparecia em X=4, Y=6 e a FILA (Modelo 90) em X=10, Y=1. Agora são
+        lidas como tamanho e os dois objetos estão no lugar certo.</li>
+        <li>Acrescentado o tamanho real do Rack "PALLETS_FINALIZADOS" (25 × 1,5) no Modelo 09 · Etapa 02.</li>
+        <li>Rack e Location (Kiosk / Registration) passaram a ser reconhecidos como tipos de objeto no mapa.</li>
+      </ul>
+    </div>
   </section>
 
   <section id="downloads">

@@ -1,7 +1,7 @@
 ﻿window.TUTORIAL_CONTENT = {
     "meta":  {
                  "title":  "Tutorial de Modelagem utilizando FlexSim Education v2027-0",
-                 "generatedAt":  "2026-11-13T14:45:19.7403958-03:00",
+                 "generatedAt":  "2026-11-13T14:50:13.5670729-03:00",
                  "source":  "Word_Mestre.md",
                  "counts":  {
                                 "courses":  7,
@@ -11185,17 +11185,6 @@
                                                                               "isNew":  false
                                                                           },
                                                                           {
-                                                                              "name":  "MOVIMENTADOR_2",
-                                                                              "type":  "Operator",
-                                                                              "x":  15,
-                                                                              "y":  -3.5,
-                                                                              "rot":  180,
-                                                                              "sx":  0.4,
-                                                                              "sy":  0.58,
-                                                                              "stageId":  "modelo-02-etapa-02",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
                                                                               "name":  "DP_0",
                                                                               "type":  "Decision Point",
                                                                               "x":  42.5,
@@ -11388,17 +11377,6 @@
                                                                               "sx":  0.01,
                                                                               "sy":  0.01,
                                                                               "stageId":  "modelo-08-etapa-04",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
-                                                                              "name":  "MOVIMENTADOR_1",
-                                                                              "type":  "Operator",
-                                                                              "x":  15,
-                                                                              "y":  3.5,
-                                                                              "rot":  180,
-                                                                              "sx":  0.4,
-                                                                              "sy":  0.58,
-                                                                              "stageId":  "modelo-02-etapa-02",
                                                                               "isNew":  false
                                                                           },
                                                                           {

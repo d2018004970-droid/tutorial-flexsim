@@ -474,6 +474,12 @@ foreach ($course in $Courses) {
           if ($mm.Success) {
             $typeInObjeto = Normalize-ObjType $mm.Groups[1].Value
             $nm = Normalize-ObjName $mm.Groups[2].Value
+            # "(REMOVIDO)" no [OBJETO]: o objeto foi apagado do modelo -> sai do mini-mapa daqui em diante
+            if ($nm -and $ln2 -match '\(\s*REMOVID[OA]S?\s*\)') {
+              if ($globalLayout.ContainsKey($nm)) { $globalLayout.Remove($nm) }
+              if ($sizeMap.ContainsKey($nm)) { $sizeMap.Remove($nm) }
+              continue
+            }
             if ($nm) {
               $namesInObjeto.Add($nm)
               $nameTypeMap[$nm] = $typeInObjeto

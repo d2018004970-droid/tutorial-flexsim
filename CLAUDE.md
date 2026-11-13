@@ -96,6 +96,8 @@ confusão. Antes de editar `build.ps1` ou rodar qualquer build:
   posição (centro do objeto), `[rotate_arrow.png]` = rotação Z, `[_resize.png]`/`[resize.png]` = tamanho
   (só para objetos redimensionados; os demais usam `$DefaultSizes` do `build.ps1`, medidos pelo usuário
   no FlexSim). No `[DECISION_POINT]` o `[_resize.png]` continua sendo lido como posição.
+- **Remover objeto do mini-mapa**: linha no `[OBJETO]` terminando em `(REMOVIDO)` tira o objeto do
+  layout dali em diante (ex.: MOVIMENTADOR_1/2 no Modelo 11).
 - **Reposicionar um objeto** exige um bloco `[VISUALS]` (ou `[DECISION_POINT]`) com a nova
   coordenada — mencionar a nova posição só em `[ROTEIRO]`/`[OBSERVACAO]` (texto livre) não é lido
   pelo mini-mapa.
