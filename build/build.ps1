@@ -428,6 +428,14 @@ $nameTypeMap = @{}    # nome normalizado -> tipo (persistente no documento intei
                        # de qual foi o ULTIMO tipo mencionado na mesma coluna quando ha mais de um objeto)
 
 foreach ($course in $Courses) {
+  # Aulas Extras (numero >= 90) sao modelos independentes: o mini-mapa delas comeca vazio e
+  # nada delas "vaza" para as aulas normais seguintes (ex.: Sink SAIDA_CLIENTES do Modelo 90
+  # nao pode mover o SAIDA_CLIENTES da fabrica no Modelo 11).
+  $isExtraCourse = ($course.number -ge 90)
+  if ($isExtraCourse) {
+    $savedLayout = $globalLayout; $savedTypes = $nameTypeMap
+    $globalLayout = @{}; $nameTypeMap = $nameTypeMap.Clone()
+  }
   foreach ($model in $course.models) {
     $newNamesThisModel = New-Object System.Collections.Generic.HashSet[string]
 
@@ -558,6 +566,7 @@ foreach ($course in $Courses) {
     }
     $model.layout = [PSCustomObject]@{ objects = $objectsSnapshot }
   }
+  if ($isExtraCourse) { $globalLayout = $savedLayout; $nameTypeMap = $savedTypes }
 }
 
 # ------------------------------------------------------------------

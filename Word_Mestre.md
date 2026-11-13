@@ -256,7 +256,7 @@ AULA1_MODELO1_ETAPA5_1.png
 
 [ROTEIRO]
 APÓS SEREM IMPRESSAS, AS PLACAS DEIXARÃO O SISTEMA PELO
-“SINK: SAIDA_CLIENTES”
+“SINK: SAIDAS_CLIENTES”
 
 [OBJETO]
 Sink
@@ -281,12 +281,12 @@ Configurando saída do modelo
 AULA1_MODELO1_ETAPA5_2.png
 
 [ROTEIRO]
-“SINK: SAIDA_CLIENTES”
+“SINK: SAIDAS_CLIENTES”
 POSICIONADO EM:
 [Mid6_small.png] X=30.00 ; Y=0.00 ; Z=0.00
 
 [OBJETO]
-Sink – “SAIDA_CLIENTES”
+Sink – “SAIDAS_CLIENTES”
 
 [ACAO_MOUSE]
 Conectar objetos (Atalho: Letra “A” do teclado - clicar primeiro na Impressora e depois no Sink.)
@@ -296,7 +296,7 @@ Assim como se fez a ligação da Queue “PLACAS_VIRGENS” aos Processors “IM
 
 [PROPERTIES]
 [NOME]
-SAIDA_CLIENTES
+SAIDAS_CLIENTES
 
 [VISUALS]
 [Mid6_small.png] X = 30.00 ; Y = 0.00 ; Z = 0.00
@@ -717,13 +717,13 @@ AULA2_MODELO3_ETAPA1_1.png
 [OBJETO]
 Processor – “IMPRESSORA_1”
 Processor – “IMPRESSORA_2”
-Sink – “SAIDA_CLIENTES”
+Sink – “SAIDAS_CLIENTES”
 
 [ACAO_MOUSE]
 Desconectar os objetos utilizando o comando de Disconnect Object. Como atalho, pressione a tecla “Q” do teclado.
 
 [OBSERVACAO]
-Após realizar a desconexão dos objetos, coloque o Sink – “SAIDA_CLIENTES” em X = 50.00, mantendo Y e Z em 0.00.
+Após realizar a desconexão dos objetos, coloque o Sink – “SAIDAS_CLIENTES” em X = 50.00, mantendo Y e Z em 0.00.
 [FIM_COLUNA]
 
 [COLUNA]
@@ -751,7 +751,7 @@ PLACAS_IMPRESSAS
 
 [VISUALS]
 PLACAS_IMPRESSAS - [Mid6_small.png] X = 30.00 ; Y = 0.00 ; Z = 0.00
-SAIDA_CLIENTES - [Mid6_small.png] X = 50.00 ; Y = 0.00 ; Z = 0.00
+SAIDAS_CLIENTES - [Mid6_small.png] X = 50.00 ; Y = 0.00 ; Z = 0.00
 
 [QUEUE]
 Max Content – 1000000
@@ -1010,7 +1010,7 @@ AULA2_MODELO3_ETAPA5_3.png
 [ROTEIRO]
 DEIXANDO O “ PROCESSOR: TESTE ”, AS PLACAS DEVERÃO ENTRAR EM UMA ESTEIRA RETA HORIZONTAL
 POSICIONADA EM Xa = 42.00 e Xb = 48.00 ; Ya = 0.00 e Yb = 0.00 ; Za = 1.00 e Zb = 1.00,
-QUE LEVARÁ AS PLACAS APROVADAS PARA O “ SINK: SAIDA_CLIENTES ”,
+QUE LEVARÁ AS PLACAS APROVADAS PARA O “ SINK: SAIDAS_CLIENTES ”,
 QUE AGORA ESTARÁ POSICIONADO EM X = 50.00 ; Y = 0.00 ; Z = 0.00
 
 [OBJETO]
@@ -1018,10 +1018,10 @@ Conveyor
 
 [ACAO_MOUSE]
 1°: Desconectar os objetos utilizando o comando de Disconnect Object. Como atalho, pressione a tecla “Q” do teclado. Conforme orientado a seguir:
-Processor “TESTE” → Sink “SAIDA_CLIENTES”
+Processor “TESTE” → Sink “SAIDAS_CLIENTES”
 
 2°: Conectar os objetos utilizando o comando de conexão. Como atalho, pressione a tecla “A” do teclado. Conforme orientado a seguir:
-Processor “TESTE” → Conveyor (ESTEIRA) → Sink “SAIDA_CLIENTES”
+Processor “TESTE” → Conveyor (ESTEIRA) → Sink “SAIDAS_CLIENTES”
 
 [PROPERTIES]
 [CONVEYOR]
@@ -1228,7 +1228,7 @@ RETRABALHADAS NAS IMPRESSORAS NAS QUAIS FORAM IMPRESSAS:
 Queue – “PLACAS_IMPRESSAS_REPROVADAS”
 Processor – “IMPRESSORA_1”
 Processor – “IMPRESSORA_2”
-Sink – “SAIDA_CLIENTES”
+Sink – “SAIDAS_CLIENTES”
 
 [ACAO_MOUSE]
 1°: Conectar os objetos utilizando o comando de conexão. Como atalho, pressione a tecla “A” do teclado. 
@@ -1614,13 +1614,13 @@ AULA3_MODELO5_ETAPA1_1.png
 
 [OBJETO]
 Conveyor – “StraightConveyor1”
-Sink – “SAIDA_CLIENTES”
+Sink – “SAIDAS_CLIENTES”
 
 [ACAO_MOUSE]
 Desconectar os objetos utilizando o comando de Disconnect Object. Como atalho, pressione a tecla “Q” do teclado.
 
 [OBSERVACAO]
-Após realizar a desconexão dos objetos, coloque o Sink – “SAIDA_CLIENTES” em X = 80.00, mantendo Y e Z em 0.00.
+Após realizar a desconexão dos objetos, coloque o Sink – “SAIDAS_CLIENTES” em X = 80.00, mantendo Y e Z em 0.00.
 [FIM_COLUNA]
 
 [COLUNA]
@@ -1820,16 +1820,16 @@ AULA3_MODELO5_ETAPA3_2.png
 [ROTEIRO]
 ESSE PROCESSO, ALÉM DE FAZER O ACABAMENTO, REALIZARÁ A SEPARAÇÃO ENTRE
 AS PLACAS IMPRESSAS MONTADAS E OS CILINDROS DE COMPONENTES VAZIOS,
-SENDO AS PLACAS ENVIADAS PARA O “ SINK: SAIDA_CLIENTES ”,
+SENDO AS PLACAS ENVIADAS PARA O “ SINK: SAIDAS_CLIENTES ”,
 POSICIONADO EM X = 80.00 ; Y = 0.00 ; Z = 0.00
 
 [OBJETO]
 Separator – “ACABAMENTO”
-Sink – “SAIDA_CLIENTES”
+Sink – “SAIDAS_CLIENTES”
 
 [PROPERTIES]
 [VISUALS]
-SAIDA_CLIENTES: [Mid6_small.png] X = 80.00 ; Y = 0.00 ; Z = 0.00
+SAIDAS_CLIENTES: [Mid6_small.png] X = 80.00 ; Y = 0.00 ; Z = 0.00
 [FIM_COLUNA]
 
 [COLUNA]
@@ -1852,20 +1852,20 @@ Queue – “COMPONENTES_CILINDROS_VAZIOS”
 Conectar os objetos utilizando o comando de conexão. Como atalho, pressione a tecla “A” do teclado. 
 Conforme orientado a seguir:
 1°: Separator – “ACABAMENTO” → Queue – “COMPONENTES_CILINDROS_VAZIOS”
-2°: Queue – “COMPONENTES_CILINDROS_VAZIOS” → Sink – “SAIDA_CLIENTES”
+2°: Queue – “COMPONENTES_CILINDROS_VAZIOS” → Sink – “SAIDAS_CLIENTES”
 
 [OBSERVACAO]
 No Combiner, deve-se manter a opção Combine Mode = Pack. Da mesma forma, no Separator, deve estar selecionada a opção Separate Mode = Unpack.
 
 Essa configuração faz com que o cilindro de componentes e a placa impressa sejam mantidos como duas entidades distintas durante o processo. Dessa forma, a operação de montagem utiliza os componentes disponíveis no cilindro como matéria-prima.
 
-Ao final da montagem, o cilindro de componentes vazio é separado da placa impressa, e esta segue para o Sink – “SAIDA_CLIENTES”.
+Ao final da montagem, o cilindro de componentes vazio é separado da placa impressa, e esta segue para o Sink – “SAIDAS_CLIENTES”.
 
 [OBSERVACAO]
 A ordem das conexões no Separator devem ser respeitadas assim como foi realizado no Combiner.
 
 Para o Combiner:
-1°: Separator – “ACABAMENTO” → Sink – “SAIDA_CLIENTES” (Carrega a entidade das Placas Impressas)
+1°: Separator – “ACABAMENTO” → Sink – “SAIDAS_CLIENTES” (Carrega a entidade das Placas Impressas)
 2°: Separator – “ACABAMENTO” → Queue – “COMPONENTES_CILINDROS_VAZIOS” (Carrega a entidade dos Cilíndros de Componentes Vazios)
 
 [PROPERTIES]

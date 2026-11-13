@@ -1,7 +1,7 @@
 ﻿window.TUTORIAL_CONTENT = {
     "meta":  {
                  "title":  "Tutorial de Modelagem utilizando FlexSim Education v2027-0",
-                 "generatedAt":  "2026-11-13T14:13:30.3524114-03:00",
+                 "generatedAt":  "2026-11-13T14:21:24.9310482-03:00",
                  "source":  "Word_Mestre.md",
                  "counts":  {
                                 "courses":  7,
@@ -413,7 +413,7 @@
                                                                                              ],
                                                                                   "roteiro":  [
                                                                                                   "APÓS SEREM IMPRESSAS, AS PLACAS DEIXARÃO O SISTEMA PELO",
-                                                                                                  "“SINK: SAIDA_CLIENTES”"
+                                                                                                  "“SINK: SAIDAS_CLIENTES”"
                                                                                               ],
                                                                                   "objeto":  [
                                                                                                  "Sink"
@@ -445,12 +445,12 @@
                                                                                                  }
                                                                                              ],
                                                                                   "roteiro":  [
-                                                                                                  "“SINK: SAIDA_CLIENTES”",
+                                                                                                  "“SINK: SAIDAS_CLIENTES”",
                                                                                                   "POSICIONADO EM:",
                                                                                                   "[Mid6_small.png] X=30.00 ; Y=0.00 ; Z=0.00"
                                                                                               ],
                                                                                   "objeto":  [
-                                                                                                 "Sink – “SAIDA_CLIENTES”"
+                                                                                                 "Sink – “SAIDAS_CLIENTES”"
                                                                                              ],
                                                                                   "caminho":  [
 
@@ -463,7 +463,7 @@
                                                                                                          "key":  "NOME",
                                                                                                          "title":  "Nome",
                                                                                                          "lines":  [
-                                                                                                                       "SAIDA_CLIENTES"
+                                                                                                                       "SAIDAS_CLIENTES"
                                                                                                                    ]
                                                                                                      },
                                                                                                      {
@@ -761,7 +761,7 @@
                                            "layout":  {
                                                           "objects":  [
                                                                           {
-                                                                              "name":  "SAIDA_CLIENTES",
+                                                                              "name":  "SAIDAS_CLIENTES",
                                                                               "type":  "Sink",
                                                                               "x":  30,
                                                                               "y":  0,
@@ -1282,13 +1282,13 @@
                                                                               "isNew":  false
                                                                           },
                                                                           {
-                                                                              "name":  "SAIDA_CLIENTES",
-                                                                              "type":  "Sink",
-                                                                              "x":  30,
-                                                                              "y":  0,
+                                                                              "name":  "MOVIMENTADOR_1",
+                                                                              "type":  "Operator",
+                                                                              "x":  15,
+                                                                              "y":  3.5,
                                                                               "rot":  0,
-                                                                              "stageId":  "modelo-01-etapa-05",
-                                                                              "isNew":  false
+                                                                              "stageId":  "modelo-02-etapa-02",
+                                                                              "isNew":  true
                                                                           },
                                                                           {
                                                                               "name":  "OPERADOR_IMPRESSORA_1",
@@ -1309,13 +1309,13 @@
                                                                               "isNew":  false
                                                                           },
                                                                           {
-                                                                              "name":  "MOVIMENTADOR_1",
-                                                                              "type":  "Operator",
-                                                                              "x":  15,
-                                                                              "y":  3.5,
+                                                                              "name":  "SAIDAS_CLIENTES",
+                                                                              "type":  "Sink",
+                                                                              "x":  30,
+                                                                              "y":  0,
                                                                               "rot":  0,
-                                                                              "stageId":  "modelo-02-etapa-02",
-                                                                              "isNew":  true
+                                                                              "stageId":  "modelo-01-etapa-05",
+                                                                              "isNew":  false
                                                                           },
                                                                           {
                                                                               "name":  "OPERADOR_IMPRESSORA_2",
@@ -1372,7 +1372,7 @@
                                                                                   "objeto":  [
                                                                                                  "Processor – “IMPRESSORA_1”",
                                                                                                  "Processor – “IMPRESSORA_2”",
-                                                                                                 "Sink – “SAIDA_CLIENTES”"
+                                                                                                 "Sink – “SAIDAS_CLIENTES”"
                                                                                              ],
                                                                                   "caminho":  [
 
@@ -1385,7 +1385,7 @@
                                                                                                  ],
                                                                                   "observacoes":  [
                                                                                                       [
-                                                                                                          "Após realizar a desconexão dos objetos, coloque o Sink – “SAIDA_CLIENTES” em X = 50.00, mantendo Y e Z em 0.00."
+                                                                                                          "Após realizar a desconexão dos objetos, coloque o Sink – “SAIDAS_CLIENTES” em X = 50.00, mantendo Y e Z em 0.00."
                                                                                                       ]
                                                                                                   ]
                                                                               },
@@ -1431,7 +1431,7 @@
                                                                                                          "title":  "Visuals",
                                                                                                          "lines":  [
                                                                                                                        "PLACAS_IMPRESSAS - [Mid6_small.png] X = 30.00 ; Y = 0.00 ; Z = 0.00",
-                                                                                                                       "SAIDA_CLIENTES - [Mid6_small.png] X = 50.00 ; Y = 0.00 ; Z = 0.00"
+                                                                                                                       "SAIDAS_CLIENTES - [Mid6_small.png] X = 50.00 ; Y = 0.00 ; Z = 0.00"
                                                                                                                    ]
                                                                                                      },
                                                                                                      {
@@ -1897,7 +1897,7 @@
                                                                                   "roteiro":  [
                                                                                                   "DEIXANDO O “ PROCESSOR: TESTE ”, AS PLACAS DEVERÃO ENTRAR EM UMA ESTEIRA RETA HORIZONTAL",
                                                                                                   "POSICIONADA EM Xa = 42.00 e Xb = 48.00 ; Ya = 0.00 e Yb = 0.00 ; Za = 1.00 e Zb = 1.00,",
-                                                                                                  "QUE LEVARÁ AS PLACAS APROVADAS PARA O “ SINK: SAIDA_CLIENTES ”,",
+                                                                                                  "QUE LEVARÁ AS PLACAS APROVADAS PARA O “ SINK: SAIDAS_CLIENTES ”,",
                                                                                                   "QUE AGORA ESTARÁ POSICIONADO EM X = 50.00 ; Y = 0.00 ; Z = 0.00"
                                                                                               ],
                                                                                   "objeto":  [
@@ -1908,10 +1908,10 @@
                                                                                               ],
                                                                                   "acao":  [
                                                                                                "1°: Desconectar os objetos utilizando o comando de Disconnect Object. Como atalho, pressione a tecla “Q” do teclado. Conforme orientado a seguir:",
-                                                                                               "Processor “TESTE” → Sink “SAIDA_CLIENTES”",
+                                                                                               "Processor “TESTE” → Sink “SAIDAS_CLIENTES”",
                                                                                                "",
                                                                                                "2°: Conectar os objetos utilizando o comando de conexão. Como atalho, pressione a tecla “A” do teclado. Conforme orientado a seguir:",
-                                                                                               "Processor “TESTE” → Conveyor (ESTEIRA) → Sink “SAIDA_CLIENTES”"
+                                                                                               "Processor “TESTE” → Conveyor (ESTEIRA) → Sink “SAIDAS_CLIENTES”"
                                                                                            ],
                                                                                   "properties":  [
                                                                                                      {
@@ -2298,15 +2298,6 @@
                                                                               "isNew":  true
                                                                           },
                                                                           {
-                                                                              "name":  "DP_1",
-                                                                              "type":  "Decision Point",
-                                                                              "x":  45,
-                                                                              "y":  -1.5,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-03-etapa-06",
-                                                                              "isNew":  true
-                                                                          },
-                                                                          {
                                                                               "name":  "MOVIMENTADOR_1",
                                                                               "type":  "Operator",
                                                                               "x":  15,
@@ -2371,6 +2362,15 @@
                                                                               "isNew":  false
                                                                           },
                                                                           {
+                                                                              "name":  "SAIDAS_CLIENTES",
+                                                                              "type":  "Sink",
+                                                                              "x":  50,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-03-etapa-01",
+                                                                              "isNew":  true
+                                                                          },
+                                                                          {
                                                                               "name":  "IMPRESSORA_1",
                                                                               "type":  "Processor",
                                                                               "x":  20,
@@ -2426,12 +2426,12 @@
                                                                               "isNew":  true
                                                                           },
                                                                           {
-                                                                              "name":  "SAIDA_CLIENTES",
-                                                                              "type":  "Sink",
-                                                                              "x":  50,
-                                                                              "y":  0,
+                                                                              "name":  "DP_1",
+                                                                              "type":  "Decision Point",
+                                                                              "x":  45,
+                                                                              "y":  -1.5,
                                                                               "rot":  0,
-                                                                              "stageId":  "modelo-03-etapa-01",
+                                                                              "stageId":  "modelo-03-etapa-06",
                                                                               "isNew":  true
                                                                           }
                                                                       ]
@@ -2472,7 +2472,7 @@
                                                                                                  "Queue – “PLACAS_IMPRESSAS_REPROVADAS”",
                                                                                                  "Processor – “IMPRESSORA_1”",
                                                                                                  "Processor – “IMPRESSORA_2”",
-                                                                                                 "Sink – “SAIDA_CLIENTES”"
+                                                                                                 "Sink – “SAIDAS_CLIENTES”"
                                                                                              ],
                                                                                   "caminho":  [
 
@@ -3105,6 +3105,15 @@
                                            "layout":  {
                                                           "objects":  [
                                                                           {
+                                                                              "name":  "PLACAS_IMPRESSAS_REFUGADAS",
+                                                                              "type":  "Queue",
+                                                                              "x":  20,
+                                                                              "y":  -10,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-04-etapa-04",
+                                                                              "isNew":  true
+                                                                          },
+                                                                          {
                                                                               "name":  "CONVEYOR_modelo-03-etapa-07_Adicionando_e_configurando_objetos_(Esteira_horizontal)",
                                                                               "type":  "Conveyor",
                                                                               "x1":  43,
@@ -3119,15 +3128,6 @@
                                                                               "type":  "Decision Point",
                                                                               "x":  42.5,
                                                                               "y":  0.2,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-03-etapa-06",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
-                                                                              "name":  "DP_1",
-                                                                              "type":  "Decision Point",
-                                                                              "x":  45,
-                                                                              "y":  -1.5,
                                                                               "rot":  0,
                                                                               "stageId":  "modelo-03-etapa-06",
                                                                               "isNew":  false
@@ -3197,13 +3197,13 @@
                                                                               "isNew":  false
                                                                           },
                                                                           {
-                                                                              "name":  "PLACAS_IMPRESSAS_REFUGADAS",
-                                                                              "type":  "Queue",
-                                                                              "x":  20,
-                                                                              "y":  -10,
+                                                                              "name":  "SAIDAS_CLIENTES",
+                                                                              "type":  "Sink",
+                                                                              "x":  50,
+                                                                              "y":  0,
                                                                               "rot":  0,
-                                                                              "stageId":  "modelo-04-etapa-04",
-                                                                              "isNew":  true
+                                                                              "stageId":  "modelo-03-etapa-01",
+                                                                              "isNew":  false
                                                                           },
                                                                           {
                                                                               "name":  "IMPRESSORA_1",
@@ -3289,12 +3289,12 @@
                                                                               "isNew":  false
                                                                           },
                                                                           {
-                                                                              "name":  "SAIDA_CLIENTES",
-                                                                              "type":  "Sink",
-                                                                              "x":  50,
-                                                                              "y":  0,
+                                                                              "name":  "DP_1",
+                                                                              "type":  "Decision Point",
+                                                                              "x":  45,
+                                                                              "y":  -1.5,
                                                                               "rot":  0,
-                                                                              "stageId":  "modelo-03-etapa-01",
+                                                                              "stageId":  "modelo-03-etapa-06",
                                                                               "isNew":  false
                                                                           }
                                                                       ]
@@ -3333,7 +3333,7 @@
                                                                                               ],
                                                                                   "objeto":  [
                                                                                                  "Conveyor – “StraightConveyor1”",
-                                                                                                 "Sink – “SAIDA_CLIENTES”"
+                                                                                                 "Sink – “SAIDAS_CLIENTES”"
                                                                                              ],
                                                                                   "caminho":  [
 
@@ -3346,7 +3346,7 @@
                                                                                                  ],
                                                                                   "observacoes":  [
                                                                                                       [
-                                                                                                          "Após realizar a desconexão dos objetos, coloque o Sink – “SAIDA_CLIENTES” em X = 80.00, mantendo Y e Z em 0.00."
+                                                                                                          "Após realizar a desconexão dos objetos, coloque o Sink – “SAIDAS_CLIENTES” em X = 80.00, mantendo Y e Z em 0.00."
                                                                                                       ]
                                                                                                   ]
                                                                               },
@@ -3710,12 +3710,12 @@
                                                                                   "roteiro":  [
                                                                                                   "ESSE PROCESSO, ALÉM DE FAZER O ACABAMENTO, REALIZARÁ A SEPARAÇÃO ENTRE",
                                                                                                   "AS PLACAS IMPRESSAS MONTADAS E OS CILINDROS DE COMPONENTES VAZIOS,",
-                                                                                                  "SENDO AS PLACAS ENVIADAS PARA O “ SINK: SAIDA_CLIENTES ”,",
+                                                                                                  "SENDO AS PLACAS ENVIADAS PARA O “ SINK: SAIDAS_CLIENTES ”,",
                                                                                                   "POSICIONADO EM X = 80.00 ; Y = 0.00 ; Z = 0.00"
                                                                                               ],
                                                                                   "objeto":  [
                                                                                                  "Separator – “ACABAMENTO”",
-                                                                                                 "Sink – “SAIDA_CLIENTES”"
+                                                                                                 "Sink – “SAIDAS_CLIENTES”"
                                                                                              ],
                                                                                   "caminho":  [
 
@@ -3728,7 +3728,7 @@
                                                                                                          "key":  "VISUALS",
                                                                                                          "title":  "Visuals",
                                                                                                          "lines":  [
-                                                                                                                       "SAIDA_CLIENTES: [Mid6_small.png] X = 80.00 ; Y = 0.00 ; Z = 0.00"
+                                                                                                                       "SAIDAS_CLIENTES: [Mid6_small.png] X = 80.00 ; Y = 0.00 ; Z = 0.00"
                                                                                                                    ]
                                                                                                      }
                                                                                                  ],
@@ -3761,7 +3761,7 @@
                                                                                                "Conectar os objetos utilizando o comando de conexão. Como atalho, pressione a tecla “A” do teclado. ",
                                                                                                "Conforme orientado a seguir:",
                                                                                                "1°: Separator – “ACABAMENTO” → Queue – “COMPONENTES_CILINDROS_VAZIOS”",
-                                                                                               "2°: Queue – “COMPONENTES_CILINDROS_VAZIOS” → Sink – “SAIDA_CLIENTES”"
+                                                                                               "2°: Queue – “COMPONENTES_CILINDROS_VAZIOS” → Sink – “SAIDAS_CLIENTES”"
                                                                                            ],
                                                                                   "properties":  [
                                                                                                      {
@@ -3792,13 +3792,13 @@
                                                                                                           "",
                                                                                                           "Essa configuração faz com que o cilindro de componentes e a placa impressa sejam mantidos como duas entidades distintas durante o processo. Dessa forma, a operação de montagem utiliza os componentes disponíveis no cilindro como matéria-prima.",
                                                                                                           "",
-                                                                                                          "Ao final da montagem, o cilindro de componentes vazio é separado da placa impressa, e esta segue para o Sink – “SAIDA_CLIENTES”."
+                                                                                                          "Ao final da montagem, o cilindro de componentes vazio é separado da placa impressa, e esta segue para o Sink – “SAIDAS_CLIENTES”."
                                                                                                       ],
                                                                                                       [
                                                                                                           "A ordem das conexões no Separator devem ser respeitadas assim como foi realizado no Combiner.",
                                                                                                           "",
                                                                                                           "Para o Combiner:",
-                                                                                                          "1°: Separator – “ACABAMENTO” → Sink – “SAIDA_CLIENTES” (Carrega a entidade das Placas Impressas)",
+                                                                                                          "1°: Separator – “ACABAMENTO” → Sink – “SAIDAS_CLIENTES” (Carrega a entidade das Placas Impressas)",
                                                                                                           "2°: Separator – “ACABAMENTO” → Queue – “COMPONENTES_CILINDROS_VAZIOS” (Carrega a entidade dos Cilíndros de Componentes Vazios)"
                                                                                                       ]
                                                                                                   ]
@@ -4128,6 +4128,15 @@
                                                                               "isNew":  true
                                                                           },
                                                                           {
+                                                                              "name":  "SAIDAS_CLIENTES",
+                                                                              "type":  "Sink",
+                                                                              "x":  80,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-05-etapa-03",
+                                                                              "isNew":  true
+                                                                          },
+                                                                          {
                                                                               "name":  "MOVIMENTADOR_2",
                                                                               "type":  "Operator",
                                                                               "x":  15,
@@ -4183,6 +4192,16 @@
                                                                               "isNew":  false
                                                                           },
                                                                           {
+                                                                              "name":  "CONVEYOR_modelo-03-etapa-05_Adicionando_e_configurando_objeto_(Esteira_reprovados)",
+                                                                              "type":  "Conveyor",
+                                                                              "x1":  45,
+                                                                              "y1":  -0.5,
+                                                                              "x2":  45,
+                                                                              "y2":  -16.5,
+                                                                              "stageId":  "modelo-03-etapa-05",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
                                                                               "name":  "DP_1",
                                                                               "type":  "Decision Point",
                                                                               "x":  45,
@@ -4192,15 +4211,6 @@
                                                                               "isNew":  false
                                                                           },
                                                                           {
-                                                                              "name":  "SAIDA_CLIENTES",
-                                                                              "type":  "Sink",
-                                                                              "x":  80,
-                                                                              "y":  0,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-05-etapa-03",
-                                                                              "isNew":  true
-                                                                          },
-                                                                          {
                                                                               "name":  "CHEGADA_PLACAS_VIRGENS",
                                                                               "type":  "Source",
                                                                               "x":  0,
@@ -4208,15 +4218,6 @@
                                                                               "rot":  0,
                                                                               "stageId":  "modelo-01-etapa-01",
                                                                               "isNew":  false
-                                                                          },
-                                                                          {
-                                                                              "name":  "ACABAMENTO",
-                                                                              "type":  "Separator",
-                                                                              "x":  70,
-                                                                              "y":  0,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-05-etapa-03",
-                                                                              "isNew":  true
                                                                           },
                                                                           {
                                                                               "name":  "CONVEYOR_modelo-03-etapa-05_Adicionando_e_configurando_objeto_(Esteira_aprovados)",
@@ -4311,14 +4312,13 @@
                                                                               "isNew":  false
                                                                           },
                                                                           {
-                                                                              "name":  "CONVEYOR_modelo-03-etapa-05_Adicionando_e_configurando_objeto_(Esteira_reprovados)",
-                                                                              "type":  "Conveyor",
-                                                                              "x1":  45,
-                                                                              "y1":  -0.5,
-                                                                              "x2":  45,
-                                                                              "y2":  -16.5,
-                                                                              "stageId":  "modelo-03-etapa-05",
-                                                                              "isNew":  false
+                                                                              "name":  "ACABAMENTO",
+                                                                              "type":  "Separator",
+                                                                              "x":  70,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-05-etapa-03",
+                                                                              "isNew":  true
                                                                           },
                                                                           {
                                                                               "name":  "COMPONENTES_CILINDROS_CHEIOS",
@@ -4677,6 +4677,15 @@
                                                                               "isNew":  false
                                                                           },
                                                                           {
+                                                                              "name":  "SAIDAS_CLIENTES",
+                                                                              "type":  "Sink",
+                                                                              "x":  80,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-05-etapa-03",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
                                                                               "name":  "MOVIMENTADOR_2",
                                                                               "type":  "Operator",
                                                                               "x":  15,
@@ -4732,6 +4741,16 @@
                                                                               "isNew":  false
                                                                           },
                                                                           {
+                                                                              "name":  "CONVEYOR_modelo-03-etapa-05_Adicionando_e_configurando_objeto_(Esteira_reprovados)",
+                                                                              "type":  "Conveyor",
+                                                                              "x1":  45,
+                                                                              "y1":  -0.5,
+                                                                              "x2":  45,
+                                                                              "y2":  -16.5,
+                                                                              "stageId":  "modelo-03-etapa-05",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
                                                                               "name":  "DP_1",
                                                                               "type":  "Decision Point",
                                                                               "x":  45,
@@ -4741,30 +4760,12 @@
                                                                               "isNew":  false
                                                                           },
                                                                           {
-                                                                              "name":  "SAIDA_CLIENTES",
-                                                                              "type":  "Sink",
-                                                                              "x":  80,
-                                                                              "y":  0,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-05-etapa-03",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
                                                                               "name":  "CHEGADA_PLACAS_VIRGENS",
                                                                               "type":  "Source",
                                                                               "x":  0,
                                                                               "y":  0,
                                                                               "rot":  0,
                                                                               "stageId":  "modelo-01-etapa-01",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
-                                                                              "name":  "ACABAMENTO",
-                                                                              "type":  "Separator",
-                                                                              "x":  70,
-                                                                              "y":  0,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-05-etapa-03",
                                                                               "isNew":  false
                                                                           },
                                                                           {
@@ -4860,13 +4861,12 @@
                                                                               "isNew":  false
                                                                           },
                                                                           {
-                                                                              "name":  "CONVEYOR_modelo-03-etapa-05_Adicionando_e_configurando_objeto_(Esteira_reprovados)",
-                                                                              "type":  "Conveyor",
-                                                                              "x1":  45,
-                                                                              "y1":  -0.5,
-                                                                              "x2":  45,
-                                                                              "y2":  -16.5,
-                                                                              "stageId":  "modelo-03-etapa-05",
+                                                                              "name":  "ACABAMENTO",
+                                                                              "type":  "Separator",
+                                                                              "x":  70,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-05-etapa-03",
                                                                               "isNew":  false
                                                                           },
                                                                           {
@@ -5779,6 +5779,16 @@
                                                                               "isNew":  false
                                                                           },
                                                                           {
+                                                                              "name":  "CONVEYOR_modelo-03-etapa-05_Adicionando_e_configurando_objeto_(Esteira_reprovados)",
+                                                                              "type":  "Conveyor",
+                                                                              "x1":  45,
+                                                                              "y1":  -0.5,
+                                                                              "x2":  45,
+                                                                              "y2":  -16.5,
+                                                                              "stageId":  "modelo-03-etapa-05",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
                                                                               "name":  "DP_1",
                                                                               "type":  "Decision Point",
                                                                               "x":  45,
@@ -5788,30 +5798,12 @@
                                                                               "isNew":  false
                                                                           },
                                                                           {
-                                                                              "name":  "SAIDA_CLIENTES",
-                                                                              "type":  "Sink",
-                                                                              "x":  80,
-                                                                              "y":  0,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-05-etapa-03",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
                                                                               "name":  "CHEGADA_PLACAS_VIRGENS",
                                                                               "type":  "Source",
                                                                               "x":  0,
                                                                               "y":  0,
                                                                               "rot":  0,
                                                                               "stageId":  "modelo-01-etapa-01",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
-                                                                              "name":  "ACABAMENTO",
-                                                                              "type":  "Separator",
-                                                                              "x":  70,
-                                                                              "y":  0,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-05-etapa-03",
                                                                               "isNew":  false
                                                                           },
                                                                           {
@@ -5925,13 +5917,12 @@
                                                                               "isNew":  false
                                                                           },
                                                                           {
-                                                                              "name":  "CONVEYOR_modelo-03-etapa-05_Adicionando_e_configurando_objeto_(Esteira_reprovados)",
-                                                                              "type":  "Conveyor",
-                                                                              "x1":  45,
-                                                                              "y1":  -0.5,
-                                                                              "x2":  45,
-                                                                              "y2":  -16.5,
-                                                                              "stageId":  "modelo-03-etapa-05",
+                                                                              "name":  "ACABAMENTO",
+                                                                              "type":  "Separator",
+                                                                              "x":  70,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-05-etapa-03",
                                                                               "isNew":  false
                                                                           },
                                                                           {
@@ -6847,39 +6838,22 @@
                                                                               "isNew":  false
                                                                           },
                                                                           {
+                                                                              "name":  "CONVEYOR_modelo-03-etapa-05_Adicionando_e_configurando_objeto_(Esteira_reprovados)",
+                                                                              "type":  "Conveyor",
+                                                                              "x1":  45,
+                                                                              "y1":  -0.5,
+                                                                              "x2":  45,
+                                                                              "y2":  -16.5,
+                                                                              "stageId":  "modelo-03-etapa-05",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
                                                                               "name":  "DP_1",
                                                                               "type":  "Decision Point",
                                                                               "x":  45,
                                                                               "y":  -1.5,
                                                                               "rot":  0,
                                                                               "stageId":  "modelo-03-etapa-06",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
-                                                                              "name":  "SAIDA_CLIENTES",
-                                                                              "type":  "Sink",
-                                                                              "x":  80,
-                                                                              "y":  0,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-05-etapa-03",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
-                                                                              "name":  "CHEGADA_PLACAS_VIRGENS",
-                                                                              "type":  "Source",
-                                                                              "x":  0,
-                                                                              "y":  0,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-01-etapa-01",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
-                                                                              "name":  "ACABAMENTO",
-                                                                              "type":  "Separator",
-                                                                              "x":  70,
-                                                                              "y":  0,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-05-etapa-03",
                                                                               "isNew":  false
                                                                           },
                                                                           {
@@ -6890,6 +6864,15 @@
                                                                               "rot":  0,
                                                                               "stageId":  "modelo-08-etapa-04",
                                                                               "isNew":  true
+                                                                          },
+                                                                          {
+                                                                              "name":  "CHEGADA_PLACAS_VIRGENS",
+                                                                              "type":  "Source",
+                                                                              "x":  0,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-01-etapa-01",
+                                                                              "isNew":  false
                                                                           },
                                                                           {
                                                                               "name":  "CONVEYOR_modelo-03-etapa-05_Adicionando_e_configurando_objeto_(Esteira_aprovados)",
@@ -7056,13 +7039,12 @@
                                                                               "isNew":  false
                                                                           },
                                                                           {
-                                                                              "name":  "CONVEYOR_modelo-03-etapa-05_Adicionando_e_configurando_objeto_(Esteira_reprovados)",
-                                                                              "type":  "Conveyor",
-                                                                              "x1":  45,
-                                                                              "y1":  -0.5,
-                                                                              "x2":  45,
-                                                                              "y2":  -16.5,
-                                                                              "stageId":  "modelo-03-etapa-05",
+                                                                              "name":  "ACABAMENTO",
+                                                                              "type":  "Separator",
+                                                                              "x":  70,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-05-etapa-03",
                                                                               "isNew":  false
                                                                           },
                                                                           {
@@ -8001,6 +7983,16 @@
                                                                               "isNew":  false
                                                                           },
                                                                           {
+                                                                              "name":  "CONVEYOR_modelo-03-etapa-05_Adicionando_e_configurando_objeto_(Esteira_reprovados)",
+                                                                              "type":  "Conveyor",
+                                                                              "x1":  45,
+                                                                              "y1":  -0.5,
+                                                                              "x2":  45,
+                                                                              "y2":  -16.5,
+                                                                              "stageId":  "modelo-03-etapa-05",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
                                                                               "name":  "DP_1",
                                                                               "type":  "Decision Point",
                                                                               "x":  45,
@@ -8010,12 +8002,12 @@
                                                                               "isNew":  false
                                                                           },
                                                                           {
-                                                                              "name":  "SAIDA_CLIENTES",
-                                                                              "type":  "Sink",
-                                                                              "x":  80,
+                                                                              "name":  "NN1",
+                                                                              "type":  "NetworkNode",
+                                                                              "x":  105,
                                                                               "y":  0,
                                                                               "rot":  0,
-                                                                              "stageId":  "modelo-05-etapa-03",
+                                                                              "stageId":  "modelo-08-etapa-04",
                                                                               "isNew":  false
                                                                           },
                                                                           {
@@ -8025,24 +8017,6 @@
                                                                               "y":  0,
                                                                               "rot":  0,
                                                                               "stageId":  "modelo-01-etapa-01",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
-                                                                              "name":  "ACABAMENTO",
-                                                                              "type":  "Separator",
-                                                                              "x":  70,
-                                                                              "y":  0,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-05-etapa-03",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
-                                                                              "name":  "NN1",
-                                                                              "type":  "NetworkNode",
-                                                                              "x":  105,
-                                                                              "y":  0,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-08-etapa-04",
                                                                               "isNew":  false
                                                                           },
                                                                           {
@@ -8210,13 +8184,12 @@
                                                                               "isNew":  false
                                                                           },
                                                                           {
-                                                                              "name":  "CONVEYOR_modelo-03-etapa-05_Adicionando_e_configurando_objeto_(Esteira_reprovados)",
-                                                                              "type":  "Conveyor",
-                                                                              "x1":  45,
-                                                                              "y1":  -0.5,
-                                                                              "x2":  45,
-                                                                              "y2":  -16.5,
-                                                                              "stageId":  "modelo-03-etapa-05",
+                                                                              "name":  "ACABAMENTO",
+                                                                              "type":  "Separator",
+                                                                              "x":  70,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-05-etapa-03",
                                                                               "isNew":  false
                                                                           },
                                                                           {
@@ -8860,6 +8833,16 @@
                                                                               "isNew":  false
                                                                           },
                                                                           {
+                                                                              "name":  "CONVEYOR_modelo-03-etapa-05_Adicionando_e_configurando_objeto_(Esteira_reprovados)",
+                                                                              "type":  "Conveyor",
+                                                                              "x1":  45,
+                                                                              "y1":  -0.5,
+                                                                              "x2":  45,
+                                                                              "y2":  -16.5,
+                                                                              "stageId":  "modelo-03-etapa-05",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
                                                                               "name":  "DP_1",
                                                                               "type":  "Decision Point",
                                                                               "x":  45,
@@ -8869,12 +8852,12 @@
                                                                               "isNew":  false
                                                                           },
                                                                           {
-                                                                              "name":  "SAIDA_CLIENTES",
-                                                                              "type":  "Sink",
-                                                                              "x":  80,
+                                                                              "name":  "NN1",
+                                                                              "type":  "NetworkNode",
+                                                                              "x":  105,
                                                                               "y":  0,
                                                                               "rot":  0,
-                                                                              "stageId":  "modelo-05-etapa-03",
+                                                                              "stageId":  "modelo-08-etapa-04",
                                                                               "isNew":  false
                                                                           },
                                                                           {
@@ -8884,24 +8867,6 @@
                                                                               "y":  0,
                                                                               "rot":  0,
                                                                               "stageId":  "modelo-01-etapa-01",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
-                                                                              "name":  "ACABAMENTO",
-                                                                              "type":  "Separator",
-                                                                              "x":  70,
-                                                                              "y":  0,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-05-etapa-03",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
-                                                                              "name":  "NN1",
-                                                                              "type":  "NetworkNode",
-                                                                              "x":  105,
-                                                                              "y":  0,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-08-etapa-04",
                                                                               "isNew":  false
                                                                           },
                                                                           {
@@ -9069,13 +9034,12 @@
                                                                               "isNew":  false
                                                                           },
                                                                           {
-                                                                              "name":  "CONVEYOR_modelo-03-etapa-05_Adicionando_e_configurando_objeto_(Esteira_reprovados)",
-                                                                              "type":  "Conveyor",
-                                                                              "x1":  45,
-                                                                              "y1":  -0.5,
-                                                                              "x2":  45,
-                                                                              "y2":  -16.5,
-                                                                              "stageId":  "modelo-03-etapa-05",
+                                                                              "name":  "ACABAMENTO",
+                                                                              "type":  "Separator",
+                                                                              "x":  70,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-05-etapa-03",
                                                                               "isNew":  false
                                                                           },
                                                                           {
@@ -9861,88 +9825,6 @@
                                            "layout":  {
                                                           "objects":  [
                                                                           {
-                                                                              "name":  "PLACAS_IMPRESSAS",
-                                                                              "type":  "Queue",
-                                                                              "x":  30,
-                                                                              "y":  0,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-03-etapa-01",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
-                                                                              "name":  "IMPRESSORA_2",
-                                                                              "type":  "Processor",
-                                                                              "x":  20,
-                                                                              "y":  -3.5,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-01-etapa-04",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
-                                                                              "name":  "COMPONENTES_CILINDROS_VAZIOS",
-                                                                              "type":  "Queue",
-                                                                              "x":  70,
-                                                                              "y":  -10,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-05-etapa-03",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
-                                                                              "name":  "PLACAS_ACABADAS",
-                                                                              "type":  "Queue",
-                                                                              "x":  75,
-                                                                              "y":  0,
-                                                                              "rot":  1,
-                                                                              "stageId":  "modelo-07-etapa-01",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
-                                                                              "name":  "MOVIMENTADOR_2",
-                                                                              "type":  "Operator",
-                                                                              "x":  15,
-                                                                              "y":  -3.5,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-02-etapa-02",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
-                                                                              "name":  "DP_0",
-                                                                              "type":  "Decision Point",
-                                                                              "x":  42.5,
-                                                                              "y":  0.2,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-03-etapa-06",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
-                                                                              "name":  "ENTRADA_CLIENTES",
-                                                                              "type":  "Source",
-                                                                              "x":  0,
-                                                                              "y":  0,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-90-etapa-01",
-                                                                              "isNew":  true
-                                                                          },
-                                                                          {
-                                                                              "name":  "MONTAGEM",
-                                                                              "type":  "Combiner",
-                                                                              "x":  60,
-                                                                              "y":  0,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-05-etapa-02",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
-                                                                              "name":  "CONVEYOR_modelo-04-etapa-04_Adicionando_e_configurando_objeto",
-                                                                              "type":  "Conveyor",
-                                                                              "x1":  20,
-                                                                              "y1":  -19.5,
-                                                                              "x2":  20,
-                                                                              "y2":  -12,
-                                                                              "stageId":  "modelo-04-etapa-04",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
                                                                               "name":  "POSTO_DE_SENHA_3D",
                                                                               "type":  "Operator",
                                                                               "x":  10,
@@ -9950,133 +9832,6 @@
                                                                               "rot":  0,
                                                                               "stageId":  "modelo-90-etapa-02",
                                                                               "isNew":  true
-                                                                          },
-                                                                          {
-                                                                              "name":  "PLACAS_IMPRESSAS_APROVADAS",
-                                                                              "type":  "Queue",
-                                                                              "x":  50,
-                                                                              "y":  0,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-05-etapa-01",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
-                                                                              "name":  "ATENDENTE",
-                                                                              "type":  "Operator",
-                                                                              "x":  30,
-                                                                              "y":  1.5,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-90-etapa-02",
-                                                                              "isNew":  true
-                                                                          },
-                                                                          {
-                                                                              "name":  "PLACAS_EMBALADAS_MOD_1",
-                                                                              "type":  "Queue",
-                                                                              "x":  85,
-                                                                              "y":  1,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-07-etapa-03",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
-                                                                              "name":  "POSTO_DE_ATENDIMENTO",
-                                                                              "type":  "Processor",
-                                                                              "x":  30,
-                                                                              "y":  0,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-90-etapa-01",
-                                                                              "isNew":  true
-                                                                          },
-                                                                          {
-                                                                              "name":  "TESTE",
-                                                                              "type":  "Processor",
-                                                                              "x":  40,
-                                                                              "y":  0,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-03-etapa-02",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
-                                                                              "name":  "DP_1",
-                                                                              "type":  "Decision Point",
-                                                                              "x":  45,
-                                                                              "y":  -1.5,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-03-etapa-06",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
-                                                                              "name":  "SAIDA_CLIENTES",
-                                                                              "type":  "Sink",
-                                                                              "x":  40,
-                                                                              "y":  0,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-90-etapa-01",
-                                                                              "isNew":  true
-                                                                          },
-                                                                          {
-                                                                              "name":  "CHEGADA_PLACAS_VIRGENS",
-                                                                              "type":  "Source",
-                                                                              "x":  0,
-                                                                              "y":  0,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-01-etapa-01",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
-                                                                              "name":  "ACABAMENTO",
-                                                                              "type":  "Separator",
-                                                                              "x":  70,
-                                                                              "y":  0,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-05-etapa-03",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
-                                                                              "name":  "NN1",
-                                                                              "type":  "NetworkNode",
-                                                                              "x":  105,
-                                                                              "y":  0,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-08-etapa-04",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
-                                                                              "name":  "CONVEYOR_modelo-03-etapa-05_Adicionando_e_configurando_objeto_(Esteira_aprovados)",
-                                                                              "type":  "Conveyor",
-                                                                              "x1":  42,
-                                                                              "y1":  0,
-                                                                              "x2":  48,
-                                                                              "y2":  0,
-                                                                              "stageId":  "modelo-03-etapa-05",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
-                                                                              "name":  "PLACAS_VIRGENS",
-                                                                              "type":  "Queue",
-                                                                              "x":  10,
-                                                                              "y":  0,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-01-etapa-02",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
-                                                                              "name":  "FILA_PALLETS_VAZIOS",
-                                                                              "type":  "Queue",
-                                                                              "x":  100,
-                                                                              "y":  -4,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-08-etapa-01",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
-                                                                              "name":  "NN2",
-                                                                              "type":  "NetworkNode",
-                                                                              "x":  110,
-                                                                              "y":  -3.5,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-08-etapa-04",
-                                                                              "isNew":  false
                                                                           },
                                                                           {
                                                                               "name":  "POSTO_DE_ATENDIMENTO_3D",
@@ -10088,121 +9843,30 @@
                                                                               "isNew":  true
                                                                           },
                                                                           {
-                                                                              "name":  "MOVIMENTADOR_1",
-                                                                              "type":  "Operator",
-                                                                              "x":  15,
-                                                                              "y":  3.5,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-02-etapa-02",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
-                                                                              "name":  "CONVEYOR_modelo-03-etapa-07_Adicionando_e_configurando_objetos_(Esteira_horizontal)",
-                                                                              "type":  "Conveyor",
-                                                                              "x1":  43,
-                                                                              "y1":  -20,
-                                                                              "x2":  12,
-                                                                              "y2":  -20,
-                                                                              "stageId":  "modelo-03-etapa-07",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
-                                                                              "name":  "CHEGADAS_PALLETS",
-                                                                              "type":  "Source",
-                                                                              "x":  100,
-                                                                              "y":  -20,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-08-etapa-01",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
-                                                                              "name":  "INSPECAO_EMBALAGEM",
-                                                                              "type":  "MultiProcessor",
-                                                                              "x":  80,
-                                                                              "y":  0,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-07-etapa-02",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
-                                                                              "name":  "OPERADOR_MONTAGEM_ACABAMENTO",
-                                                                              "type":  "Operator",
-                                                                              "x":  60,
-                                                                              "y":  2.5,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-05-etapa-03",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
-                                                                              "name":  "PLACAS_EMBALADAS_MOD_2",
-                                                                              "type":  "Queue",
-                                                                              "x":  85,
-                                                                              "y":  -1,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-07-etapa-03",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
-                                                                              "name":  "PALETIZACAO",
-                                                                              "type":  "Combiner",
-                                                                              "x":  4,
-                                                                              "y":  6,
-                                                                              "rot":  4,
-                                                                              "stageId":  "modelo-09-etapa-01",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
-                                                                              "name":  "NN4",
-                                                                              "type":  "NetworkNode",
-                                                                              "x":  110,
-                                                                              "y":  3.5,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-08-etapa-04",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
-                                                                              "name":  "PLACAS_IMPRESSAS_REPROVADAS",
-                                                                              "type":  "Queue",
-                                                                              "x":  10,
-                                                                              "y":  -20,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-03-etapa-07",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
-                                                                              "name":  "DP_3",
-                                                                              "type":  "Decision Point",
-                                                                              "x":  20,
-                                                                              "y":  -17.5,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-04-etapa-04",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
-                                                                              "name":  "NN3",
-                                                                              "type":  "NetworkNode",
-                                                                              "x":  115,
-                                                                              "y":  0,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-08-etapa-04",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
-                                                                              "name":  "IMPRESSORA_1",
-                                                                              "type":  "Processor",
-                                                                              "x":  20,
-                                                                              "y":  3.5,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-01-etapa-04",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
                                                                               "name":  "POSTO_DE_SENHA",
                                                                               "type":  "Processor",
                                                                               "x":  10,
                                                                               "y":  0,
                                                                               "rot":  0,
                                                                               "stageId":  "modelo-90-etapa-01",
+                                                                              "isNew":  true
+                                                                          },
+                                                                          {
+                                                                              "name":  "SAIDA_CLIENTES",
+                                                                              "type":  "Sink",
+                                                                              "x":  40,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-90-etapa-01",
+                                                                              "isNew":  true
+                                                                          },
+                                                                          {
+                                                                              "name":  "ATENDENTE",
+                                                                              "type":  "Operator",
+                                                                              "x":  30,
+                                                                              "y":  1.5,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-90-etapa-02",
                                                                               "isNew":  true
                                                                           },
                                                                           {
@@ -10215,68 +9879,22 @@
                                                                               "isNew":  true
                                                                           },
                                                                           {
-                                                                              "name":  "OPERADOR_IMPRESSORA_2",
-                                                                              "type":  "Operator",
-                                                                              "x":  20,
-                                                                              "y":  -1,
+                                                                              "name":  "ENTRADA_CLIENTES",
+                                                                              "type":  "Source",
+                                                                              "x":  0,
+                                                                              "y":  0,
                                                                               "rot":  0,
-                                                                              "stageId":  "modelo-02-etapa-01",
-                                                                              "isNew":  false
+                                                                              "stageId":  "modelo-90-etapa-01",
+                                                                              "isNew":  true
                                                                           },
                                                                           {
-                                                                              "name":  "DP_2",
-                                                                              "type":  "Decision Point",
-                                                                              "x":  22,
-                                                                              "y":  -20,
+                                                                              "name":  "POSTO_DE_ATENDIMENTO",
+                                                                              "type":  "Processor",
+                                                                              "x":  30,
+                                                                              "y":  0,
                                                                               "rot":  0,
-                                                                              "stageId":  "modelo-04-etapa-04",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
-                                                                              "name":  "CONVEYOR_modelo-03-etapa-05_Adicionando_e_configurando_objeto_(Esteira_reprovados)",
-                                                                              "type":  "Conveyor",
-                                                                              "x1":  45,
-                                                                              "y1":  -0.5,
-                                                                              "x2":  45,
-                                                                              "y2":  -16.5,
-                                                                              "stageId":  "modelo-03-etapa-05",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
-                                                                              "name":  "COMPONENTES_CILINDROS_CHEIOS",
-                                                                              "type":  "Queue",
-                                                                              "x":  60,
-                                                                              "y":  -10,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-05-etapa-02",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
-                                                                              "name":  "COMPONENTES_CILINDROS_CHEIOS_MOD_2",
-                                                                              "type":  "Queue",
-                                                                              "x":  63,
-                                                                              "y":  -10,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-06-etapa-01",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
-                                                                              "name":  "OPERADOR_IMPRESSORA_1",
-                                                                              "type":  "Operator",
-                                                                              "x":  20,
-                                                                              "y":  6,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-02-etapa-01",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
-                                                                              "name":  "PLACAS_IMPRESSAS_REFUGADAS",
-                                                                              "type":  "Queue",
-                                                                              "x":  20,
-                                                                              "y":  -10,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-04-etapa-04",
-                                                                              "isNew":  false
+                                                                              "stageId":  "modelo-90-etapa-01",
+                                                                              "isNew":  true
                                                                           }
                                                                       ]
                                                       },
@@ -11050,6 +10668,15 @@
                                                                               "isNew":  false
                                                                           },
                                                                           {
+                                                                              "name":  "SAIDAS_CLIENTES",
+                                                                              "type":  "Sink",
+                                                                              "x":  140,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-09-etapa-02",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
                                                                               "name":  "PLACAS_ACABADAS",
                                                                               "type":  "Queue",
                                                                               "x":  75,
@@ -11086,15 +10713,6 @@
                                                                               "isNew":  true
                                                                           },
                                                                           {
-                                                                              "name":  "ENTRADA_CLIENTES",
-                                                                              "type":  "Source",
-                                                                              "x":  0,
-                                                                              "y":  0,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-90-etapa-01",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
                                                                               "name":  "MONTAGEM",
                                                                               "type":  "Combiner",
                                                                               "x":  60,
@@ -11114,30 +10732,12 @@
                                                                               "isNew":  false
                                                                           },
                                                                           {
-                                                                              "name":  "POSTO_DE_SENHA_3D",
-                                                                              "type":  "Operator",
-                                                                              "x":  10,
-                                                                              "y":  0,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-90-etapa-02",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
                                                                               "name":  "PLACAS_IMPRESSAS_APROVADAS",
                                                                               "type":  "Queue",
                                                                               "x":  50,
                                                                               "y":  0,
                                                                               "rot":  0,
                                                                               "stageId":  "modelo-05-etapa-01",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
-                                                                              "name":  "ATENDENTE",
-                                                                              "type":  "Operator",
-                                                                              "x":  30,
-                                                                              "y":  1.5,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-90-etapa-02",
                                                                               "isNew":  false
                                                                           },
                                                                           {
@@ -11150,12 +10750,13 @@
                                                                               "isNew":  false
                                                                           },
                                                                           {
-                                                                              "name":  "POSTO_DE_ATENDIMENTO",
-                                                                              "type":  "Processor",
-                                                                              "x":  30,
-                                                                              "y":  0,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-90-etapa-01",
+                                                                              "name":  "CONVEYOR_modelo-03-etapa-05_Adicionando_e_configurando_objeto_(Esteira_reprovados)",
+                                                                              "type":  "Conveyor",
+                                                                              "x1":  45,
+                                                                              "y1":  -0.5,
+                                                                              "x2":  45,
+                                                                              "y2":  -16.5,
+                                                                              "stageId":  "modelo-03-etapa-05",
                                                                               "isNew":  false
                                                                           },
                                                                           {
@@ -11168,12 +10769,12 @@
                                                                               "isNew":  false
                                                                           },
                                                                           {
-                                                                              "name":  "SAIDA_CLIENTES",
-                                                                              "type":  "Sink",
-                                                                              "x":  40,
+                                                                              "name":  "NN1",
+                                                                              "type":  "NetworkNode",
+                                                                              "x":  105,
                                                                               "y":  0,
                                                                               "rot":  0,
-                                                                              "stageId":  "modelo-90-etapa-01",
+                                                                              "stageId":  "modelo-08-etapa-04",
                                                                               "isNew":  false
                                                                           },
                                                                           {
@@ -11183,24 +10784,6 @@
                                                                               "y":  0,
                                                                               "rot":  0,
                                                                               "stageId":  "modelo-01-etapa-01",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
-                                                                              "name":  "ACABAMENTO",
-                                                                              "type":  "Separator",
-                                                                              "x":  70,
-                                                                              "y":  0,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-05-etapa-03",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
-                                                                              "name":  "NN1",
-                                                                              "type":  "NetworkNode",
-                                                                              "x":  105,
-                                                                              "y":  0,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-08-etapa-04",
                                                                               "isNew":  false
                                                                           },
                                                                           {
@@ -11265,15 +10848,6 @@
                                                                               "y":  -3.5,
                                                                               "rot":  0,
                                                                               "stageId":  "modelo-08-etapa-04",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
-                                                                              "name":  "POSTO_DE_ATENDIMENTO_3D",
-                                                                              "type":  "Operator",
-                                                                              "x":  30,
-                                                                              "y":  1.25,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-90-etapa-02",
                                                                               "isNew":  false
                                                                           },
                                                                           {
@@ -11386,24 +10960,6 @@
                                                                               "isNew":  false
                                                                           },
                                                                           {
-                                                                              "name":  "POSTO_DE_SENHA",
-                                                                              "type":  "Processor",
-                                                                              "x":  10,
-                                                                              "y":  0,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-90-etapa-01",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
-                                                                              "name":  "FILA",
-                                                                              "type":  "Queue",
-                                                                              "x":  10,
-                                                                              "y":  1,
-                                                                              "rot":  0.01,
-                                                                              "stageId":  "modelo-90-etapa-02",
-                                                                              "isNew":  false
-                                                                          },
-                                                                          {
                                                                               "name":  "OPERADOR_IMPRESSORA_2",
                                                                               "type":  "Operator",
                                                                               "x":  20,
@@ -11422,13 +10978,12 @@
                                                                               "isNew":  false
                                                                           },
                                                                           {
-                                                                              "name":  "CONVEYOR_modelo-03-etapa-05_Adicionando_e_configurando_objeto_(Esteira_reprovados)",
-                                                                              "type":  "Conveyor",
-                                                                              "x1":  45,
-                                                                              "y1":  -0.5,
-                                                                              "x2":  45,
-                                                                              "y2":  -16.5,
-                                                                              "stageId":  "modelo-03-etapa-05",
+                                                                              "name":  "ACABAMENTO",
+                                                                              "type":  "Separator",
+                                                                              "x":  70,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-05-etapa-03",
                                                                               "isNew":  false
                                                                           },
                                                                           {
