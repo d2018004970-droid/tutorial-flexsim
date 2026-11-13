@@ -111,6 +111,9 @@ $PropertyTitleMap = @{
   'RUN_TIME'        = 'Run Time'
   'TASKEXECUTER'    = 'TaskExecuter'
   'ROBOT'           = 'Robot'
+  'GROUP_PROPERTIES' = 'Group Properties'
+  'JOBS'            = 'Jobs'
+  'NAME'            = 'Name'
 }
 $InlineOnlyTokens = @('CHECK', 'UNCHECK', 'PLUS', 'LETRA_VERMELHA', 'FIM_LETRA_VERMELHA')
 $KnownSimpleMarkers = @('TITULO','PRINT','ROTEIRO','OBJETO','CAMINHO','ACAO_MOUSE','OBSERVACAO','PROPERTIES','ETAPA','COLUNA','FIM_COLUNA')
@@ -431,6 +434,7 @@ foreach ($course in $Courses) {
     foreach ($stage in $model.stages) {
       foreach ($col in $stage.columns) {
         # nomes citados em [OBJETO]
+        $namePattern = $typeRegex + '\s*[-–—]?\s*["“]?([A-Za-zÀ-ÿ0-9_]+)'
         $namesInObjeto = New-Object System.Collections.Generic.List[string]
         $typeInObjeto = $null
         foreach ($ln2 in $col.objeto) {
@@ -446,11 +450,45 @@ foreach ($course in $Courses) {
           }
         }
 
+        # renomeacao: [NOME]/[NAME] com linhas "Tipo - "NOVO_NOME"" renomeia os objetos do [OBJETO]
+        # da mesma coluna, casando por tipo e na ordem (ex.: Processor "TESTE" -> Processor "TESTE_1").
+        # O nome antigo sai do mini-mapa (senao vira objeto fantasma) e o novo herda a posicao.
+        $objTypes = @($namesInObjeto | ForEach-Object { $nameTypeMap[$_] })
+        $usedIdx = @{}
+        foreach ($p in $col.properties) {
+          if ($p.key -notin @('NOME', 'NAME')) { continue }
+          foreach ($ln2 in $p.lines) {
+            $mm = [regex]::Match($ln2, $namePattern)
+            if (-not $mm.Success) { continue }
+            $newType = $mm.Groups[1].Value.Trim()
+            $newNm = Normalize-ObjName $mm.Groups[2].Value
+            if (-not $newNm) { continue }
+            $nameTypeMap[$newNm] = $newType
+            for ($oi = 0; $oi -lt $namesInObjeto.Count; $oi++) {
+              if ($usedIdx.ContainsKey($oi) -or $objTypes[$oi] -ne $newType) { continue }
+              $usedIdx[$oi] = $true
+              $oldNm = $namesInObjeto[$oi]
+              if ($oldNm -ne $newNm) {
+                if ($globalLayout.ContainsKey($oldNm)) {
+                  if (-not $globalLayout.ContainsKey($newNm)) {
+                    $moved = $globalLayout[$oldNm]
+                    $globalLayout[$newNm] = [PSCustomObject]@{ name = $newNm; type = $newType; x = $moved.x; y = $moved.y; rot = $moved.rot; stageId = $stage.id }
+                    [void]$newNamesThisModel.Add($newNm)
+                  }
+                  $globalLayout.Remove($oldNm)
+                }
+                $namesInObjeto[$oi] = $newNm
+              }
+              break
+            }
+          }
+        }
+
         # posicoes em properties (VISUALS / NOME+coords / DECISION_POINT)
         foreach ($p in $col.properties) {
           if ($p.key -notin @('VISUALS', 'DECISION_POINT')) { continue }
           $lines2 = $p.lines -join "`n"
-          $coordMatches = @([regex]::Matches($lines2, '(?:([A-Za-zÀ-ÿ0-9_]+)\s*[:–-]\s*(?:\[[^\]]*\]\s*)?)?X\s*=\s*(-?[\d.,]+)\s*;\s*Y\s*=\s*(-?[\d.,]+)'))
+          $coordMatches = @([regex]::Matches($lines2, '(?:["“]?([A-Za-zÀ-ÿ0-9_]+)["”]?\s*[:–-]\s*(?:\[[^\]]*\]\s*)?)?X\s*=\s*(-?[\d.,]+)\s*;\s*Y\s*=\s*(-?[\d.,]+)'))
           $rotMatches = @([regex]::Matches($lines2, '(?:\[[^\]]*\]\s*)?Z\s*=\s*(-?[\d.,]+)\s*$', 'Multiline'))
           for ($ci = 0; $ci -lt $coordMatches.Count; $ci++) {
             $coordM = $coordMatches[$ci]

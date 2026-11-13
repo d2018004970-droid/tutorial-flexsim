@@ -3986,6 +3986,351 @@ O Modo B é uma alternativa para o Modo A, onde apenas altera o layout dos Proce
 Os resultados devem ser o mesmo.
 [FIM_COLUNA]
 
+## 6) Aula 06 - Experimenter
+### 6.1) Modelo 11
+
+[ETAPA] Etapa 01 - Aproximando os estoque de placas virgens, reprovadas e impressas das impressoras
+[COLUNA]
+[TITULO]
+Desabilitando Use Transports do Outputs dos objetos
+
+[PRINT]
+AULA6_MODELO11_ETAPA1_1.png
+[PRINT]
+AULA6_MODELO11_ETAPA1_2.png
+[PRINT]
+AULA6_MODELO11_ETAPA1_3.png
+[PRINT]
+AULA6_MODELO11_ETAPA1_4.png
+
+[OBJETO]
+Queue - "ESTOQUE_PLACAS_VIRGENS"
+Queue - "ESTOQUE_PLACAS_REPROVADAS"
+Processor - "IMPRESSORA_1"
+Processor - "IMPRESSORA_2"
+Operator - "MOVIMENTADOR_1" (REMOVIDO)
+Operator - "MOVIMENTADOR_2" (REMOVIDO)
+
+[PROPERTIES]
+[OUTPUT]
+[UNCHECK] Use Transport
+
+[OBSERVACAO]
+Na imagem 4 deste passo, veja que não deleta-se o Operator conectado à Porta Central de cada Impressora, isso se dá pois eles ainda vão executar uma atividade nestes Processors, que no caso é o Process Time, ou seja, vão operar a máquina, mas não realização mais o transporte saindo da máquina.
+
+Diferente do que foi feito com os Outputs dos estoques de placas virgens e reprovadas, em que os Operators eram responsáveis somente pelo transporte.
+[FIM_COLUNA]
+
+[ETAPA] Etapa 02 - Alterando taxa de reprovação no teste
+[COLUNA]
+[TITULO]
+Alterando Trigger do objeto
+
+[PRINT]
+AULA6_MODELO11_ETAPA2_1.png
+
+[OBJETO]
+Processor - "TESTE"
+
+[PROPERTIES]
+[TRIGGERS]
+On Exit [properties.png] → Set Label by Percentage:
+Label: <b>“QUALIDADE”</b>
+
+Percent: <b>98</b>
+Value: <b>“APROVADA”</b>
+
+Percent: <b>2</b>
+Value: <b>“REPROVADA”</b>
+[FIM_COLUNA]
+
+[ETAPA] Etapa 03 - Programando as chegadas de placas virgens em lotes por hora.
+[COLUNA]
+[TITULO]
+Lógica de chegada de placas virgens antes x depois.
+
+[OBJETO]
+Source - "ENTRADA_PLACAS_VIRGENS"
+[OBSERVACAO]
+Antes - A partir do tempo t=0 segundos, chegam placas a cada 10 segundos, em uma hora temos 3600 segundos, ou seja, chegam 360 placas por hora, de forma aleatória mas com probabilidade de 50% para Modelo 1 ou Modelo 2.
+
+Depois - Com chegada programada em lote de 360 placas por hora, sendo 180 placas do Modelo 1 e 180 placas do Modelo 2.
+[FIM_COLUNA]
+
+[COLUNA]
+[TITULO]
+Configurando a lógica no objeto
+
+[PRINT]
+AULA6_MODELO11_ETAPA3_1.png
+
+[OBJETO]
+Source - "ENTRADA_PLACAS_VIRGENS"
+
+[PROPERTIES]
+[SOURCE]
+Arrival Style: [down_arrow.bmp] → Arrival Schedule
+[CHECK] Repeat Table
+
+Click em [view_table.ico] Edit Table
+
+3x [up_arrow.bmp] Add Arrivals
+Arrivals: <b>4</b>             
+
+1x [up_arrow.bmp] Add Labels
+Labels: <b>1</b>
+
+Dentro da tabela:
+Renomeie MyLabel1 para <b>MODELO</b>
+Na coluna de MODELO, digite 1 para Arrival1 e Arrival3 e 2 para Arrival2 e Arrival4.
+Na coluna de ArrivalTime, digite 0 para Arrival1 e Arrival2, 3600 para Arrival3 e Arrival4.
+Na coluna de Quantity, digite 180 para Arrival1 e Arrival2, e 0 para Arrival3 e Arrival4.
+
+[OBSERVACAO]
+A interpretação da tabela de Arrival Schedule é a seguinte:
+
+Em todo ciclo de 1 hora, chegam 2 lotes de placas virgens, sendo o primeiro lote com 180 unidades do Modelo 1 e o segundo lote com 180 unidades do Modelo 2.
+
+O motivo de estar 0 no ArrivalTime de 3600 é porque o sistema enxerga que quando há repetição, e dessa forma, a cada uma hora, o modelo deve chegar a quantidade programada para t = 3600 mas também a programada para o t = 0 pois ele repete o ciclo.
+Sendo assim, se configurar 180 para Arrival3 e Arrival4, o sistema entende que a cada hora chegam 720 placas virgens, sendo 320 do Modelo 1 e 320 do Modelo 2, chegando o dobro do que deveria.
+[FIM_COLUNA]
+
+[ETAPA] Etapa 04 - Aproximando Placas impressas do Teste
+[COLUNA]
+[TITULO]
+Desabilitando Use Transports do Outputs dos objetos
+
+[PRINT]
+AULA6_MODELO11_ETAPA4_1.png
+
+[OBJETO]
+Queue - "PLACAS_IMPRESSAS"
+
+[PROPERTIES]
+[OUTPUT]
+[UNCHECK] Use Transport
+[FIM_COLUNA]
+
+[ETAPA] Etapa 05 - Testando com mais bancadas de teste e de operadores do teste com Experimenter
+[COLUNA]
+[TITULO]
+Criando Grupo de objetos
+
+[PRINT]
+AULA6_MODELO11_ETAPA5_1.png
+
+[OBJETO]
+Processor - "TESTE"
+Operator - "OPERADOR_TESTE"
+
+[CAMINHO]
+Barra Esquerda [PLUS] → Groups:
+
+[PROPERTIES]
+[GROUP_PROPERTIES]
+Members: 
+[eyedropper.png] → Processor “TESTE”
+[eyedropper.png] → Operator “OPERADOR_TESTE”
+
+[OBSERVACAO]
+Quando há uma combinação de Fixed Resource (Processor) e Task Executer (Operator) deve ser seguido esta sequência de seleção, primeiro o Processor e depois o Operator, para que o grupo seja criado corretamente.
+[FIM_COLUNA]
+
+[COLUNA]
+[TITULO]
+Configurando Parameters como as variáveis de entrada do Experimenter
+
+[PRINT]
+AULA6_MODELO11_ETAPA5_2.png
+[PRINT]
+AULA6_MODELO11_ETAPA5_3.png
+
+[OBJETO]
+Parameters - "VARIAVEIS_ENTRADA_MODELO_11"
+
+[PROPERTIES]
+[TABLE]
+Name: <b>Q_CEL_TESTE</b>
+
+Value: [down_arrow.bmp]:
+Type: [down_arrow.bmp] Integer
+Reference: [eyedropper.png] → Group “TESTE” → Delete and Copy Group Members
+[FIM_COLUNA]
+
+[COLUNA]
+[TITULO]
+Configurando Performance Measures Tables como as variáveis de saída do Experimenter
+
+[PRINT]
+AULA6_MODELO11_ETAPA5_4.png
+[PRINT]
+AULA6_MODELO11_ETAPA5_5.png
+[PRINT]
+AULA6_MODELO11_ETAPA5_6.png
+
+[OBJETO]
+Performance Measures Tables - "CAPACIDADE_TESTAGEM_MODELO_11"
+
+[PROPERTIES]
+[TABLE]
+Name: <b>Q_PLACAS_TESTADAS</b>
+
+Reference: [eyedropper.png] → Group "CELULA_TESTE" → Statistic → Output → Total
+[FIM_COLUNA]
+
+[ETAPA] Etapa 06 - Rodando o Experimenter e analisando os resultados
+[COLUNA]
+[TITULO]
+Configurando o Experimenter
+
+[PRINT]
+AULA6_MODELO11_ETAPA6_1.png
+[PRINT]
+AULA6_MODELO11_ETAPA6_2.png
+[PRINT]
+AULA6_MODELO11_ETAPA6_3.png
+[PRINT]
+AULA6_MODELO11_ETAPA6_4.png
+
+[OBJETO]
+Experimenter - "CAPACIDADE_TESTAGEM_MODELO_11"
+
+[PROPERTIES]
+[JOBS]
+Name: <b>CAPACIDADE_TESTAGEM_MODELO_11</b>
+Stop Time: <b>18:00</b>
+
+Parameters:
+[CHECK] VARIAVEIS_ENTRADA_MODELO_11
+
+Scenarios:
+Names:
+<b>1 CEL_TESTE</b>
+<b>2 CEL_TESTE</b>
+<b>3 CEL_TESTE</b>
+<b>4 CEL_TESTE</b>
+
+Values "Q_CEL_TESTE":
+<b>1</b>
+<b>2</b>
+<b>3</b>
+<b>4</b>
+
+[OBSERVACAO]
+Veja que, pela última Imagem, de 1 para 2 celulas de teste, a capacidade de testagem aumenta, mas acima de 2 já não faz diferença.
+[FIM_COLUNA]
+
+[ETAPA] Etapa 07 - Simulando o modelo com mais um Processor de teste e mais um operador de teste manualmente.
+[COLUNA]
+[TITULO]
+Deletando Experimenter, variáveis de entrada e de saída
+
+[PRINT]
+AULA6_MODELO11_ETAPA7_1.png
+[PRINT]
+AULA6_MODELO11_ETAPA7_2.png
+
+[OBJETO]
+Parameters - "VARIAVEIS_ENTRADA_MODELO_11"
+Performance Measures Tables - "CAPACIDADE_TESTAGEM_MODELO_11"
+Experimenter - "CAPACIDADE_TESTAGEM_MODELO_11"
+
+[OBSERVACAO]
+Lembre-se de salvar o modelo até a etapa anterior com um nome de arquivo diferente, para não perder o que foi feito com o Experimenter, pois a partir deste passo, vamos simular manualmente com mais um Processor de teste e mais um operador de teste.
+[FIM_COLUNA]
+
+[COLUNA]
+[TITULO]
+Adicionando o Operador de teste (foi removido quando rodou o modelo com Grupo CELULA_TESTE) manualmente
+
+[PRINT]
+AULA6_MODELO11_ETAPA7_3.png
+[PRINT]
+AULA6_MODELO11_ETAPA7_4.png
+
+[OBJETO]
+Operator - "OPERADOR_TESTE"
+
+[PROPERTIES]
+[NOME]
+OPERADOR_TESTE
+[VISUALS]
+"OPERADOR_TESTE" - [Mid6_small.png] X = 40.00 ; Y = 2.50 ; Z = 0.00
+"OPERADOR_TESTE" - [rotate_arrow.png] Z = 270.00
+[PROCESSOR]
+"TESTE" - Operator: [eyedropper.png] → Operator “OPERADOR_TESTE”
+[FIM_COLUNA]
+
+[COLUNA]
+[TITULO]
+Reposicionando e renomeando Teste e Operador
+[PRINT]
+AULA6_MODELO11_ETAPA7_5.png
+[PRINT]
+AULA6_MODELO11_ETAPA7_6.png
+[OBJETO]
+Processor - "TESTE"
+Operator - "OPERADOR_TESTE"
+
+[PROPERTIES]
+[NAME]
+Operator - "OPERADOR_TESTE_1"
+Processor - "TESTE_1"
+[VISUALS]
+"OPERADOR_TESTE_1" - [Mid6_small.png] X = 40.00 ; Y = 6.00 ; Z = 0.00
+"TESTE_1" - [Mid6_small.png] X = 40.00 ; Y = 3.50 ; Z = 0.00
+[FIM_COLUNA]
+
+[COLUNA]
+[TITULO]
+Copiando Teste e Operador para criar mais uma célula de teste
+
+[PRINT]
+AULA6_MODELO11_ETAPA7_7.png
+[PRINT]
+AULA6_MODELO11_ETAPA7_8.png
+[PRINT]
+AULA6_MODELO11_ETAPA7_9.png
+
+[OBJETO]
+Processor - "TESTE_2"
+Operator - "OPERADOR_TESTE_2"
+Queue - "PLACAS_IMPRESSAS"
+
+[PROPERTIES]
+[VISUALS]
+"TESTE_2" - [Mid6_small.png] X = 40.00 ; Y = -3.50 ; Z = 0.00
+"OPERADOR_TESTE_2" - [Mid6_small.png] X = 40.00 ; Y = -1.00 ; Z = 0.00
+[PROCESSOR]
+"TESTE_2" - Operator: [eyedropper.png] → Operator “OPERADOR_TESTE_2”
+[OUTPUT]
+"PLACAS_IMPRESSAS" - Send To Port[down_arrow.bmp] → Port by Case:
+Case Function: <b>item.MODELO</b>
+
+Clique no [PLUS] abaixo de Case Function para adicionar os campos necessários aos dois modelos.
+
+Case: 1 Port: 1
+Case: 2 Port: 2
+[OBSERVACAO]
+As conexões estabelecidas neste passo são:
+Conexão com Atalho "A" de PLACAS IMPRESSAS → TESTE_2 + TESTE_2 → Esteira "StraightConveyor1"
+Conexão com Atalho "S" de OPERADOR_TESTE_2 → TESTE_2
+[FIM_COLUNA]
+
+[ETAPA] Etapa 08 - Resultados
+[COLUNA]
+[TITULO]
+Validando o modelo simulado.
+
+[PRINT]
+AULA6_MODELO11_RESULTADOS_1.png
+
+[ROTEIRO]
+Saída do modelo = 30 pallets = 30 * 20 = 600 unidades
+
+[OBSERVACAO]
+Conforme dito em vídeo, não podem haver valores um pouco diferentes quando ao LeadTime, mas devem ainda ser próximos dos exibidos na imagem, no entanto, a quantidade de Pallets expedidos segue a mesma.
+[FIM_COLUNA]
 
 
 

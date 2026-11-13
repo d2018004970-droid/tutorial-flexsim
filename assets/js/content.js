@@ -1,14 +1,14 @@
 ﻿window.TUTORIAL_CONTENT = {
     "meta":  {
                  "title":  "Tutorial de Modelagem utilizando FlexSim Education v2027-0",
-                 "generatedAt":  "2026-10-27T15:43:07.1433345-03:00",
+                 "generatedAt":  "2026-11-13T14:09:13.6242965-03:00",
                  "source":  "Word_Mestre.md",
                  "counts":  {
-                                "courses":  6,
-                                "models":  11,
-                                "stages":  61,
-                                "columns":  136,
-                                "prints":  236,
+                                "courses":  7,
+                                "models":  12,
+                                "stages":  69,
+                                "columns":  150,
+                                "prints":  263,
                                 "roteiros":  10,
                                 "downloads":  2
                             }
@@ -9888,15 +9888,6 @@
                                                                               "isNew":  false
                                                                           },
                                                                           {
-                                                                              "name":  "SAIDAS_CLIENTES",
-                                                                              "type":  "Sink",
-                                                                              "x":  40,
-                                                                              "y":  0,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-90-etapa-01",
-                                                                              "isNew":  true
-                                                                          },
-                                                                          {
                                                                               "name":  "PLACAS_ACABADAS",
                                                                               "type":  "Queue",
                                                                               "x":  75,
@@ -9924,9 +9915,9 @@
                                                                               "isNew":  false
                                                                           },
                                                                           {
-                                                                              "name":  "PROCESSO_SERVICOS",
-                                                                              "type":  "Processor",
-                                                                              "x":  30,
+                                                                              "name":  "ENTRADA_CLIENTES",
+                                                                              "type":  "Source",
+                                                                              "x":  0,
                                                                               "y":  0,
                                                                               "rot":  0,
                                                                               "stageId":  "modelo-90-etapa-01",
@@ -9952,6 +9943,15 @@
                                                                               "isNew":  false
                                                                           },
                                                                           {
+                                                                              "name":  "POSTO_DE_SENHA_3D",
+                                                                              "type":  "Operator",
+                                                                              "x":  10,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-90-etapa-02",
+                                                                              "isNew":  true
+                                                                          },
+                                                                          {
                                                                               "name":  "PLACAS_IMPRESSAS_APROVADAS",
                                                                               "type":  "Queue",
                                                                               "x":  50,
@@ -9961,6 +9961,15 @@
                                                                               "isNew":  false
                                                                           },
                                                                           {
+                                                                              "name":  "ATENDENTE",
+                                                                              "type":  "Operator",
+                                                                              "x":  30,
+                                                                              "y":  1.5,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-90-etapa-02",
+                                                                              "isNew":  true
+                                                                          },
+                                                                          {
                                                                               "name":  "PLACAS_EMBALADAS_MOD_1",
                                                                               "type":  "Queue",
                                                                               "x":  85,
@@ -9968,6 +9977,15 @@
                                                                               "rot":  0,
                                                                               "stageId":  "modelo-07-etapa-03",
                                                                               "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "POSTO_DE_ATENDIMENTO",
+                                                                              "type":  "Processor",
+                                                                              "x":  30,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-90-etapa-01",
+                                                                              "isNew":  true
                                                                           },
                                                                           {
                                                                               "name":  "TESTE",
@@ -9990,11 +10008,11 @@
                                                                           {
                                                                               "name":  "SAIDA_CLIENTES",
                                                                               "type":  "Sink",
-                                                                              "x":  80,
+                                                                              "x":  40,
                                                                               "y":  0,
                                                                               "rot":  0,
-                                                                              "stageId":  "modelo-05-etapa-03",
-                                                                              "isNew":  false
+                                                                              "stageId":  "modelo-90-etapa-01",
+                                                                              "isNew":  true
                                                                           },
                                                                           {
                                                                               "name":  "CHEGADA_PLACAS_VIRGENS",
@@ -10013,15 +10031,6 @@
                                                                               "rot":  0,
                                                                               "stageId":  "modelo-05-etapa-03",
                                                                               "isNew":  false
-                                                                          },
-                                                                          {
-                                                                              "name":  "QUEUE_SERVICOS",
-                                                                              "type":  "Queue",
-                                                                              "x":  20,
-                                                                              "y":  0,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-90-etapa-01",
-                                                                              "isNew":  true
                                                                           },
                                                                           {
                                                                               "name":  "NN1",
@@ -10067,6 +10076,1204 @@
                                                                               "y":  -3.5,
                                                                               "rot":  0,
                                                                               "stageId":  "modelo-08-etapa-04",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "POSTO_DE_ATENDIMENTO_3D",
+                                                                              "type":  "Operator",
+                                                                              "x":  30,
+                                                                              "y":  1.25,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-90-etapa-02",
+                                                                              "isNew":  true
+                                                                          },
+                                                                          {
+                                                                              "name":  "MOVIMENTADOR_1",
+                                                                              "type":  "Operator",
+                                                                              "x":  15,
+                                                                              "y":  3.5,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-02-etapa-02",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "CONVEYOR_modelo-03-etapa-07_Adicionando_e_configurando_objetos_(Esteira_horizontal)",
+                                                                              "type":  "Conveyor",
+                                                                              "x1":  43,
+                                                                              "y1":  -20,
+                                                                              "x2":  12,
+                                                                              "y2":  -20,
+                                                                              "stageId":  "modelo-03-etapa-07",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "CHEGADAS_PALLETS",
+                                                                              "type":  "Source",
+                                                                              "x":  100,
+                                                                              "y":  -20,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-08-etapa-01",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "INSPECAO_EMBALAGEM",
+                                                                              "type":  "MultiProcessor",
+                                                                              "x":  80,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-07-etapa-02",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "OPERADOR_MONTAGEM_ACABAMENTO",
+                                                                              "type":  "Operator",
+                                                                              "x":  60,
+                                                                              "y":  2.5,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-05-etapa-03",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "PLACAS_EMBALADAS_MOD_2",
+                                                                              "type":  "Queue",
+                                                                              "x":  85,
+                                                                              "y":  -1,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-07-etapa-03",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "PALETIZACAO",
+                                                                              "type":  "Combiner",
+                                                                              "x":  4,
+                                                                              "y":  6,
+                                                                              "rot":  4,
+                                                                              "stageId":  "modelo-09-etapa-01",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "NN4",
+                                                                              "type":  "NetworkNode",
+                                                                              "x":  110,
+                                                                              "y":  3.5,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-08-etapa-04",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "PLACAS_IMPRESSAS_REPROVADAS",
+                                                                              "type":  "Queue",
+                                                                              "x":  10,
+                                                                              "y":  -20,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-03-etapa-07",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "DP_3",
+                                                                              "type":  "Decision Point",
+                                                                              "x":  20,
+                                                                              "y":  -17.5,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-04-etapa-04",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "NN3",
+                                                                              "type":  "NetworkNode",
+                                                                              "x":  115,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-08-etapa-04",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "IMPRESSORA_1",
+                                                                              "type":  "Processor",
+                                                                              "x":  20,
+                                                                              "y":  3.5,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-01-etapa-04",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "POSTO_DE_SENHA",
+                                                                              "type":  "Processor",
+                                                                              "x":  10,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-90-etapa-01",
+                                                                              "isNew":  true
+                                                                          },
+                                                                          {
+                                                                              "name":  "FILA",
+                                                                              "type":  "Queue",
+                                                                              "x":  10,
+                                                                              "y":  1,
+                                                                              "rot":  0.01,
+                                                                              "stageId":  "modelo-90-etapa-02",
+                                                                              "isNew":  true
+                                                                          },
+                                                                          {
+                                                                              "name":  "OPERADOR_IMPRESSORA_2",
+                                                                              "type":  "Operator",
+                                                                              "x":  20,
+                                                                              "y":  -1,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-02-etapa-01",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "DP_2",
+                                                                              "type":  "Decision Point",
+                                                                              "x":  22,
+                                                                              "y":  -20,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-04-etapa-04",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "CONVEYOR_modelo-03-etapa-05_Adicionando_e_configurando_objeto_(Esteira_reprovados)",
+                                                                              "type":  "Conveyor",
+                                                                              "x1":  45,
+                                                                              "y1":  -0.5,
+                                                                              "x2":  45,
+                                                                              "y2":  -16.5,
+                                                                              "stageId":  "modelo-03-etapa-05",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "COMPONENTES_CILINDROS_CHEIOS",
+                                                                              "type":  "Queue",
+                                                                              "x":  60,
+                                                                              "y":  -10,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-05-etapa-02",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "COMPONENTES_CILINDROS_CHEIOS_MOD_2",
+                                                                              "type":  "Queue",
+                                                                              "x":  63,
+                                                                              "y":  -10,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-06-etapa-01",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "OPERADOR_IMPRESSORA_1",
+                                                                              "type":  "Operator",
+                                                                              "x":  20,
+                                                                              "y":  6,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-02-etapa-01",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "PLACAS_IMPRESSAS_REFUGADAS",
+                                                                              "type":  "Queue",
+                                                                              "x":  20,
+                                                                              "y":  -10,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-04-etapa-04",
+                                                                              "isNew":  false
+                                                                          }
+                                                                      ]
+                                                      },
+                                           "roteiroFile":  null
+                                       }
+                                   ]
+                    },
+                    {
+                        "id":  "aula-06",
+                        "number":  6,
+                        "title":  "Experimenter",
+                        "models":  [
+                                       {
+                                           "id":  "modelo-11",
+                                           "number":  11,
+                                           "label":  "6.1) Modelo 11",
+                                           "stages":  [
+                                                          {
+                                                              "id":  "modelo-11-etapa-01",
+                                                              "number":  "01",
+                                                              "type":  "normal",
+                                                              "title":  "Etapa 01 - Aproximando os estoque de placas virgens, reprovadas e impressas das impressoras",
+                                                              "columns":  [
+                                                                              {
+                                                                                  "title":  "Desabilitando Use Transports do Outputs dos objetos",
+                                                                                  "prints":  [
+                                                                                                 {
+                                                                                                     "file":  "AULA6_MODELO11_ETAPA1_1.png",
+                                                                                                     "w":  1716,
+                                                                                                     "h":  912
+                                                                                                 },
+                                                                                                 {
+                                                                                                     "file":  "AULA6_MODELO11_ETAPA1_2.png",
+                                                                                                     "w":  1716,
+                                                                                                     "h":  913
+                                                                                                 },
+                                                                                                 {
+                                                                                                     "file":  "AULA6_MODELO11_ETAPA1_3.png",
+                                                                                                     "w":  1418,
+                                                                                                     "h":  895
+                                                                                                 },
+                                                                                                 {
+                                                                                                     "file":  "AULA6_MODELO11_ETAPA1_4.png",
+                                                                                                     "w":  1700,
+                                                                                                     "h":  916
+                                                                                                 }
+                                                                                             ],
+                                                                                  "roteiro":  [
+
+                                                                                              ],
+                                                                                  "objeto":  [
+                                                                                                 "Queue - \"ESTOQUE_PLACAS_VIRGENS\"",
+                                                                                                 "Queue - \"ESTOQUE_PLACAS_REPROVADAS\"",
+                                                                                                 "Processor - \"IMPRESSORA_1\"",
+                                                                                                 "Processor - \"IMPRESSORA_2\"",
+                                                                                                 "Operator - \"MOVIMENTADOR_1\" (REMOVIDO)",
+                                                                                                 "Operator - \"MOVIMENTADOR_2\" (REMOVIDO)"
+                                                                                             ],
+                                                                                  "caminho":  [
+
+                                                                                              ],
+                                                                                  "acao":  [
+
+                                                                                           ],
+                                                                                  "properties":  [
+                                                                                                     {
+                                                                                                         "key":  "OUTPUT",
+                                                                                                         "title":  "Output",
+                                                                                                         "lines":  [
+                                                                                                                       "[UNCHECK] Use Transport"
+                                                                                                                   ]
+                                                                                                     }
+                                                                                                 ],
+                                                                                  "observacoes":  [
+                                                                                                      [
+                                                                                                          "Na imagem 4 deste passo, veja que não deleta-se o Operator conectado à Porta Central de cada Impressora, isso se dá pois eles ainda vão executar uma atividade nestes Processors, que no caso é o Process Time, ou seja, vão operar a máquina, mas não realização mais o transporte saindo da máquina.",
+                                                                                                          "",
+                                                                                                          "Diferente do que foi feito com os Outputs dos estoques de placas virgens e reprovadas, em que os Operators eram responsáveis somente pelo transporte."
+                                                                                                      ]
+                                                                                                  ]
+                                                                              }
+                                                                          ]
+                                                          },
+                                                          {
+                                                              "id":  "modelo-11-etapa-02",
+                                                              "number":  "02",
+                                                              "type":  "normal",
+                                                              "title":  "Etapa 02 - Alterando taxa de reprovação no teste",
+                                                              "columns":  [
+                                                                              {
+                                                                                  "title":  "Alterando Trigger do objeto",
+                                                                                  "prints":  [
+                                                                                                 {
+                                                                                                     "file":  "AULA6_MODELO11_ETAPA2_1.png",
+                                                                                                     "w":  1715,
+                                                                                                     "h":  938
+                                                                                                 }
+                                                                                             ],
+                                                                                  "roteiro":  [
+
+                                                                                              ],
+                                                                                  "objeto":  [
+                                                                                                 "Processor - \"TESTE\""
+                                                                                             ],
+                                                                                  "caminho":  [
+
+                                                                                              ],
+                                                                                  "acao":  [
+
+                                                                                           ],
+                                                                                  "properties":  [
+                                                                                                     {
+                                                                                                         "key":  "TRIGGERS",
+                                                                                                         "title":  "Triggers",
+                                                                                                         "lines":  [
+                                                                                                                       "On Exit [properties.png] → Set Label by Percentage:",
+                                                                                                                       "Label: \u003cb\u003e“QUALIDADE”\u003c/b\u003e",
+                                                                                                                       "",
+                                                                                                                       "Percent: \u003cb\u003e98\u003c/b\u003e",
+                                                                                                                       "Value: \u003cb\u003e“APROVADA”\u003c/b\u003e",
+                                                                                                                       "",
+                                                                                                                       "Percent: \u003cb\u003e2\u003c/b\u003e",
+                                                                                                                       "Value: \u003cb\u003e“REPROVADA”\u003c/b\u003e"
+                                                                                                                   ]
+                                                                                                     }
+                                                                                                 ],
+                                                                                  "observacoes":  [
+
+                                                                                                  ]
+                                                                              }
+                                                                          ]
+                                                          },
+                                                          {
+                                                              "id":  "modelo-11-etapa-03",
+                                                              "number":  "03",
+                                                              "type":  "normal",
+                                                              "title":  "Etapa 03 - Programando as chegadas de placas virgens em lotes por hora.",
+                                                              "columns":  [
+                                                                              {
+                                                                                  "title":  "Lógica de chegada de placas virgens antes x depois.",
+                                                                                  "prints":  [
+
+                                                                                             ],
+                                                                                  "roteiro":  [
+
+                                                                                              ],
+                                                                                  "objeto":  [
+                                                                                                 "Source - \"ENTRADA_PLACAS_VIRGENS\""
+                                                                                             ],
+                                                                                  "caminho":  [
+
+                                                                                              ],
+                                                                                  "acao":  [
+
+                                                                                           ],
+                                                                                  "properties":  [
+
+                                                                                                 ],
+                                                                                  "observacoes":  [
+                                                                                                      [
+                                                                                                          "Antes - A partir do tempo t=0 segundos, chegam placas a cada 10 segundos, em uma hora temos 3600 segundos, ou seja, chegam 360 placas por hora, de forma aleatória mas com probabilidade de 50% para Modelo 1 ou Modelo 2.",
+                                                                                                          "",
+                                                                                                          "Depois - Com chegada programada em lote de 360 placas por hora, sendo 180 placas do Modelo 1 e 180 placas do Modelo 2."
+                                                                                                      ]
+                                                                                                  ]
+                                                                              },
+                                                                              {
+                                                                                  "title":  "Configurando a lógica no objeto",
+                                                                                  "prints":  [
+                                                                                                 {
+                                                                                                     "file":  "AULA6_MODELO11_ETAPA3_1.png",
+                                                                                                     "w":  1718,
+                                                                                                     "h":  912
+                                                                                                 }
+                                                                                             ],
+                                                                                  "roteiro":  [
+
+                                                                                              ],
+                                                                                  "objeto":  [
+                                                                                                 "Source - \"ENTRADA_PLACAS_VIRGENS\""
+                                                                                             ],
+                                                                                  "caminho":  [
+
+                                                                                              ],
+                                                                                  "acao":  [
+
+                                                                                           ],
+                                                                                  "properties":  [
+                                                                                                     {
+                                                                                                         "key":  "SOURCE",
+                                                                                                         "title":  "Source",
+                                                                                                         "lines":  [
+                                                                                                                       "Arrival Style: [down_arrow.bmp] → Arrival Schedule",
+                                                                                                                       "[CHECK] Repeat Table",
+                                                                                                                       "",
+                                                                                                                       "Click em [view_table.ico] Edit Table",
+                                                                                                                       "",
+                                                                                                                       "3x [up_arrow.bmp] Add Arrivals",
+                                                                                                                       "Arrivals: \u003cb\u003e4\u003c/b\u003e             ",
+                                                                                                                       "",
+                                                                                                                       "1x [up_arrow.bmp] Add Labels",
+                                                                                                                       "Labels: \u003cb\u003e1\u003c/b\u003e",
+                                                                                                                       "",
+                                                                                                                       "Dentro da tabela:",
+                                                                                                                       "Renomeie MyLabel1 para \u003cb\u003eMODELO\u003c/b\u003e",
+                                                                                                                       "Na coluna de MODELO, digite 1 para Arrival1 e Arrival3 e 2 para Arrival2 e Arrival4.",
+                                                                                                                       "Na coluna de ArrivalTime, digite 0 para Arrival1 e Arrival2, 3600 para Arrival3 e Arrival4.",
+                                                                                                                       "Na coluna de Quantity, digite 180 para Arrival1 e Arrival2, e 0 para Arrival3 e Arrival4."
+                                                                                                                   ]
+                                                                                                     }
+                                                                                                 ],
+                                                                                  "observacoes":  [
+                                                                                                      [
+                                                                                                          "A interpretação da tabela de Arrival Schedule é a seguinte:",
+                                                                                                          "",
+                                                                                                          "Em todo ciclo de 1 hora, chegam 2 lotes de placas virgens, sendo o primeiro lote com 180 unidades do Modelo 1 e o segundo lote com 180 unidades do Modelo 2.",
+                                                                                                          "",
+                                                                                                          "O motivo de estar 0 no ArrivalTime de 3600 é porque o sistema enxerga que quando há repetição, e dessa forma, a cada uma hora, o modelo deve chegar a quantidade programada para t = 3600 mas também a programada para o t = 0 pois ele repete o ciclo.",
+                                                                                                          "Sendo assim, se configurar 180 para Arrival3 e Arrival4, o sistema entende que a cada hora chegam 720 placas virgens, sendo 320 do Modelo 1 e 320 do Modelo 2, chegando o dobro do que deveria."
+                                                                                                      ]
+                                                                                                  ]
+                                                                              }
+                                                                          ]
+                                                          },
+                                                          {
+                                                              "id":  "modelo-11-etapa-04",
+                                                              "number":  "04",
+                                                              "type":  "normal",
+                                                              "title":  "Etapa 04 - Aproximando Placas impressas do Teste",
+                                                              "columns":  [
+                                                                              {
+                                                                                  "title":  "Desabilitando Use Transports do Outputs dos objetos",
+                                                                                  "prints":  [
+                                                                                                 {
+                                                                                                     "file":  "AULA6_MODELO11_ETAPA4_1.png",
+                                                                                                     "w":  1715,
+                                                                                                     "h":  936
+                                                                                                 }
+                                                                                             ],
+                                                                                  "roteiro":  [
+
+                                                                                              ],
+                                                                                  "objeto":  [
+                                                                                                 "Queue - \"PLACAS_IMPRESSAS\""
+                                                                                             ],
+                                                                                  "caminho":  [
+
+                                                                                              ],
+                                                                                  "acao":  [
+
+                                                                                           ],
+                                                                                  "properties":  [
+                                                                                                     {
+                                                                                                         "key":  "OUTPUT",
+                                                                                                         "title":  "Output",
+                                                                                                         "lines":  [
+                                                                                                                       "[UNCHECK] Use Transport"
+                                                                                                                   ]
+                                                                                                     }
+                                                                                                 ],
+                                                                                  "observacoes":  [
+
+                                                                                                  ]
+                                                                              }
+                                                                          ]
+                                                          },
+                                                          {
+                                                              "id":  "modelo-11-etapa-05",
+                                                              "number":  "05",
+                                                              "type":  "normal",
+                                                              "title":  "Etapa 05 - Testando com mais bancadas de teste e de operadores do teste com Experimenter",
+                                                              "columns":  [
+                                                                              {
+                                                                                  "title":  "Criando Grupo de objetos",
+                                                                                  "prints":  [
+                                                                                                 {
+                                                                                                     "file":  "AULA6_MODELO11_ETAPA5_1.png",
+                                                                                                     "w":  1619,
+                                                                                                     "h":  914
+                                                                                                 }
+                                                                                             ],
+                                                                                  "roteiro":  [
+
+                                                                                              ],
+                                                                                  "objeto":  [
+                                                                                                 "Processor - \"TESTE\"",
+                                                                                                 "Operator - \"OPERADOR_TESTE\""
+                                                                                             ],
+                                                                                  "caminho":  [
+                                                                                                  "Barra Esquerda [PLUS] → Groups:"
+                                                                                              ],
+                                                                                  "acao":  [
+
+                                                                                           ],
+                                                                                  "properties":  [
+                                                                                                     {
+                                                                                                         "key":  "GROUP_PROPERTIES",
+                                                                                                         "title":  "Group Properties",
+                                                                                                         "lines":  [
+                                                                                                                       "Members: ",
+                                                                                                                       "[eyedropper.png] → Processor “TESTE”",
+                                                                                                                       "[eyedropper.png] → Operator “OPERADOR_TESTE”"
+                                                                                                                   ]
+                                                                                                     }
+                                                                                                 ],
+                                                                                  "observacoes":  [
+                                                                                                      [
+                                                                                                          "Quando há uma combinação de Fixed Resource (Processor) e Task Executer (Operator) deve ser seguido esta sequência de seleção, primeiro o Processor e depois o Operator, para que o grupo seja criado corretamente."
+                                                                                                      ]
+                                                                                                  ]
+                                                                              },
+                                                                              {
+                                                                                  "title":  "Configurando Parameters como as variáveis de entrada do Experimenter",
+                                                                                  "prints":  [
+                                                                                                 {
+                                                                                                     "file":  "AULA6_MODELO11_ETAPA5_2.png",
+                                                                                                     "w":  1620,
+                                                                                                     "h":  916
+                                                                                                 },
+                                                                                                 {
+                                                                                                     "file":  "AULA6_MODELO11_ETAPA5_3.png",
+                                                                                                     "w":  1622,
+                                                                                                     "h":  916
+                                                                                                 }
+                                                                                             ],
+                                                                                  "roteiro":  [
+
+                                                                                              ],
+                                                                                  "objeto":  [
+                                                                                                 "Parameters - \"VARIAVEIS_ENTRADA_MODELO_11\""
+                                                                                             ],
+                                                                                  "caminho":  [
+
+                                                                                              ],
+                                                                                  "acao":  [
+
+                                                                                           ],
+                                                                                  "properties":  [
+                                                                                                     {
+                                                                                                         "key":  "TABLE",
+                                                                                                         "title":  "Table",
+                                                                                                         "lines":  [
+                                                                                                                       "Name: \u003cb\u003eQ_CEL_TESTE\u003c/b\u003e",
+                                                                                                                       "",
+                                                                                                                       "Value: [down_arrow.bmp]:",
+                                                                                                                       "Type: [down_arrow.bmp] Integer",
+                                                                                                                       "Reference: [eyedropper.png] → Group “TESTE” → Delete and Copy Group Members"
+                                                                                                                   ]
+                                                                                                     }
+                                                                                                 ],
+                                                                                  "observacoes":  [
+
+                                                                                                  ]
+                                                                              },
+                                                                              {
+                                                                                  "title":  "Configurando Performance Measures Tables como as variáveis de saída do Experimenter",
+                                                                                  "prints":  [
+                                                                                                 {
+                                                                                                     "file":  "AULA6_MODELO11_ETAPA5_4.png",
+                                                                                                     "w":  1623,
+                                                                                                     "h":  913
+                                                                                                 },
+                                                                                                 {
+                                                                                                     "file":  "AULA6_MODELO11_ETAPA5_5.png",
+                                                                                                     "w":  1622,
+                                                                                                     "h":  916
+                                                                                                 },
+                                                                                                 {
+                                                                                                     "file":  "AULA6_MODELO11_ETAPA5_6.png",
+                                                                                                     "w":  1622,
+                                                                                                     "h":  916
+                                                                                                 }
+                                                                                             ],
+                                                                                  "roteiro":  [
+
+                                                                                              ],
+                                                                                  "objeto":  [
+                                                                                                 "Performance Measures Tables - \"CAPACIDADE_TESTAGEM_MODELO_11\""
+                                                                                             ],
+                                                                                  "caminho":  [
+
+                                                                                              ],
+                                                                                  "acao":  [
+
+                                                                                           ],
+                                                                                  "properties":  [
+                                                                                                     {
+                                                                                                         "key":  "TABLE",
+                                                                                                         "title":  "Table",
+                                                                                                         "lines":  [
+                                                                                                                       "Name: \u003cb\u003eQ_PLACAS_TESTADAS\u003c/b\u003e",
+                                                                                                                       "",
+                                                                                                                       "Reference: [eyedropper.png] → Group \"CELULA_TESTE\" → Statistic → Output → Total"
+                                                                                                                   ]
+                                                                                                     }
+                                                                                                 ],
+                                                                                  "observacoes":  [
+
+                                                                                                  ]
+                                                                              }
+                                                                          ]
+                                                          },
+                                                          {
+                                                              "id":  "modelo-11-etapa-06",
+                                                              "number":  "06",
+                                                              "type":  "results",
+                                                              "title":  "Etapa 06 - Rodando o Experimenter e analisando os resultados",
+                                                              "columns":  [
+                                                                              {
+                                                                                  "title":  "Configurando o Experimenter",
+                                                                                  "prints":  [
+                                                                                                 {
+                                                                                                     "file":  "AULA6_MODELO11_ETAPA6_1.png",
+                                                                                                     "w":  1623,
+                                                                                                     "h":  989
+                                                                                                 },
+                                                                                                 {
+                                                                                                     "file":  "AULA6_MODELO11_ETAPA6_2.png",
+                                                                                                     "w":  1622,
+                                                                                                     "h":  914
+                                                                                                 },
+                                                                                                 {
+                                                                                                     "file":  "AULA6_MODELO11_ETAPA6_3.png",
+                                                                                                     "w":  1624,
+                                                                                                     "h":  914
+                                                                                                 },
+                                                                                                 {
+                                                                                                     "file":  "AULA6_MODELO11_ETAPA6_4.png",
+                                                                                                     "w":  1539,
+                                                                                                     "h":  1181
+                                                                                                 }
+                                                                                             ],
+                                                                                  "roteiro":  [
+
+                                                                                              ],
+                                                                                  "objeto":  [
+                                                                                                 "Experimenter - \"CAPACIDADE_TESTAGEM_MODELO_11\""
+                                                                                             ],
+                                                                                  "caminho":  [
+
+                                                                                              ],
+                                                                                  "acao":  [
+
+                                                                                           ],
+                                                                                  "properties":  [
+                                                                                                     {
+                                                                                                         "key":  "JOBS",
+                                                                                                         "title":  "Jobs",
+                                                                                                         "lines":  [
+                                                                                                                       "Name: \u003cb\u003eCAPACIDADE_TESTAGEM_MODELO_11\u003c/b\u003e",
+                                                                                                                       "Stop Time: \u003cb\u003e18:00\u003c/b\u003e",
+                                                                                                                       "",
+                                                                                                                       "Parameters:",
+                                                                                                                       "[CHECK] VARIAVEIS_ENTRADA_MODELO_11",
+                                                                                                                       "",
+                                                                                                                       "Scenarios:",
+                                                                                                                       "Names:",
+                                                                                                                       "\u003cb\u003e1 CEL_TESTE\u003c/b\u003e",
+                                                                                                                       "\u003cb\u003e2 CEL_TESTE\u003c/b\u003e",
+                                                                                                                       "\u003cb\u003e3 CEL_TESTE\u003c/b\u003e",
+                                                                                                                       "\u003cb\u003e4 CEL_TESTE\u003c/b\u003e",
+                                                                                                                       "",
+                                                                                                                       "Values \"Q_CEL_TESTE\":",
+                                                                                                                       "\u003cb\u003e1\u003c/b\u003e",
+                                                                                                                       "\u003cb\u003e2\u003c/b\u003e",
+                                                                                                                       "\u003cb\u003e3\u003c/b\u003e",
+                                                                                                                       "\u003cb\u003e4\u003c/b\u003e"
+                                                                                                                   ]
+                                                                                                     }
+                                                                                                 ],
+                                                                                  "observacoes":  [
+                                                                                                      [
+                                                                                                          "Veja que, pela última Imagem, de 1 para 2 celulas de teste, a capacidade de testagem aumenta, mas acima de 2 já não faz diferença."
+                                                                                                      ]
+                                                                                                  ]
+                                                                              }
+                                                                          ]
+                                                          },
+                                                          {
+                                                              "id":  "modelo-11-etapa-07",
+                                                              "number":  "07",
+                                                              "type":  "normal",
+                                                              "title":  "Etapa 07 - Simulando o modelo com mais um Processor de teste e mais um operador de teste manualmente.",
+                                                              "columns":  [
+                                                                              {
+                                                                                  "title":  "Deletando Experimenter, variáveis de entrada e de saída",
+                                                                                  "prints":  [
+                                                                                                 {
+                                                                                                     "file":  "AULA6_MODELO11_ETAPA7_1.png",
+                                                                                                     "w":  1622,
+                                                                                                     "h":  915
+                                                                                                 },
+                                                                                                 {
+                                                                                                     "file":  "AULA6_MODELO11_ETAPA7_2.png",
+                                                                                                     "w":  1626,
+                                                                                                     "h":  913
+                                                                                                 }
+                                                                                             ],
+                                                                                  "roteiro":  [
+
+                                                                                              ],
+                                                                                  "objeto":  [
+                                                                                                 "Parameters - \"VARIAVEIS_ENTRADA_MODELO_11\"",
+                                                                                                 "Performance Measures Tables - \"CAPACIDADE_TESTAGEM_MODELO_11\"",
+                                                                                                 "Experimenter - \"CAPACIDADE_TESTAGEM_MODELO_11\""
+                                                                                             ],
+                                                                                  "caminho":  [
+
+                                                                                              ],
+                                                                                  "acao":  [
+
+                                                                                           ],
+                                                                                  "properties":  [
+
+                                                                                                 ],
+                                                                                  "observacoes":  [
+                                                                                                      [
+                                                                                                          "Lembre-se de salvar o modelo até a etapa anterior com um nome de arquivo diferente, para não perder o que foi feito com o Experimenter, pois a partir deste passo, vamos simular manualmente com mais um Processor de teste e mais um operador de teste."
+                                                                                                      ]
+                                                                                                  ]
+                                                                              },
+                                                                              {
+                                                                                  "title":  "Adicionando o Operador de teste (foi removido quando rodou o modelo com Grupo CELULA_TESTE) manualmente",
+                                                                                  "prints":  [
+                                                                                                 {
+                                                                                                     "file":  "AULA6_MODELO11_ETAPA7_3.png",
+                                                                                                     "w":  1918,
+                                                                                                     "h":  916
+                                                                                                 },
+                                                                                                 {
+                                                                                                     "file":  "AULA6_MODELO11_ETAPA7_4.png",
+                                                                                                     "w":  1679,
+                                                                                                     "h":  916
+                                                                                                 }
+                                                                                             ],
+                                                                                  "roteiro":  [
+
+                                                                                              ],
+                                                                                  "objeto":  [
+                                                                                                 "Operator - \"OPERADOR_TESTE\""
+                                                                                             ],
+                                                                                  "caminho":  [
+
+                                                                                              ],
+                                                                                  "acao":  [
+
+                                                                                           ],
+                                                                                  "properties":  [
+                                                                                                     {
+                                                                                                         "key":  "NOME",
+                                                                                                         "title":  "Nome",
+                                                                                                         "lines":  [
+                                                                                                                       "OPERADOR_TESTE"
+                                                                                                                   ]
+                                                                                                     },
+                                                                                                     {
+                                                                                                         "key":  "VISUALS",
+                                                                                                         "title":  "Visuals",
+                                                                                                         "lines":  [
+                                                                                                                       "\"OPERADOR_TESTE\" - [Mid6_small.png] X = 40.00 ; Y = 2.50 ; Z = 0.00",
+                                                                                                                       "\"OPERADOR_TESTE\" - [rotate_arrow.png] Z = 270.00"
+                                                                                                                   ]
+                                                                                                     },
+                                                                                                     {
+                                                                                                         "key":  "PROCESSOR",
+                                                                                                         "title":  "Processor",
+                                                                                                         "lines":  [
+                                                                                                                       "\"TESTE\" - Operator: [eyedropper.png] → Operator “OPERADOR_TESTE”"
+                                                                                                                   ]
+                                                                                                     }
+                                                                                                 ],
+                                                                                  "observacoes":  [
+
+                                                                                                  ]
+                                                                              },
+                                                                              {
+                                                                                  "title":  "Reposicionando e renomeando Teste e Operador",
+                                                                                  "prints":  [
+                                                                                                 {
+                                                                                                     "file":  "AULA6_MODELO11_ETAPA7_5.png",
+                                                                                                     "w":  1680,
+                                                                                                     "h":  914
+                                                                                                 },
+                                                                                                 {
+                                                                                                     "file":  "AULA6_MODELO11_ETAPA7_6.png",
+                                                                                                     "w":  1682,
+                                                                                                     "h":  919
+                                                                                                 }
+                                                                                             ],
+                                                                                  "roteiro":  [
+
+                                                                                              ],
+                                                                                  "objeto":  [
+                                                                                                 "Processor - \"TESTE\"",
+                                                                                                 "Operator - \"OPERADOR_TESTE\""
+                                                                                             ],
+                                                                                  "caminho":  [
+
+                                                                                              ],
+                                                                                  "acao":  [
+
+                                                                                           ],
+                                                                                  "properties":  [
+                                                                                                     {
+                                                                                                         "key":  "NAME",
+                                                                                                         "title":  "Name",
+                                                                                                         "lines":  [
+                                                                                                                       "Operator - \"OPERADOR_TESTE_1\"",
+                                                                                                                       "Processor - \"TESTE_1\""
+                                                                                                                   ]
+                                                                                                     },
+                                                                                                     {
+                                                                                                         "key":  "VISUALS",
+                                                                                                         "title":  "Visuals",
+                                                                                                         "lines":  [
+                                                                                                                       "\"OPERADOR_TESTE_1\" - [Mid6_small.png] X = 40.00 ; Y = 6.00 ; Z = 0.00",
+                                                                                                                       "\"TESTE_1\" - [Mid6_small.png] X = 40.00 ; Y = 3.50 ; Z = 0.00"
+                                                                                                                   ]
+                                                                                                     }
+                                                                                                 ],
+                                                                                  "observacoes":  [
+
+                                                                                                  ]
+                                                                              },
+                                                                              {
+                                                                                  "title":  "Copiando Teste e Operador para criar mais uma célula de teste",
+                                                                                  "prints":  [
+                                                                                                 {
+                                                                                                     "file":  "AULA6_MODELO11_ETAPA7_7.png",
+                                                                                                     "w":  1677,
+                                                                                                     "h":  821
+                                                                                                 },
+                                                                                                 {
+                                                                                                     "file":  "AULA6_MODELO11_ETAPA7_8.png",
+                                                                                                     "w":  1680,
+                                                                                                     "h":  914
+                                                                                                 },
+                                                                                                 {
+                                                                                                     "file":  "AULA6_MODELO11_ETAPA7_9.png",
+                                                                                                     "w":  1677,
+                                                                                                     "h":  915
+                                                                                                 }
+                                                                                             ],
+                                                                                  "roteiro":  [
+
+                                                                                              ],
+                                                                                  "objeto":  [
+                                                                                                 "Processor - \"TESTE_2\"",
+                                                                                                 "Operator - \"OPERADOR_TESTE_2\"",
+                                                                                                 "Queue - \"PLACAS_IMPRESSAS\""
+                                                                                             ],
+                                                                                  "caminho":  [
+
+                                                                                              ],
+                                                                                  "acao":  [
+
+                                                                                           ],
+                                                                                  "properties":  [
+                                                                                                     {
+                                                                                                         "key":  "VISUALS",
+                                                                                                         "title":  "Visuals",
+                                                                                                         "lines":  [
+                                                                                                                       "\"TESTE_2\" - [Mid6_small.png] X = 40.00 ; Y = -3.50 ; Z = 0.00",
+                                                                                                                       "\"OPERADOR_TESTE_2\" - [Mid6_small.png] X = 40.00 ; Y = -1.00 ; Z = 0.00"
+                                                                                                                   ]
+                                                                                                     },
+                                                                                                     {
+                                                                                                         "key":  "PROCESSOR",
+                                                                                                         "title":  "Processor",
+                                                                                                         "lines":  [
+                                                                                                                       "\"TESTE_2\" - Operator: [eyedropper.png] → Operator “OPERADOR_TESTE_2”"
+                                                                                                                   ]
+                                                                                                     },
+                                                                                                     {
+                                                                                                         "key":  "OUTPUT",
+                                                                                                         "title":  "Output",
+                                                                                                         "lines":  [
+                                                                                                                       "\"PLACAS_IMPRESSAS\" - Send To Port[down_arrow.bmp] → Port by Case:",
+                                                                                                                       "Case Function: \u003cb\u003eitem.MODELO\u003c/b\u003e",
+                                                                                                                       "",
+                                                                                                                       "Clique no [PLUS] abaixo de Case Function para adicionar os campos necessários aos dois modelos.",
+                                                                                                                       "",
+                                                                                                                       "Case: 1 Port: 1",
+                                                                                                                       "Case: 2 Port: 2"
+                                                                                                                   ]
+                                                                                                     }
+                                                                                                 ],
+                                                                                  "observacoes":  [
+                                                                                                      [
+                                                                                                          "As conexões estabelecidas neste passo são:",
+                                                                                                          "Conexão com Atalho \"A\" de PLACAS IMPRESSAS → TESTE_2 + TESTE_2 → Esteira \"StraightConveyor1\"",
+                                                                                                          "Conexão com Atalho \"S\" de OPERADOR_TESTE_2 → TESTE_2"
+                                                                                                      ]
+                                                                                                  ]
+                                                                              }
+                                                                          ]
+                                                          },
+                                                          {
+                                                              "id":  "modelo-11-etapa-08",
+                                                              "number":  "08",
+                                                              "type":  "results",
+                                                              "title":  "Etapa 08 - Resultados",
+                                                              "columns":  [
+                                                                              {
+                                                                                  "title":  "Validando o modelo simulado.",
+                                                                                  "prints":  [
+                                                                                                 {
+                                                                                                     "file":  "AULA6_MODELO11_RESULTADOS_1.png",
+                                                                                                     "w":  1916,
+                                                                                                     "h":  944
+                                                                                                 }
+                                                                                             ],
+                                                                                  "roteiro":  [
+                                                                                                  "Saída do modelo = 30 pallets = 30 * 20 = 600 unidades"
+                                                                                              ],
+                                                                                  "objeto":  [
+
+                                                                                             ],
+                                                                                  "caminho":  [
+
+                                                                                              ],
+                                                                                  "acao":  [
+
+                                                                                           ],
+                                                                                  "properties":  [
+
+                                                                                                 ],
+                                                                                  "observacoes":  [
+                                                                                                      [
+                                                                                                          "Conforme dito em vídeo, não podem haver valores um pouco diferentes quando ao LeadTime, mas devem ainda ser próximos dos exibidos na imagem, no entanto, a quantidade de Pallets expedidos segue a mesma."
+                                                                                                      ]
+                                                                                                  ]
+                                                                              }
+                                                                          ],
+                                                              "results":  {
+                                                                              "throughput":  "600",
+                                                                              "processing":  [
+
+                                                                                             ],
+                                                                              "raw":  "Saída do modelo = 30 pallets = 30 * 20 = 600 unidades\nConforme dito em vídeo, não podem haver valores um pouco diferentes quando ao LeadTime, mas devem ainda ser próximos dos exibidos na imagem, no entanto, a quantidade de Pallets expedidos segue a mesma."
+                                                                          }
+                                                          }
+                                                      ],
+                                           "layout":  {
+                                                          "objects":  [
+                                                                          {
+                                                                              "name":  "PLACAS_IMPRESSAS",
+                                                                              "type":  "Queue",
+                                                                              "x":  30,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-03-etapa-01",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "IMPRESSORA_2",
+                                                                              "type":  "Processor",
+                                                                              "x":  20,
+                                                                              "y":  -3.5,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-01-etapa-04",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "COMPONENTES_CILINDROS_VAZIOS",
+                                                                              "type":  "Queue",
+                                                                              "x":  70,
+                                                                              "y":  -10,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-05-etapa-03",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "PLACAS_ACABADAS",
+                                                                              "type":  "Queue",
+                                                                              "x":  75,
+                                                                              "y":  0,
+                                                                              "rot":  1,
+                                                                              "stageId":  "modelo-07-etapa-01",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "MOVIMENTADOR_2",
+                                                                              "type":  "Operator",
+                                                                              "x":  15,
+                                                                              "y":  -3.5,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-02-etapa-02",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "DP_0",
+                                                                              "type":  "Decision Point",
+                                                                              "x":  42.5,
+                                                                              "y":  0.2,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-03-etapa-06",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "OPERADOR_TESTE_1",
+                                                                              "type":  "Operator",
+                                                                              "x":  40,
+                                                                              "y":  6,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-11-etapa-07",
+                                                                              "isNew":  true
+                                                                          },
+                                                                          {
+                                                                              "name":  "ENTRADA_CLIENTES",
+                                                                              "type":  "Source",
+                                                                              "x":  0,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-90-etapa-01",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "MONTAGEM",
+                                                                              "type":  "Combiner",
+                                                                              "x":  60,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-05-etapa-02",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "CONVEYOR_modelo-04-etapa-04_Adicionando_e_configurando_objeto",
+                                                                              "type":  "Conveyor",
+                                                                              "x1":  20,
+                                                                              "y1":  -19.5,
+                                                                              "x2":  20,
+                                                                              "y2":  -12,
+                                                                              "stageId":  "modelo-04-etapa-04",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "POSTO_DE_SENHA_3D",
+                                                                              "type":  "Operator",
+                                                                              "x":  10,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-90-etapa-02",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "PLACAS_IMPRESSAS_APROVADAS",
+                                                                              "type":  "Queue",
+                                                                              "x":  50,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-05-etapa-01",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "ATENDENTE",
+                                                                              "type":  "Operator",
+                                                                              "x":  30,
+                                                                              "y":  1.5,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-90-etapa-02",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "PLACAS_EMBALADAS_MOD_1",
+                                                                              "type":  "Queue",
+                                                                              "x":  85,
+                                                                              "y":  1,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-07-etapa-03",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "POSTO_DE_ATENDIMENTO",
+                                                                              "type":  "Processor",
+                                                                              "x":  30,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-90-etapa-01",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "DP_1",
+                                                                              "type":  "Decision Point",
+                                                                              "x":  45,
+                                                                              "y":  -1.5,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-03-etapa-06",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "SAIDA_CLIENTES",
+                                                                              "type":  "Sink",
+                                                                              "x":  40,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-90-etapa-01",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "CHEGADA_PLACAS_VIRGENS",
+                                                                              "type":  "Source",
+                                                                              "x":  0,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-01-etapa-01",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "ACABAMENTO",
+                                                                              "type":  "Separator",
+                                                                              "x":  70,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-05-etapa-03",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "NN1",
+                                                                              "type":  "NetworkNode",
+                                                                              "x":  105,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-08-etapa-04",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "CONVEYOR_modelo-03-etapa-05_Adicionando_e_configurando_objeto_(Esteira_aprovados)",
+                                                                              "type":  "Conveyor",
+                                                                              "x1":  42,
+                                                                              "y1":  0,
+                                                                              "x2":  48,
+                                                                              "y2":  0,
+                                                                              "stageId":  "modelo-03-etapa-05",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "PLACAS_VIRGENS",
+                                                                              "type":  "Queue",
+                                                                              "x":  10,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-01-etapa-02",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "TESTE_1",
+                                                                              "type":  "Processor",
+                                                                              "x":  40,
+                                                                              "y":  3.5,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-11-etapa-07",
+                                                                              "isNew":  true
+                                                                          },
+                                                                          {
+                                                                              "name":  "OPERADOR_TESTE_2",
+                                                                              "type":  "Operator",
+                                                                              "x":  40,
+                                                                              "y":  -1,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-11-etapa-07",
+                                                                              "isNew":  true
+                                                                          },
+                                                                          {
+                                                                              "name":  "FILA_PALLETS_VAZIOS",
+                                                                              "type":  "Queue",
+                                                                              "x":  100,
+                                                                              "y":  -4,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-08-etapa-01",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "TESTE_2",
+                                                                              "type":  "Processor",
+                                                                              "x":  40,
+                                                                              "y":  -3.5,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-11-etapa-07",
+                                                                              "isNew":  true
+                                                                          },
+                                                                          {
+                                                                              "name":  "NN2",
+                                                                              "type":  "NetworkNode",
+                                                                              "x":  110,
+                                                                              "y":  -3.5,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-08-etapa-04",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "POSTO_DE_ATENDIMENTO_3D",
+                                                                              "type":  "Operator",
+                                                                              "x":  30,
+                                                                              "y":  1.25,
+                                                                              "rot":  0,
+                                                                              "stageId":  "modelo-90-etapa-02",
                                                                               "isNew":  false
                                                                           },
                                                                           {
@@ -10179,13 +11386,13 @@
                                                                               "isNew":  false
                                                                           },
                                                                           {
-                                                                              "name":  "ATENDENTE",
-                                                                              "type":  "Operator",
-                                                                              "x":  30,
-                                                                              "y":  1.5,
+                                                                              "name":  "POSTO_DE_SENHA",
+                                                                              "type":  "Processor",
+                                                                              "x":  10,
+                                                                              "y":  0,
                                                                               "rot":  0,
-                                                                              "stageId":  "modelo-90-etapa-02",
-                                                                              "isNew":  true
+                                                                              "stageId":  "modelo-90-etapa-01",
+                                                                              "isNew":  false
                                                                           },
                                                                           {
                                                                               "name":  "FILA",
@@ -10194,7 +11401,7 @@
                                                                               "y":  1,
                                                                               "rot":  0.01,
                                                                               "stageId":  "modelo-90-etapa-02",
-                                                                              "isNew":  true
+                                                                              "isNew":  false
                                                                           },
                                                                           {
                                                                               "name":  "OPERADOR_IMPRESSORA_2",
@@ -10241,15 +11448,6 @@
                                                                               "rot":  0,
                                                                               "stageId":  "modelo-06-etapa-01",
                                                                               "isNew":  false
-                                                                          },
-                                                                          {
-                                                                              "name":  "ENTRADAS_CLIENTES",
-                                                                              "type":  "Source",
-                                                                              "x":  0,
-                                                                              "y":  0,
-                                                                              "rot":  0,
-                                                                              "stageId":  "modelo-90-etapa-01",
-                                                                              "isNew":  true
                                                                           },
                                                                           {
                                                                               "name":  "OPERADOR_IMPRESSORA_1",
@@ -10319,26 +11517,28 @@
                      },
                      {
                          "type":  "Operator",
-                         "count":  4,
+                         "count":  5,
                          "stages":  [
                                         "modelo-02-etapa-02",
                                         "modelo-02-etapa-01",
                                         "modelo-05-etapa-03",
-                                        "modelo-90-etapa-02"
+                                        "modelo-90-etapa-02",
+                                        "modelo-11-etapa-07"
                                     ]
                      },
                      {
                          "type":  "Processor",
-                         "count":  3,
+                         "count":  4,
                          "stages":  [
                                         "modelo-01-etapa-04",
                                         "modelo-03-etapa-02",
-                                        "modelo-90-etapa-01"
+                                        "modelo-90-etapa-01",
+                                        "modelo-11-etapa-07"
                                     ]
                      },
                      {
                          "type":  "Queue",
-                         "count":  13,
+                         "count":  12,
                          "stages":  [
                                         "modelo-01-etapa-02",
                                         "modelo-03-etapa-07",
@@ -10351,7 +11551,6 @@
                                         "modelo-07-etapa-01",
                                         "modelo-07-etapa-03",
                                         "modelo-08-etapa-01",
-                                        "modelo-90-etapa-01",
                                         "modelo-90-etapa-02"
                                     ]
                      },
