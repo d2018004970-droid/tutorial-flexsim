@@ -122,6 +122,7 @@
     'Decision Point': 'Direciona o fluxo de um item entre diferentes caminhos, com base em uma regra.',
     'Combiner': 'Junta multiplos itens (ex.: produto + componentes) em uma unica entidade.',
     'Separator': 'Separa uma entidade combinada de volta em seus itens originais.',
+    'Rack': 'Estante de armazenagem (Storage Object) com baias e niveis; guarda itens ate serem retirados.',
     'Global Table': 'Tabela de dados acessivel por todo o modelo, usada em regras e logicas.',
     'A* Navigation': 'Sistema de navegacao que permite a operadores desviar de obstaculos no Mapa 3D.'
   };
@@ -308,7 +309,7 @@
       var open = wrap.classList.toggle('open');
       toggle.innerHTML = open ? 'Mapa do modelo &#9652;' : 'Mapa do modelo &#9662;';
       if (open && !wrap.dataset.built) {
-        var head = el('div', 'model-map-head', '<h4>Mapa do modelo</h4><span class="model-map-legend">gerado automaticamente — cinza = já existente, cor = novo neste modelo</span>');
+        var head = el('div', 'model-map-head', '<h4>Mapa do modelo</h4><span class="model-map-legend">gerado automaticamente, em escala — cinza = já existente, cor = novo neste modelo</span>');
         wrap.appendChild(head);
         wrap.appendChild(buildMapSvg(model, false));
         wrap.dataset.built = '1';
@@ -319,11 +320,22 @@
     return outer;
   }
 
+  // Tamanho do objeto no chao (metros), ja considerando a rotacao em Z (ex.: Rack girado 270 graus
+  // troca largura e profundidade). Sem tamanho conhecido -> null (desenha com icone fixo).
+  function footprint(o) {
+    if (o.sx == null || o.sy == null) return null;
+    var a = (o.rot || 0) * Math.PI / 180, c = Math.abs(Math.cos(a)), s = Math.abs(Math.sin(a));
+    return { w: c * o.sx + s * o.sy, h: s * o.sx + c * o.sy };
+  }
+
   function computeBounds(objects) {
     var xs = [], ys = [];
     objects.forEach(function (o) {
       if (o.type === 'Conveyor' || o.x1 !== undefined) { xs.push(o.x1, o.x2); ys.push(o.y1, o.y2); }
-      else { xs.push(o.x); ys.push(o.y); }
+      else {
+        var f = footprint(o) || { w: 0, h: 0 };
+        xs.push(o.x - f.w / 2, o.x + f.w / 2); ys.push(o.y - f.h / 2, o.y + f.h / 2);
+      }
     });
     if (!xs.length) return { minX: 0, maxX: 10, minY: 0, maxY: 10 };
     return { minX: Math.min.apply(null, xs), maxX: Math.max.apply(null, xs), minY: Math.min.apply(null, ys), maxY: Math.max.apply(null, ys) };
@@ -335,15 +347,19 @@
     var pad = Math.max(4, (b.maxX - b.minX) * 0.12);
     var minX = b.minX - pad, maxX = b.maxX + pad, minY = b.minY - pad, maxY = b.maxY + pad;
     var w = Math.max(1, maxX - minX), h = Math.max(1, maxY - minY);
-    var vbW = 480, vbH = Math.max(140, vbW * (h / w));
-    function sx(x) { return ((x - minX) / w) * vbW; }
-    function sy(y) { return vbH - ((y - minY) / h) * vbH; } // inverte Y (FlexSim Y+ = topo)
+    // Mesma escala em X e Y (metros -> px). Se o layout for muito baixo, aumenta a faixa de Y
+    // (centralizada) em vez de esticar o desenho.
+    var vbW = 480, k = vbW / w, MIN_VBH = 140;
+    if (h * k < MIN_VBH) { var extra = (MIN_VBH / k - h) / 2; minY -= extra; maxY += extra; h = maxY - minY; }
+    var vbH = h * k;
+    function sx(x) { return (x - minX) * k; }
+    function sy(y) { return vbH - (y - minY) * k; } // inverte Y (FlexSim Y+ = topo)
 
     var svgNs = 'http://www.w3.org/2000/svg';
     var svg = document.createElementNS(svgNs, 'svg');
     svg.setAttribute('viewBox', '0 0 ' + vbW + ' ' + vbH);
     svg.setAttribute('class', 'model-map-svg');
-    svg.style.maxHeight = big ? '78vh' : '260px';
+    svg.style.maxHeight = big ? '78vh' : '360px';
 
     objs.forEach(function (o) {
       if (o.type === 'Conveyor' || o.x1 !== undefined) {
@@ -364,23 +380,36 @@
       g.setAttribute('class', o.isNew ? 'map-node-new' : 'map-node-old');
       var cx = sx(o.x), cy = sy(o.y);
       var glyph = TYPE_GLYPH[o.type] || 'rect';
+      var scaled = o.sx != null && o.sy != null;
+      // em escala: largura/profundidade reais (com um minimo na tela p/ continuar visivel e clicavel)
+      var MIN_PX = 5;
+      var wpx = scaled ? Math.max(o.sx * k, MIN_PX) : 16;
+      var hpx = scaled ? Math.max(o.sy * k, MIN_PX) : 14;
       var shape;
       if (glyph === 'circle') {
-        shape = document.createElementNS(svgNs, 'circle');
-        shape.setAttribute('cx', cx); shape.setAttribute('cy', cy); shape.setAttribute('r', 7);
+        shape = document.createElementNS(svgNs, 'ellipse');
+        shape.setAttribute('cx', cx); shape.setAttribute('cy', cy);
+        shape.setAttribute('rx', scaled ? Math.max(wpx / 2, 3) : 7); shape.setAttribute('ry', scaled ? Math.max(hpx / 2, 3) : 7);
       } else if (glyph === 'diamond') {
+        var d = scaled ? 5 : 8; // Decision Point e um ponto no FlexSim: losango pequeno fixo
         shape = document.createElementNS(svgNs, 'polygon');
-        shape.setAttribute('points', [cx + ',' + (cy - 8), (cx + 8) + ',' + cy, cx + ',' + (cy + 8), (cx - 8) + ',' + cy].join(' '));
+        shape.setAttribute('points', [cx + ',' + (cy - d), (cx + d) + ',' + cy, cx + ',' + (cy + d), (cx - d) + ',' + cy].join(' '));
       } else {
         shape = document.createElementNS(svgNs, 'rect');
-        shape.setAttribute('x', cx - 8); shape.setAttribute('y', cy - 7); shape.setAttribute('width', 16); shape.setAttribute('height', 14); shape.setAttribute('rx', 3);
+        shape.setAttribute('x', cx - wpx / 2); shape.setAttribute('y', cy - hpx / 2);
+        shape.setAttribute('width', wpx); shape.setAttribute('height', hpx);
+        shape.setAttribute('rx', Math.min(3, wpx / 4, hpx / 4));
       }
+      // rotacao do FlexSim (Z, anti-horaria vista de cima) -> no SVG o Y e invertido, entao o angulo troca de sinal
+      if (scaled && o.rot && glyph !== 'diamond') shape.setAttribute('transform', 'rotate(' + (-o.rot) + ' ' + cx + ' ' + cy + ')');
       shape.setAttribute('fill', 'currentColor');
-      var tt = document.createElementNS(svgNs, 'title'); tt.textContent = o.name + ' (' + (o.type || '?') + ')  X=' + o.x + ' Y=' + o.y;
+      var tt = document.createElementNS(svgNs, 'title');
+      tt.textContent = o.name + ' (' + (o.type || '?') + ')  X=' + o.x + ' Y=' + o.y + (scaled ? '  ·  ' + o.sx + ' × ' + o.sy + ' m' : '') + (o.rot ? '  ·  ' + o.rot + '°' : '');
       g.appendChild(shape); g.appendChild(tt);
       if (big) {
+        var fp = footprint(o);
         var label = document.createElementNS(svgNs, 'text');
-        label.setAttribute('x', cx); label.setAttribute('y', cy + 18);
+        label.setAttribute('x', cx); label.setAttribute('y', cy + (fp ? Math.max(fp.h * k, MIN_PX) / 2 : 7) + 10);
         label.setAttribute('text-anchor', 'middle'); label.setAttribute('class', 'map-label');
         label.textContent = o.name;
         g.appendChild(label);

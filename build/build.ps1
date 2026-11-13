@@ -422,7 +422,30 @@ function Normalize-ObjName([string]$n) {
   return $n
 }
 
-$typeRegex = '(Source|Queue|MultiProcessor|Processor|Sink|Operator|Conveyor|NetworkNode|Decision Point|Combiner|Separator|Global Table|A\*? ?Navigation)'
+$typeRegex = '(Location\s*[-–—]\s*(?:Kiosk|Registration)|Source|Queue|MultiProcessor|Processor|Sink|Operator|Conveyor|NetworkNode|Decision Point|Combiner|Separator|Rack|Global Table|A\*? ?Navigation)'
+function Normalize-ObjType([string]$t) {
+  $t = $t.Trim()
+  if ($t -match '^Location.*(Kiosk|Registration)$') { return "Location - $($Matches[1])" }
+  return $t
+}
+# Tamanho padrao (X x Y, em metros) de cada tipo recem-inserido no FlexSim, para o mini-mapa em escala.
+# Objetos redimensionados informam o tamanho real no [VISUALS]:  "NOME" - Size X = 25.00 ; Y = 1.50
+$DefaultSizes = @{
+  'Source'                  = @(1.06, 1.06)
+  'Queue'                   = @(2.00, 2.00)
+  'Processor'               = @(4.00, 3.00)
+  'MultiProcessor'          = @(5.00, 3.08)
+  'Combiner'                = @(4.02, 3.01)
+  'Separator'               = @(4.02, 3.01)
+  'Sink'                    = @(1.06, 1.06)
+  'Operator'                = @(0.40, 0.58)
+  'Rack'                    = @(20.00, 1.50)
+  'NetworkNode'             = @(0.01, 0.01)
+  'Decision Point'          = @(0.01, 0.01)
+  'Location - Kiosk'        = @(0.36, 0.58)
+  'Location - Registration' = @(2.00, 2.00)
+}
+$sizeMap = @{}        # nome normalizado -> @(X, Y) informado com "Size" no [VISUALS]
 $globalLayout = @{}   # nome normalizado -> objeto layout (persistente entre modelos)
 $nameTypeMap = @{}    # nome normalizado -> tipo (persistente no documento inteiro, para nao depender
                        # de qual foi o ULTIMO tipo mencionado na mesma coluna quando ha mais de um objeto)
@@ -433,8 +456,8 @@ foreach ($course in $Courses) {
   # nao pode mover o SAIDA_CLIENTES da fabrica no Modelo 11).
   $isExtraCourse = ($course.number -ge 90)
   if ($isExtraCourse) {
-    $savedLayout = $globalLayout; $savedTypes = $nameTypeMap
-    $globalLayout = @{}; $nameTypeMap = $nameTypeMap.Clone()
+    $savedLayout = $globalLayout; $savedTypes = $nameTypeMap; $savedSizes = $sizeMap
+    $globalLayout = @{}; $nameTypeMap = $nameTypeMap.Clone(); $sizeMap = @{}
   }
   foreach ($model in $course.models) {
     $newNamesThisModel = New-Object System.Collections.Generic.HashSet[string]
@@ -449,7 +472,7 @@ foreach ($course in $Courses) {
           $namePattern = $typeRegex + '\s*[-\u2013\u2014]?\s*["\u201c]?([A-Za-z\u00c0-\u00ff0-9_]+)'
           $mm = [regex]::Match($ln2, $namePattern)
           if ($mm.Success) {
-            $typeInObjeto = $mm.Groups[1].Value.Trim()
+            $typeInObjeto = Normalize-ObjType $mm.Groups[1].Value
             $nm = Normalize-ObjName $mm.Groups[2].Value
             if ($nm) {
               $namesInObjeto.Add($nm)
@@ -468,7 +491,7 @@ foreach ($course in $Courses) {
           foreach ($ln2 in $p.lines) {
             $mm = [regex]::Match($ln2, $namePattern)
             if (-not $mm.Success) { continue }
-            $newType = $mm.Groups[1].Value.Trim()
+            $newType = Normalize-ObjType $mm.Groups[1].Value
             $newNm = Normalize-ObjName $mm.Groups[2].Value
             if (-not $newNm) { continue }
             $nameTypeMap[$newNm] = $newType
@@ -495,9 +518,17 @@ foreach ($course in $Courses) {
         # posicoes em properties (VISUALS / NOME+coords / DECISION_POINT)
         foreach ($p in $col.properties) {
           if ($p.key -notin @('VISUALS', 'DECISION_POINT')) { continue }
-          $lines2 = $p.lines -join "`n"
-          $coordMatches = @([regex]::Matches($lines2, '(?:["“]?([A-Za-zÀ-ÿ0-9_]+)["”]?\s*[:–-]\s*(?:\[[^\]]*\]\s*)?)?X\s*=\s*(-?[\d.,]+)\s*;\s*Y\s*=\s*(-?[\d.,]+)'))
-          $rotMatches = @([regex]::Matches($lines2, '(?:\[[^\]]*\]\s*)?Z\s*=\s*(-?[\d.,]+)\s*$', 'Multiline'))
+          # No [VISUALS], como no Quick Properties do FlexSim: [Mid6_small.png] = posicao,
+          # [rotate_arrow.png] = rotacao, [_resize.png] (ou a palavra Size) = tamanho.
+          # Tamanho e rotacao sao lidos a parte para nao serem confundidos com posicao.
+          # (No [DECISION_POINT] o _resize.png continua sendo lido como posicao, como sempre foi.)
+          $sizeRe = if ($p.key -eq 'VISUALS') { '\bSize\b|resize\.png' } else { '\bSize\b' }
+          $sizeLines = @($p.lines | Where-Object { $_ -match $sizeRe })
+          $rotLines  = @($p.lines | Where-Object { $_ -match 'rotate_arrow' })
+          $lines2 = @($p.lines | Where-Object { $_ -notmatch $sizeRe -and $_ -notmatch 'rotate_arrow' }) -join "`n"
+          $prefixRe = '(?:["“]?([A-Za-zÀ-ÿ0-9_]+)["”]?\s*[:–-]\s*(?:\[[^\]]*\]\s*)?)?'
+          $coordMatches = @([regex]::Matches($lines2, $prefixRe + 'X\s*=\s*(-?[\d.,]+)\s*;\s*Y\s*=\s*(-?[\d.,]+)'))
+          $placedHere = New-Object System.Collections.Generic.List[string]
           for ($ci = 0; $ci -lt $coordMatches.Count; $ci++) {
             $coordM = $coordMatches[$ci]
             $nmPrefix = $coordM.Groups[1].Value
@@ -521,14 +552,41 @@ foreach ($course in $Courses) {
               }
             }
             if ($targetName) {
+              # mover um objeto nao desfaz a rotacao que ele ja tinha
               $rotVal = 0
-              if ($rotMatches.Count -eq $coordMatches.Count) { $rotVal = [double]($rotMatches[$ci].Groups[1].Value -replace ',', '.') }
-              elseif ($rotMatches.Count -eq 1) { $rotVal = [double]($rotMatches[0].Groups[1].Value -replace ',', '.') }
+              if ($globalLayout.ContainsKey($targetName) -and $globalLayout[$targetName].rot) { $rotVal = $globalLayout[$targetName].rot }
               $resolvedType = if ($nameTypeMap.ContainsKey($targetName)) { $nameTypeMap[$targetName] } else { $typeInObjeto }
               $obj = [PSCustomObject]@{ name = $targetName; type = $resolvedType; x = $x; y = $y; rot = $rotVal; stageId = $stage.id }
               $globalLayout[$targetName] = $obj
               [void]$newNamesThisModel.Add($targetName)
+              $placedHere.Add($targetName)
             }
+          }
+
+          # Resolve a qual objeto uma linha SEM nome se refere: o unico posicionado neste bloco,
+          # o i-esimo (se a quantidade bate) ou o unico citado no [OBJETO].
+          $resolveUnnamed = {
+            param([int]$idx, [int]$total)
+            if ($placedHere.Count -eq $total -and $total -gt 1) { return $placedHere[$idx] }
+            if ($placedHere.Count -eq 1) { return $placedHere[0] }
+            if ($placedHere.Count -eq 0 -and $namesInObjeto.Count -eq 1) { return $namesInObjeto[0] }
+            return $null
+          }
+
+          # rotacao:  ["NOME" - ][rotate_arrow.png] Z = 270.00
+          for ($ri = 0; $ri -lt $rotLines.Count; $ri++) {
+            $rm = [regex]::Match($rotLines[$ri], '^\s*(?:["“]?([A-Za-zÀ-ÿ0-9_]+)["”]?\s*[:–-]\s*)?.*?Z\s*=\s*(-?[\d.,]+)')
+            if (-not $rm.Success) { continue }
+            $rn = if ($rm.Groups[1].Value) { Normalize-ObjName $rm.Groups[1].Value } else { & $resolveUnnamed $ri $rotLines.Count }
+            if ($rn -and $globalLayout.ContainsKey($rn)) { $globalLayout[$rn].rot = [double]($rm.Groups[2].Value -replace ',', '.') }
+          }
+
+          # tamanho:  ["NOME" - ][_resize.png] X = 25.00 ; Y = 1.50 ; Z = ...   (ou "Size X = ...")
+          for ($si = 0; $si -lt $sizeLines.Count; $si++) {
+            $sm = [regex]::Match(($sizeLines[$si] -replace '</?b>', ''), $prefixRe + '(?:Size\s*:?\s*)?X\s*=\s*(-?[\d.,]+)\s*;\s*Y\s*=\s*(-?[\d.,]+)')
+            if (-not $sm.Success) { continue }
+            $sn = if ($sm.Groups[1].Value) { Normalize-ObjName $sm.Groups[1].Value } else { & $resolveUnnamed $si $sizeLines.Count }
+            if ($sn) { $sizeMap[$sn] = @([double]($sm.Groups[2].Value -replace ',', '.'), [double]($sm.Groups[3].Value -replace ',', '.')) }
           }
         }
 
@@ -561,12 +619,17 @@ foreach ($course in $Courses) {
       if ($o.PSObject.Properties.Match('x1').Count -gt 0) {
         $objectsSnapshot += [PSCustomObject]@{ name = $o.name; type = 'Conveyor'; x1 = $o.x1; y1 = $o.y1; x2 = $o.x2; y2 = $o.y2; stageId = $o.stageId; isNew = $isNew }
       } else {
-        $objectsSnapshot += [PSCustomObject]@{ name = $o.name; type = $o.type; x = $o.x; y = $o.y; rot = $o.rot; stageId = $o.stageId; isNew = $isNew }
+        $sz = $null
+        if ($sizeMap.ContainsKey($o.name)) { $sz = $sizeMap[$o.name] }
+        elseif ($o.type -and $DefaultSizes.ContainsKey($o.type)) { $sz = $DefaultSizes[$o.type] }
+        $sxv = if ($sz) { $sz[0] } else { $null }
+        $syv = if ($sz) { $sz[1] } else { $null }
+        $objectsSnapshot += [PSCustomObject]@{ name = $o.name; type = $o.type; x = $o.x; y = $o.y; rot = $o.rot; sx = $sxv; sy = $syv; stageId = $o.stageId; isNew = $isNew }
       }
     }
     $model.layout = [PSCustomObject]@{ objects = $objectsSnapshot }
   }
-  if ($isExtraCourse) { $globalLayout = $savedLayout; $nameTypeMap = $savedTypes }
+  if ($isExtraCourse) { $globalLayout = $savedLayout; $nameTypeMap = $savedTypes; $sizeMap = $savedSizes }
 }
 
 # ------------------------------------------------------------------

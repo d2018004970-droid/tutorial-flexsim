@@ -222,6 +222,7 @@ details.course-section:not([open]) .course-chevron{transform:rotate(-90deg)}
 .model-map-svg{width:100%;height:auto;display:block;cursor:zoom-in;border-radius:10px}
 .map-node-new{color:var(--accent)}
 .map-node-old{color:var(--muted);opacity:.55}
+.map-node-new>rect,.map-node-new>ellipse,.map-node-new>circle,.map-node-new>polygon,.map-node-old>rect,.map-node-old>ellipse,.map-node-old>circle,.map-node-old>polygon{stroke:var(--surface-alt);stroke-width:.8}
 .map-label{font-family:var(--font-mono);font-size:8px;fill:var(--ink)}
 .map-edge{stroke:var(--line-strong);stroke-dasharray:3 3;fill:none}
 .map-conveyor{stroke-width:2.4;fill:none}

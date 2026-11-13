@@ -85,6 +85,17 @@ confusão. Antes de editar `build.ps1` ou rodar qualquer build:
 - **Nomes de objeto inconsistentes** (ex.: "SAIDA_CLIENTES" vs "SAIDAS_CLIENTES") criam um objeto
   fantasma duplicado no mini-mapa, já que o layout é indexado por nome normalizado. Se o mini-mapa
   mostrar um objeto na posição errada/antiga, checar grafia do nome primeiro.
+- **Aulas Extras (`## 90)` em diante) são modelos completamente independentes** da fábrica dos
+  Modelos 01–11: o mini-mapa delas começa vazio e nada delas vaza para as aulas normais (o
+  `build.ps1` isola o layout quando `course.number -ge 90`). Nunca misturar nomes/posições entre
+  elas — ex.: o Modelo 90 tem um Sink `SAIDA_CLIENTES` próprio, enquanto o Sink da fábrica é
+  `SAIDAS_CLIENTES` (grafia unificada nos Modelos 01–11).
+- **Renomear objeto no mini-mapa**: `[NOME]`/`[NAME]` com linhas `Tipo - "NOVO_NOME"` renomeia os
+  objetos do `[OBJETO]` da mesma coluna (casando por tipo, na ordem); o nome antigo sai do mapa.
+- **Mini-mapa em escala**: no `[VISUALS]`, como no Quick Properties do FlexSim, `[Mid6_small.png]` =
+  posição (centro do objeto), `[rotate_arrow.png]` = rotação Z, `[_resize.png]`/`[resize.png]` = tamanho
+  (só para objetos redimensionados; os demais usam `$DefaultSizes` do `build.ps1`, medidos pelo usuário
+  no FlexSim). No `[DECISION_POINT]` o `[_resize.png]` continua sendo lido como posição.
 - **Reposicionar um objeto** exige um bloco `[VISUALS]` (ou `[DECISION_POINT]`) com a nova
   coordenada — mencionar a nova posição só em `[ROTEIRO]`/`[OBSERVACAO]` (texto livre) não é lido
   pelo mini-mapa.

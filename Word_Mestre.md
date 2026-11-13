@@ -3154,6 +3154,7 @@ Rack – “PALLETS_FINALIZADOS”
 [PROPERTIES]
 [VISUALS]
 [Mid6_small.png] X = 120.00 ; Y = 0.00 ; Z = 0.00
+"PALLETS_FINALIZADOS" - [_resize.png] X = 25.00 ; Y = 1.50
 
 [STORAGE_OBJECT]
 Edit Dimensions:

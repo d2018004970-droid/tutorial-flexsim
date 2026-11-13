@@ -1,7 +1,7 @@
 ﻿window.TUTORIAL_CONTENT = {
     "meta":  {
                  "title":  "Tutorial de Modelagem utilizando FlexSim Education v2027-0",
-                 "generatedAt":  "2026-11-13T14:21:24.9310482-03:00",
+                 "generatedAt":  "2026-11-13T14:45:19.7403958-03:00",
                  "source":  "Word_Mestre.md",
                  "counts":  {
                                 "courses":  7,
@@ -766,6 +766,8 @@
                                                                               "x":  30,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  1.06,
+                                                                              "sy":  1.06,
                                                                               "stageId":  "modelo-01-etapa-05",
                                                                               "isNew":  true
                                                                           },
@@ -775,6 +777,8 @@
                                                                               "x":  20,
                                                                               "y":  -3.5,
                                                                               "rot":  0,
+                                                                              "sx":  4,
+                                                                              "sy":  3,
                                                                               "stageId":  "modelo-01-etapa-04",
                                                                               "isNew":  true
                                                                           },
@@ -784,6 +788,8 @@
                                                                               "x":  20,
                                                                               "y":  3.5,
                                                                               "rot":  0,
+                                                                              "sx":  4,
+                                                                              "sy":  3,
                                                                               "stageId":  "modelo-01-etapa-04",
                                                                               "isNew":  true
                                                                           },
@@ -793,6 +799,8 @@
                                                                               "x":  10,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-01-etapa-02",
                                                                               "isNew":  true
                                                                           },
@@ -802,6 +810,8 @@
                                                                               "x":  0,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  1.06,
+                                                                              "sy":  1.06,
                                                                               "stageId":  "modelo-01-etapa-01",
                                                                               "isNew":  true
                                                                           }
@@ -1260,6 +1270,8 @@
                                                                               "x":  0,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  1.06,
+                                                                              "sy":  1.06,
                                                                               "stageId":  "modelo-01-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -1268,7 +1280,9 @@
                                                                               "type":  "Operator",
                                                                               "x":  15,
                                                                               "y":  -3.5,
-                                                                              "rot":  0,
+                                                                              "rot":  180,
+                                                                              "sx":  0.4,
+                                                                              "sy":  0.58,
                                                                               "stageId":  "modelo-02-etapa-02",
                                                                               "isNew":  true
                                                                           },
@@ -1278,6 +1292,8 @@
                                                                               "x":  20,
                                                                               "y":  -3.5,
                                                                               "rot":  0,
+                                                                              "sx":  4,
+                                                                              "sy":  3,
                                                                               "stageId":  "modelo-01-etapa-04",
                                                                               "isNew":  false
                                                                           },
@@ -1286,7 +1302,9 @@
                                                                               "type":  "Operator",
                                                                               "x":  15,
                                                                               "y":  3.5,
-                                                                              "rot":  0,
+                                                                              "rot":  180,
+                                                                              "sx":  0.4,
+                                                                              "sy":  0.58,
                                                                               "stageId":  "modelo-02-etapa-02",
                                                                               "isNew":  true
                                                                           },
@@ -1295,7 +1313,9 @@
                                                                               "type":  "Operator",
                                                                               "x":  20,
                                                                               "y":  6,
-                                                                              "rot":  0,
+                                                                              "rot":  270,
+                                                                              "sx":  0.4,
+                                                                              "sy":  0.58,
                                                                               "stageId":  "modelo-02-etapa-01",
                                                                               "isNew":  true
                                                                           },
@@ -1305,6 +1325,8 @@
                                                                               "x":  10,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-01-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -1314,6 +1336,8 @@
                                                                               "x":  30,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  1.06,
+                                                                              "sy":  1.06,
                                                                               "stageId":  "modelo-01-etapa-05",
                                                                               "isNew":  false
                                                                           },
@@ -1322,7 +1346,9 @@
                                                                               "type":  "Operator",
                                                                               "x":  20,
                                                                               "y":  -1,
-                                                                              "rot":  0,
+                                                                              "rot":  270,
+                                                                              "sx":  0.4,
+                                                                              "sy":  0.58,
                                                                               "stageId":  "modelo-02-etapa-01",
                                                                               "isNew":  true
                                                                           },
@@ -1332,6 +1358,8 @@
                                                                               "x":  20,
                                                                               "y":  3.5,
                                                                               "rot":  0,
+                                                                              "sx":  4,
+                                                                              "sy":  3,
                                                                               "stageId":  "modelo-01-etapa-04",
                                                                               "isNew":  false
                                                                           }
@@ -2294,6 +2322,8 @@
                                                                               "x":  42.5,
                                                                               "y":  0.2,
                                                                               "rot":  0,
+                                                                              "sx":  0.01,
+                                                                              "sy":  0.01,
                                                                               "stageId":  "modelo-03-etapa-06",
                                                                               "isNew":  true
                                                                           },
@@ -2302,7 +2332,9 @@
                                                                               "type":  "Operator",
                                                                               "x":  15,
                                                                               "y":  3.5,
-                                                                              "rot":  0,
+                                                                              "rot":  180,
+                                                                              "sx":  0.4,
+                                                                              "sy":  0.58,
                                                                               "stageId":  "modelo-02-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -2311,7 +2343,9 @@
                                                                               "type":  "Operator",
                                                                               "x":  20,
                                                                               "y":  6,
-                                                                              "rot":  0,
+                                                                              "rot":  270,
+                                                                              "sx":  0.4,
+                                                                              "sy":  0.58,
                                                                               "stageId":  "modelo-02-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -2321,6 +2355,8 @@
                                                                               "x":  10,
                                                                               "y":  -20,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-03-etapa-07",
                                                                               "isNew":  true
                                                                           },
@@ -2330,6 +2366,8 @@
                                                                               "x":  10,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-01-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -2339,6 +2377,8 @@
                                                                               "x":  20,
                                                                               "y":  -3.5,
                                                                               "rot":  0,
+                                                                              "sx":  4,
+                                                                              "sy":  3,
                                                                               "stageId":  "modelo-01-etapa-04",
                                                                               "isNew":  false
                                                                           },
@@ -2357,7 +2397,9 @@
                                                                               "type":  "Operator",
                                                                               "x":  15,
                                                                               "y":  -3.5,
-                                                                              "rot":  0,
+                                                                              "rot":  180,
+                                                                              "sx":  0.4,
+                                                                              "sy":  0.58,
                                                                               "stageId":  "modelo-02-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -2367,6 +2409,8 @@
                                                                               "x":  50,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  1.06,
+                                                                              "sy":  1.06,
                                                                               "stageId":  "modelo-03-etapa-01",
                                                                               "isNew":  true
                                                                           },
@@ -2376,6 +2420,8 @@
                                                                               "x":  20,
                                                                               "y":  3.5,
                                                                               "rot":  0,
+                                                                              "sx":  4,
+                                                                              "sy":  3,
                                                                               "stageId":  "modelo-01-etapa-04",
                                                                               "isNew":  false
                                                                           },
@@ -2384,7 +2430,9 @@
                                                                               "type":  "Operator",
                                                                               "x":  20,
                                                                               "y":  -1,
-                                                                              "rot":  0,
+                                                                              "rot":  270,
+                                                                              "sx":  0.4,
+                                                                              "sy":  0.58,
                                                                               "stageId":  "modelo-02-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -2394,6 +2442,8 @@
                                                                               "x":  40,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  4,
+                                                                              "sy":  3,
                                                                               "stageId":  "modelo-03-etapa-02",
                                                                               "isNew":  true
                                                                           },
@@ -2403,6 +2453,8 @@
                                                                               "x":  0,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  1.06,
+                                                                              "sy":  1.06,
                                                                               "stageId":  "modelo-01-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -2422,6 +2474,8 @@
                                                                               "x":  30,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-03-etapa-01",
                                                                               "isNew":  true
                                                                           },
@@ -2431,6 +2485,8 @@
                                                                               "x":  45,
                                                                               "y":  -1.5,
                                                                               "rot":  0,
+                                                                              "sx":  0.01,
+                                                                              "sy":  0.01,
                                                                               "stageId":  "modelo-03-etapa-06",
                                                                               "isNew":  true
                                                                           }
@@ -3110,6 +3166,8 @@
                                                                               "x":  20,
                                                                               "y":  -10,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-04-etapa-04",
                                                                               "isNew":  true
                                                                           },
@@ -3129,6 +3187,8 @@
                                                                               "x":  42.5,
                                                                               "y":  0.2,
                                                                               "rot":  0,
+                                                                              "sx":  0.01,
+                                                                              "sy":  0.01,
                                                                               "stageId":  "modelo-03-etapa-06",
                                                                               "isNew":  false
                                                                           },
@@ -3137,7 +3197,9 @@
                                                                               "type":  "Operator",
                                                                               "x":  15,
                                                                               "y":  3.5,
-                                                                              "rot":  0,
+                                                                              "rot":  180,
+                                                                              "sx":  0.4,
+                                                                              "sy":  0.58,
                                                                               "stageId":  "modelo-02-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -3146,7 +3208,9 @@
                                                                               "type":  "Operator",
                                                                               "x":  20,
                                                                               "y":  6,
-                                                                              "rot":  0,
+                                                                              "rot":  270,
+                                                                              "sx":  0.4,
+                                                                              "sy":  0.58,
                                                                               "stageId":  "modelo-02-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -3156,6 +3220,8 @@
                                                                               "x":  10,
                                                                               "y":  -20,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-03-etapa-07",
                                                                               "isNew":  false
                                                                           },
@@ -3165,6 +3231,8 @@
                                                                               "x":  10,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-01-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -3174,6 +3242,8 @@
                                                                               "x":  20,
                                                                               "y":  -3.5,
                                                                               "rot":  0,
+                                                                              "sx":  4,
+                                                                              "sy":  3,
                                                                               "stageId":  "modelo-01-etapa-04",
                                                                               "isNew":  false
                                                                           },
@@ -3192,7 +3262,9 @@
                                                                               "type":  "Operator",
                                                                               "x":  15,
                                                                               "y":  -3.5,
-                                                                              "rot":  0,
+                                                                              "rot":  180,
+                                                                              "sx":  0.4,
+                                                                              "sy":  0.58,
                                                                               "stageId":  "modelo-02-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -3202,6 +3274,8 @@
                                                                               "x":  50,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  1.06,
+                                                                              "sy":  1.06,
                                                                               "stageId":  "modelo-03-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -3211,6 +3285,8 @@
                                                                               "x":  20,
                                                                               "y":  3.5,
                                                                               "rot":  0,
+                                                                              "sx":  4,
+                                                                              "sy":  3,
                                                                               "stageId":  "modelo-01-etapa-04",
                                                                               "isNew":  false
                                                                           },
@@ -3219,7 +3295,9 @@
                                                                               "type":  "Operator",
                                                                               "x":  20,
                                                                               "y":  -1,
-                                                                              "rot":  0,
+                                                                              "rot":  270,
+                                                                              "sx":  0.4,
+                                                                              "sy":  0.58,
                                                                               "stageId":  "modelo-02-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -3229,6 +3307,8 @@
                                                                               "x":  22,
                                                                               "y":  -20,
                                                                               "rot":  0,
+                                                                              "sx":  0.01,
+                                                                              "sy":  0.01,
                                                                               "stageId":  "modelo-04-etapa-04",
                                                                               "isNew":  true
                                                                           },
@@ -3238,6 +3318,8 @@
                                                                               "x":  40,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  4,
+                                                                              "sy":  3,
                                                                               "stageId":  "modelo-03-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -3257,6 +3339,8 @@
                                                                               "x":  20,
                                                                               "y":  -17.5,
                                                                               "rot":  0,
+                                                                              "sx":  0.01,
+                                                                              "sy":  0.01,
                                                                               "stageId":  "modelo-04-etapa-04",
                                                                               "isNew":  true
                                                                           },
@@ -3266,6 +3350,8 @@
                                                                               "x":  0,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  1.06,
+                                                                              "sy":  1.06,
                                                                               "stageId":  "modelo-01-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -3285,6 +3371,8 @@
                                                                               "x":  30,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-03-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -3294,6 +3382,8 @@
                                                                               "x":  45,
                                                                               "y":  -1.5,
                                                                               "rot":  0,
+                                                                              "sx":  0.01,
+                                                                              "sy":  0.01,
                                                                               "stageId":  "modelo-03-etapa-06",
                                                                               "isNew":  false
                                                                           }
@@ -4106,6 +4196,8 @@
                                                                               "x":  30,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-03-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -4115,6 +4207,8 @@
                                                                               "x":  20,
                                                                               "y":  -3.5,
                                                                               "rot":  0,
+                                                                              "sx":  4,
+                                                                              "sy":  3,
                                                                               "stageId":  "modelo-01-etapa-04",
                                                                               "isNew":  false
                                                                           },
@@ -4124,6 +4218,8 @@
                                                                               "x":  70,
                                                                               "y":  -10,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-05-etapa-03",
                                                                               "isNew":  true
                                                                           },
@@ -4133,6 +4229,8 @@
                                                                               "x":  80,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  1.06,
+                                                                              "sy":  1.06,
                                                                               "stageId":  "modelo-05-etapa-03",
                                                                               "isNew":  true
                                                                           },
@@ -4141,7 +4239,9 @@
                                                                               "type":  "Operator",
                                                                               "x":  15,
                                                                               "y":  -3.5,
-                                                                              "rot":  0,
+                                                                              "rot":  180,
+                                                                              "sx":  0.4,
+                                                                              "sy":  0.58,
                                                                               "stageId":  "modelo-02-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -4151,6 +4251,8 @@
                                                                               "x":  42.5,
                                                                               "y":  0.2,
                                                                               "rot":  0,
+                                                                              "sx":  0.01,
+                                                                              "sy":  0.01,
                                                                               "stageId":  "modelo-03-etapa-06",
                                                                               "isNew":  false
                                                                           },
@@ -4160,6 +4262,8 @@
                                                                               "x":  60,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  4.02,
+                                                                              "sy":  3.01,
                                                                               "stageId":  "modelo-05-etapa-02",
                                                                               "isNew":  true
                                                                           },
@@ -4179,6 +4283,8 @@
                                                                               "x":  50,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-05-etapa-01",
                                                                               "isNew":  true
                                                                           },
@@ -4188,6 +4294,8 @@
                                                                               "x":  40,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  4,
+                                                                              "sy":  3,
                                                                               "stageId":  "modelo-03-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -4207,6 +4315,8 @@
                                                                               "x":  45,
                                                                               "y":  -1.5,
                                                                               "rot":  0,
+                                                                              "sx":  0.01,
+                                                                              "sy":  0.01,
                                                                               "stageId":  "modelo-03-etapa-06",
                                                                               "isNew":  false
                                                                           },
@@ -4216,6 +4326,8 @@
                                                                               "x":  0,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  1.06,
+                                                                              "sy":  1.06,
                                                                               "stageId":  "modelo-01-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -4235,6 +4347,8 @@
                                                                               "x":  10,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-01-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -4243,7 +4357,9 @@
                                                                               "type":  "Operator",
                                                                               "x":  15,
                                                                               "y":  3.5,
-                                                                              "rot":  0,
+                                                                              "rot":  180,
+                                                                              "sx":  0.4,
+                                                                              "sy":  0.58,
                                                                               "stageId":  "modelo-02-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -4262,7 +4378,9 @@
                                                                               "type":  "Operator",
                                                                               "x":  60,
                                                                               "y":  2.5,
-                                                                              "rot":  0,
+                                                                              "rot":  270,
+                                                                              "sx":  0.4,
+                                                                              "sy":  0.58,
                                                                               "stageId":  "modelo-05-etapa-03",
                                                                               "isNew":  true
                                                                           },
@@ -4272,6 +4390,8 @@
                                                                               "x":  10,
                                                                               "y":  -20,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-03-etapa-07",
                                                                               "isNew":  false
                                                                           },
@@ -4281,6 +4401,8 @@
                                                                               "x":  20,
                                                                               "y":  -17.5,
                                                                               "rot":  0,
+                                                                              "sx":  0.01,
+                                                                              "sy":  0.01,
                                                                               "stageId":  "modelo-04-etapa-04",
                                                                               "isNew":  false
                                                                           },
@@ -4290,6 +4412,8 @@
                                                                               "x":  20,
                                                                               "y":  3.5,
                                                                               "rot":  0,
+                                                                              "sx":  4,
+                                                                              "sy":  3,
                                                                               "stageId":  "modelo-01-etapa-04",
                                                                               "isNew":  false
                                                                           },
@@ -4298,7 +4422,9 @@
                                                                               "type":  "Operator",
                                                                               "x":  20,
                                                                               "y":  -1,
-                                                                              "rot":  0,
+                                                                              "rot":  270,
+                                                                              "sx":  0.4,
+                                                                              "sy":  0.58,
                                                                               "stageId":  "modelo-02-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -4308,6 +4434,8 @@
                                                                               "x":  22,
                                                                               "y":  -20,
                                                                               "rot":  0,
+                                                                              "sx":  0.01,
+                                                                              "sy":  0.01,
                                                                               "stageId":  "modelo-04-etapa-04",
                                                                               "isNew":  false
                                                                           },
@@ -4317,6 +4445,8 @@
                                                                               "x":  70,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  4.02,
+                                                                              "sy":  3.01,
                                                                               "stageId":  "modelo-05-etapa-03",
                                                                               "isNew":  true
                                                                           },
@@ -4326,6 +4456,8 @@
                                                                               "x":  60,
                                                                               "y":  -10,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-05-etapa-02",
                                                                               "isNew":  true
                                                                           },
@@ -4334,7 +4466,9 @@
                                                                               "type":  "Operator",
                                                                               "x":  20,
                                                                               "y":  6,
-                                                                              "rot":  0,
+                                                                              "rot":  270,
+                                                                              "sx":  0.4,
+                                                                              "sy":  0.58,
                                                                               "stageId":  "modelo-02-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -4344,6 +4478,8 @@
                                                                               "x":  20,
                                                                               "y":  -10,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-04-etapa-04",
                                                                               "isNew":  false
                                                                           }
@@ -4655,6 +4791,8 @@
                                                                               "x":  30,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-03-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -4664,6 +4802,8 @@
                                                                               "x":  20,
                                                                               "y":  -3.5,
                                                                               "rot":  0,
+                                                                              "sx":  4,
+                                                                              "sy":  3,
                                                                               "stageId":  "modelo-01-etapa-04",
                                                                               "isNew":  false
                                                                           },
@@ -4673,6 +4813,8 @@
                                                                               "x":  70,
                                                                               "y":  -10,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-05-etapa-03",
                                                                               "isNew":  false
                                                                           },
@@ -4682,6 +4824,8 @@
                                                                               "x":  80,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  1.06,
+                                                                              "sy":  1.06,
                                                                               "stageId":  "modelo-05-etapa-03",
                                                                               "isNew":  false
                                                                           },
@@ -4690,7 +4834,9 @@
                                                                               "type":  "Operator",
                                                                               "x":  15,
                                                                               "y":  -3.5,
-                                                                              "rot":  0,
+                                                                              "rot":  180,
+                                                                              "sx":  0.4,
+                                                                              "sy":  0.58,
                                                                               "stageId":  "modelo-02-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -4700,6 +4846,8 @@
                                                                               "x":  42.5,
                                                                               "y":  0.2,
                                                                               "rot":  0,
+                                                                              "sx":  0.01,
+                                                                              "sy":  0.01,
                                                                               "stageId":  "modelo-03-etapa-06",
                                                                               "isNew":  false
                                                                           },
@@ -4709,6 +4857,8 @@
                                                                               "x":  60,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  4.02,
+                                                                              "sy":  3.01,
                                                                               "stageId":  "modelo-05-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -4728,6 +4878,8 @@
                                                                               "x":  50,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-05-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -4737,6 +4889,8 @@
                                                                               "x":  40,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  4,
+                                                                              "sy":  3,
                                                                               "stageId":  "modelo-03-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -4756,6 +4910,8 @@
                                                                               "x":  45,
                                                                               "y":  -1.5,
                                                                               "rot":  0,
+                                                                              "sx":  0.01,
+                                                                              "sy":  0.01,
                                                                               "stageId":  "modelo-03-etapa-06",
                                                                               "isNew":  false
                                                                           },
@@ -4765,6 +4921,8 @@
                                                                               "x":  0,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  1.06,
+                                                                              "sy":  1.06,
                                                                               "stageId":  "modelo-01-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -4784,6 +4942,8 @@
                                                                               "x":  10,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-01-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -4792,7 +4952,9 @@
                                                                               "type":  "Operator",
                                                                               "x":  15,
                                                                               "y":  3.5,
-                                                                              "rot":  0,
+                                                                              "rot":  180,
+                                                                              "sx":  0.4,
+                                                                              "sy":  0.58,
                                                                               "stageId":  "modelo-02-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -4811,7 +4973,9 @@
                                                                               "type":  "Operator",
                                                                               "x":  60,
                                                                               "y":  2.5,
-                                                                              "rot":  0,
+                                                                              "rot":  270,
+                                                                              "sx":  0.4,
+                                                                              "sy":  0.58,
                                                                               "stageId":  "modelo-05-etapa-03",
                                                                               "isNew":  false
                                                                           },
@@ -4821,6 +4985,8 @@
                                                                               "x":  10,
                                                                               "y":  -20,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-03-etapa-07",
                                                                               "isNew":  false
                                                                           },
@@ -4830,6 +4996,8 @@
                                                                               "x":  20,
                                                                               "y":  -17.5,
                                                                               "rot":  0,
+                                                                              "sx":  0.01,
+                                                                              "sy":  0.01,
                                                                               "stageId":  "modelo-04-etapa-04",
                                                                               "isNew":  false
                                                                           },
@@ -4839,6 +5007,8 @@
                                                                               "x":  20,
                                                                               "y":  3.5,
                                                                               "rot":  0,
+                                                                              "sx":  4,
+                                                                              "sy":  3,
                                                                               "stageId":  "modelo-01-etapa-04",
                                                                               "isNew":  false
                                                                           },
@@ -4847,7 +5017,9 @@
                                                                               "type":  "Operator",
                                                                               "x":  20,
                                                                               "y":  -1,
-                                                                              "rot":  0,
+                                                                              "rot":  270,
+                                                                              "sx":  0.4,
+                                                                              "sy":  0.58,
                                                                               "stageId":  "modelo-02-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -4857,6 +5029,8 @@
                                                                               "x":  22,
                                                                               "y":  -20,
                                                                               "rot":  0,
+                                                                              "sx":  0.01,
+                                                                              "sy":  0.01,
                                                                               "stageId":  "modelo-04-etapa-04",
                                                                               "isNew":  false
                                                                           },
@@ -4866,6 +5040,8 @@
                                                                               "x":  70,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  4.02,
+                                                                              "sy":  3.01,
                                                                               "stageId":  "modelo-05-etapa-03",
                                                                               "isNew":  false
                                                                           },
@@ -4875,6 +5051,8 @@
                                                                               "x":  60,
                                                                               "y":  -10,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-05-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -4884,6 +5062,8 @@
                                                                               "x":  63,
                                                                               "y":  -10,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-06-etapa-01",
                                                                               "isNew":  true
                                                                           },
@@ -4892,7 +5072,9 @@
                                                                               "type":  "Operator",
                                                                               "x":  20,
                                                                               "y":  6,
-                                                                              "rot":  0,
+                                                                              "rot":  270,
+                                                                              "sx":  0.4,
+                                                                              "sy":  0.58,
                                                                               "stageId":  "modelo-02-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -4902,6 +5084,8 @@
                                                                               "x":  20,
                                                                               "y":  -10,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-04-etapa-04",
                                                                               "isNew":  false
                                                                           }
@@ -5675,6 +5859,8 @@
                                                                               "x":  30,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-03-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -5684,6 +5870,8 @@
                                                                               "x":  20,
                                                                               "y":  -3.5,
                                                                               "rot":  0,
+                                                                              "sx":  4,
+                                                                              "sy":  3,
                                                                               "stageId":  "modelo-01-etapa-04",
                                                                               "isNew":  false
                                                                           },
@@ -5693,6 +5881,8 @@
                                                                               "x":  70,
                                                                               "y":  -10,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-05-etapa-03",
                                                                               "isNew":  false
                                                                           },
@@ -5702,6 +5892,8 @@
                                                                               "x":  100,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  1.06,
+                                                                              "sy":  1.06,
                                                                               "stageId":  "modelo-07-etapa-01",
                                                                               "isNew":  true
                                                                           },
@@ -5710,7 +5902,9 @@
                                                                               "type":  "Queue",
                                                                               "x":  75,
                                                                               "y":  0,
-                                                                              "rot":  1,
+                                                                              "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-07-etapa-01",
                                                                               "isNew":  true
                                                                           },
@@ -5719,7 +5913,9 @@
                                                                               "type":  "Operator",
                                                                               "x":  15,
                                                                               "y":  -3.5,
-                                                                              "rot":  0,
+                                                                              "rot":  180,
+                                                                              "sx":  0.4,
+                                                                              "sy":  0.58,
                                                                               "stageId":  "modelo-02-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -5729,6 +5925,8 @@
                                                                               "x":  42.5,
                                                                               "y":  0.2,
                                                                               "rot":  0,
+                                                                              "sx":  0.01,
+                                                                              "sy":  0.01,
                                                                               "stageId":  "modelo-03-etapa-06",
                                                                               "isNew":  false
                                                                           },
@@ -5738,6 +5936,8 @@
                                                                               "x":  60,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  4.02,
+                                                                              "sy":  3.01,
                                                                               "stageId":  "modelo-05-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -5757,6 +5957,8 @@
                                                                               "x":  50,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-05-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -5766,6 +5968,8 @@
                                                                               "x":  85,
                                                                               "y":  1,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-07-etapa-03",
                                                                               "isNew":  true
                                                                           },
@@ -5775,6 +5979,8 @@
                                                                               "x":  40,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  4,
+                                                                              "sy":  3,
                                                                               "stageId":  "modelo-03-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -5794,6 +6000,8 @@
                                                                               "x":  45,
                                                                               "y":  -1.5,
                                                                               "rot":  0,
+                                                                              "sx":  0.01,
+                                                                              "sy":  0.01,
                                                                               "stageId":  "modelo-03-etapa-06",
                                                                               "isNew":  false
                                                                           },
@@ -5803,6 +6011,8 @@
                                                                               "x":  0,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  1.06,
+                                                                              "sy":  1.06,
                                                                               "stageId":  "modelo-01-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -5822,6 +6032,8 @@
                                                                               "x":  10,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-01-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -5830,7 +6042,9 @@
                                                                               "type":  "Operator",
                                                                               "x":  15,
                                                                               "y":  3.5,
-                                                                              "rot":  0,
+                                                                              "rot":  180,
+                                                                              "sx":  0.4,
+                                                                              "sy":  0.58,
                                                                               "stageId":  "modelo-02-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -5850,6 +6064,8 @@
                                                                               "x":  80,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  5,
+                                                                              "sy":  3.08,
                                                                               "stageId":  "modelo-07-etapa-02",
                                                                               "isNew":  true
                                                                           },
@@ -5858,7 +6074,9 @@
                                                                               "type":  "Operator",
                                                                               "x":  60,
                                                                               "y":  2.5,
-                                                                              "rot":  0,
+                                                                              "rot":  270,
+                                                                              "sx":  0.4,
+                                                                              "sy":  0.58,
                                                                               "stageId":  "modelo-05-etapa-03",
                                                                               "isNew":  false
                                                                           },
@@ -5868,6 +6086,8 @@
                                                                               "x":  85,
                                                                               "y":  -1,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-07-etapa-03",
                                                                               "isNew":  true
                                                                           },
@@ -5877,6 +6097,8 @@
                                                                               "x":  10,
                                                                               "y":  -20,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-03-etapa-07",
                                                                               "isNew":  false
                                                                           },
@@ -5886,6 +6108,8 @@
                                                                               "x":  20,
                                                                               "y":  -17.5,
                                                                               "rot":  0,
+                                                                              "sx":  0.01,
+                                                                              "sy":  0.01,
                                                                               "stageId":  "modelo-04-etapa-04",
                                                                               "isNew":  false
                                                                           },
@@ -5895,6 +6119,8 @@
                                                                               "x":  20,
                                                                               "y":  3.5,
                                                                               "rot":  0,
+                                                                              "sx":  4,
+                                                                              "sy":  3,
                                                                               "stageId":  "modelo-01-etapa-04",
                                                                               "isNew":  false
                                                                           },
@@ -5903,7 +6129,9 @@
                                                                               "type":  "Operator",
                                                                               "x":  20,
                                                                               "y":  -1,
-                                                                              "rot":  0,
+                                                                              "rot":  270,
+                                                                              "sx":  0.4,
+                                                                              "sy":  0.58,
                                                                               "stageId":  "modelo-02-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -5913,6 +6141,8 @@
                                                                               "x":  22,
                                                                               "y":  -20,
                                                                               "rot":  0,
+                                                                              "sx":  0.01,
+                                                                              "sy":  0.01,
                                                                               "stageId":  "modelo-04-etapa-04",
                                                                               "isNew":  false
                                                                           },
@@ -5922,6 +6152,8 @@
                                                                               "x":  70,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  4.02,
+                                                                              "sy":  3.01,
                                                                               "stageId":  "modelo-05-etapa-03",
                                                                               "isNew":  false
                                                                           },
@@ -5931,6 +6163,8 @@
                                                                               "x":  60,
                                                                               "y":  -10,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-05-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -5940,6 +6174,8 @@
                                                                               "x":  63,
                                                                               "y":  -10,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-06-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -5948,7 +6184,9 @@
                                                                               "type":  "Operator",
                                                                               "x":  20,
                                                                               "y":  6,
-                                                                              "rot":  0,
+                                                                              "rot":  270,
+                                                                              "sx":  0.4,
+                                                                              "sy":  0.58,
                                                                               "stageId":  "modelo-02-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -5958,6 +6196,8 @@
                                                                               "x":  20,
                                                                               "y":  -10,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-04-etapa-04",
                                                                               "isNew":  false
                                                                           }
@@ -6734,6 +6974,8 @@
                                                                               "x":  30,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-03-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -6743,6 +6985,8 @@
                                                                               "x":  20,
                                                                               "y":  -3.5,
                                                                               "rot":  0,
+                                                                              "sx":  4,
+                                                                              "sy":  3,
                                                                               "stageId":  "modelo-01-etapa-04",
                                                                               "isNew":  false
                                                                           },
@@ -6752,6 +6996,8 @@
                                                                               "x":  70,
                                                                               "y":  -10,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-05-etapa-03",
                                                                               "isNew":  false
                                                                           },
@@ -6761,6 +7007,8 @@
                                                                               "x":  120,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  1.06,
+                                                                              "sy":  1.06,
                                                                               "stageId":  "modelo-08-etapa-01",
                                                                               "isNew":  true
                                                                           },
@@ -6769,7 +7017,9 @@
                                                                               "type":  "Queue",
                                                                               "x":  75,
                                                                               "y":  0,
-                                                                              "rot":  1,
+                                                                              "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-07-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -6778,7 +7028,9 @@
                                                                               "type":  "Operator",
                                                                               "x":  15,
                                                                               "y":  -3.5,
-                                                                              "rot":  0,
+                                                                              "rot":  180,
+                                                                              "sx":  0.4,
+                                                                              "sy":  0.58,
                                                                               "stageId":  "modelo-02-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -6788,6 +7040,8 @@
                                                                               "x":  42.5,
                                                                               "y":  0.2,
                                                                               "rot":  0,
+                                                                              "sx":  0.01,
+                                                                              "sy":  0.01,
                                                                               "stageId":  "modelo-03-etapa-06",
                                                                               "isNew":  false
                                                                           },
@@ -6797,6 +7051,8 @@
                                                                               "x":  60,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  4.02,
+                                                                              "sy":  3.01,
                                                                               "stageId":  "modelo-05-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -6816,6 +7072,8 @@
                                                                               "x":  50,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-05-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -6825,6 +7083,8 @@
                                                                               "x":  85,
                                                                               "y":  1,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-07-etapa-03",
                                                                               "isNew":  false
                                                                           },
@@ -6834,6 +7094,8 @@
                                                                               "x":  40,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  4,
+                                                                              "sy":  3,
                                                                               "stageId":  "modelo-03-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -6853,6 +7115,8 @@
                                                                               "x":  45,
                                                                               "y":  -1.5,
                                                                               "rot":  0,
+                                                                              "sx":  0.01,
+                                                                              "sy":  0.01,
                                                                               "stageId":  "modelo-03-etapa-06",
                                                                               "isNew":  false
                                                                           },
@@ -6862,6 +7126,8 @@
                                                                               "x":  105,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  0.01,
+                                                                              "sy":  0.01,
                                                                               "stageId":  "modelo-08-etapa-04",
                                                                               "isNew":  true
                                                                           },
@@ -6871,6 +7137,8 @@
                                                                               "x":  0,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  1.06,
+                                                                              "sy":  1.06,
                                                                               "stageId":  "modelo-01-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -6890,6 +7158,8 @@
                                                                               "x":  10,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-01-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -6898,7 +7168,9 @@
                                                                               "type":  "Queue",
                                                                               "x":  100,
                                                                               "y":  -4,
-                                                                              "rot":  0,
+                                                                              "rot":  90,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-08-etapa-01",
                                                                               "isNew":  true
                                                                           },
@@ -6908,6 +7180,8 @@
                                                                               "x":  110,
                                                                               "y":  -3.5,
                                                                               "rot":  0,
+                                                                              "sx":  0.01,
+                                                                              "sy":  0.01,
                                                                               "stageId":  "modelo-08-etapa-04",
                                                                               "isNew":  true
                                                                           },
@@ -6916,7 +7190,9 @@
                                                                               "type":  "Operator",
                                                                               "x":  15,
                                                                               "y":  3.5,
-                                                                              "rot":  0,
+                                                                              "rot":  180,
+                                                                              "sx":  0.4,
+                                                                              "sy":  0.58,
                                                                               "stageId":  "modelo-02-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -6935,7 +7211,9 @@
                                                                               "type":  "Source",
                                                                               "x":  100,
                                                                               "y":  -20,
-                                                                              "rot":  0,
+                                                                              "rot":  90,
+                                                                              "sx":  1.06,
+                                                                              "sy":  1.06,
                                                                               "stageId":  "modelo-08-etapa-01",
                                                                               "isNew":  true
                                                                           },
@@ -6945,6 +7223,8 @@
                                                                               "x":  80,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  5,
+                                                                              "sy":  3.08,
                                                                               "stageId":  "modelo-07-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -6953,7 +7233,9 @@
                                                                               "type":  "Operator",
                                                                               "x":  60,
                                                                               "y":  2.5,
-                                                                              "rot":  0,
+                                                                              "rot":  270,
+                                                                              "sx":  0.4,
+                                                                              "sy":  0.58,
                                                                               "stageId":  "modelo-05-etapa-03",
                                                                               "isNew":  false
                                                                           },
@@ -6963,6 +7245,8 @@
                                                                               "x":  85,
                                                                               "y":  -1,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-07-etapa-03",
                                                                               "isNew":  false
                                                                           },
@@ -6972,6 +7256,8 @@
                                                                               "x":  100,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  4.02,
+                                                                              "sy":  3.01,
                                                                               "stageId":  "modelo-08-etapa-01",
                                                                               "isNew":  true
                                                                           },
@@ -6981,6 +7267,8 @@
                                                                               "x":  110,
                                                                               "y":  3.5,
                                                                               "rot":  0,
+                                                                              "sx":  0.01,
+                                                                              "sy":  0.01,
                                                                               "stageId":  "modelo-08-etapa-04",
                                                                               "isNew":  true
                                                                           },
@@ -6990,6 +7278,8 @@
                                                                               "x":  10,
                                                                               "y":  -20,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-03-etapa-07",
                                                                               "isNew":  false
                                                                           },
@@ -6999,6 +7289,8 @@
                                                                               "x":  20,
                                                                               "y":  -17.5,
                                                                               "rot":  0,
+                                                                              "sx":  0.01,
+                                                                              "sy":  0.01,
                                                                               "stageId":  "modelo-04-etapa-04",
                                                                               "isNew":  false
                                                                           },
@@ -7008,6 +7300,8 @@
                                                                               "x":  115,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  0.01,
+                                                                              "sy":  0.01,
                                                                               "stageId":  "modelo-08-etapa-04",
                                                                               "isNew":  true
                                                                           },
@@ -7017,6 +7311,8 @@
                                                                               "x":  20,
                                                                               "y":  3.5,
                                                                               "rot":  0,
+                                                                              "sx":  4,
+                                                                              "sy":  3,
                                                                               "stageId":  "modelo-01-etapa-04",
                                                                               "isNew":  false
                                                                           },
@@ -7025,7 +7321,9 @@
                                                                               "type":  "Operator",
                                                                               "x":  20,
                                                                               "y":  -1,
-                                                                              "rot":  0,
+                                                                              "rot":  270,
+                                                                              "sx":  0.4,
+                                                                              "sy":  0.58,
                                                                               "stageId":  "modelo-02-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -7035,6 +7333,8 @@
                                                                               "x":  22,
                                                                               "y":  -20,
                                                                               "rot":  0,
+                                                                              "sx":  0.01,
+                                                                              "sy":  0.01,
                                                                               "stageId":  "modelo-04-etapa-04",
                                                                               "isNew":  false
                                                                           },
@@ -7044,6 +7344,8 @@
                                                                               "x":  70,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  4.02,
+                                                                              "sy":  3.01,
                                                                               "stageId":  "modelo-05-etapa-03",
                                                                               "isNew":  false
                                                                           },
@@ -7053,6 +7355,8 @@
                                                                               "x":  60,
                                                                               "y":  -10,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-05-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -7062,6 +7366,8 @@
                                                                               "x":  63,
                                                                               "y":  -10,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-06-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -7070,7 +7376,9 @@
                                                                               "type":  "Operator",
                                                                               "x":  20,
                                                                               "y":  6,
-                                                                              "rot":  0,
+                                                                              "rot":  270,
+                                                                              "sx":  0.4,
+                                                                              "sy":  0.58,
                                                                               "stageId":  "modelo-02-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -7080,6 +7388,8 @@
                                                                               "x":  20,
                                                                               "y":  -10,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-04-etapa-04",
                                                                               "isNew":  false
                                                                           }
@@ -7357,7 +7667,8 @@
                                                                                                          "key":  "VISUALS",
                                                                                                          "title":  "Visuals",
                                                                                                          "lines":  [
-                                                                                                                       "[Mid6_small.png] X = 120.00 ; Y = 0.00 ; Z = 0.00"
+                                                                                                                       "[Mid6_small.png] X = 120.00 ; Y = 0.00 ; Z = 0.00",
+                                                                                                                       "\"PALLETS_FINALIZADOS\" - [_resize.png] X = 25.00 ; Y = 1.50"
                                                                                                                    ]
                                                                                                      },
                                                                                                      {
@@ -7879,6 +8190,8 @@
                                                                               "x":  30,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-03-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -7888,6 +8201,8 @@
                                                                               "x":  20,
                                                                               "y":  -3.5,
                                                                               "rot":  0,
+                                                                              "sx":  4,
+                                                                              "sy":  3,
                                                                               "stageId":  "modelo-01-etapa-04",
                                                                               "isNew":  false
                                                                           },
@@ -7897,6 +8212,8 @@
                                                                               "x":  70,
                                                                               "y":  -10,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-05-etapa-03",
                                                                               "isNew":  false
                                                                           },
@@ -7906,6 +8223,8 @@
                                                                               "x":  140,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  1.06,
+                                                                              "sy":  1.06,
                                                                               "stageId":  "modelo-09-etapa-02",
                                                                               "isNew":  true
                                                                           },
@@ -7914,7 +8233,9 @@
                                                                               "type":  "Queue",
                                                                               "x":  75,
                                                                               "y":  0,
-                                                                              "rot":  1,
+                                                                              "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-07-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -7923,7 +8244,9 @@
                                                                               "type":  "Operator",
                                                                               "x":  15,
                                                                               "y":  -3.5,
-                                                                              "rot":  0,
+                                                                              "rot":  180,
+                                                                              "sx":  0.4,
+                                                                              "sy":  0.58,
                                                                               "stageId":  "modelo-02-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -7933,6 +8256,8 @@
                                                                               "x":  42.5,
                                                                               "y":  0.2,
                                                                               "rot":  0,
+                                                                              "sx":  0.01,
+                                                                              "sy":  0.01,
                                                                               "stageId":  "modelo-03-etapa-06",
                                                                               "isNew":  false
                                                                           },
@@ -7942,6 +8267,8 @@
                                                                               "x":  60,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  4.02,
+                                                                              "sy":  3.01,
                                                                               "stageId":  "modelo-05-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -7961,6 +8288,8 @@
                                                                               "x":  50,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-05-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -7970,8 +8299,21 @@
                                                                               "x":  85,
                                                                               "y":  1,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-07-etapa-03",
                                                                               "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "PALLETS_FINALIZADOS",
+                                                                              "type":  "Rack",
+                                                                              "x":  120,
+                                                                              "y":  0,
+                                                                              "rot":  270,
+                                                                              "sx":  25,
+                                                                              "sy":  1.5,
+                                                                              "stageId":  "modelo-09-etapa-02",
+                                                                              "isNew":  true
                                                                           },
                                                                           {
                                                                               "name":  "TESTE",
@@ -7979,6 +8321,8 @@
                                                                               "x":  40,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  4,
+                                                                              "sy":  3,
                                                                               "stageId":  "modelo-03-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -7998,6 +8342,8 @@
                                                                               "x":  45,
                                                                               "y":  -1.5,
                                                                               "rot":  0,
+                                                                              "sx":  0.01,
+                                                                              "sy":  0.01,
                                                                               "stageId":  "modelo-03-etapa-06",
                                                                               "isNew":  false
                                                                           },
@@ -8007,6 +8353,8 @@
                                                                               "x":  105,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  0.01,
+                                                                              "sy":  0.01,
                                                                               "stageId":  "modelo-08-etapa-04",
                                                                               "isNew":  false
                                                                           },
@@ -8016,6 +8364,8 @@
                                                                               "x":  0,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  1.06,
+                                                                              "sy":  1.06,
                                                                               "stageId":  "modelo-01-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -8035,6 +8385,8 @@
                                                                               "x":  10,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-01-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -8043,7 +8395,9 @@
                                                                               "type":  "Queue",
                                                                               "x":  100,
                                                                               "y":  -4,
-                                                                              "rot":  0,
+                                                                              "rot":  90,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-08-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -8053,6 +8407,8 @@
                                                                               "x":  110,
                                                                               "y":  -3.5,
                                                                               "rot":  0,
+                                                                              "sx":  0.01,
+                                                                              "sy":  0.01,
                                                                               "stageId":  "modelo-08-etapa-04",
                                                                               "isNew":  false
                                                                           },
@@ -8061,7 +8417,9 @@
                                                                               "type":  "Operator",
                                                                               "x":  15,
                                                                               "y":  3.5,
-                                                                              "rot":  0,
+                                                                              "rot":  180,
+                                                                              "sx":  0.4,
+                                                                              "sy":  0.58,
                                                                               "stageId":  "modelo-02-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -8080,7 +8438,9 @@
                                                                               "type":  "Source",
                                                                               "x":  100,
                                                                               "y":  -20,
-                                                                              "rot":  0,
+                                                                              "rot":  90,
+                                                                              "sx":  1.06,
+                                                                              "sy":  1.06,
                                                                               "stageId":  "modelo-08-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -8090,6 +8450,8 @@
                                                                               "x":  80,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  5,
+                                                                              "sy":  3.08,
                                                                               "stageId":  "modelo-07-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -8098,7 +8460,9 @@
                                                                               "type":  "Operator",
                                                                               "x":  60,
                                                                               "y":  2.5,
-                                                                              "rot":  0,
+                                                                              "rot":  270,
+                                                                              "sx":  0.4,
+                                                                              "sy":  0.58,
                                                                               "stageId":  "modelo-05-etapa-03",
                                                                               "isNew":  false
                                                                           },
@@ -8108,15 +8472,19 @@
                                                                               "x":  85,
                                                                               "y":  -1,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-07-etapa-03",
                                                                               "isNew":  false
                                                                           },
                                                                           {
                                                                               "name":  "PALETIZACAO",
                                                                               "type":  "Combiner",
-                                                                              "x":  4,
-                                                                              "y":  6,
-                                                                              "rot":  4,
+                                                                              "x":  100,
+                                                                              "y":  1,
+                                                                              "rot":  0,
+                                                                              "sx":  4,
+                                                                              "sy":  6,
                                                                               "stageId":  "modelo-09-etapa-01",
                                                                               "isNew":  true
                                                                           },
@@ -8126,6 +8494,8 @@
                                                                               "x":  110,
                                                                               "y":  3.5,
                                                                               "rot":  0,
+                                                                              "sx":  0.01,
+                                                                              "sy":  0.01,
                                                                               "stageId":  "modelo-08-etapa-04",
                                                                               "isNew":  false
                                                                           },
@@ -8135,6 +8505,8 @@
                                                                               "x":  10,
                                                                               "y":  -20,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-03-etapa-07",
                                                                               "isNew":  false
                                                                           },
@@ -8144,6 +8516,8 @@
                                                                               "x":  20,
                                                                               "y":  -17.5,
                                                                               "rot":  0,
+                                                                              "sx":  0.01,
+                                                                              "sy":  0.01,
                                                                               "stageId":  "modelo-04-etapa-04",
                                                                               "isNew":  false
                                                                           },
@@ -8153,6 +8527,8 @@
                                                                               "x":  115,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  0.01,
+                                                                              "sy":  0.01,
                                                                               "stageId":  "modelo-08-etapa-04",
                                                                               "isNew":  false
                                                                           },
@@ -8162,6 +8538,8 @@
                                                                               "x":  20,
                                                                               "y":  3.5,
                                                                               "rot":  0,
+                                                                              "sx":  4,
+                                                                              "sy":  3,
                                                                               "stageId":  "modelo-01-etapa-04",
                                                                               "isNew":  false
                                                                           },
@@ -8170,7 +8548,9 @@
                                                                               "type":  "Operator",
                                                                               "x":  20,
                                                                               "y":  -1,
-                                                                              "rot":  0,
+                                                                              "rot":  270,
+                                                                              "sx":  0.4,
+                                                                              "sy":  0.58,
                                                                               "stageId":  "modelo-02-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -8180,6 +8560,8 @@
                                                                               "x":  22,
                                                                               "y":  -20,
                                                                               "rot":  0,
+                                                                              "sx":  0.01,
+                                                                              "sy":  0.01,
                                                                               "stageId":  "modelo-04-etapa-04",
                                                                               "isNew":  false
                                                                           },
@@ -8189,6 +8571,8 @@
                                                                               "x":  70,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  4.02,
+                                                                              "sy":  3.01,
                                                                               "stageId":  "modelo-05-etapa-03",
                                                                               "isNew":  false
                                                                           },
@@ -8198,6 +8582,8 @@
                                                                               "x":  60,
                                                                               "y":  -10,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-05-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -8207,6 +8593,8 @@
                                                                               "x":  63,
                                                                               "y":  -10,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-06-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -8215,7 +8603,9 @@
                                                                               "type":  "Operator",
                                                                               "x":  20,
                                                                               "y":  6,
-                                                                              "rot":  0,
+                                                                              "rot":  270,
+                                                                              "sx":  0.4,
+                                                                              "sy":  0.58,
                                                                               "stageId":  "modelo-02-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -8225,6 +8615,8 @@
                                                                               "x":  20,
                                                                               "y":  -10,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-04-etapa-04",
                                                                               "isNew":  false
                                                                           }
@@ -8729,6 +9121,8 @@
                                                                               "x":  30,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-03-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -8738,6 +9132,8 @@
                                                                               "x":  20,
                                                                               "y":  -3.5,
                                                                               "rot":  0,
+                                                                              "sx":  4,
+                                                                              "sy":  3,
                                                                               "stageId":  "modelo-01-etapa-04",
                                                                               "isNew":  false
                                                                           },
@@ -8747,6 +9143,8 @@
                                                                               "x":  70,
                                                                               "y":  -10,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-05-etapa-03",
                                                                               "isNew":  false
                                                                           },
@@ -8756,6 +9154,8 @@
                                                                               "x":  140,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  1.06,
+                                                                              "sy":  1.06,
                                                                               "stageId":  "modelo-09-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -8764,7 +9164,9 @@
                                                                               "type":  "Queue",
                                                                               "x":  75,
                                                                               "y":  0,
-                                                                              "rot":  1,
+                                                                              "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-07-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -8773,7 +9175,9 @@
                                                                               "type":  "Operator",
                                                                               "x":  15,
                                                                               "y":  -3.5,
-                                                                              "rot":  0,
+                                                                              "rot":  180,
+                                                                              "sx":  0.4,
+                                                                              "sy":  0.58,
                                                                               "stageId":  "modelo-02-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -8783,6 +9187,8 @@
                                                                               "x":  42.5,
                                                                               "y":  0.2,
                                                                               "rot":  0,
+                                                                              "sx":  0.01,
+                                                                              "sy":  0.01,
                                                                               "stageId":  "modelo-03-etapa-06",
                                                                               "isNew":  false
                                                                           },
@@ -8792,6 +9198,8 @@
                                                                               "x":  60,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  4.02,
+                                                                              "sy":  3.01,
                                                                               "stageId":  "modelo-05-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -8811,6 +9219,8 @@
                                                                               "x":  50,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-05-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -8820,7 +9230,20 @@
                                                                               "x":  85,
                                                                               "y":  1,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-07-etapa-03",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "PALLETS_FINALIZADOS",
+                                                                              "type":  "Rack",
+                                                                              "x":  120,
+                                                                              "y":  0,
+                                                                              "rot":  270,
+                                                                              "sx":  25,
+                                                                              "sy":  1.5,
+                                                                              "stageId":  "modelo-09-etapa-02",
                                                                               "isNew":  false
                                                                           },
                                                                           {
@@ -8829,6 +9252,8 @@
                                                                               "x":  40,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  4,
+                                                                              "sy":  3,
                                                                               "stageId":  "modelo-03-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -8848,6 +9273,8 @@
                                                                               "x":  45,
                                                                               "y":  -1.5,
                                                                               "rot":  0,
+                                                                              "sx":  0.01,
+                                                                              "sy":  0.01,
                                                                               "stageId":  "modelo-03-etapa-06",
                                                                               "isNew":  false
                                                                           },
@@ -8857,6 +9284,8 @@
                                                                               "x":  105,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  0.01,
+                                                                              "sy":  0.01,
                                                                               "stageId":  "modelo-08-etapa-04",
                                                                               "isNew":  false
                                                                           },
@@ -8866,6 +9295,8 @@
                                                                               "x":  0,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  1.06,
+                                                                              "sy":  1.06,
                                                                               "stageId":  "modelo-01-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -8885,6 +9316,8 @@
                                                                               "x":  10,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-01-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -8893,7 +9326,9 @@
                                                                               "type":  "Queue",
                                                                               "x":  100,
                                                                               "y":  -4,
-                                                                              "rot":  0,
+                                                                              "rot":  90,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-08-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -8903,6 +9338,8 @@
                                                                               "x":  110,
                                                                               "y":  -3.5,
                                                                               "rot":  0,
+                                                                              "sx":  0.01,
+                                                                              "sy":  0.01,
                                                                               "stageId":  "modelo-08-etapa-04",
                                                                               "isNew":  false
                                                                           },
@@ -8911,7 +9348,9 @@
                                                                               "type":  "Operator",
                                                                               "x":  15,
                                                                               "y":  3.5,
-                                                                              "rot":  0,
+                                                                              "rot":  180,
+                                                                              "sx":  0.4,
+                                                                              "sy":  0.58,
                                                                               "stageId":  "modelo-02-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -8930,7 +9369,9 @@
                                                                               "type":  "Source",
                                                                               "x":  100,
                                                                               "y":  -20,
-                                                                              "rot":  0,
+                                                                              "rot":  90,
+                                                                              "sx":  1.06,
+                                                                              "sy":  1.06,
                                                                               "stageId":  "modelo-08-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -8940,6 +9381,8 @@
                                                                               "x":  80,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  5,
+                                                                              "sy":  3.08,
                                                                               "stageId":  "modelo-07-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -8948,7 +9391,9 @@
                                                                               "type":  "Operator",
                                                                               "x":  60,
                                                                               "y":  2.5,
-                                                                              "rot":  0,
+                                                                              "rot":  270,
+                                                                              "sx":  0.4,
+                                                                              "sy":  0.58,
                                                                               "stageId":  "modelo-05-etapa-03",
                                                                               "isNew":  false
                                                                           },
@@ -8958,15 +9403,19 @@
                                                                               "x":  85,
                                                                               "y":  -1,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-07-etapa-03",
                                                                               "isNew":  false
                                                                           },
                                                                           {
                                                                               "name":  "PALETIZACAO",
                                                                               "type":  "Combiner",
-                                                                              "x":  4,
-                                                                              "y":  6,
-                                                                              "rot":  4,
+                                                                              "x":  100,
+                                                                              "y":  1,
+                                                                              "rot":  0,
+                                                                              "sx":  4,
+                                                                              "sy":  6,
                                                                               "stageId":  "modelo-09-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -8976,6 +9425,8 @@
                                                                               "x":  110,
                                                                               "y":  3.5,
                                                                               "rot":  0,
+                                                                              "sx":  0.01,
+                                                                              "sy":  0.01,
                                                                               "stageId":  "modelo-08-etapa-04",
                                                                               "isNew":  false
                                                                           },
@@ -8985,6 +9436,8 @@
                                                                               "x":  10,
                                                                               "y":  -20,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-03-etapa-07",
                                                                               "isNew":  false
                                                                           },
@@ -8994,6 +9447,8 @@
                                                                               "x":  20,
                                                                               "y":  -17.5,
                                                                               "rot":  0,
+                                                                              "sx":  0.01,
+                                                                              "sy":  0.01,
                                                                               "stageId":  "modelo-04-etapa-04",
                                                                               "isNew":  false
                                                                           },
@@ -9003,6 +9458,8 @@
                                                                               "x":  115,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  0.01,
+                                                                              "sy":  0.01,
                                                                               "stageId":  "modelo-08-etapa-04",
                                                                               "isNew":  false
                                                                           },
@@ -9012,6 +9469,8 @@
                                                                               "x":  20,
                                                                               "y":  3.5,
                                                                               "rot":  0,
+                                                                              "sx":  4,
+                                                                              "sy":  3,
                                                                               "stageId":  "modelo-01-etapa-04",
                                                                               "isNew":  false
                                                                           },
@@ -9020,7 +9479,9 @@
                                                                               "type":  "Operator",
                                                                               "x":  20,
                                                                               "y":  -1,
-                                                                              "rot":  0,
+                                                                              "rot":  270,
+                                                                              "sx":  0.4,
+                                                                              "sy":  0.58,
                                                                               "stageId":  "modelo-02-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -9030,6 +9491,8 @@
                                                                               "x":  22,
                                                                               "y":  -20,
                                                                               "rot":  0,
+                                                                              "sx":  0.01,
+                                                                              "sy":  0.01,
                                                                               "stageId":  "modelo-04-etapa-04",
                                                                               "isNew":  false
                                                                           },
@@ -9039,6 +9502,8 @@
                                                                               "x":  70,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  4.02,
+                                                                              "sy":  3.01,
                                                                               "stageId":  "modelo-05-etapa-03",
                                                                               "isNew":  false
                                                                           },
@@ -9048,6 +9513,8 @@
                                                                               "x":  60,
                                                                               "y":  -10,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-05-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -9057,6 +9524,8 @@
                                                                               "x":  63,
                                                                               "y":  -10,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-06-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -9065,7 +9534,9 @@
                                                                               "type":  "Operator",
                                                                               "x":  20,
                                                                               "y":  6,
-                                                                              "rot":  0,
+                                                                              "rot":  270,
+                                                                              "sx":  0.4,
+                                                                              "sy":  0.58,
                                                                               "stageId":  "modelo-02-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -9075,6 +9546,8 @@
                                                                               "x":  20,
                                                                               "y":  -10,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-04-etapa-04",
                                                                               "isNew":  false
                                                                           }
@@ -9826,19 +10299,23 @@
                                                           "objects":  [
                                                                           {
                                                                               "name":  "POSTO_DE_SENHA_3D",
-                                                                              "type":  "Operator",
+                                                                              "type":  "Location - Kiosk",
                                                                               "x":  10,
                                                                               "y":  0,
-                                                                              "rot":  0,
+                                                                              "rot":  90,
+                                                                              "sx":  0.36,
+                                                                              "sy":  0.58,
                                                                               "stageId":  "modelo-90-etapa-02",
                                                                               "isNew":  true
                                                                           },
                                                                           {
                                                                               "name":  "POSTO_DE_ATENDIMENTO_3D",
-                                                                              "type":  "Operator",
+                                                                              "type":  "Location - Registration",
                                                                               "x":  30,
                                                                               "y":  1.25,
-                                                                              "rot":  0,
+                                                                              "rot":  180,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-90-etapa-02",
                                                                               "isNew":  true
                                                                           },
@@ -9848,6 +10325,8 @@
                                                                               "x":  10,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  4,
+                                                                              "sy":  3,
                                                                               "stageId":  "modelo-90-etapa-01",
                                                                               "isNew":  true
                                                                           },
@@ -9857,6 +10336,8 @@
                                                                               "x":  40,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  1.06,
+                                                                              "sy":  1.06,
                                                                               "stageId":  "modelo-90-etapa-01",
                                                                               "isNew":  true
                                                                           },
@@ -9865,17 +10346,21 @@
                                                                               "type":  "Operator",
                                                                               "x":  30,
                                                                               "y":  1.5,
-                                                                              "rot":  0,
+                                                                              "rot":  270,
+                                                                              "sx":  0.4,
+                                                                              "sy":  0.58,
                                                                               "stageId":  "modelo-90-etapa-02",
                                                                               "isNew":  true
                                                                           },
                                                                           {
                                                                               "name":  "FILA",
                                                                               "type":  "Queue",
-                                                                              "x":  10,
-                                                                              "y":  1,
-                                                                              "rot":  0.01,
-                                                                              "stageId":  "modelo-90-etapa-02",
+                                                                              "x":  20,
+                                                                              "y":  0,
+                                                                              "rot":  0,
+                                                                              "sx":  10,
+                                                                              "sy":  1,
+                                                                              "stageId":  "modelo-90-etapa-01",
                                                                               "isNew":  true
                                                                           },
                                                                           {
@@ -9884,6 +10369,8 @@
                                                                               "x":  0,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  1.06,
+                                                                              "sy":  1.06,
                                                                               "stageId":  "modelo-90-etapa-01",
                                                                               "isNew":  true
                                                                           },
@@ -9893,6 +10380,8 @@
                                                                               "x":  30,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  4,
+                                                                              "sy":  3,
                                                                               "stageId":  "modelo-90-etapa-01",
                                                                               "isNew":  true
                                                                           }
@@ -10646,6 +11135,8 @@
                                                                               "x":  30,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-03-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -10655,6 +11146,8 @@
                                                                               "x":  20,
                                                                               "y":  -3.5,
                                                                               "rot":  0,
+                                                                              "sx":  4,
+                                                                              "sy":  3,
                                                                               "stageId":  "modelo-01-etapa-04",
                                                                               "isNew":  false
                                                                           },
@@ -10664,6 +11157,8 @@
                                                                               "x":  70,
                                                                               "y":  -10,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-05-etapa-03",
                                                                               "isNew":  false
                                                                           },
@@ -10673,6 +11168,8 @@
                                                                               "x":  140,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  1.06,
+                                                                              "sy":  1.06,
                                                                               "stageId":  "modelo-09-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -10681,7 +11178,9 @@
                                                                               "type":  "Queue",
                                                                               "x":  75,
                                                                               "y":  0,
-                                                                              "rot":  1,
+                                                                              "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-07-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -10690,7 +11189,9 @@
                                                                               "type":  "Operator",
                                                                               "x":  15,
                                                                               "y":  -3.5,
-                                                                              "rot":  0,
+                                                                              "rot":  180,
+                                                                              "sx":  0.4,
+                                                                              "sy":  0.58,
                                                                               "stageId":  "modelo-02-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -10700,6 +11201,8 @@
                                                                               "x":  42.5,
                                                                               "y":  0.2,
                                                                               "rot":  0,
+                                                                              "sx":  0.01,
+                                                                              "sy":  0.01,
                                                                               "stageId":  "modelo-03-etapa-06",
                                                                               "isNew":  false
                                                                           },
@@ -10708,7 +11211,9 @@
                                                                               "type":  "Operator",
                                                                               "x":  40,
                                                                               "y":  6,
-                                                                              "rot":  0,
+                                                                              "rot":  270,
+                                                                              "sx":  0.4,
+                                                                              "sy":  0.58,
                                                                               "stageId":  "modelo-11-etapa-07",
                                                                               "isNew":  true
                                                                           },
@@ -10718,6 +11223,8 @@
                                                                               "x":  60,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  4.02,
+                                                                              "sy":  3.01,
                                                                               "stageId":  "modelo-05-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -10737,6 +11244,8 @@
                                                                               "x":  50,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-05-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -10746,7 +11255,20 @@
                                                                               "x":  85,
                                                                               "y":  1,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-07-etapa-03",
+                                                                              "isNew":  false
+                                                                          },
+                                                                          {
+                                                                              "name":  "PALLETS_FINALIZADOS",
+                                                                              "type":  "Rack",
+                                                                              "x":  120,
+                                                                              "y":  0,
+                                                                              "rot":  270,
+                                                                              "sx":  25,
+                                                                              "sy":  1.5,
+                                                                              "stageId":  "modelo-09-etapa-02",
                                                                               "isNew":  false
                                                                           },
                                                                           {
@@ -10765,6 +11287,8 @@
                                                                               "x":  45,
                                                                               "y":  -1.5,
                                                                               "rot":  0,
+                                                                              "sx":  0.01,
+                                                                              "sy":  0.01,
                                                                               "stageId":  "modelo-03-etapa-06",
                                                                               "isNew":  false
                                                                           },
@@ -10774,6 +11298,8 @@
                                                                               "x":  105,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  0.01,
+                                                                              "sy":  0.01,
                                                                               "stageId":  "modelo-08-etapa-04",
                                                                               "isNew":  false
                                                                           },
@@ -10783,6 +11309,8 @@
                                                                               "x":  0,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  1.06,
+                                                                              "sy":  1.06,
                                                                               "stageId":  "modelo-01-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -10802,6 +11330,8 @@
                                                                               "x":  10,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-01-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -10811,6 +11341,8 @@
                                                                               "x":  40,
                                                                               "y":  3.5,
                                                                               "rot":  0,
+                                                                              "sx":  4,
+                                                                              "sy":  3,
                                                                               "stageId":  "modelo-11-etapa-07",
                                                                               "isNew":  true
                                                                           },
@@ -10820,6 +11352,8 @@
                                                                               "x":  40,
                                                                               "y":  -1,
                                                                               "rot":  0,
+                                                                              "sx":  0.4,
+                                                                              "sy":  0.58,
                                                                               "stageId":  "modelo-11-etapa-07",
                                                                               "isNew":  true
                                                                           },
@@ -10828,7 +11362,9 @@
                                                                               "type":  "Queue",
                                                                               "x":  100,
                                                                               "y":  -4,
-                                                                              "rot":  0,
+                                                                              "rot":  90,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-08-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -10838,6 +11374,8 @@
                                                                               "x":  40,
                                                                               "y":  -3.5,
                                                                               "rot":  0,
+                                                                              "sx":  4,
+                                                                              "sy":  3,
                                                                               "stageId":  "modelo-11-etapa-07",
                                                                               "isNew":  true
                                                                           },
@@ -10847,6 +11385,8 @@
                                                                               "x":  110,
                                                                               "y":  -3.5,
                                                                               "rot":  0,
+                                                                              "sx":  0.01,
+                                                                              "sy":  0.01,
                                                                               "stageId":  "modelo-08-etapa-04",
                                                                               "isNew":  false
                                                                           },
@@ -10855,7 +11395,9 @@
                                                                               "type":  "Operator",
                                                                               "x":  15,
                                                                               "y":  3.5,
-                                                                              "rot":  0,
+                                                                              "rot":  180,
+                                                                              "sx":  0.4,
+                                                                              "sy":  0.58,
                                                                               "stageId":  "modelo-02-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -10874,7 +11416,9 @@
                                                                               "type":  "Source",
                                                                               "x":  100,
                                                                               "y":  -20,
-                                                                              "rot":  0,
+                                                                              "rot":  90,
+                                                                              "sx":  1.06,
+                                                                              "sy":  1.06,
                                                                               "stageId":  "modelo-08-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -10884,6 +11428,8 @@
                                                                               "x":  80,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  5,
+                                                                              "sy":  3.08,
                                                                               "stageId":  "modelo-07-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -10892,7 +11438,9 @@
                                                                               "type":  "Operator",
                                                                               "x":  60,
                                                                               "y":  2.5,
-                                                                              "rot":  0,
+                                                                              "rot":  270,
+                                                                              "sx":  0.4,
+                                                                              "sy":  0.58,
                                                                               "stageId":  "modelo-05-etapa-03",
                                                                               "isNew":  false
                                                                           },
@@ -10902,15 +11450,19 @@
                                                                               "x":  85,
                                                                               "y":  -1,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-07-etapa-03",
                                                                               "isNew":  false
                                                                           },
                                                                           {
                                                                               "name":  "PALETIZACAO",
                                                                               "type":  "Combiner",
-                                                                              "x":  4,
-                                                                              "y":  6,
-                                                                              "rot":  4,
+                                                                              "x":  100,
+                                                                              "y":  1,
+                                                                              "rot":  0,
+                                                                              "sx":  4,
+                                                                              "sy":  6,
                                                                               "stageId":  "modelo-09-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -10920,6 +11472,8 @@
                                                                               "x":  110,
                                                                               "y":  3.5,
                                                                               "rot":  0,
+                                                                              "sx":  0.01,
+                                                                              "sy":  0.01,
                                                                               "stageId":  "modelo-08-etapa-04",
                                                                               "isNew":  false
                                                                           },
@@ -10929,6 +11483,8 @@
                                                                               "x":  10,
                                                                               "y":  -20,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-03-etapa-07",
                                                                               "isNew":  false
                                                                           },
@@ -10938,6 +11494,8 @@
                                                                               "x":  20,
                                                                               "y":  -17.5,
                                                                               "rot":  0,
+                                                                              "sx":  0.01,
+                                                                              "sy":  0.01,
                                                                               "stageId":  "modelo-04-etapa-04",
                                                                               "isNew":  false
                                                                           },
@@ -10947,6 +11505,8 @@
                                                                               "x":  115,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  0.01,
+                                                                              "sy":  0.01,
                                                                               "stageId":  "modelo-08-etapa-04",
                                                                               "isNew":  false
                                                                           },
@@ -10956,6 +11516,8 @@
                                                                               "x":  20,
                                                                               "y":  3.5,
                                                                               "rot":  0,
+                                                                              "sx":  4,
+                                                                              "sy":  3,
                                                                               "stageId":  "modelo-01-etapa-04",
                                                                               "isNew":  false
                                                                           },
@@ -10964,7 +11526,9 @@
                                                                               "type":  "Operator",
                                                                               "x":  20,
                                                                               "y":  -1,
-                                                                              "rot":  0,
+                                                                              "rot":  270,
+                                                                              "sx":  0.4,
+                                                                              "sy":  0.58,
                                                                               "stageId":  "modelo-02-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -10974,6 +11538,8 @@
                                                                               "x":  22,
                                                                               "y":  -20,
                                                                               "rot":  0,
+                                                                              "sx":  0.01,
+                                                                              "sy":  0.01,
                                                                               "stageId":  "modelo-04-etapa-04",
                                                                               "isNew":  false
                                                                           },
@@ -10983,6 +11549,8 @@
                                                                               "x":  70,
                                                                               "y":  0,
                                                                               "rot":  0,
+                                                                              "sx":  4.02,
+                                                                              "sy":  3.01,
                                                                               "stageId":  "modelo-05-etapa-03",
                                                                               "isNew":  false
                                                                           },
@@ -10992,6 +11560,8 @@
                                                                               "x":  60,
                                                                               "y":  -10,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-05-etapa-02",
                                                                               "isNew":  false
                                                                           },
@@ -11001,6 +11571,8 @@
                                                                               "x":  63,
                                                                               "y":  -10,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-06-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -11009,7 +11581,9 @@
                                                                               "type":  "Operator",
                                                                               "x":  20,
                                                                               "y":  6,
-                                                                              "rot":  0,
+                                                                              "rot":  270,
+                                                                              "sx":  0.4,
+                                                                              "sy":  0.58,
                                                                               "stageId":  "modelo-02-etapa-01",
                                                                               "isNew":  false
                                                                           },
@@ -11019,6 +11593,8 @@
                                                                               "x":  20,
                                                                               "y":  -10,
                                                                               "rot":  0,
+                                                                              "sx":  2,
+                                                                              "sy":  2,
                                                                               "stageId":  "modelo-04-etapa-04",
                                                                               "isNew":  false
                                                                           }
@@ -11054,6 +11630,20 @@
                          "stages":  [
                                         "modelo-03-etapa-06",
                                         "modelo-04-etapa-04"
+                                    ]
+                     },
+                     {
+                         "type":  "Location - Kiosk",
+                         "count":  1,
+                         "stages":  [
+                                        "modelo-90-etapa-02"
+                                    ]
+                     },
+                     {
+                         "type":  "Location - Registration",
+                         "count":  1,
+                         "stages":  [
+                                        "modelo-90-etapa-02"
                                     ]
                      },
                      {
@@ -11106,7 +11696,14 @@
                                         "modelo-07-etapa-01",
                                         "modelo-07-etapa-03",
                                         "modelo-08-etapa-01",
-                                        "modelo-90-etapa-02"
+                                        "modelo-90-etapa-01"
+                                    ]
+                     },
+                     {
+                         "type":  "Rack",
+                         "count":  1,
+                         "stages":  [
+                                        "modelo-09-etapa-02"
                                     ]
                      },
                      {
